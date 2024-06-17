@@ -6,6 +6,7 @@ import { GithubSignIn } from "@/components/auth/GithubSignIn";
 import { Navigation } from "@/components/navbar";
 import { auth } from "@/auth";
 import { Card } from "@/components/ui/card";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Jobspire",

@@ -6,15 +6,15 @@ import prisma from './utils/db';
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),
-  pages: { 
-    // signIn: '/login'
-    // change test so user creates new page.
+  pages: {
+    signIn: '/login',
+    newUser: '/test'
     // newUser: '/test'
   },
   providers: [
     Google({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_SECRET,
+      clientId: process.env.AUTH_GOOGLE_ID,
+      clientSecret: process.env.AUTH_GOOGLE_SECRET,
       authorization: {
         params: {
           prompt: "consent",
@@ -26,22 +26,21 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
   ],
   secret:process.env.AUTH_SECRET,
   session: {
-    strategy: 'jwt',
+    strategy: 'database'
   },
   trustHost: true,
-  callbacks: {
-    async jwt({ token, user }) {
-        if(user) {
-            token.id = user.id
-        }
-      return token
-    },
-    async session({ token, session }) {
-      if(session.user && token.sub) {
-        session.user.id = token.sub
-      } 
-      return session;
-    }
-  },
-  
+  // callbacks: {
+  //   async jwt({ token, user }) {
+  //       if(user) {
+  //           token.id = user.id
+  //       }
+  //     return token
+  //   },
+  //   async session({ token, session }) {
+  //     if(session.user && token.sub) {
+  //       session.user.id = token.sub
+  //     } 
+  //     return session;
+  //   }
+  // },
 })

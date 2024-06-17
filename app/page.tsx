@@ -8,6 +8,7 @@ export default async function Home() {
   return (
    <>
    <Navigation session={session}/>
+   {JSON.stringify(session)}
    </>
   );
 }
