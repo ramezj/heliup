@@ -81,7 +81,7 @@ export function Navigation(props:any) {
             ? 
             <>
                 <Button variant="outline" asChild>
-                  <Link href='/app'>
+                  <Link href='/dashboard'>
                   Dashboard
                   </Link>
                   </Button>
