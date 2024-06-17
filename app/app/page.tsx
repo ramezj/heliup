@@ -8,7 +8,6 @@ export default async function Page() {
   const session = await auth();
   return (
    <>
-   <Navigation session={session}/>
    {JSON.stringify(session)}
    </>
   );
