@@ -90,12 +90,12 @@ export function Navigation(props:any) {
             :
             <>
                   <Button variant="default" asChild>
-                  <Link href='/login'>
+                  <Link href='/auth'>
                   Log In
                   </Link>
                   </Button>
                 <Button variant="outline" asChild>
-                  <Link href='/register'>
+                  <Link href='/auth'>
                   Try For Free
                   </Link>
                   </Button>
