@@ -77,10 +77,20 @@ export function CreateOrganization() {
                     animate= {{opacity: 1}}
                     >
                     <Label>Website</Label>
-                    <Input placeholder="jobspire.co" required/>
+                    <Input placeholder="jobspire.co" required value={website} onChange={((e) => {setWebsite(e.target.value)})}/>
                     <div className="flex gap-3">
                     <Button variant={"outline"} className="w-full" type="submit" onClick={(() => setStep(step - 1))}>Back</Button>
-                    <Button className="w-full" type="submit">Create</Button>
+                    {
+                        website?.length as number === 0 || website?.length as number === undefined
+                        ? 
+                        <>
+                        <Button className="w-full" disabled type="submit" onClick={(() => setStep(step + 1))}>Create</Button>
+                        </>
+                        : 
+                        <>
+                        <Button className="w-full" type="submit" onClick={(() => setStep(step + 1))}>Create</Button>
+                        </>
+                    }
                     </div>
                     </motion.div>
                 )
