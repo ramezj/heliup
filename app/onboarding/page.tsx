@@ -4,6 +4,7 @@ import { Navigation } from "@/components/navbar";
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
     title: "Onboarding",
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 
   export default async function Page() {
     const session = await auth();
+    if(!session) redirect('/login');
       return (
         <>
         <Navigation session={session}/>
