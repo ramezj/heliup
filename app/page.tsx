@@ -9,7 +9,7 @@ export default async function Page() {
   return (
    <>
    <Navigation session={session}/>
-   {JSON.stringify(session)}
+   {JSON.stringify(session?.user)}
    </>
   );
 }

@@ -8,8 +8,6 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),
   pages: {
     signIn: '/login',
-    newUser: '/test'
-    // newUser: '/test'
   },
   providers: [
     Google({
@@ -29,18 +27,10 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
     strategy: 'database'
   },
   trustHost: true,
-  // callbacks: {
-  //   async jwt({ token, user }) {
-  //       if(user) {
-  //           token.id = user.id
-  //       }
-  //     return token
-  //   },
-  //   async session({ token, session }) {
-  //     if(session.user && token.sub) {
-  //       session.user.id = token.sub
-  //     } 
-  //     return session;
-  //   }
-  // },
+  callbacks: {
+    async session({ session, user }) {
+      session.user = user;
+      return session;
+    }
+  },
 })

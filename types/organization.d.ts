@@ -1,4 +1,3 @@
-import { User } from "next-auth"
 
 type Organization = {
     id: string,

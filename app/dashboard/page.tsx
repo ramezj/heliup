@@ -3,6 +3,7 @@ import { Toggle } from "@/components/toggle";
 import { Navigation } from "@/components/navbar";
 import { auth } from "@/auth";
 import { Metadata } from "next";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -11,6 +12,8 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const session = await auth();
+  if(!session) { redirect('/') }
+  if(session.user?.firstTimeUser === true) { redirect('/onboarding') }
   return (
    <>
    <h1 className="font-bold text-3xl">Overview</h1>
