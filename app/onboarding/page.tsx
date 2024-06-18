@@ -5,6 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { redirect } from "next/navigation";
+import { CreateOrganization } from "@/components/create-organization";
 
 export const metadata: Metadata = {
     title: "Onboarding",
@@ -22,13 +23,7 @@ export const metadata: Metadata = {
             <div className="grid gap-2 text-center">
               <h1 className="text-3xl font-bold">Create Organization</h1>
             </div>
-            <div className="grid gap-4">
-              <div className="-mt-1">
-                <Separator />
-              </div>
-              <Input placeholder="Organization Name"/>
-              <Button>Create</Button>
-            </div>
+            <CreateOrganization />
           </div>
         </div>
         </>
