@@ -9,6 +9,8 @@ import { motion } from "framer-motion"
 
 export function CreateOrganization() {
     const [ name, setName ] = useState<string>();
+    const [ slug, setSlug ] = useState<string>();
+    const [ website, setWebsite ] = useState<string>();
     const [ step, setStep ] = useState<number>(1);
     console.log(name?.length);
     return (
@@ -38,7 +40,6 @@ export function CreateOrganization() {
                         <Button type="submit" onClick={(() => setStep(step + 1))}>Next</Button>
                         </>
                     }
-
                     </motion.div>
                 )
               }
@@ -50,10 +51,20 @@ export function CreateOrganization() {
                     animate= {{opacity: 1}}
                     >
                     <Label>Slug</Label>
-                    <Input placeholder="slug.jobspire.co" required/>
+                    <Input placeholder="slug.jobspire.co" required value={slug} onChange={((e) => {setSlug(e.target.value)})}/>
                     <div className="flex gap-3">
                     <Button variant={"outline"} className="w-full" type="submit" onClick={(() => setStep(step - 1))}>Back</Button>
-                    <Button className="w-full" type="submit" onClick={(() => setStep(step + 1))}>Next</Button>
+                    {
+                        slug?.length as number === 0 || slug?.length as number === undefined
+                        ? 
+                        <>
+                        <Button className="w-full" disabled type="submit" onClick={(() => setStep(step + 1))}>Next</Button>
+                        </>
+                        : 
+                        <>
+                        <Button className="w-full" type="submit" onClick={(() => setStep(step + 1))}>Next</Button>
+                        </>
+                    }
                     </div>
                     </motion.div>
                 )
