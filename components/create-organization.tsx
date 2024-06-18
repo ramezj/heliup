@@ -10,6 +10,7 @@ import { motion } from "framer-motion"
 export function CreateOrganization() {
     const [ name, setName ] = useState<string>();
     const [ step, setStep ] = useState<number>(1);
+    console.log(name?.length);
     return (
         <>
         <div className="grid gap-4">
@@ -25,8 +26,19 @@ export function CreateOrganization() {
                     animate= {{opacity: 1}}
                     >
                     <Label>Name</Label>
-                    <Input placeholder="Jobspire" required/>
-                    <Button type="submit" onClick={(() => setStep(step + 1))}>Next</Button>
+                    <Input placeholder="Jobspire" required value={name} onChange={((e) => {setName(e.target.value)})}/>
+                    {
+                        name?.length as number === 0 || name?.length as number === undefined
+                        ? 
+                        <>
+                        <Button disabled type="submit" onClick={(() => setStep(step + 1))}>Next</Button>
+                        </>
+                        : 
+                        <>
+                        <Button type="submit" onClick={(() => setStep(step + 1))}>Next</Button>
+                        </>
+                    }
+
                     </motion.div>
                 )
               }
