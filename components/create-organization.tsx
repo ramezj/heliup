@@ -16,6 +16,7 @@ export function CreateOrganization() {
               <div className="-mt-1">
                 <Separator />
               </div>
+              <form action="">
               {
                 step === 1 && (
                     <motion.div 
@@ -23,8 +24,8 @@ export function CreateOrganization() {
                     initial= {{opacity: 0}}
                     animate= {{opacity: 1}}
                     >
-                    <Label>Organization Name</Label>
-                    <Input placeholder="Jobspire"/>
+                    <Label>Name</Label>
+                    <Input placeholder="Jobspire" required/>
                     <Button type="submit" onClick={(() => setStep(step + 1))}>Next</Button>
                     </motion.div>
                 )
@@ -36,9 +37,12 @@ export function CreateOrganization() {
                     initial= {{opacity: 0}}
                     animate= {{opacity: 1}}
                     >
-                    <Label>Organization Slug</Label>
-                    <Input placeholder="slug.jobspire.co"/>
+                    <Label>Slug</Label>
+                    <Input placeholder="slug.jobspire.co" required/>
+                    <div className="flex gap-3">
+                    <Button variant={"outline"} className="w-full" type="submit" onClick={(() => setStep(step - 1))}>Back</Button>
                     <Button className="w-full" type="submit" onClick={(() => setStep(step + 1))}>Next</Button>
+                    </div>
                     </motion.div>
                 )
               }
@@ -49,12 +53,16 @@ export function CreateOrganization() {
                     initial= {{opacity: 0}}
                     animate= {{opacity: 1}}
                     >
-                    <Label>Organization Website</Label>
-                    <Input placeholder="jobspire.co"/>
-                    <Button type="submit">Create</Button>
+                    <Label>Website</Label>
+                    <Input placeholder="jobspire.co" required/>
+                    <div className="flex gap-3">
+                    <Button variant={"outline"} className="w-full" type="submit" onClick={(() => setStep(step - 1))}>Back</Button>
+                    <Button className="w-full" type="submit">Create</Button>
+                    </div>
                     </motion.div>
                 )
               }
+              </form>
             </div>
         </>
     )
