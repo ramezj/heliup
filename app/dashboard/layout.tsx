@@ -47,18 +47,18 @@ export default function DashboardLayout({children, params, req} : any) {
           </Link>
           </div>
           <div className="flex-1 ">
-            <nav className="grid items-start px-2 text-sm font-medium lg:px-4 gap-2">
-              <Link href={`/app/${params.slug}/overview`} className={`${path == 'overview' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+            <nav className="grid items-start px-2 text-sm font-medium lg:px-4 gap-2 mt-1">
+              <Link href={`/dashboard`} className={`${path == 'dashboard' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <Home className="h-4 w-4" />
-                Overview
+                Dashboard
               </Link>
-              <Link href={`/app/${params.slug}/feedback`} className={`${path == 'feedback' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
-                <MessageCircle className="h-4 w-4" />
-                Feedback
+              <Link href={`/jobs`} className={`${path == 'feedback' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+                <BriefcaseBusiness className="h-4 w-4" />
+                Jobs
               </Link>
               <Link href={`/app/${params.slug}/ideas`} className={`${path == 'ideas' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
-              <Lightbulb className="h-4 w-4" />
-                Ideas
+              <Users className="h-4 w-4" />
+                Applicants
               </Link>
               <Link href={`/app/${params.slug}/issues`} className={`${path == 'issues' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
               <BanIcon className="h-4 w-4" />
