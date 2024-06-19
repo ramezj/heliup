@@ -52,11 +52,11 @@ export default function DashboardLayout({children, params, req} : any) {
                 <Home className="h-4 w-4" />
                 Dashboard
               </Link>
-              <Link href={`/jobs`} className={`${path == 'feedback' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+              <Link href={`/jobs`} className={`${path == 'jobs' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <BriefcaseBusiness className="h-4 w-4" />
                 Jobs
               </Link>
-              <Link href={`/app/${params.slug}/ideas`} className={`${path == 'ideas' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+              <Link href='/applicants' className={`${path == 'applicants' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
               <Users className="h-4 w-4" />
                 Applicants
               </Link>
