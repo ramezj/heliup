@@ -19,6 +19,7 @@ export default async function Page() {
   const organization:Organization | null = await getUserDashboard();
   return (
    <>
+   <title>Applicants</title>
    <h1 className="font-bold text-3xl">Applicants</h1>
    {JSON.stringify(organization)}
    </>
