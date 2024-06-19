@@ -80,7 +80,7 @@ export default function DashboardLayout({children, params, req} : any) {
           </div>
         </div>
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col sticky">
         <header className="flex h-16 items-center gap-4 border-b px-3 lg:h-16 lg:px-3 sticky top-0 bg-background/75 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <Sheet>
           <SheetTrigger asChild>

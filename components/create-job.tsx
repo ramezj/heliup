@@ -23,7 +23,7 @@ export function CreateJobButton() {
       </DialogTrigger>
       <DialogContent className="text-left w-[90%] rounded-md">
         <DialogHeader>
-          <DialogTitle className="text-left text-xl">Create Job</DialogTitle>
+          <DialogTitle className="text-left text-3xl">Create Job</DialogTitle>
           <DialogDescription className="text-left">
           Complete your job listing & start hiring immediately
           </DialogDescription>
