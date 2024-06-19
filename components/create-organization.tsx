@@ -6,20 +6,35 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Label } from "./ui/label";
 import { motion } from "framer-motion"
+import { createOrganization } from "@/server-actions/organization/createOrganization";
+import { Loader2 } from "lucide-react"
+import { toast } from "sonner"
 
 export function CreateOrganization() {
-    const [ name, setName ] = useState<string>();
-    const [ slug, setSlug ] = useState<string>();
-    const [ website, setWebsite ] = useState<string>();
+    const [ name, setName ] = useState<string>("");
+    const [ slug, setSlug ] = useState<string>("");
+    const [ website, setWebsite ] = useState<string>("");
     const [ step, setStep ] = useState<number>(1);
-    console.log(name?.length);
+    const [ loading, setLoading ] = useState<Boolean>(false);
+    const createOrg = async (e:any) => {
+        e.preventDefault();
+        setLoading(true);
+        const response = await createOrganization({name, slug, website});
+        if(response?.error) {
+            toast("" + response?.error);
+        } else {
+            toast("Organization Created Successfully")
+        }
+        setLoading(false);
+        console.log(response);
+    }
     return (
         <>
         <div className="grid gap-4">
               <div className="-mt-1">
                 <Separator />
               </div>
-              <form action="">
+              <form onSubmit={createOrg}>
               {
                 step === 1 && (
                     <motion.div 
@@ -84,11 +99,15 @@ export function CreateOrganization() {
                         website?.length as number === 0 || website?.length as number === undefined
                         ? 
                         <>
-                        <Button className="w-full" disabled type="submit" onClick={(() => setStep(step + 1))}>Create</Button>
+                        <Button className="w-full" disabled type="submit">Create</Button>
                         </>
                         : 
                         <>
-                        <Button className="w-full" type="submit" onClick={(() => setStep(step + 1))}>Create</Button>
+                        {
+                            loading 
+                            ? <><Button disabled className="w-full" type="submit"><Loader2 className="mr-2 h-4 w-4 animate-spin" />Create</Button></>
+                            : <><Button className="w-full" type="submit">Create</Button></>
+                        }
                         </>
                     }
                     </div>
