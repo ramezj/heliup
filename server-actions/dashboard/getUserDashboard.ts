@@ -9,6 +9,9 @@ export  async function getUserDashboard() {
     const organization:Organization | null = await prisma.organization.findFirst({
         where:{
             userId:session.user?.id
+        },
+        include: {
+            jobs:true
         }
     });
     return ( organization )
