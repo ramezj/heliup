@@ -27,7 +27,7 @@ export default async function Page() {
    <>
 <>
         <div className="flex justify-between items-center w-full">
-        <h1 className="font-bold text-2xl">Overview</h1>
+        <h1 className="font-bold text-3xl">Overview</h1>
         <CreateJobButton />
         </div>
         </>
