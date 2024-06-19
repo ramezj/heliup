@@ -9,6 +9,7 @@ import { Organization } from "@prisma/client";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import { JobCard } from "@/components/job-card";
+import { CreateJobButton } from "@/components/create-job";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -27,7 +28,7 @@ export default async function Page() {
 <>
         <div className="flex justify-between items-center w-full">
         <h1 className="font-bold text-2xl">Overview</h1>
-        <Button> <Plus className="w-4 h-4 mr-2"/> Create new Job</Button>
+        <CreateJobButton />
         </div>
         </>
    </>
