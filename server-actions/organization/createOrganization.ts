@@ -40,12 +40,12 @@ export  async function createOrganization(props: OrganizationProps) {
             ok:true,
             organization,
             error:null
-        } )
+        })
     } catch (error) {
         return ({
             ok: false,
             organization:null,
-            error:error
+            error:'something went wrong, try again later.'
         })
     }
 }
