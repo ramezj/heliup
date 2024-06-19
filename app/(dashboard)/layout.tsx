@@ -60,14 +60,6 @@ export default function DashboardLayout({children, params, req} : any) {
               <Users className="h-4 w-4" />
                 Applicants
               </Link>
-              <Link href={`/app/${params.slug}/issues`} className={`${path == 'issues' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
-              <BanIcon className="h-4 w-4" />
-                Issues
-              </Link>
-              <Link href={`/app/${params.slug}/settings`} className={`${path == 'settings' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
-              <Settings className="h-4 w-4" />
-                Settings
-              </Link>
             </nav>
           </div>
           <div className="mt-auto p-4">
