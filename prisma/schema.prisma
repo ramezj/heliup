@@ -25,7 +25,7 @@ model Account {
   @@id([provider, providerAccountId])
 }
 model User {
-  id            String          @id @default(cuid())
+  id String @id @default(cuid())
   name          String?
   email         String          @unique
   firstTimeUser Boolean @default(true)
@@ -53,11 +53,24 @@ model VerificationToken {
   @@id([identifier, token])
 }
 model Organization {
-  id        String     @id @default(cuid())
+  id String @id @default(cuid())
   slug String @unique
   name      String?
   website   String     @default("")
   userId    String @unique
   user User @relation(fields: [userId], references: [id])
+  jobs Job[]
+}
+enum Type {
+  FULLTIME
+  PARTTIME
+}
+model Job {
+  id String @id @default(cuid())
+  title String
+  type Type @default(FULLTIME)
+  content String
+  organizationId String
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
 }
 
