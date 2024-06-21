@@ -5,7 +5,8 @@ import { auth } from "@/auth";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { getUserDashboard } from "@/server-actions/dashboard/getUserDashboard";
-import { Organization } from "@prisma/client";
+import { Job, Organization } from "@prisma/client";
+import { JobCard } from "@/components/job-card";
 
 export const metadata: Metadata = {
   title: "Jobs",
@@ -17,11 +18,19 @@ export default async function Page() {
   const session = await auth();
   if(!session) { redirect('/') }
   if(session.user?.firstTimeUser === true) { redirect('/onboarding') }
-  const organization:Organization | null = await getUserDashboard();
+  const organization= await getUserDashboard();
   return (
    <>
    <h1 className="font-bold text-3xl">Jobs</h1>
-   {JSON.stringify(organization)}
+   <div className="flex">
+   {organization?.jobs.map((job:Job) => {
+            return (
+                <>
+                <JobCard id={job.id} title={job.title} type={job.type} content={job.content} organizationId={job.organizationId}/>
+                </>
+            )
+    })}
+   </div>
    </>
   );
 }
