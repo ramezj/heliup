@@ -6,7 +6,7 @@ import { Job } from "@prisma/client"
 
 export function JobCard(job:Job) {
     return (
-        <Link href={`/job/${job.id}`}>
+        <Link href={`/jobs/${job.id}/edit`}>
         <Card className="w-[250px]">
             <CardHeader className="">
                 <CardTitle>{job.title}</CardTitle>

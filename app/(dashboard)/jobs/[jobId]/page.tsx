@@ -1,7 +1,7 @@
 export default function Page({ params }: { params: { jobId: string } }) {
     return (
         <>
-        Page ID : {params.jobId}
+        JOB ID : {params.jobId} PREVIEW
         </>
     )
 }
