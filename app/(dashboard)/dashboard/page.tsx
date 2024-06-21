@@ -22,7 +22,6 @@ export default async function Page() {
   if(!session) { redirect('/') }
   if(session.user?.firstTimeUser === true) { redirect('/onboarding') }
   const organization:Organization | null = await getUserDashboard();
-  console.log(organization);
   return (
    <>
 <>
