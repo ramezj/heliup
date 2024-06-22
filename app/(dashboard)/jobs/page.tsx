@@ -12,6 +12,9 @@ export default async function Page() {
   if(jobs?.ok === false) { toast(jobs.message) }
   return (
     <>
+    <div className="flex justify-between items-center w-full">
+    <h1 className="font-bold text-3xl">Jobs</h1>
+    </div>
     <JobsTable jobs={jobs?.jobs as Job[]} />
     </>
   )
