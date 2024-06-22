@@ -22,14 +22,34 @@ import {
     TableHeader,
     TableRow,
   } from "@/components/ui/table"
+  import { Checkbox } from "./ui/checkbox"
+  import { Button } from "./ui/button"
+  import { ArrowUpDown } from "lucide-react"
 
 export function JobsTable({ jobs }: { jobs: Job[] }) {
     const [ data, setData ] = useState<Job[]>(jobs);
     const columnDef: ColumnDef<Job>[] = [
         {
-           accessorKey: "id",
-           header: "id",
-           cell: ({ row }) => <p>{row.getValue("id")}</p>
+            id: "select",
+            header: ({ table }) => (
+              <Checkbox
+                checked={
+                  table.getIsAllPageRowsSelected() ||
+                  (table.getIsSomePageRowsSelected() && "indeterminate")
+                }
+                onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+                aria-label="Select all"
+              />
+            ),
+            cell: ({ row }) => (
+                <Checkbox
+                  checked={row.getIsSelected()}
+                  onCheckedChange={(value) => row.toggleSelected(!!value)}
+                  aria-label="Select row"
+                />
+              ),
+              enableSorting: false,
+              enableHiding: false,
         },
         {
             accessorKey: "title",
@@ -49,6 +69,7 @@ export function JobsTable({ jobs }: { jobs: Job[] }) {
     })
     return (
        <>
+    <div className="rounded-md border">
        <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -97,7 +118,7 @@ export function JobsTable({ jobs }: { jobs: Job[] }) {
             )}
           </TableBody>
         </Table>
-
+        </div>
        </>
     )
 }
