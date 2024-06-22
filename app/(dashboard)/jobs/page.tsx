@@ -22,7 +22,7 @@ export default async function Page() {
   return (
    <>
    <h1 className="font-bold text-3xl">Jobs</h1>
-   <div className="grid grid-cols-1 gap-4">
+   <div className="grid grid-cols-1 gap-4 sm:w-[75%]">
    {organization?.jobs.map((job:Job) => {
             return (
                 <>

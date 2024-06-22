@@ -20,7 +20,7 @@ export function JobCard(job:Job) {
         <div className="m-5 ml-auto">
         <Button asChild className="gap-1" size="sm">
           <Link target="_blank" href={`/job/${job.id}`}>
-            <ArrowUpRight className="h-4 w-4"/>
+           Edit
           </Link>
         </Button>
         </div>
