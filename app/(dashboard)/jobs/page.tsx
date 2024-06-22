@@ -22,7 +22,7 @@ export default async function Page() {
   return (
    <>
    <h1 className="font-bold text-3xl">Jobs</h1>
-   <div className="flex">
+   <div className="grid grid-cols-1 gap-4">
    {organization?.jobs.map((job:Job) => {
             return (
                 <>
