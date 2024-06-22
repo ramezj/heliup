@@ -1,6 +1,7 @@
 'use client'
 import Link from "next/link"
 import {
+  XIcon,
   Bell,
   CircleUser,
   Home,
@@ -17,7 +18,8 @@ import {
   MessageCircle,
   Lightbulb,
   BanIcon,
-  Radio
+  Radio,
+  MenuIcon
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -112,12 +114,12 @@ export default function DashboardLayout({children, params, req} : any) {
             </Button>
           </SheetTrigger>
             <SheetContent side="left" className="flex flex-col">
-              <nav className="grid gap-3 text-lg font-medium">
               <SheetClose asChild>
                 <Link href="/" className="flex items-center gap-2 text-lg font-bold">
                   Jobspire
                 </Link>
                 </SheetClose>
+              <nav className="grid gap-3 text-lg font-medium mt-1">
                 <SheetClose asChild>
                 <Link href={`/dashboard`} className={`${path == 'dashboard' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <Home className="h-4 w-4" />
@@ -157,8 +159,6 @@ export default function DashboardLayout({children, params, req} : any) {
           </Sheet>
           <div className="w-full flex-1">
           </div>
-          {/* <Toggle />
-          <AvatarDropdown /> */}
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
             {children}
