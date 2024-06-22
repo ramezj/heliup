@@ -1,6 +1,7 @@
 "use server"
 import prisma from "@/utils/db"
 import { auth } from "@/auth"
+import { revalidatePath } from "next/cache";
 
 export  async function createJob(name: string) {
     const session = await auth();
@@ -22,6 +23,7 @@ export  async function createJob(name: string) {
                 organizationId: user?.organization?.id as string
             }
         })
+        revalidatePath('/jobs');
         return {
             ok:true,
             job:Job,
