@@ -5,6 +5,7 @@ import { JobsTable } from "@/components/jobs-table";
 import { Job } from "@prisma/client";
 import { toast } from "sonner";
 import { Metadata } from "next";
+import { CreateJobButton } from "@/components/create-job";
 
 export const metadata: Metadata = {
   title: "Jobs",
@@ -20,7 +21,19 @@ export default async function Page() {
   return (
     <>
     <h1 className="font-bold text-3xl">Jobs</h1>
-    <JobsTable jobs={jobs?.jobs as Job[]} />
+    {
+      jobs.jobs?.length as number === 0 
+      ? 
+      <div className="w-full border border-white/20 h-full rounded-md items-center flex flex-col gap-2 justify-center">
+        <h1 className="font-bold text-lg">You dont have any jobs yet</h1>
+        <p className="text-muted-foreground">Create some jobs & start hiring immediately.</p>
+        <CreateJobButton />
+      </div>
+      : 
+      <> 
+      <JobsTable jobs={jobs?.jobs as Job[]} />
+      </>
+    }
     </>
   )
 }

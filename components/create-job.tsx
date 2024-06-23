@@ -67,11 +67,11 @@ export function CreateJobButton() {
             loading
             ? 
             <>
-            <Button disabled form="form" type="submit" className="w-full"><Loader2 className="mr-2 h-4 w-4 animate-spin" />Create Job</Button>
+            <Button size={"sm"} disabled form="form" type="submit" className="w-full"><Loader2 className="mr-2 h-4 w-4 animate-spin" />Create Job</Button>
             </>
             : 
             <>
-            <Button form="form" type="submit" className="w-full">Create Job</Button>
+            <Button size={"sm"} form="form" type="submit" className="w-full">Create Job</Button>
             </>
           }
         </DialogFooter>
