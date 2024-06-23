@@ -24,10 +24,11 @@ import {
   } from "@/components/ui/table"
   import { Checkbox } from "./ui/checkbox"
   import { Button } from "./ui/button"
-  import { ArrowUpDown } from "lucide-react"
+  import { ArrowUpDown, MoreHorizontal } from "lucide-react"
 
 export function JobsTable({ jobs }: { jobs: Job[] }) {
     const [ data, setData ] = useState<Job[]>(jobs);
+    const [ pagination, setPagination ] = useState({ pageIndex: 0, pageSize: 5});
     const columnDef: ColumnDef<Job>[] = [
         {
             id: "select",
@@ -54,18 +55,32 @@ export function JobsTable({ jobs }: { jobs: Job[] }) {
         {
             accessorKey: "title",
             header: "Title",
-            cell: ({ row }) => <p>{row.getValue("title")}</p>
+            cell: ({ row }) => <p>{row.getValue("title")}</p>,
+            enableResizing: false,
+            size: 450
         },
         {
             accessorKey: "type",
             header: "Type",
+            enableResizing: false,
             cell: ({ row }) => <p>{row.getValue("type")}</p>
+        },
+        {
+          id: "actions",
+          enableHiding: false,
+          enableResizing: false,
+          cell: ({ row }) => <Button variant={"ghost"} className="h-8 w-8 p-0"><MoreHorizontal className="h-4 w-4" /></Button>
         }
     ]
     const table = useReactTable({
         columns: columnDef,
         data,
-        getCoreRowModel: getCoreRowModel()
+        getCoreRowModel: getCoreRowModel(),
+        getPaginationRowModel: getPaginationRowModel(),
+        onPaginationChange: setPagination,
+        state: {
+          pagination
+        }
     })
     return (
        <>
@@ -119,6 +134,24 @@ export function JobsTable({ jobs }: { jobs: Job[] }) {
           </TableBody>
         </Table>
         </div>
+        <div className="flex items-center justify-end space-x-2">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => table.previousPage()}
+          disabled={!table.getCanPreviousPage()}
+        >
+          Previous
+        </Button>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={() => table.nextPage()}
+          disabled={!table.getCanNextPage()}
+        >
+          Next
+        </Button>
+      </div>
        </>
     )
 }

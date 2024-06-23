@@ -1,7 +1,7 @@
 export default function Loading() {
     return (
         <>
-        Loading skeleton should appear here.
+        <h1 className="font-bold text-3xl">Jobs</h1>
         </>
     )
 }
