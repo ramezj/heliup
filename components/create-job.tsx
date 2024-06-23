@@ -37,7 +37,7 @@ export function CreateJobButton() {
       <DialogTrigger asChild>
       <Button size={"sm"}> <Plus className="w-4 h-4 mr-2"/> Create Job</Button>
       </DialogTrigger>
-      <DialogContent className="text-left w-[90%] rounded-md">
+      <DialogContent onOpenAutoFocus={((e) => {e.preventDefault()})} className="text-left w-[90%] rounded-md">
         <DialogHeader>
           <DialogTitle className="text-left">Create Job</DialogTitle>
           <DialogDescription className="text-left">
