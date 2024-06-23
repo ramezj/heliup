@@ -25,9 +25,11 @@ import {
   import { Checkbox } from "./ui/checkbox"
   import { Button } from "./ui/button"
   import { ArrowUpDown, MoreHorizontal } from "lucide-react"
+  import Link from "next/link"
 
 export function JobsTable({ jobs }: { jobs: Job[] }) {
     const [ data, setData ] = useState<Job[]>(jobs);
+    console.log(data);
     const [ pagination, setPagination ] = useState({ pageIndex: 0, pageSize: 5});
     const columnDef: ColumnDef<Job>[] = [
         {
@@ -66,10 +68,11 @@ export function JobsTable({ jobs }: { jobs: Job[] }) {
             cell: ({ row }) => <p>{row.getValue("type")}</p>
         },
         {
+          accessorKey:"id",
           id: "actions",
           enableHiding: false,
           enableResizing: false,
-          cell: ({ row }) => <Button variant={"ghost"} className="h-8 w-8 p-0"><MoreHorizontal className="h-4 w-4" /></Button>
+          cell: ({ row }) => <Button variant={"outline"} asChild><Link href={`/jobs/${row.getValue("id")}/edit`}>Edit</Link></Button>
         }
     ]
     const table = useReactTable({
