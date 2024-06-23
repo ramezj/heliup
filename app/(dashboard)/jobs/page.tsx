@@ -24,9 +24,11 @@ export default async function Page() {
     {
       jobs.jobs?.length as number === 0 
       ? 
-      <div className="w-full border border-white/20 h-full rounded-md items-center flex flex-col gap-2 justify-center">
-        <h1 className="font-bold text-lg">You dont have any jobs yet</h1>
-        <p className="text-muted-foreground">Create some jobs & start hiring immediately.</p>
+      <div className="w-full border border-white/20 h-full rounded-md items-center flex flex-col gap-3 justify-center">
+        <div>
+          <h1 className="font-bold text-lg text-center">You dont have any jobs yet</h1>
+          <p className="text-muted-foreground">Create some jobs & start hiring immediately.</p>
+        </div>
         <CreateJobButton />
       </div>
       : 
