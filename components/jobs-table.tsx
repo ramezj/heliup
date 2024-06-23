@@ -71,7 +71,7 @@ export function JobsTable({ jobs }: { jobs: Job[] }) {
           id: "actions",
           enableHiding: false,
           enableResizing: false,
-          cell: ({ row }) => <Button variant={"outline"} asChild><Link href={`/jobs/${row.getValue("id")}/edit`}>Edit</Link></Button>
+          cell: ({ row }) => <Button variant={"outline"} asChild><Link href={`/jobs/${row.getValue("id")}/edit`}>{row.original.id}</Link></Button>
         }
     ]
     const table = useReactTable({
