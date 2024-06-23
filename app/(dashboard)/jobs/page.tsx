@@ -26,7 +26,7 @@ export default async function Page() {
       ? 
       <div className="w-full border border-white/20 h-full rounded-lg items-center flex flex-col gap-3 justify-center">
         <div>
-          <h1 className="font-bold text-lg text-center">You dont have any jobs yet</h1>
+          <h1 className="font-bold text-xl text-center">You dont have any jobs yet</h1>
           <p className="text-muted-foreground">Create some jobs & start hiring immediately.</p>
         </div>
         <CreateJobButton />
