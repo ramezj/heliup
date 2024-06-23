@@ -6,6 +6,7 @@ import { Job } from "@prisma/client";
 import { toast } from "sonner";
 import { Metadata } from "next";
 import { CreateJobButton } from "@/components/create-job";
+import { DataTableDemo } from "@/components/jobs-table-2";
 
 export const metadata: Metadata = {
   title: "Jobs",
@@ -33,7 +34,8 @@ export default async function Page() {
       </div>
       : 
       <> 
-      <JobsTable jobs={jobs?.jobs as Job[]} />
+      <DataTableDemo jobs={jobs?.jobs as Job[]} />
+      {/* <JobsTable jobs={jobs?.jobs as Job[]} /> */}
       </>
     }
     </>

@@ -29,7 +29,6 @@ import {
 
 export function JobsTable({ jobs }: { jobs: Job[] }) {
     const [ data, setData ] = useState<Job[]>(jobs);
-    console.log(data);
     const [ pagination, setPagination ] = useState({ pageIndex: 0, pageSize: 5});
     const columnDef: ColumnDef<Job>[] = [
         {
