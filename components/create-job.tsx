@@ -35,7 +35,7 @@ export function CreateJobButton() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-      <Button> <Plus className="w-4 h-4 mr-2"/> Create new Job</Button>
+      <Button size={"sm"}> <Plus className="w-4 h-4 mr-2"/> Create Job</Button>
       </DialogTrigger>
       <DialogContent className="text-left w-[90%] rounded-md">
         <DialogHeader>
