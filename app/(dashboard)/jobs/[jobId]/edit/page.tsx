@@ -2,6 +2,12 @@ import { getJobById } from "@/server-actions/jobs/get-job"
 import { Job } from "@prisma/client"
 import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { Metadata } from "next";
+
+export const metadata:Metadata = {
+    title: "Edit Job",
+    description: "Edit Your Job."
+}
 
 export default async function Page({ params }: { params: { jobId: string } }) {
     const job = await getJobById(params.jobId);
