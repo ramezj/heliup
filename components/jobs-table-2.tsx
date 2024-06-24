@@ -14,20 +14,9 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table"
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
 import { CreateJobButton } from "./create-job"
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import {
   Table,
@@ -64,7 +53,8 @@ const columns: ColumnDef<Job>[] = [
 
 export function DataTableDemo({ jobs }: { jobs: Job[] }) {
   const [ data, setData ] = useState<Job[]>(jobs);
-  const [sorting, setSorting] = React.useState<SortingState>([])
+  const [ pagination, setPagination ] = useState({ pageIndex: 0, pageSize: 5});
+  const [ sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   )
@@ -84,6 +74,7 @@ export function DataTableDemo({ jobs }: { jobs: Job[] }) {
     onColumnVisibilityChange: setColumnVisibility,
     onRowSelectionChange: setRowSelection,
     state: {
+      pagination,
       sorting,
       columnFilters,
       columnVisibility,
