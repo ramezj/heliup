@@ -73,6 +73,7 @@ export function DataTableDemo({ jobs }: { jobs: Job[] }) {
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
     onRowSelectionChange: setRowSelection,
+    onPaginationChange: setPagination,
     state: {
       pagination,
       sorting,
