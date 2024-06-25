@@ -20,6 +20,14 @@ import {
     TabsTrigger,
   } from "@/components/ui/tabs"
   import { Textarea } from "@/components/ui/textarea";
+  import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+  } from "@/components/ui/select"
+
 
 export const metadata:Metadata = {
     title: "Edit Job",
@@ -36,29 +44,38 @@ export default async function Page({ params }: { params: { jobId: string } }) {
         <h1 className="font-bold text-3xl">Edit Job</h1>
         <Button size={"sm"}>Preview Job</Button>
         </div>
-    <Tabs defaultValue="account" className="">
+    <Tabs defaultValue="details" className="">
       <TabsList className="grid w-full grid-cols-4">
-        <TabsTrigger value="account">Details</TabsTrigger>
-        <TabsTrigger value="password">Description</TabsTrigger>
+        <TabsTrigger value="details">Details</TabsTrigger>
+        <TabsTrigger value="description">Description</TabsTrigger>
         <TabsTrigger value="type">Type</TabsTrigger>
         <TabsTrigger value="content">Content</TabsTrigger>
       </TabsList>
-      <TabsContent value="account">
+      <TabsContent value="details">
         <Card>
           <CardHeader>
-            <CardTitle>Account</CardTitle>
+            <CardTitle>Job Details</CardTitle>
             <CardDescription>
-              Make changes to your account here. Click save when youre done.
+              Make changes to your job details here, Click save when youre done.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="space-y-1">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" defaultValue="Pedro Duarte" />
+              <Label htmlFor="name">Title</Label>
+              <Input id="name" placeholder="Product Manager"/>
             </div>
             <div className="space-y-1">
-              <Label htmlFor="username">Username</Label>
-              <Input id="username" defaultValue="@peduarte" />
+              <Label htmlFor="username">Type</Label>
+                <Select>
+                <SelectTrigger>
+                  <SelectValue placeholder="Full-Time" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="FULLTIME">Full-Time</SelectItem>
+                  <SelectItem value="PARTTIME">Part-Time</SelectItem>
+                  <SelectItem value="system">System</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
           </CardContent>
           <CardFooter>
@@ -66,10 +83,10 @@ export default async function Page({ params }: { params: { jobId: string } }) {
           </CardFooter>
         </Card>
       </TabsContent>
-      <TabsContent value="password">
+      <TabsContent value="description">
         <Card>
           <CardHeader>
-            <CardTitle>Password</CardTitle>
+            <CardTitle>Job Description</CardTitle>
             <CardDescription>
               Change your password here. After saving, youll be logged out.
             </CardDescription>
