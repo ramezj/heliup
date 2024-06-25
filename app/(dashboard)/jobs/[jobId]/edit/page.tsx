@@ -34,7 +34,7 @@ export default async function Page({ params }: { params: { jobId: string } }) {
         <>
         <div className="flex justify-between items-center w-full">
         <h1 className="font-bold text-3xl">Edit Job</h1>
-        <Button>Preview Job</Button>
+        <Button size={"sm"}>Preview Job</Button>
         </div>
     <Tabs defaultValue="account" className="">
       <TabsList className="grid w-full grid-cols-4">
