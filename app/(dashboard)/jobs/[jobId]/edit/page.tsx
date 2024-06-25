@@ -38,8 +38,8 @@ export default async function Page({ params }: { params: { jobId: string } }) {
         </div>
     <Tabs defaultValue="account" className="">
       <TabsList className="grid w-full grid-cols-4">
-        <TabsTrigger value="account">Title</TabsTrigger>
-        <TabsTrigger value="password">Location</TabsTrigger>
+        <TabsTrigger value="account">Details</TabsTrigger>
+        <TabsTrigger value="password">Description</TabsTrigger>
         <TabsTrigger value="type">Type</TabsTrigger>
         <TabsTrigger value="content">Content</TabsTrigger>
       </TabsList>
