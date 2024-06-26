@@ -12,7 +12,7 @@ export const metadata:Metadata = {
 
 export default async function Page({ params }: { params: { jobId: string } }) {
     const job = await getJobById(params.jobId);
-    if(job?.error) { redirect('/jobs') }
+    if(job?.error || job?.job === null) { redirect('/jobs') }
     return (
         <>
         <div className="flex justify-between items-center w-full">
