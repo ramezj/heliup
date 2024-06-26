@@ -1,13 +1,13 @@
-datasource db {
-  provider = "sqlite"
-  url = "file:./dev.db"
-}
- 
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["driverAdapters"]
 }
 
+datasource db {
+  provider = "sqlite"
+  url = env("DATABASE_URL")
+}
+ 
 model Account {
   userId            String
   type              String
@@ -62,13 +62,6 @@ model Organization {
   user User @relation(fields: [userId], references: [id])
   jobs Job[]
 }
-// SQLITE DOESNT SUPPORT ENUMS, USE RAW SQL CONSTRAINTS INSTEAD.
-// enum Type {
-//   FULLTIME
-//   PARTTIME
-//   INTERNSHIP
-//   CONTRACT
-// }
 model Job {
   id String @id @default(cuid())
   title String
