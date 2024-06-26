@@ -64,6 +64,8 @@ model Organization {
 enum Type {
   FULLTIME
   PARTTIME
+  INTERNSHIP
+  CONTRACT
 }
 model Job {
   id String @id @default(cuid())
@@ -72,5 +74,9 @@ model Job {
   content String
   organizationId String
   organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+}
+
+model Applicant {
+  id String @id @default(cuid())
 }
 
