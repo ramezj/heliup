@@ -30,9 +30,10 @@ import {
   import { Job } from "@prisma/client"
   import { useState } from "react"
   import RichTextEditor from "./rich-text-editor"
+  import { motion } from "framer-motion"
 
 export default function EditJobTabs({ job }: { job: Job }) {
-    const [ value, setValue ] = useState<string>("");
+    const [ value, setValue ] = useState<string>(job.content);
     const [ loading, setLoading ] = useState<Boolean>(false);
     const [ title, setTitle ] = useState<string>(job.title);
     return (
@@ -53,11 +54,17 @@ export default function EditJobTabs({ job }: { job: Job }) {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
-            <div className="space-y-1">
+                    <motion.div 
+                    className="space-y-1"
+                    initial= {{opacity: 0}}
+                    animate= {{opacity: 1}}>
               <Label htmlFor="name">Title</Label>
               <Input placeholder="Product Manager" value={title} onChange={((e) => {setTitle(e.target.value)})}/>
-            </div>
-            <div className="space-y-1">
+            </motion.div>
+                    <motion.div 
+                    className="space-y-1"
+                    initial= {{opacity: 0}}
+                    animate= {{opacity: 1}}>
               <Label htmlFor="username">Type</Label>
                 <Select>
                 <SelectTrigger>
@@ -69,7 +76,7 @@ export default function EditJobTabs({ job }: { job: Job }) {
                   <SelectItem value="system">System</SelectItem>
                 </SelectContent>
               </Select>
-            </div>
+            </motion.div>
           </CardContent>
           <CardFooter>
             <Button>Save changes</Button>
@@ -85,9 +92,12 @@ export default function EditJobTabs({ job }: { job: Job }) {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
-            <div className="space-y-1">
+                    <motion.div 
+                    className="space-y-1"
+                    initial= {{opacity: 0}}
+                    animate= {{opacity: 1}}>
               <RichTextEditor value={value} onChange={((value) => {setValue(value)})}/> 
-            </div>
+            </motion.div>
           </CardContent>
           <CardFooter>
             <Button onClick={(() => {toast("Message :" + value)})}>Save password</Button>
