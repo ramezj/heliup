@@ -28,19 +28,10 @@ import {
   } from "@/components/ui/select"
   import { Job } from "@prisma/client"
   import { useState } from "react"
+  import RichTextEditor from "./rich-text-editor"
 
 export default function EditJobTabs({ job }: { job: Job }) {
-    const editor = useEditor({
-      extensions:[
-        StarterKit
-      ],
-      editorProps: {
-        attributes: {
-          class: "rounded-md border min-h-[150px]"
-        }
-      },
-      content: '<p>Hello Jobspire! </p>'
-    })
+    const [ value, setValue ] = useState<string>("");
     const [ loading, setLoading ] = useState<Boolean>(false);
     const [ title, setTitle ] = useState<string>(job.title);
     return (
@@ -94,7 +85,7 @@ export default function EditJobTabs({ job }: { job: Job }) {
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="space-y-1">
-              <EditorContent editor={editor} /> 
+              <RichTextEditor value={value} onChange={(() => {console.log(value)})}/> 
             </div>
           </CardContent>
           <CardFooter>
