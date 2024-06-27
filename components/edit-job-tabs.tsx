@@ -7,6 +7,8 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
+  import { useEditor, EditorContent } from "@tiptap/react"
+  import StarterKit from "@tiptap/starter-kit"
   import { Input } from "@/components/ui/input"
   import { Label } from "@/components/ui/label"
   import { Button } from "./ui/button"
@@ -28,6 +30,17 @@ import {
   import { useState } from "react"
 
 export default function EditJobTabs({ job }: { job: Job }) {
+    const editor = useEditor({
+      extensions:[
+        StarterKit
+      ],
+      editorProps: {
+        attributes: {
+          class: "rounded-md border min-h-[150px]"
+        }
+      },
+      content: '<p>Hello Jobspire! </p>'
+    })
     const [ loading, setLoading ] = useState<Boolean>(false);
     const [ title, setTitle ] = useState<string>(job.title);
     return (
@@ -81,12 +94,7 @@ export default function EditJobTabs({ job }: { job: Job }) {
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="space-y-1">
-              <Label htmlFor="current">Current password</Label>
-              <Input id="current" type="password" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="new">New password</Label>
-              <Input id="new" type="password" />
+              <EditorContent editor={editor} /> 
             </div>
           </CardContent>
           <CardFooter>
