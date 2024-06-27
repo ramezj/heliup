@@ -12,6 +12,7 @@ import {
   import { Input } from "@/components/ui/input"
   import { Label } from "@/components/ui/label"
   import { Button } from "./ui/button"
+  import { toast } from "sonner"
   import {
     Tabs,
     TabsContent,
@@ -85,11 +86,11 @@ export default function EditJobTabs({ job }: { job: Job }) {
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="space-y-1">
-              <RichTextEditor value={value} onChange={(() => {console.log(value)})}/> 
+              <RichTextEditor value={value} onChange={((value) => {setValue(value)})}/> 
             </div>
           </CardContent>
           <CardFooter>
-            <Button>Save password</Button>
+            <Button onClick={(() => {toast("Message :" + value)})}>Save password</Button>
           </CardFooter>
         </Card>
       </TabsContent>
