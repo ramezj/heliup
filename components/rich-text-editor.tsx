@@ -5,42 +5,11 @@ import { Bold, Strikethrough, Italic, List, ListOrdered } from "lucide-react";
 import { Toggle } from "@/components/ui/toggle";
 import { Separator } from "@/components/ui/separator";
 
-const RichTextEditor = ({
-  value,
-  onChange,
-}: {
-  value: string;
-  onChange: (value: string) => void;
-}) => {
-  const editor = useEditor({
-    editorProps: {
-      attributes: {
-        class:
-          "min-h-[150px] max-h-[150px] w-full rounded-md rounded-br-none rounded-bl-none border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 overflow-auto",
-      },
-    },
-    extensions: [
-      StarterKit.configure({
-        orderedList: {
-          HTMLAttributes: {
-            class: "list-decimal pl-4",
-          },
-        },
-        bulletList: {
-          HTMLAttributes: {
-            class: "list-disc pl-4",
-          },
-        },
-      }),
-    ],
-    content: value, // Set the initial content with the provided value
-    onUpdate: ({ editor }) => {
-      onChange(editor.getHTML()); // Call the onChange callback with the updated HTML content
-    },
-  });
+const RichTextEditor = ({ value, onChange, editor }: { value: string; onChange: (value: string) => void, editor:Editor }) => {
   return (
     <>
-      {editor ? <RichTextEditorToolbar editor={editor} /> : null}
+      {/* {editor ? <RichTextEditorToolbar editor={editor} /> : null} */}
+      <RichTextEditorToolbar editor={editor} />
       <EditorContent editor={editor} />
     </>
   );

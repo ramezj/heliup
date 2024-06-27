@@ -33,17 +33,43 @@ import {
   import { motion } from "framer-motion"
 
 export default function EditJobTabs({ job }: { job: Job }) {
-    const [ value, setValue ] = useState<string>(job.content);
-    const [ loading, setLoading ] = useState<Boolean>(false);
-    const [ title, setTitle ] = useState<string>(job.title);
+  const [ value, setValue ] = useState<string>(job.content);
+  const [ loading, setLoading ] = useState<Boolean>(false);
+  const [ title, setTitle ] = useState<string>(job.title);
+  const editor = useEditor({
+    editorProps: {
+      attributes: {
+        class:
+          "min-h-[150px] max-h-[150px] w-full rounded-md rounded-br-none rounded-bl-none border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 overflow-auto",
+      },
+    },
+    extensions: [
+      StarterKit.configure({
+        orderedList: {
+          HTMLAttributes: {
+            class: "list-decimal pl-4",
+          },
+        },
+        bulletList: {
+          HTMLAttributes: {
+            class: "list-disc pl-4",
+          },
+        },
+      }),
+    ],
+    content: value,
+    onUpdate: ({ editor }) => {
+      setValue(editor.getHTML());
+    },
+  });
     return (
         <>
         <Tabs defaultValue="details" className="">
       <TabsList className="grid w-full grid-cols-4">
         <TabsTrigger value="details">Details</TabsTrigger>
-        <TabsTrigger value="description">Description</TabsTrigger>
+        <TabsTrigger value="content">Description</TabsTrigger>
         <TabsTrigger value="type">Type</TabsTrigger>
-        <TabsTrigger value="content">Content</TabsTrigger>
+        <TabsTrigger value="aa">Content</TabsTrigger>
       </TabsList>
       <TabsContent value="details">
         <Card>
@@ -83,7 +109,7 @@ export default function EditJobTabs({ job }: { job: Job }) {
           </CardFooter>
         </Card>
       </TabsContent>
-      <TabsContent value="description">
+      <TabsContent value="content">
         <Card>
           <CardHeader>
             <CardTitle>Job Description</CardTitle>
@@ -96,7 +122,7 @@ export default function EditJobTabs({ job }: { job: Job }) {
                     className="space-y-1"
                     initial= {{opacity: 0}}
                     animate= {{opacity: 1}}>
-              <RichTextEditor value={value} onChange={((value) => {setValue(value)})}/> 
+              <RichTextEditor value={value} onChange={((value) => {setValue(value)})} editor={editor!}/> 
             </motion.div>
           </CardContent>
           <CardFooter>
@@ -104,7 +130,7 @@ export default function EditJobTabs({ job }: { job: Job }) {
           </CardFooter>
         </Card>
       </TabsContent>
-      <TabsContent value="content">
+      <TabsContent value="aa">
         <Card>
           <CardHeader>
             <CardTitle>Content</CardTitle>
