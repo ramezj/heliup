@@ -36,6 +36,7 @@ export default function EditJobTabs({ job }: { job: Job }) {
   const [ value, setValue ] = useState<string>(job.content);
   const [ loading, setLoading ] = useState<Boolean>(false);
   const [ title, setTitle ] = useState<string>(job.title);
+  const [ NewJob, setNewJob ] = useState<Job>(job);
   const editor = useEditor({
     editorProps: {
       attributes: {
@@ -55,6 +56,11 @@ export default function EditJobTabs({ job }: { job: Job }) {
             class: "list-disc pl-4",
           },
         },
+        heading: {
+          HTMLAttributes: {
+            class: "text-red"
+          }
+        }
       }),
     ],
     content: value,
@@ -118,6 +124,7 @@ export default function EditJobTabs({ job }: { job: Job }) {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
+                   {value}
                     <motion.div 
                     className="space-y-1"
                     initial= {{opacity: 0}}
