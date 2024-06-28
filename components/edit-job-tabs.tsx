@@ -124,7 +124,6 @@ export default function EditJobTabs({ job }: { job: Job }) {
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-2">
-                   {value}
                     <motion.div 
                     className="space-y-1"
                     initial= {{opacity: 0}}

@@ -17,7 +17,7 @@ const RichTextEditor = ({ value, onChange, editor }: { value: string; onChange: 
 
 const RichTextEditorToolbar = ({ editor }: { editor: Editor }) => {
   return (
-    <div className="border border-input bg-transparent rounded-br-md rounded-bl-md p-1 flex flex-row items-center gap-1">
+    <div className="border border-input bg-transparent rounded-br-md rounded-bl-md p-1 flex flex-row items-center gap-1 w-full">
       <Toggle
         size="sm"
         pressed={editor.isActive("heading")}
