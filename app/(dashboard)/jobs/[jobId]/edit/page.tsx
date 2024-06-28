@@ -3,7 +3,7 @@ import { Job } from "@prisma/client"
 import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
-import EditJobTabs from "@/components/edit-job-tabs";
+import EditJobTabs from "@/components/edit-job";
 
 export const metadata:Metadata = {
     title: "Edit Job",

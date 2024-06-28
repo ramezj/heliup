@@ -21,6 +21,11 @@ export async function editJob(job:Job) {
                 type: job.type
             }
         })
+        return {
+            error: false,
+            job:updateJobData,
+            message: "Updated Successfully!"
+        }
     } catch (error) {
         
     }

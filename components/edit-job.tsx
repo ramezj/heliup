@@ -1,37 +1,16 @@
 "use client"
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-  } from "@/components/ui/card"
   import { useEditor, EditorContent } from "@tiptap/react"
   import StarterKit from "@tiptap/starter-kit"
   import { Input } from "@/components/ui/input"
   import { Label } from "@/components/ui/label"
   import { Button } from "./ui/button"
   import { toast } from "sonner"
-  import {
-    Tabs,
-    TabsContent,
-    TabsList,
-    TabsTrigger,
-  } from "@/components/ui/tabs"
-  import { Textarea } from "@/components/ui/textarea";
-  import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-  } from "@/components/ui/select"
+  import { Loader2 } from "lucide-react"
   import { Job } from "@prisma/client"
   import { useState } from "react"
   import RichTextEditor from "./rich-text-editor"
   import { motion } from "framer-motion"
-import { editJob } from "@/server-actions/jobs/edit-job"
+  import { editJob } from "@/server-actions/jobs/edit-job"
 
 export default function EditJobTabs({ job }: { job: Job }) {
   const [ loading, setLoading ] = useState<Boolean>(false);
@@ -39,7 +18,10 @@ export default function EditJobTabs({ job }: { job: Job }) {
   const [ NewJob, setNewJob ] = useState<Job>(job);
   const editTheJob = async (e:any) => {
     e.preventDefault();
+    setLoading(true);
     const res = await editJob(NewJob);
+    toast(res?.message)
+    setLoading(false);
     console.log(res);
   }
   const editor = useEditor({
@@ -90,6 +72,14 @@ export default function EditJobTabs({ job }: { job: Job }) {
                 <Label htmlFor="name">Job Description</Label>
               <RichTextEditor editor={editor!}/> 
             </motion.div>
+            {
+              loading
+              ? <Button disabled>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Saving Changes
+                </Button>
+              : <Button onClick={editTheJob}>Save Changes</Button>
+            }
           </div>
         </>
     )
