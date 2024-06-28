@@ -5,7 +5,7 @@ import { Bold, Strikethrough, Italic, List, ListOrdered, Heading1 } from "lucide
 import { Toggle } from "@/components/ui/toggle";
 import { Separator } from "@/components/ui/separator";
 
-const RichTextEditor = ({ value, onChange, editor }: { value: string; onChange: (value: string) => void, editor:Editor }) => {
+const RichTextEditor = ({editor }: { editor:Editor }) => {
   return (
     <>
       {/* {editor ? <RichTextEditorToolbar editor={editor} /> : null} */}

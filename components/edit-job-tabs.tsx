@@ -31,17 +31,22 @@ import {
   import { useState } from "react"
   import RichTextEditor from "./rich-text-editor"
   import { motion } from "framer-motion"
+import { editJob } from "@/server-actions/jobs/edit-job"
 
 export default function EditJobTabs({ job }: { job: Job }) {
-  const [ value, setValue ] = useState<string>(job.content);
   const [ loading, setLoading ] = useState<Boolean>(false);
   const [ title, setTitle ] = useState<string>(job.title);
   const [ NewJob, setNewJob ] = useState<Job>(job);
+  const editTheJob = async (e:any) => {
+    e.preventDefault();
+    const res = await editJob(NewJob);
+    console.log(res);
+  }
   const editor = useEditor({
     editorProps: {
       attributes: {
         class:
-          "min-h-[150px] w-full rounded-md rounded-br-none rounded-bl-none border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 overflow-auto",
+          "min-h-[150px] max-h-[150px] w-full rounded-md rounded-br-none rounded-bl-none border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 overflow-auto",
       },
     },
     extensions: [
@@ -63,14 +68,14 @@ export default function EditJobTabs({ job }: { job: Job }) {
         }
       }),
     ],
-    content: value,
+    content: NewJob.content,
     onUpdate: ({ editor }) => {
-      setValue(editor.getHTML());
+      setNewJob((prevJob) => ({...prevJob, content: editor.getHTML()}));
     },
   });
     return (
         <>
-        <Tabs defaultValue="details" className="">
+      <Tabs defaultValue="details" className="w-full">
       <TabsList className="grid w-full grid-cols-4">
         <TabsTrigger value="details">Details</TabsTrigger>
         <TabsTrigger value="content">Description</TabsTrigger>
@@ -115,24 +120,24 @@ export default function EditJobTabs({ job }: { job: Job }) {
           </CardFooter>
         </Card>
       </TabsContent>
-      <TabsContent value="content">
-        <Card>
+      <TabsContent value="content" className="w-full">
+        <Card className="w-full">
           <CardHeader>
             <CardTitle>Job Description</CardTitle>
             <CardDescription>
               Change your password here. After saving, youll be logged out.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-2">
+          <CardContent className="space-y-2 w-full">
                     <motion.div 
-                    className="space-y-1"
+                    className="space-y-1 w-full"
                     initial= {{opacity: 0}}
                     animate= {{opacity: 1}}>
-              <RichTextEditor value={value} onChange={((value) => {setValue(value)})} editor={editor!}/> 
+              <RichTextEditor editor={editor!}/> 
             </motion.div>
           </CardContent>
           <CardFooter>
-            <Button onClick={(() => {toast("Message :" + value)})}>Save password</Button>
+            <Button onClick={editTheJob}>Save password</Button>
           </CardFooter>
         </Card>
       </TabsContent>

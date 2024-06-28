@@ -3,7 +3,7 @@ import prisma from "@/utils/db"
 import { auth } from "@/auth"
 import { Job, Organization } from "@prisma/client";
 
-export async function getJobById(job:Job) {
+export async function editJob(job:Job) {
     const session = await auth();
     if(!session) { return {
         error: true,
