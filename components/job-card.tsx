@@ -6,7 +6,7 @@ import { Job } from "@prisma/client"
 import { Badge } from "./ui/badge"
 import { Briefcase, Navigation, ArrowUpRight } from "lucide-react"
 
-export function JobCard(job:Job) {
+export function JobCard({ job }: { job: Job }) {
     return (
         <div className="w-full flex border border-white/10 rounded-lg items-center duration-300">
         <div className="m-5 flex flex-col items-start text-left">
