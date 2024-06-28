@@ -19,7 +19,7 @@ export default async function Page({ params }: { params: { jobId: string } }) {
         <h1 className="font-bold text-3xl">Edit Job</h1>
         <Button size={"sm"}>Preview Job</Button>
         </div>
-        <div className="">
+        <div className="w-full">
         <EditJobTabs job={job?.job as Job} />
         </div>
         </>

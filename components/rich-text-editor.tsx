@@ -9,8 +9,17 @@ const RichTextEditor = ({editor }: { editor:Editor }) => {
   return (
     <>
       {/* {editor ? <RichTextEditorToolbar editor={editor} /> : null} */}
-      <RichTextEditorToolbar editor={editor} />
-      <EditorContent editor={editor} />
+      {
+        editor 
+        ? 
+        <>     
+         <RichTextEditorToolbar editor={editor} />
+        <EditorContent editor={editor} />
+        </>
+        : 
+        <>
+        </>
+      }
     </>
   );
 };

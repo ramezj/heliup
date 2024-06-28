@@ -75,92 +75,22 @@ export default function EditJobTabs({ job }: { job: Job }) {
   });
     return (
         <>
-      <Tabs defaultValue="details" className="w-full">
-      <TabsList className="grid w-full grid-cols-4">
-        <TabsTrigger value="details">Details</TabsTrigger>
-        <TabsTrigger value="content">Description</TabsTrigger>
-        <TabsTrigger value="type">Type</TabsTrigger>
-        <TabsTrigger value="aa">Content</TabsTrigger>
-      </TabsList>
-      <TabsContent value="details">
-        <Card>
-          <CardHeader>
-            <CardTitle>Job Details</CardTitle>
-            <CardDescription>
-              Make changes to your job details here, Click save when youre done.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-                    <motion.div 
-                    className="space-y-1"
+        <div className="space-y-4 w-full">
+            <motion.div 
+                    className="space-y-2"
                     initial= {{opacity: 0}}
                     animate= {{opacity: 1}}>
               <Label htmlFor="name">Title</Label>
               <Input placeholder="Product Manager" value={title} onChange={((e) => {setTitle(e.target.value)})}/>
-            </motion.div>
+              </motion.div>
                     <motion.div 
-                    className="space-y-1"
+                    className="space-y-2 w-full"
                     initial= {{opacity: 0}}
                     animate= {{opacity: 1}}>
-              <Label htmlFor="username">Type</Label>
-                <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Full-Time" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="FULLTIME">Full-Time</SelectItem>
-                  <SelectItem value="PARTTIME">Part-Time</SelectItem>
-                  <SelectItem value="system">System</SelectItem>
-                </SelectContent>
-              </Select>
-            </motion.div>
-          </CardContent>
-          <CardFooter>
-            <Button>Save changes</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
-      <TabsContent value="content" className="w-full">
-        <Card className="w-full">
-          <CardHeader>
-            <CardTitle>Job Description</CardTitle>
-            <CardDescription>
-              Change your password here. After saving, youll be logged out.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2 w-full">
-                    <motion.div 
-                    className="space-y-1 w-full"
-                    initial= {{opacity: 0}}
-                    animate= {{opacity: 1}}>
+                <Label htmlFor="name">Job Description</Label>
               <RichTextEditor editor={editor!}/> 
             </motion.div>
-          </CardContent>
-          <CardFooter>
-            <Button onClick={editTheJob}>Save password</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
-      <TabsContent value="aa">
-        <Card>
-          <CardHeader>
-            <CardTitle>Content</CardTitle>
-            <CardDescription>
-              Make changes to your account here. Click save when youre done.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="name">Describe Your Job</Label>
-              <Textarea id="name" rows={7}/>
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button>Save changes</Button>
-          </CardFooter>
-        </Card>
-      </TabsContent>
-    </Tabs>
+          </div>
         </>
     )
 }
