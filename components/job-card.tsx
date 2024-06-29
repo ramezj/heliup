@@ -20,7 +20,7 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
         <div className="m-5 ml-auto">
         <Button asChild className="gap-1" size="sm">
           <Link href={`/${organization.slug}/${job.id}`}>
-           View
+           Apply
           </Link>
         </Button>
         </div>

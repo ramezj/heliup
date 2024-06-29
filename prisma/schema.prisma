@@ -4,7 +4,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url = env("DATABASE_URL")
 }
  
@@ -62,16 +62,27 @@ model Organization {
   user User @relation(fields: [userId], references: [id])
   jobs Job[]
 }
+enum Type {
+  FULLTIME
+  PARTTIME
+  INTERNSHIP
+  CONTRACT
+}
 model Job {
   id String @id @default(cuid())
   title String
-  type String @default("FULLTIME")
+  type Type @default(FULLTIME)
   content String
+  applicants Applicant[]
   organizationId String
   organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
 }
 
 model Applicant {
   id String @id @default(cuid())
+  first_name String
+  last_name String
+  jobId String
+  job Job @relation(fields: [jobId], references: [id], onDelete: Cascade)
 }
 
