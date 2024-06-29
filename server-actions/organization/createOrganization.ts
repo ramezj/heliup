@@ -20,6 +20,18 @@ export  async function createOrganization(props: OrganizationProps) {
         });
     }
     try {
+        const organizationExist = await prisma.organization.findFirst({
+            where: {
+                slug: props.slug
+            }
+        });
+        if(organizationExist) {
+            return ({
+                ok: false,
+                organization:null,
+                error:"Slug In Use, Please try something else."
+            })
+        }
         const organization = await prisma.organization.create({
             data: {
                 userId: session.user.id as string,

@@ -11,8 +11,7 @@ export const metadata: Metadata = {
     title: "Onboarding",
     description: "Create Organization",
   };
-
-  export default async function Page() {
+export default async function Page() {
     const session = await auth();
     if(!session) redirect('/login');
     if(session.user?.firstTimeUser === false) { redirect ('/dashboard')}

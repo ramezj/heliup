@@ -35,8 +35,6 @@ export function CreateOrganization() {
                 <Separator />
               </div>
               <form onSubmit={createOrg}>
-              {
-                step === 1 && (
                     <motion.div 
                     className="w-full grid gap-4"
                     initial= {{opacity: 0}}
@@ -44,76 +42,14 @@ export function CreateOrganization() {
                     >
                     <Label>Name</Label>
                     <Input placeholder="Jobspire" required value={name} onChange={((e) => {setName(e.target.value)})}/>
-                    {
-                        name?.length as number === 0 || name?.length as number === undefined
-                        ? 
-                        <>
-                        <Button disabled type="submit" onClick={(() => setStep(step + 1))}>Next</Button>
-                        </>
-                        : 
-                        <>
-                        <Button type="submit" onClick={(() => setStep(step + 1))}>Next</Button>
-                        </>
-                    }
-                    </motion.div>
-                )
-              }
-              {
-                step === 2 && (
-                    <motion.div 
-                    className="w-full grid gap-4"
-                    initial= {{opacity: 0}}
-                    animate= {{opacity: 1}}
-                    >
                     <Label>Slug</Label>
-                    <Input placeholder="slug.jobspire.co" required value={slug} onChange={((e) => {setSlug(e.target.value)})}/>
-                    <div className="flex gap-3">
-                    <Button variant={"outline"} className="w-full" type="submit" onClick={(() => setStep(step - 1))}>Back</Button>
+                    <Input placeholder="Jobspire" required value={slug} onChange={((e) => {setSlug(e.target.value)})}/>
                     {
-                        slug?.length as number === 0 || slug?.length as number === undefined
-                        ? 
-                        <>
-                        <Button className="w-full" disabled type="submit" onClick={(() => setStep(step + 1))}>Next</Button>
-                        </>
-                        : 
-                        <>
-                        <Button className="w-full" type="submit" onClick={(() => setStep(step + 1))}>Next</Button>
-                        </>
+                        loading
+                        ? <Button><Loader2 className="mr-2 h-4 w-4 animate-spin" />Create</Button>
+                        : <Button>Create</Button>
                     }
-                    </div>
                     </motion.div>
-                )
-              }
-               {
-                step === 3 && (
-                    <motion.div 
-                    className="w-full grid gap-4"
-                    initial= {{opacity: 0}}
-                    animate= {{opacity: 1}}
-                    >
-                    <Label>Website</Label>
-                    <Input placeholder="jobspire.co" required value={website} onChange={((e) => {setWebsite(e.target.value)})}/>
-                    <div className="flex gap-3">
-                    <Button variant={"outline"} className="w-full" type="submit" onClick={(() => setStep(step - 1))}>Back</Button>
-                    {
-                        website?.length as number === 0 || website?.length as number === undefined
-                        ? 
-                        <>
-                        <Button className="w-full" disabled type="submit">Create</Button>
-                        </>
-                        : 
-                        <>
-                        {
-                            loading 
-                            ? <><Button disabled className="w-full" type="submit"><Loader2 className="mr-2 h-4 w-4 animate-spin" />Create</Button></>
-                            : <><Button className="w-full" type="submit">Create</Button></>
-                        }
-                        </>
-                    }
-                    </div>
-                    </motion.div>
-                )
-              }
               </form>
             </div>
         </>

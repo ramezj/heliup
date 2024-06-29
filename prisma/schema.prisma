@@ -55,9 +55,10 @@ model VerificationToken {
 }
 model Organization {
   id String @id @default(cuid())
-  slug String @unique
   name      String?
-  website   String     @default("")
+  slug String @unique
+  website   String?
+  description String?
   userId    String @unique
   user User @relation(fields: [userId], references: [id])
   jobs Job[]

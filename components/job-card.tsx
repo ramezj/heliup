@@ -8,7 +8,7 @@ import { Briefcase, Navigation, ArrowUpRight } from "lucide-react"
 
 export function JobCard({ job, organization }: { job: Job, organization:Organization }) {
     return (
-        <div className="w-full flex border border-white/10 rounded-lg items-center duration-300">
+        <div className="w-full flex border border-white/10 rounded-lg items-center duration-300 hover:border-white/20">
         <div className="m-5 flex flex-col items-start text-left">
         <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
          {job.title}     
