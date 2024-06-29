@@ -15,7 +15,8 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const session = await auth();
-  if(!session) { redirect('/auth') }
+  if(!session) { redirect('/') }
+  if(session.user?.firstTimeUser === true) { redirect('/onboarding') }
   const jobs = await getUserJobs();
   if(jobs?.ok === false) { toast(jobs.message) }
   return (
