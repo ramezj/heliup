@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import { JobCard } from "@/components/job-card";
 import { CreateJobButton } from "@/components/create-job";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -25,7 +26,11 @@ export default async function Page() {
         <>
         <div className="flex justify-between items-center w-full">
         <h1 className="font-bold text-3xl">Overview</h1>
-        <CreateJobButton />
+        <Button asChild>
+          <Link href={`/${organization?.slug}`}>
+          Preview Board
+          </Link>
+        </Button>
         </div>
         </>
   );

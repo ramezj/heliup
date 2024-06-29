@@ -2,7 +2,13 @@ import { getOrganizationBySlug } from "@/server-actions/organization/get-organiz
 import { Job } from "@prisma/client"
 import { redirect } from "next/navigation";
 import { JobCard } from "@/components/job-card";
+import { Metadata } from "next";
+import { Select,SelectContent,SelectGroup,SelectItem,SelectLabel,SelectTrigger,SelectValue } from "@/components/ui/select"  
 
+export const metadata:Metadata = {
+    title: "View Jobs",
+    description: "View Jobs"
+}
 export default async function Page({ params }: { params: { slug: string } }) {
     const organization = await getOrganizationBySlug(params.slug);
     if(organization?.error) { redirect('/') }
