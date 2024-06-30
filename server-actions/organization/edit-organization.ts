@@ -25,7 +25,10 @@ export async function editOrganization(organization:Organization) {
         }
         const checkSlug = await prisma.organization.findFirst({
             where: {
-                slug:organization.slug
+                slug: {
+                    equals: organization.slug,
+                    mode: 'insensitive'
+                }
             }
         })
         if(checkSlug && organization.slug != orgExists.slug) { return {

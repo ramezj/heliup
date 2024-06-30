@@ -5,10 +5,13 @@ import { Organization } from "@prisma/client";
 
 export async function getOrganizationBySlug(slug: string) {
     try {
-        const organization = await prisma.organization.findUnique({
+        const organization = await prisma.organization.findFirst({
             where: {
-                slug: slug
-            },
+                slug: {
+                  equals: slug,
+                  mode: 'insensitive',
+                },
+              },
             include: {
                 jobs: true
             }
