@@ -26,16 +26,20 @@ export default async function Page() {
   if(!session) { redirect('/') }
   if(session.user?.firstTimeUser === true) { redirect('/onboarding') }
   const organization:Organization | null = await getUserDashboard();
+  if(organization === null) { redirect('/onboarding' ) }
   return (
         <>
+        <div className="flex justify-between items-center w-full">
           <h1 className="font-bold text-2xl">Manage Board</h1>
-        <EditOrganization />
-        {/* <Button asChild>
+        <Button asChild>
           <Link href={`/${organization?.slug}`}>
-          Preview Board
+          Preview
           </Link>
-        </Button> */}
-
+        </Button>
+        </div>
+        <div>
+        <EditOrganization organization={organization!} />
+        </div>
         </>
   );
 }

@@ -6,30 +6,35 @@
   import { Button } from "./ui/button"
   import { toast } from "sonner"
   import { Loader2 } from "lucide-react"
-  import { Job } from "@prisma/client"
+  import { Job, Organization } from "@prisma/client"
   import { useState } from "react"
   import RichTextEditor from "./rich-text-editor"
   import { motion } from "framer-motion"
   import { editJob } from "@/server-actions/jobs/edit-job"
+  import { Textarea } from "./ui/textarea"
 
-export default function EditOrganization() {
+export default function EditOrganization({ organization } : { organization:Organization}) {
+    const [ org, setOrg ] = useState<Organization>(organization);
   const [ loading, setLoading ] = useState<Boolean>(false);
     return (
         <>
         <div className="space-y-4 w-full">
+            <form>
             <motion.div 
                     className="space-y-2"
                     initial= {{opacity: 0}}
                     animate= {{opacity: 1}}>
-              <Label htmlFor="name">Title</Label>
-              <Input placeholder="Product Manager"/>
+              <Label htmlFor="name">Name</Label>
+              <Input required placeholder="Microsoft" value={org.name!}/>
+              <Label htmlFor="name">Slug</Label>
+              <Input required placeholder="microsoft.jobspire.co" value={org.slug!} onChange={((e) => {setOrg((prevOrg) => ({ ...prevOrg, slug:e.target.value}))})}/>
               </motion.div>
                     <motion.div 
                     className="space-y-2 w-full"
                     initial= {{opacity: 0}}
                     animate= {{opacity: 1}}>
-                <Label htmlFor="name">Job Description</Label>
-                <Input placeholder="Product Manager"/>  
+                <Label htmlFor="name">Description</Label>
+                <Textarea placeholder="Company Biography" rows={4} />  
             </motion.div>
             {
               loading
@@ -37,8 +42,9 @@ export default function EditOrganization() {
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 Saving Changes
                 </Button>
-              : <Button>Save Changes</Button>
+              : <Button type="submit">Save Changes</Button>
             }
+            </form>
           </div>
         </>
     )
