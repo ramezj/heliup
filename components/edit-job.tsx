@@ -16,7 +16,7 @@ export default function EditJobTabs({ job }: { job: Job }) {
   const [ loading, setLoading ] = useState<Boolean>(false);
   const [ title, setTitle ] = useState<string>(job.title);
   const [ NewJob, setNewJob ] = useState<Job>(job);
-  const editTheJob = async (e:any) => {
+  const editTheJob = async (e:React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     const res = await editJob(NewJob);

@@ -12,20 +12,28 @@
   import { motion } from "framer-motion"
   import { editJob } from "@/server-actions/jobs/edit-job"
   import { Textarea } from "./ui/textarea"
+import { editOrganization } from "@/server-actions/organization/edit-organization"
 
 export default function EditOrganization({ organization } : { organization:Organization}) {
     const [ org, setOrg ] = useState<Organization>(organization);
-  const [ loading, setLoading ] = useState<Boolean>(false);
+    const [ loading, setLoading ] = useState<Boolean>(false);
+    const editOrg = async (e:React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+        const res = await editOrganization(organization);
+        toast(res.message);
+        setLoading(false);
+    }
     return (
         <>
         <div className="space-y-4 w-full">
-            <form>
+            <form onSubmit={editOrg}>
             <motion.div 
                     className="space-y-2"
                     initial= {{opacity: 0}}
                     animate= {{opacity: 1}}>
               <Label htmlFor="name">Name</Label>
-              <Input required placeholder="Microsoft" value={org.name!}/>
+              <Input required placeholder="Microsoft" value={org.name!} onChange={((e) => {setOrg((prevOrg) => ({ ...prevOrg, name: e.target.value }))})}/>
               <Label htmlFor="name">Slug</Label>
               <Input required placeholder="microsoft.jobspire.co" value={org.slug!} onChange={((e) => {setOrg((prevOrg) => ({ ...prevOrg, slug:e.target.value}))})}/>
               </motion.div>
