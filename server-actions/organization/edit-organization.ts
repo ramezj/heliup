@@ -11,12 +11,24 @@ export async function editOrganization(organization:Organization) {
         message: "Not authenticated"
     }}
     try {
+        const orgExists = await prisma.organization.findFirst({
+            where:{
+                id: organization.id
+            }
+        })
+        if(!orgExists) {
+            return {
+                error: true,
+                organization:null,
+                message: "please create an organization first."
+            }
+        }
         const checkSlug = await prisma.organization.findFirst({
             where: {
                 slug:organization.slug
             }
         })
-        if(checkSlug) { return {
+        if(checkSlug && organization.slug != orgExists.slug) { return {
             error: true,
             organization:null,
             message:"Slug Already In Use"
@@ -28,7 +40,7 @@ export async function editOrganization(organization:Organization) {
             data: {
                 slug: organization.slug,
                 name: organization.name,
-                description: organization.name
+                description: organization.description
             }
         })
         return {

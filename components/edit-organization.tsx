@@ -26,8 +26,8 @@ export default function EditOrganization({ organization } : { organization:Organ
     }
     return (
         <>
+        <form onSubmit={editOrg}>
         <div className="space-y-4 w-full">
-            <form onSubmit={editOrg}>
             <motion.div 
                     className="space-y-2"
                     initial= {{opacity: 0}}
@@ -42,7 +42,7 @@ export default function EditOrganization({ organization } : { organization:Organ
                     initial= {{opacity: 0}}
                     animate= {{opacity: 1}}>
                 <Label htmlFor="name">Description</Label>
-                <Textarea placeholder="Company Biography" rows={4} />  
+                <Textarea placeholder="Company Biography" value={org.description!} onChange={((e) => {setOrg((prevOrg) => ({...prevOrg, description: e.target.value}))})} rows={4} />  
             </motion.div>
             {
               loading
@@ -52,8 +52,8 @@ export default function EditOrganization({ organization } : { organization:Organ
                 </Button>
               : <Button type="submit">Save Changes</Button>
             }
-            </form>
           </div>
+          </form>
         </>
     )
 }
