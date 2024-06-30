@@ -22,7 +22,10 @@ export  async function createOrganization(props: OrganizationProps) {
     try {
         const organizationExist = await prisma.organization.findFirst({
             where: {
-                slug: props.slug
+                slug: {
+                    equals: props.slug,
+                    mode: 'insensitive'
+                }
             }
         });
         if(organizationExist) {
