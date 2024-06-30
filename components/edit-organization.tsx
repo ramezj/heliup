@@ -41,8 +41,8 @@ export default function EditOrganization({ organization } : { organization:Organ
                     className="space-y-2 w-full"
                     initial= {{opacity: 0}}
                     animate= {{opacity: 1}}>
-                <Label htmlFor="name">Description</Label>
-                <Textarea placeholder="Company Biography" value={org.description!} onChange={((e) => {setOrg((prevOrg) => ({...prevOrg, description: e.target.value}))})} rows={4} />  
+                <Label htmlFor="name">Slogan</Label>
+                <Textarea placeholder="I'm Lovin' it!" value={org.description!} onChange={((e) => {setOrg((prevOrg) => ({...prevOrg, description: e.target.value}))})} rows={4} />  
             </motion.div>
             {
               loading
