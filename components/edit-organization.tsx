@@ -20,7 +20,7 @@ export default function EditOrganization({ organization } : { organization:Organ
     const editOrg = async (e:React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
-        const res = await editOrganization(organization);
+        const res = await editOrganization(org);
         toast(res.message);
         setLoading(false);
     }

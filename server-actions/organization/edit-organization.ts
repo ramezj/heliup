@@ -4,7 +4,6 @@ import { auth } from "@/auth"
 import { Job, Organization } from "@prisma/client";
 
 export async function editOrganization(organization:Organization) {
-    console.log(organization);
     const session = await auth();
     if(!session) { return {
         error: true,
@@ -12,12 +11,24 @@ export async function editOrganization(organization:Organization) {
         message: "Not authenticated"
     }}
     try {
+        const checkSlug = await prisma.organization.findFirst({
+            where: {
+                slug:organization.slug
+            }
+        })
+        if(checkSlug) { return {
+            error: true,
+            organization:null,
+            message:"Slug Already In Use"
+        }}
         const updateOrg = await prisma.organization.update({
             where: {
                 id: organization.id
             },
             data: {
-                ...organization
+                slug: organization.slug,
+                name: organization.name,
+                description: organization.name
             }
         })
         return {
