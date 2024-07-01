@@ -3,6 +3,14 @@ import { Job } from "@prisma/client"
 import { redirect } from "next/navigation";
 import { RenderContent } from "@/components/render-content";
 import { Badge } from "@/components/ui/badge";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: { jobId: string } }): Promise<Metadata> {
+    const job = await getJobById(params.jobId)
+    return {
+      title: job.job?.title
+    };
+}
 
 export default async function Page({ params }: { params: { jobId: string } }) {
     const job = await getJobById(params.jobId);
