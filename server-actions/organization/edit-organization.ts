@@ -2,6 +2,7 @@
 import prisma from "@/utils/db"
 import { auth } from "@/auth"
 import { Job, Organization } from "@prisma/client";
+import { revalidatePath } from "next/cache";
 
 export async function editOrganization(organization:Organization) {
     const session = await auth();
@@ -46,6 +47,7 @@ export async function editOrganization(organization:Organization) {
                 description: organization.description
             }
         })
+        revalidatePath('/dashboard');
         return {
             error: false,
             organization:updateOrg,
