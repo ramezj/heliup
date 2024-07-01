@@ -75,7 +75,7 @@ export default function DashboardLayout({children, params, req} : any) {
               </Link>
             </nav>
           </div>
-          <div className="mt-auto p-4">
+          {/* <div className="mt-auto p-4">
             <Card>
               <CardHeader className="p-2 pt-0 md:p-4">
                 <CardTitle>Upgrade to Pro</CardTitle>
@@ -90,7 +90,7 @@ export default function DashboardLayout({children, params, req} : any) {
                 </Button>
               </CardContent>
             </Card>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="flex flex-col sticky">
@@ -150,7 +150,7 @@ export default function DashboardLayout({children, params, req} : any) {
                 </Link>
                 </SheetClose>
               </nav>
-              <div className="mt-auto">
+              {/* <div className="mt-auto">
                 <Card>
                   <CardHeader>
                     <CardTitle>Upgrade to Pro</CardTitle>
@@ -165,7 +165,7 @@ export default function DashboardLayout({children, params, req} : any) {
                     </Button>
                   </CardContent>
                 </Card>
-              </div>
+              </div> */}
             </SheetContent>
           </Sheet>
           <div className="w-full flex-1">
