@@ -11,7 +11,6 @@ export async function generateMetadata({ params }: { params: { jobId: string } }
       title: job.job?.title
     };
 }
-
 export default async function Page({ params }: { params: { jobId: string } }) {
     const job = await getJobById(params.jobId);
     if(job?.error) { redirect('/jobs') }

@@ -7,6 +7,8 @@ import { toast } from "sonner";
 import { Metadata } from "next";
 import { CreateJobButton } from "@/components/create-job";
 import { DataTableDemo } from "@/components/jobs-table-2";
+import { JobCard } from "@/components/job-card";
+import { getOrganizationByUserId, getOrganizationBySlug } from "@/server-actions/organization/get-organization";
 
 export const metadata: Metadata = {
   title: "Jobs",
@@ -17,6 +19,8 @@ export default async function Page() {
   const session = await auth();
   if(!session) { redirect('/') }
   if(session.user?.firstTimeUser === true) { redirect('/onboarding') }
+  const organization = await getOrganizationByUserId(session.user?.id!);
+  if(organization.error) { toast(organization.message ) }
   const jobs = await getUserJobs();
   if(jobs?.ok === false) { toast(jobs.message) }
   return (
@@ -34,8 +38,16 @@ export default async function Page() {
       </div>
       : 
       <> 
-      <DataTableDemo jobs={jobs?.jobs as Job[]} />
-      {/* <JobsTable jobs={jobs?.jobs as Job[]} /> */}
+      {/* <DataTableDemo jobs={jobs?.jobs as Job[]} /> */}
+      {
+        jobs.jobs?.map((job:Job) => {
+          return (
+            <>
+            <JobCard job={job} organization={organization.organization!} />
+            </>
+          )
+        })
+      }
       </>
     }
     </>

@@ -29,21 +29,20 @@ export default function EditOrganization({ organization } : { organization:Organ
         <form onSubmit={editOrg}>
         <div className="space-y-4 w-full">
             <motion.div 
-                    className="space-y-2"
-                    initial= {{opacity: 0}}
-                    animate= {{opacity: 1}}>
+            className="space-y-2"
+            initial= {{opacity: 0}}
+            animate= {{opacity: 1}}>
               <Label htmlFor="name">Name</Label>
               <Input required placeholder="Microsoft" value={org.name!} onChange={((e) => {setOrg((prevOrg) => ({ ...prevOrg, name: e.target.value }))})}/>
+              <div>
               <Label htmlFor="name">Slug</Label>
               <Input required placeholder="microsoft.jobspire.co" value={org.slug!} onChange={((e) => {setOrg((prevOrg) => ({ ...prevOrg, slug:e.target.value}))})}/>
-              </motion.div>
-                    <motion.div 
-                    className="space-y-2 w-full"
-                    initial= {{opacity: 0}}
-                    animate= {{opacity: 1}}>
+              </div>
+              <div>
                 <Label htmlFor="name">Slogan</Label>
                 <Textarea placeholder="I'm Lovin' it!" value={org.description!} onChange={((e) => {setOrg((prevOrg) => ({...prevOrg, description: e.target.value}))})} rows={4} />  
-            </motion.div>
+              </div>
+              </motion.div>
             {
               loading
               ? <Button disabled>
