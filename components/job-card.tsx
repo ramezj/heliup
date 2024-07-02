@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link"
 import { Button } from "./ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card"
@@ -5,10 +6,14 @@ import { Separator } from "./ui/separator"
 import { Job, Organization } from "@prisma/client"
 import { Badge } from "./ui/badge"
 import { Briefcase, Navigation, ArrowUpRight } from "lucide-react"
+import { motion } from "framer-motion"
 
 export function JobCard({ job, organization }: { job: Job, organization:Organization }) {
     return (
-        <div className="w-full flex border border-white/10 rounded-lg items-center duration-300 hover:border-white/15">
+        <motion.div
+        initial= {{opacity: 0}}
+        animate= {{opacity: 1}}
+        className="w-full flex border border-white/10 rounded-lg items-center duration-300 hover:border-white/15">
         <div className="m-5 flex flex-col items-start text-left">
         <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
          {job.title}     
@@ -24,6 +29,6 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
           </Link>
         </Button>
         </div>
-        </div>
+        </motion.div>
       )
 }
