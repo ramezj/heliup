@@ -30,11 +30,11 @@ export default async function Page() {
   return (
         <>
         <div className="flex justify-between items-center w-full">
-          <h1 className="font-bold text-2xl">Manage Board</h1>
+        <h1 className="font-bold text-3xl">Overview</h1>
         <Button asChild>
-          <Link href={`/${organization?.slug}`}>
-          Preview
-          </Link>
+        <Link href={`/${organization?.slug}`}>
+        Preview
+        </Link>
         </Button>
         </div>
         <div>
