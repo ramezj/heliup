@@ -5,7 +5,7 @@ import { auth } from "@/auth";
 import { Metadata } from "next";
 
 export const metadata:Metadata = {
-  title: "Jobspire",
+  title: "HireHollo",
   description: "Jobspire, Your one-stop platform for creating and managing custom job boards."
 }
 

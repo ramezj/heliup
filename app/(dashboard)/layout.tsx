@@ -48,7 +48,7 @@ export default function DashboardLayout({children, params, req} : any) {
         <div className="flex h-full max-h-screen flex-col gap-2 sticky top-0">
           <div className="flex h-16 items-center border-b px-4 lg:h-16 text-center">
           <Link href='/'>
-            <span className="font-bold text-lg">Jobspire</span>
+            <span className="font-bold text-lg">hirehollo</span>
           </Link>
           </div>
           <div className="flex-1 ">
@@ -127,7 +127,7 @@ export default function DashboardLayout({children, params, req} : any) {
             <SheetContent side="left" className="flex flex-col">
               <SheetClose asChild>
                 <Link href="/" className="flex items-center gap-2 text-lg font-bold">
-                  Jobspire
+                  hirehollo
                 </Link>
                 </SheetClose>
               <nav className="grid gap-3 text-lg font-medium mt-1">
