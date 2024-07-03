@@ -2,6 +2,7 @@
 import prisma from "@/utils/db"
 import { auth } from "@/auth"
 import { Job, Organization } from "@prisma/client";
+import { revalidatePath } from "next/cache";
 
 export async function editJob(job:Job) {
     const session = await auth();
@@ -10,7 +11,6 @@ export async function editJob(job:Job) {
         job:null,
         message: "Not authenticated"
     }}
-    console.log(job);
     try {
         const updateJobData = await prisma.job.update({
             where: {
@@ -22,12 +22,17 @@ export async function editJob(job:Job) {
                 type: job.type
             }
         })
+        revalidatePath('/jobs')
         return {
             error: false,
             job:updateJobData,
             message: "Updated Successfully!"
         }
     } catch (error) {
-        
+        return {
+            error: "Internal Server Error",
+            job: null,
+            message: "Internal Server Error"
+        }
     }
 }
