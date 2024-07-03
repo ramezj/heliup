@@ -46,7 +46,7 @@ export default function DashboardLayout({children, params, req} : any) {
     <div className="grid min-h-screen w-full md:grid-cols-[200px_1fr] lg:grid-cols-[250px_1fr]">
       <div className="hidden border-r md:block ">
         <div className="flex h-full max-h-screen flex-col gap-2 sticky top-0">
-          <div className="flex h-16 items-center border-b px-4 lg:h-16 text-center">
+          <div className="flex h-16 items-center border-b px-4 lg:h-16 text-center justify-center">
           <Link href='/'>
             <span className="font-bold text-lg">hirehollo</span>
           </Link>
