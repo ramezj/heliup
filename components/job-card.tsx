@@ -43,10 +43,10 @@ export function JobCardForDashboard({ job }: { job: Job}) {
       <Badge className="rounded-sm cursor-default"><Briefcase className="w-3 h-3 mr-1" />{job.type}</Badge>
       </div>
       </div>
-      <div className="m-5 ml-auto flex gap-3">
+      <div className="m-5 ml-auto flex gap-2">
       <Button variant={"outline"} asChild className="gap-1">
         <Link href={`jobs/${job.id}/edit`}>
-         View Applicants
+        Applicants
         </Link>
       </Button>
       <Button variant={"outline"} asChild className="gap-1">
