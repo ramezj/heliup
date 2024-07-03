@@ -63,7 +63,7 @@ export default function EditJobTabs({ job }: { job: Job }) {
                     initial= {{opacity: 0}}
                     animate= {{opacity: 1}}>
               <Label htmlFor="name">Title</Label>
-              <Input placeholder="Product Manager" value={title} onChange={((e) => {setTitle(e.target.value)})}/>
+              <Input placeholder="Product Manager" value={NewJob.title} onChange={((e) => {setNewJob((prev) => ({...prev, title: e.target.value}))})} />
               </motion.div>
                     <motion.div 
                     className="space-y-2 w-full"

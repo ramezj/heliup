@@ -10,6 +10,7 @@ export async function editJob(job:Job) {
         job:null,
         message: "Not authenticated"
     }}
+    console.log(job);
     try {
         const updateJobData = await prisma.job.update({
             where: {
