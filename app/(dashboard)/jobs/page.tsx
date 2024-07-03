@@ -7,7 +7,7 @@ import { toast } from "sonner";
 import { Metadata } from "next";
 import { CreateJobButton } from "@/components/create-job";
 import { DataTableDemo } from "@/components/jobs-table-2";
-import { JobCard } from "@/components/job-card";
+import { JobCard, JobCardForDashboard } from "@/components/job-card";
 import { getOrganizationByUserId, getOrganizationBySlug } from "@/server-actions/organization/get-organization";
 
 export const metadata: Metadata = {
@@ -48,7 +48,7 @@ export default async function Page() {
         jobs.jobs?.map((job:Job) => {
           return (
             <>
-            <JobCard job={job} organization={organization.organization!} />
+            <JobCardForDashboard job={job}/>
             </>
           )
         })
