@@ -12,8 +12,12 @@ export  async function getUserJobs() {
             userId:session.user?.id
         },
         include: {
-            jobs:true
-        }
+            jobs: {
+                orderBy: {
+                    title: "asc"
+                }
+            }
+        },
     });
     if(!organization) {
         return { 
