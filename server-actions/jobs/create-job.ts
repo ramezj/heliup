@@ -33,7 +33,7 @@ export  async function createJob(name: string) {
         return {
             ok:false,
             job: null,
-            error: "Something went completely wrong - try again later."
+            error: "Internal Server Error"
         }
     }
 }

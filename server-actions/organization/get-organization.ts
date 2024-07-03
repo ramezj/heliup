@@ -60,7 +60,7 @@ export async function getOrganizationByUserId(userId: string) {
     } catch (error) {
         return {
             error: true,
-            message: "something went wrong, please try again later."
+            message: "Internal Server Error"
         }
     }
 }

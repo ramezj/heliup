@@ -60,7 +60,7 @@ export  async function createOrganization(props: OrganizationProps) {
         return ({
             ok: false,
             organization:null,
-            error:'something went wrong, try again later.'
+            error:'Internal Server Error'
         })
     }
 }
