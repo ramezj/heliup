@@ -72,14 +72,16 @@ export default function EditJobTabs({ job }: { job: Job }) {
                 <Label htmlFor="name">Job Description</Label>
               <RichTextEditor editor={editor!}/> 
             </motion.div>
+            <div className="flex justify-between items-center w-full">
             {
               loading
               ? <Button disabled>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 Saving Changes
                 </Button>
-              : <Button onClick={editTheJob}>Save Changes</Button>
+              : <Button className="" onClick={editTheJob}>Save Changes</Button>
             }
+            </div>
           </div>
         </>
     )
