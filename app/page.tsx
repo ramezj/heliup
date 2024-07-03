@@ -14,7 +14,14 @@ export default async function Page() {
   return (
    <>
    <Navigation session={session}/>
-   {JSON.stringify(session?.user)}
+   <div className="w-full text-center p-8">
+    <h1 className="font-bold text-4xl">
+      HireHollo
+    </h1>
+    <p className="text-muted-foreground">
+      Your one-stop platform for creating and managing custom job boards.
+    </p>
+   </div>
    </>
   );
 }
