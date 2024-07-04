@@ -19,7 +19,7 @@ export default async function Page() {
       HireHollo
     </h1>
     <p className="text-muted-foreground">
-      Your one-stop platform for creating and managing custom job boards.
+      Hiring, for startups & small organizations.
     </p>
    </div>
    </>
