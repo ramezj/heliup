@@ -22,13 +22,13 @@ export function Navigation(props:any) {
           hirehollo
           </Link>
           <Link href="/" className="text-foreground transition-colors hover:text-foreground font-semibold">
-            Features
+            features
           </Link>
           <Link href="/" className="text-foreground transition-colors hover:text-foreground font-semibold">
-            Demo
+            demo
           </Link>
           <Link href="/" className="text-foreground transition-colors hover:text-foreground font-semibold">
-            Pricing
+            pricing
           </Link>
         </nav>
         <Sheet>
@@ -52,19 +52,19 @@ export function Navigation(props:any) {
                 <SheetClose asChild>
                 <Link href={`/dashboard`} className={`${path == 'dashboard' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <SparklesIcon className="h-4 w-4" />
-                Features
+                features
                 </Link>
                 </SheetClose>
                 <SheetClose asChild>
                 <Link href={`/jobs`} className={`${path == 'jobs' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <Laptop className="h-4 w-4" />
-                Demo
+                demo
                 </Link>
                 </SheetClose>
                 <SheetClose asChild>
                 <Link href='/applicants' className={`${path == 'applicants' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <DollarSignIcon className="h-4 w-4" />
-                  Pricing
+                  pricing
                 </Link>
                 </SheetClose>
               </nav>
@@ -80,7 +80,7 @@ export function Navigation(props:any) {
             <>
                 <Button variant="outline" asChild>
                   <Link href='/dashboard'>
-                  Dashboard
+                  dashboard
                   </Link>
                   </Button>
             </>
