@@ -32,7 +32,7 @@ export default async function Page() {
         <div className="flex justify-between items-center w-full">
         <h1 className="font-bold text-3xl">Overview</h1>
         <Button asChild>
-        <Link href={`/${organization?.slug}`}>
+        <Link href={`https://${organization.slug}.${process.env.NEXT_URL}`}>
         Preview
         </Link>
         </Button>
