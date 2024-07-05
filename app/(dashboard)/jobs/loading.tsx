@@ -1,4 +1,7 @@
 import { Metadata } from "next"
+import { Button } from "@/components/ui/button";
+import { LoadingJob } from "@/components/job-card";
+import { Plus } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Loading",
@@ -7,9 +10,14 @@ export const metadata: Metadata = {
 
 export default function Loading() {
     return (
-        <>
+        <> 
+       <div className="flex justify-between items-center w-full">
         <h1 className="font-bold text-3xl">Jobs</h1>
-        <p>Loading your jobs</p>
-        </>
+        <Button size={"sm"}> <Plus className="w-4 h-4 mr-2"/> Create Job</Button>
+        </div>
+        <LoadingJob />
+        <LoadingJob />
+        <LoadingJob />
+      </>
     )
 }
