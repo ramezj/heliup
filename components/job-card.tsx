@@ -7,6 +7,7 @@ import { Job, Organization } from "@prisma/client"
 import { Badge } from "./ui/badge"
 import { Briefcase, Navigation, ArrowUpRight } from "lucide-react"
 import { motion } from "framer-motion"
+import { Skeleton } from "./ui/skeleton"
 
 export function JobCard({ job, organization }: { job: Job, organization:Organization }) {
     return (
@@ -30,6 +31,23 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
         </div>
         </div>
       )
+}
+
+export function LoadingJob() {
+  return (
+      <div
+      className="w-full flex border border-white/10 rounded-lg items-center duration-300 hover:border-white/15">
+      <div className="m-5 flex flex-col items-start text-left">
+      <Skeleton className="h-4 w-[250px]" />
+      <div className="mt-3 -mb-2 flex gap-1">
+      <Skeleton className="h-4 w-[125px]" />
+      </div>
+      </div>
+      <div className="m-5 ml-auto">
+      <Skeleton className="h-4 w-[150px]"/>
+      </div>
+      </div>
+    )
 }
 
 export function JobCardForDashboard({ job }: { job: Job}) {
