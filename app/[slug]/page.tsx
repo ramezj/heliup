@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { JobCard } from "@/components/job-card";
 import { Metadata } from "next";
 import { Select,SelectContent,SelectGroup,SelectItem,SelectLabel,SelectTrigger,SelectValue } from "@/components/ui/select"  
+import { notFound } from 'next/navigation'
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const organization = await getOrganizationBySlug(params.slug);
@@ -13,7 +14,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 export default async function Page({ params }: { params: { slug: string } }) {
     const organization = await getOrganizationBySlug(params.slug);
-    if(organization?.error) { redirect('/') }
+    if(organization?.error) { 
+        console.error("Not Found")
+        notFound() 
+    }
     return (
         <div className="w-full flex flex-col items-center text-center p-8">
             <h1 className="font-bold text-2xl">{organization.organization?.name}</h1>
