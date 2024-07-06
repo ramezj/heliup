@@ -11,13 +11,15 @@ export const metadata: Metadata = {
 export default function Loading() {
     return (
         <> 
-       <div className="flex justify-between items-center w-full">
+        <div className="flex justify-between items-center w-full">
         <h1 className="font-bold text-3xl">Jobs</h1>
         <Button size={"sm"}> <Plus className="w-4 h-4 mr-2"/> Create Job</Button>
         </div>
-        <LoadingJob />
-        <LoadingJob />
-        <LoadingJob />
+        <div className="w-full gap-4 flex flex-col">
+            <LoadingJob />
+            <LoadingJob />
+            <LoadingJob />
+        </div>
       </>
     )
 }
