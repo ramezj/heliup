@@ -12,7 +12,7 @@ import { Skeleton } from "./ui/skeleton"
 export function JobCard({ job, organization }: { job: Job, organization:Organization }) {
     return (
         <div
-        className="w-full flex border border-white/10 rounded-lg items-center duration-300 hover:border-white/15">
+        className="w-full flex border border-white/10 rounded-lg items-center duration-300 hover:border-white/20">
         <div className="m-5 flex flex-col items-start text-left">
         <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
          {job.title}     
@@ -35,7 +35,7 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
 export function LoadingJob() {
   return (
       <div
-      className="w-full flex border border-white/10 rounded-lg items-center duration-300 hover:border-white/15">
+      className="w-full flex border border-white/10 rounded-lg items-center duration-300 hover:border-white/20">
       <div className="m-5 flex flex-col items-start text-left">
       <Skeleton className="h-4 w-[100px]" />
       <div className="mt-3 -mb-2 flex gap-1">

@@ -91,10 +91,10 @@ model Applicant {
   first_name String
   last_name String
   email String
-  linkedIn String
-  twitter String
-  github String
-  reason String
+  linkedIn String?
+  twitter String?
+  github String?
+  description String
   status Status @default(SUBMITTED)
   jobId String
   job Job @relation(fields: [jobId], references: [id], onDelete: Cascade)
