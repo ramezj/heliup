@@ -52,8 +52,8 @@ export function LoadingJob() {
 
 export function JobCardForDashboard({ job }: { job: Job}) {
   return (
-      <div
-      className="w-full flex border border-white/10 rounded-lg items-center duration-300 hover:border-white/15">
+      <Link href={`jobs/${job.id}/edit`}
+      className="w-full flex border border-white/10 rounded-lg items-center duration-300 hover:border-white/20 cursor-pointer">
       <div className="m-5 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
        {job.title}     
@@ -63,17 +63,17 @@ export function JobCardForDashboard({ job }: { job: Job}) {
       </div>
       </div>
       <div className="m-5 ml-auto flex gap-2">
-      <Button variant={"outline"} asChild className="gap-1">
+      <Button variant={"default"} asChild className="gap-1">
         <Link href={`jobs/${job.id}/edit`}>
-        Applicants
+         View Applicants
         </Link>
       </Button>
-      <Button variant={"outline"} asChild className="gap-1">
+      {/* <Button variant={"outline"} asChild className="gap-1">
         <Link href={`jobs/${job.id}/edit`}>
          Edit
         </Link>
-      </Button>
+      </Button> */}
       </div>
-      </div>
+      </Link>
     )
 }
