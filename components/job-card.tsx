@@ -23,7 +23,7 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
         </div>
         <div className="m-5 ml-auto">
         <Button variant={"outline"} asChild className="gap-1">
-          <Link target="_blank" href={`/${job.id}`}>
+          <Link href={`/${job.id}`}>
            View
           </Link>
         </Button>

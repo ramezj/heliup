@@ -44,15 +44,17 @@ export default async function Page() {
         <h1 className="font-bold text-3xl">Jobs</h1>
         <CreateJobButton />
         </div>
-      {
-        jobs.jobs?.map((job:Job) => {
-          return (
-            <>
-            <JobCardForDashboard job={job}/>
-            </>
-          )
-        })
-      }
+        <div className="gap-4 flex flex-col">
+          {
+          jobs.jobs?.map((job:Job) => {
+            return (
+              <>
+              <JobCardForDashboard job={job}/>
+              </>
+            )
+          })
+         }
+        </div>
       </>
     }
     </>
