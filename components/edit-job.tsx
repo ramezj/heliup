@@ -6,7 +6,7 @@
   import { Button } from "./ui/button"
   import { toast } from "sonner"
   import { Loader2 } from "lucide-react"
-  import { Job } from "@prisma/client"
+  import { Job, Type } from "@prisma/client"
   import { useState } from "react"
   import RichTextEditor from "./rich-text-editor"
   import { motion } from "framer-motion"
@@ -15,7 +15,6 @@
 
 export default function EditJobTabs({ job }: { job: Job }) {
   const [ loading, setLoading ] = useState<Boolean>(false);
-  const [ title, setTitle ] = useState<string>(job.title);
   const [ NewJob, setNewJob ] = useState<Job>(job);
   const editTheJob = async (e:React.FormEvent) => {
     e.preventDefault();
@@ -71,9 +70,9 @@ export default function EditJobTabs({ job }: { job: Job }) {
               initial= {{opacity: 0}}
               animate= {{opacity: 1}}>
               <Label htmlFor="name">Type</Label>
-              <Select>
+              <Select defaultValue={NewJob.type}  onValueChange={(e) => { setNewJob((prev) => ({ ...prev, type: e as Type}))}}>
               <SelectTrigger className="">
-                <SelectValue placeholder="FULLTIME"/>
+                <SelectValue />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
