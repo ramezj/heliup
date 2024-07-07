@@ -1,43 +1,14 @@
 'use client'
 import Link from "next/link"
-import {
-  XIcon,
-  Bell,
-  CircleUser,
-  Home,
-  LineChart,
-  Menu,
-  Package,
-  Package2,
-  Search,
-  ShoppingCart,
-  Users,
-  BriefcaseBusiness,
-  Settings,
-  CreditCard,
-  MessageCircle,
-  Lightbulb,
-  BanIcon,
-  Radio,
-  MenuIcon,
-  Settings2,
-  Settings2Icon,
-  Banknote
-} from "lucide-react"
-import { Badge } from "@/components/ui/badge"
+import { Home, Users, BriefcaseBusiness, Settings2, Banknote } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
-import { Metadata } from "next"
-import { useState } from "react"
 import { usePathname } from "next/navigation"
 
 function useLastPathSegment() {
   const pathname = usePathname();
   const segments = pathname.split('/');
-  return segments[segments.length - 1];  // Returns the last segment of the path
+  return segments[segments.length - 1];
 }
 
 export default function DashboardLayout({children, params, req} : any) {
@@ -61,10 +32,6 @@ export default function DashboardLayout({children, params, req} : any) {
                 <BriefcaseBusiness className="h-4 w-4" />
                 Jobs
               </Link>
-              {/* <Link href='/applicants' className={`${path == 'applicants' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
-              <Users className="h-4 w-4" />
-                Applicants
-              </Link> */}
               <Link href='/billing' className={`${path == 'billing' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
               <Banknote className="h-4 w-4" />
                 Billing
