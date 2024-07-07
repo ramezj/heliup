@@ -3,14 +3,11 @@ import prisma from "@/utils/db"
 import { auth } from "@/auth"
 import { Job, Organization } from "@prisma/client";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export async function editJob(job:Job) {
     const session = await auth();
-    if(!session) { return {
-        error: true,
-        job:null,
-        message: "Not authenticated"
-    }}
+    if(!session) { redirect('/auth') }
     try {
         const updateJobData = await prisma.job.update({
             where: {

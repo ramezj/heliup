@@ -3,14 +3,11 @@ import prisma from "@/utils/db"
 import { auth } from "@/auth"
 import { Job, Organization } from "@prisma/client";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export async function editOrganization(organization:Organization) {
     const session = await auth();
-    if(!session) { return {
-        error: true,
-        organization:null,
-        message: "Not authenticated"
-    }}
+    if(!session) { redirect('/auth') }
     try {
         const orgExists = await prisma.organization.findFirst({
             where:{

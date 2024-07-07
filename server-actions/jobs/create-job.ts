@@ -2,10 +2,11 @@
 import prisma from "@/utils/db"
 import { auth } from "@/auth"
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export  async function createJob(name: string) {
     const session = await auth();
-    if(!session) { return null }
+    if(!session) { redirect('/auth') }
     try {
         const user = await prisma.user.findUnique({
             where: {

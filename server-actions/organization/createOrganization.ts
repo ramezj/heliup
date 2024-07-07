@@ -2,6 +2,7 @@
 import prisma from "@/utils/db"
 import { auth } from "@/auth"
 import { Organization } from "@prisma/client";
+import { redirect } from "next/navigation";
 
 type OrganizationProps = {
     name: string,
@@ -11,7 +12,7 @@ type OrganizationProps = {
 
 export  async function createOrganization(props: OrganizationProps) {
     const session = await auth();
-    if(!session) { return null }
+    if(!session) { redirect('/auth') }
     if(session.user?.firstTimeUser != true) {
         return ({
             ok:false,
