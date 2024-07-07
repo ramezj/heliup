@@ -8,8 +8,10 @@ export default function NotFound() {
             <p className="text-muted-foreground">Board not found, maybe try something else?</p>
             <br />
             <div className="flex flex-col gap-4 sm:w-1/2 w-full">
-            <Button>
+            <Button asChild>
+                <Link href={`https://${process.env.NEXT_URL}`}>
                 Back to home page
+                </Link>
             </Button>
             </div>
         </div>
