@@ -30,7 +30,7 @@ export default async function Page() {
   return (
         <>
         <div className="flex justify-between items-center w-full">
-        <h1 className="font-bold text-3xl">Overview</h1>
+        <h1 className="font-bold text-3xl tracking-tight">Overview</h1>
         <Button size={"sm"} asChild>
         <Link target="_blank" href={`https://${organization.slug}.${process.env.NEXT_URL}`}>
         <SquareArrowOutUpRight className="w-4 h-4 mr-2" />
