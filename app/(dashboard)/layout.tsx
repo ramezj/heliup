@@ -24,19 +24,19 @@ export default function DashboardLayout({children, params, req} : any) {
           </div>
           <div className="flex-1 ">
             <nav className="grid items-start px-2 text-sm font-medium lg:px-4 gap-2 mt-1">
-              <Link href={`/dashboard`} className={`${path == 'dashboard' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+              <Link href={`/dashboard`} className={`${path == 'dashboard' ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
                 <Home className="h-4 w-4" />
                 Board
               </Link>
-              <Link href={`/jobs`} className={`${path == 'jobs' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+              <Link href={`/jobs`} className={`${path == 'jobs' ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
                 <BriefcaseBusiness className="h-4 w-4" />
                 Jobs
               </Link>
-              <Link href='/billing' className={`${path == 'billing' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+              <Link href='/billing' className={`${path == 'billing' ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
               <Banknote className="h-4 w-4" />
                 Billing
               </Link>
-              <Link href='/settings' className={`${path == 'settings' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+              <Link href='/settings' className={`${path == 'settings' ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
               <Settings2 className="h-4 w-4" />
                 Settings
               </Link>

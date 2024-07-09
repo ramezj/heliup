@@ -4,7 +4,10 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { Toggle } from "./toggle"
 import { usePathname } from "next/navigation"
-import { Home, BriefcaseBusiness, Users, SparklesIcon, DollarSignIcon, Laptop } from "lucide-react"
+import { Home, BriefcaseBusiness, Users, SparklesIcon, DollarSignIcon, Laptop, StarIcon } from "lucide-react"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { Icons } from "./ui/icons"
 
 function useLastPathSegment() {
   const pathname = usePathname();
@@ -73,28 +76,22 @@ export function Navigation(props:any) {
         <div className="flex w-full items-center gap-3 md:ml-auto">
           <div className="ml-auto flex-1 sm:flex-initial">
           </div>
-          {/* <ThemeToggle /> */}
+          <Toggle />
           {
             props.session 
             ? 
             <>
                 <Button variant="outline" asChild>
                   <Link href='/dashboard'>
-                  dashboard
+                  Dashboard
                   </Link>
                   </Button>
             </>
-            
             :
             <>
-                  <Button variant="default" asChild>
+                  <Button variant="outline" asChild>
                   <Link href='/auth'>
-                  Log In
-                  </Link>
-                  </Button>
-                <Button variant="outline" asChild>
-                  <Link href='/auth'>
-                  Try For Free
+                  Sign In
                   </Link>
                   </Button>
             </>
