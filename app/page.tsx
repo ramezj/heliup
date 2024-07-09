@@ -3,6 +3,7 @@ import { Toggle } from "@/components/toggle";
 import { Navigation } from "@/components/navbar";
 import { auth } from "@/auth";
 import { Metadata } from "next";
+import WordPullUp from "@/components/magicui/word-pull-up";
 
 export const metadata:Metadata = {
   title: "HireHollo",
@@ -15,12 +16,10 @@ export default async function Page() {
    <>
    <Navigation session={session}/>
    <div className="w-full text-center p-8">
-    <h1 className="font-bold text-4xl">
-      HireHollo
-    </h1>
-    <p className="text-muted-foreground">
-      Hiring, for startups & small organizations.
-    </p>
+   <WordPullUp
+      className="text-4xl font-bold tracking-[-0.05em] text-black dark:text-white md:text-5xl md:leading-[5rem]"
+      words="Hiring, for startups & small teams."
+    />
    </div>
    </>
   );
