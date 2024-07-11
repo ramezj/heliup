@@ -83,7 +83,7 @@ export function LandingPageJobCard({ title, type }: { title: string, type: strin
   const theme = useTheme();
   return (
       <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
-      className="w-full flex border dark:border-white/10 border-black/10 dark:hover:border-white/20 hover:border-black/30 rounded-lg items-center duration-300">
+      className="w-full flex border rounded-lg items-center duration-300">
       <div className="m-5 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
        {title}     
@@ -93,8 +93,8 @@ export function LandingPageJobCard({ title, type }: { title: string, type: strin
       </div>
       </div>
       <div className="m-5 ml-auto">
-      <Button variant={"outline"} className="gap-1">
-         View
+      <Button variant={"outline"} className="gap-1 hover:cursor-pointer">
+        View
       </Button>
       </div>
       </ShineBorder>
