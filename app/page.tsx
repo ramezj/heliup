@@ -7,7 +7,7 @@ import { Metadata } from "next";
 import WordPullUp from "@/components/magicui/word-pull-up";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import Image from "next/image";
-import { JobCard } from "@/components/job-card";
+import { JobCard, LandingPageJobCard } from "@/components/job-card";
 import { Job, Organization } from "@prisma/client";
 
 export const metadata:Metadata = {
@@ -44,16 +44,13 @@ export default async function Page() {
       <div className="w-full items-center flex content-center flex-col">
       <div className="flex flex-col gap-4 sm:w-1/2 w-full">
       <div className="relative">
-      <JobCard job={testJob} organization={testOrganization}/>
-      <BorderBeam size={125} duration={8} delay={25} />
+      <LandingPageJobCard title="Product Manager" type="FULLTIME"/>
       </div>
       <div className="relative">
-      <JobCard job={testJob} organization={testOrganization}/>
-      <BorderBeam size={125} duration={8} delay={50} />
+      <LandingPageJobCard title="Product Manager" type="FULLTIME"/>
       </div>
       <div className="relative">
-      <JobCard job={testJob} organization={testOrganization}/>
-      <BorderBeam size={125} duration={8} delay={75} />
+      <LandingPageJobCard title="Software Developer" type="FULLTIME"/>
       </div>
       </div>
       </div>
