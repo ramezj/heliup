@@ -36,21 +36,26 @@ export default async function Page() {
    <>
    <Navigation session={session}/>
    <div className="text-center p-8 w-full">
-   <WordPullUp
-      className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem]"
-      words="Hiring for startups and small teams."
-    />
-      <br />
+      <WordPullUp
+        className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem]"
+        words="Hiring for startups and small teams."
+        />
+        <br />
+        <div className="flex flex-row items-center justify-center gap-4">
+      <Button className="w-52" variant={"secondary"}>See Demo</Button>
+      <Button className="w-52">Try Now</Button>
+        </div>
+        <br />
       <div className="w-full items-center flex content-center flex-col">
       <div className="flex flex-col gap-4 sm:w-1/2 w-full">
       <div className="relative">
       <LandingPageJobCard title="Product Manager" type="FULLTIME"/>
       </div>
       <div className="relative">
-      <LandingPageJobCard title="Product Manager" type="FULLTIME"/>
+      <LandingPageJobCard title="Operations Manager" type="CONTRACT"/>
       </div>
       <div className="relative">
-      <LandingPageJobCard title="Software Engineer" type="FULLTIME"/>
+      <LandingPageJobCard title="Software Engineer" type="INTERNSHIP"/>
       </div>
       </div>
       </div>
