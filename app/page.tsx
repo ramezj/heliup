@@ -8,8 +8,8 @@ import WordPullUp from "@/components/magicui/word-pull-up";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import Image from "next/image";
 import { JobCard, LandingPageJobCard } from "@/components/job-card";
-import { Job, Organization } from "@prisma/client";
 import Link from "next/link";
+import { MainAlert } from "@/components/main-alert";
 
 export const metadata:Metadata = {
   title: "HireHollo",
@@ -17,31 +17,16 @@ export const metadata:Metadata = {
 }
 
 export default async function Page() {
-  const testJob:Job = ({
-    id: "123",
-    type:"FULLTIME",
-    title: "Product Manager",
-    content: "",
-    organizationId: "12345"
-  })
-  const testOrganization:Organization = ({
-    id: "456",
-    userId:"123",
-    name: "HireHollo",
-    slug:"hirehollo",
-    website: "hirehollo.com",
-    description:"description"
-  })
   const session = await auth();
   return (
    <>
    <Navigation session={session}/>
-   <div className="text-center p-8 w-full">
+   <div className="text-center p-8 w-full flex flex-col gap-3">
+      <MainAlert />
       <WordPullUp
         className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem]"
         words="Hiring for startups and small teams."
         />
-        <br />
         <div className="flex flex-row items-center justify-center gap-4">
       <Button asChild className="w-52" variant={"secondary"}>
         <Link href={`https://demo.${process.env.NEXT_URL}`}>
