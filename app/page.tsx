@@ -9,6 +9,7 @@ import { BorderBeam } from "@/components/magicui/border-beam";
 import Image from "next/image";
 import { JobCard, LandingPageJobCard } from "@/components/job-card";
 import { Job, Organization } from "@prisma/client";
+import Link from "next/link";
 
 export const metadata:Metadata = {
   title: "HireHollo",
@@ -42,8 +43,16 @@ export default async function Page() {
         />
         <br />
         <div className="flex flex-row items-center justify-center gap-4">
-      <Button className="w-52" variant={"secondary"}>See Demo</Button>
-      <Button className="w-52">Try Now</Button>
+      <Button asChild className="w-52" variant={"secondary"}>
+        <Link href={`https://demo.${process.env.NEXT_URL}`}>
+        See Demo
+        </Link>
+        </Button>
+      <Button className="w-52" asChild>
+        <Link href='/auth'>
+        Try Now
+        </Link>
+      </Button>
         </div>
         <br />
       <div className="w-full items-center flex content-center flex-col">
