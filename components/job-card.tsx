@@ -8,7 +8,6 @@ import { Badge } from "./ui/badge"
 import { Briefcase, Navigation, ArrowUpRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { Skeleton } from "./ui/skeleton"
-import { useTheme } from "next-themes";
 import ShineBorder from "./magicui/shine-border"
 
 export function JobCard({ job, organization }: { job: Job, organization:Organization }) {
@@ -80,9 +79,8 @@ export function JobCardForDashboard({ job }: { job: Job}) {
 }
 
 export function LandingPageJobCard({ title, type }: { title: string, type: string }) {
-  const theme = useTheme();
   return (
-      <ShineBorder color={["#A07CFE", "#FE8FB5"]}
+      <ShineBorder color={"dark" ? "white" : "black"}
       className="w-full flex border rounded-lg items-center duration-300">
       <div className="m-5 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
