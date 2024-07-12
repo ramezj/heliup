@@ -50,7 +50,7 @@ export default async function Page() {
       <LandingPageJobCard title="Product Manager" type="FULLTIME"/>
       </div>
       <div className="relative">
-      <LandingPageJobCard title="Software Developer" type="FULLTIME"/>
+      <LandingPageJobCard title="Software Engineer" type="FULLTIME"/>
       </div>
       </div>
       </div>

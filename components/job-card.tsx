@@ -82,7 +82,7 @@ export function JobCardForDashboard({ job }: { job: Job}) {
 export function LandingPageJobCard({ title, type }: { title: string, type: string }) {
   const theme = useTheme();
   return (
-      <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+      <ShineBorder color={["#A07CFE", "#FE8FB5"]}
       className="w-full flex border rounded-lg items-center duration-300">
       <div className="m-5 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
