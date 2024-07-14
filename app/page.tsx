@@ -30,7 +30,7 @@ export default async function Page() {
         className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem]"
         words="Hiring for startups and small teams."
         />
-        <div className="flex flex-row items-center justify-center gap-4">
+        <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4">
       <Button asChild className="w-52" variant={"secondary"}>
         <Link href={`https://demo.${process.env.NEXT_URL}`}>
         See Demo
