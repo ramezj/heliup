@@ -10,6 +10,7 @@ import Image from "next/image";
 import { JobCard, LandingPageJobCard } from "@/components/job-card";
 import Link from "next/link";
 import { MainAlert } from "@/components/main-alert";
+import { Alert } from "@/components/main-alert";
 
 
 export const metadata:Metadata = {
@@ -22,8 +23,9 @@ export default async function Page() {
   return (
    <>
    <Navigation session={session}/>
-   <div className="text-center p-8 w-full flex flex-col gap-3">
-      <MainAlert />
+   <div className="text-center p-8 w-full flex flex-col gap-3 items-center">
+      {/* <MainAlert /> */}
+      <Alert />
       <WordPullUp
         className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem]"
         words="Hiring for startups and small teams."
