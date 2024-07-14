@@ -11,6 +11,7 @@ import { JobCard, LandingPageJobCard } from "@/components/job-card";
 import Link from "next/link";
 import { MainAlert } from "@/components/main-alert";
 
+
 export const metadata:Metadata = {
   title: "HireHollo",
   description: "Jobspire, Your one-stop platform for creating and managing custom job boards."
@@ -39,8 +40,7 @@ export default async function Page() {
         </Link>
       </Button>
         </div>
-        <br />
-      <div className="w-full items-center flex content-center flex-col">
+      <div className="w-full items-center flex content-center flex-col mt-3">
       <div className="flex flex-col gap-4 sm:w-1/2 w-full">
       <div className="relative">
       <LandingPageJobCard title="Product Manager" type="FULLTIME"/>
