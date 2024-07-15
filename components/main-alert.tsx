@@ -28,7 +28,7 @@ export function Alert() {
         🎉 <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
         <span
           className={cn(
-            `inline animate-gradient bg-gradient-to-r text-white`,
+            `inline animate-gradient bg-gradient-to-r dark:text-white text-black`,
           )}
         >
           Introducing HireHollo
