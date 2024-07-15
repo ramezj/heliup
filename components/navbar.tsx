@@ -51,7 +51,7 @@ export function Navigation(props:any) {
                   hirehollo
                 </Link>
                 </SheetClose>
-              <nav className="grid gap-3 text-lg font-medium mt-1">
+                <nav className="grid gap-3 text-lg font-medium mt-1">
                 <SheetClose asChild>
                 <Link href={`/dashboard`} className={`${path == 'dashboard' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <SparklesIcon className="h-4 w-4" />
@@ -76,7 +76,7 @@ export function Navigation(props:any) {
         <div className="flex w-full items-center gap-3 md:ml-auto">
           <div className="ml-auto flex-1 sm:flex-initial">
           </div>
-          <Toggle />
+          {/* <Toggle /> */}
           {
             props.session 
             ? 
