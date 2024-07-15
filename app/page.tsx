@@ -15,7 +15,9 @@ import { Alert } from "@/components/main-alert";
 
 export const metadata:Metadata = {
   title: "HireHollo",
-  description: "Jobspire, Your one-stop platform for creating and managing custom job boards."
+  description: "HireHollo, Your one-stop platform for creating and managing custom job boards.",
+  applicationName: "HireHollo"
+
 }
 
 export default async function Page() {
