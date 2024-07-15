@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   };
 export default async function Page() {
     const session = await auth();
-    if(!session) redirect('/login');
+    if(!session) redirect('/auth');
     if(session.user?.firstTimeUser === false) { redirect ('/dashboard')}
       return (
         <>

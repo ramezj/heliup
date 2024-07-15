@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const session = await auth();
-  if(!session) { redirect('/') }
+  if(!session) { redirect('/auth') }
   if(session.user?.firstTimeUser === true) { redirect('/onboarding') }
   const organization:Organization | null = await getUserDashboard();
   if(organization === null) { redirect('/onboarding' ) }

@@ -81,7 +81,7 @@ export function Navigation(props:any) {
             props.session 
             ? 
             <>
-                <Button variant="outline" asChild>
+                <Button variant="default" asChild>
                   <Link href='/dashboard'>
                   Dashboard
                   </Link>
@@ -89,7 +89,7 @@ export function Navigation(props:any) {
             </>
             :
             <>
-                  <Button variant="outline" asChild>
+                  <Button variant="default" asChild>
                   <Link href='/auth'>
                   Sign In
                   </Link>
