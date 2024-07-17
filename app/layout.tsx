@@ -15,9 +15,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Toaster />
-        {/* <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange> */}
+        <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
         {children}
-        {/* </ThemeProvider> */}
+        </ThemeProvider>
       </body>
     </html>
   );

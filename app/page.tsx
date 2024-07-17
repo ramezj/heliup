@@ -1,4 +1,3 @@
-'use client'
 import { Toggle } from "@/components/toggle";
 import { Navigation } from "@/components/navbar";
 import { auth } from "@/auth";
@@ -13,20 +12,18 @@ import Link from "next/link";
 import { MainAlert } from "@/components/main-alert";
 import { Alert } from "@/components/main-alert";
 
+export const metadata:Metadata = {
+  title: "HireHollo",
+  description: "HireHollo, Your one-stop platform for creating and managing custom job boards.",
+  applicationName: "HireHollo"
 
-// export const metadata:Metadata = {
-//   title: "HireHollo",
-//   description: "HireHollo, Your one-stop platform for creating and managing custom job boards.",
-//   applicationName: "HireHollo"
+}
 
-// }
-
-export default function Page() {
-  // const session = await auth();
-  const text:string = "Beruf = Ich arbeite als Architekt im Büro. Um 8 Uhr fahre ich eine halbe Stunde zur Arbeit mit dem Auto. Ich arbeite von 9 Uhr bis 15 Uhr. Nach der Arbeit gehe ich aus. Ich finde meine Arbeit sehr gut! URLAUB = Ich bin mit meinen Freunden mit dem Auto nach Hurghada gefahren. Am Morgen sind wir im Meer geschwommen. Am Nachmittag haben wir in einem Restaurant gegessen und viele Fotos gemacht. Das Wetter war gut und die Reise war super. Party = Kaufen Sie Fleisch, Cola und Kuchen! Mein Lieblingsessen ist Pizza. Ich bringe Pizza mit. CairoFestivalCity = Gestern bin ich mit meinen Freunden zu Cairo Festival City mit dem Auto gefahren. Meine Lieblingsfarben sind Blau und Rot und meine Lieblingsmarken sind H&M und Zara. Ich habe einen blauen Pullover und ein rotes Hemd eingekauft. Nach Einkauf sind wir ins Kino gegangen und haben Pizza gegessen. Um 22 Uhr bin ich nach Hause gekommen. Wedding Shopping = Ich mochte am Montag Uhr einen schwarzen Anzug, einen schwazen Mantel und schwarze Schuhe bei Zara kaufen. Kommst du mit? Sickness = Ich kann heute nicht zur Uni gehen, denn ich bin krank. Ich bin zum Arzt um 18 Uhr gegangen. Ich hatte Fieber. ich muss die Medikamante dreimal pro tag einnehmen, im Bett drei Tage bleiben und viele Gemuse und Suppe essen. Ich darf nicht rauchen und kein Eis essen. Kannst du mir helfen? Or kannst du die Medikamente mitbringen. Someone has cold = Hallo Ali, Wie geht's dir jetzt? Ich hoffe besser. Du sollst viele Gemuse und Suppe essen und darfst kein Eis essen. Ich kaufe dir die Medikamente."
+export default async function Page() {
+  const session = await auth();
   return (
    <>
-   {/* <Navigation session={session}/>
+   <Navigation session={session}/>
    <div className="text-center p-8 w-full flex flex-col gap-3 items-center">
       <Alert />
       <WordPullUp
@@ -58,12 +55,6 @@ export default function Page() {
       </div>
       </div>
       </div>
-   </div> */}
-   <div className="bg-white dark:bg-white h-full w-full p-8">
-    <Button onClick={(() => { navigator.clipboard.writeText(text)})}>
-      Copy
-    </Button>
-
    </div>
    </>
   );
