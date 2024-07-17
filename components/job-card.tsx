@@ -64,7 +64,7 @@ export function JobCardForDashboard({ job }: { job: Job}) {
       </div>
       <div className="m-5 ml-auto flex gap-2">
       <Button size={"sm"} variant={"outline"} asChild className="gap-1">
-        <Link href={`jobs/${job.id}/edit`}>
+        <Link href={`jobs/${job.id}/applicants`}>
          View Applicants
         </Link>
       </Button>
