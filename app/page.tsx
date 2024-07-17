@@ -24,7 +24,7 @@ export default async function Page() {
   return (
    <>
    <Navigation session={session}/>
-   <div className="text-center p-8 w-full flex flex-col gap-3 items-center">
+   <div className="text-center p-8 w-full flex flex-col gap-3 items-center h-dvh">
       <Alert />
       <WordPullUp
         className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem]"
