@@ -8,7 +8,7 @@ import Link from "next/link";
 import { Trash } from "lucide-react";
 
 export const metadata:Metadata = {
-    title: "Edit Job",
+    title: "View Applicants",
     description: "Edit Your Job."
 }
 
