@@ -16,19 +16,18 @@ export async function generateMetadata({ params }: { params: { jobId: string } }
 export default async function Page({ params }: { params: { jobId: string } }) {
     const job = await getJobById(params.jobId);
     if(job?.error) { redirect('/jobs') }
-    console.log(job.job?.content)
     return (
         <>
         <div className="w-full flex flex-col items-center text-center p-8 gap-y-4">
-                <h1 className="font-bold text-2xl">{job.job?.title}</h1>
-                <div className="grid grid-cols-2 gap-4">
-                    <Badge className="rounded-sm">{job.job?.type}</Badge>
-                    <Badge className="rounded-sm">{job.job?.type}</Badge>
-                </div>
-            <div className="text-left w-1/2">
-                <RenderContent content={job.job?.content!} />
+            <h1 className="font-bold text-2xl">{job.job?.title}</h1>
+            <div className="grid grid-cols-2 gap-4">
+            <Badge variant={"outline"} className="rounded-sm">{job.job?.type}</Badge>
+            <Badge variant={"outline"} className="rounded-sm">{job.job?.type}</Badge>
             </div>
-            <div className="sm:w-1/2 w-full rounded-lg border border-white/10 space-y-4 p-8 text-left">
+            <div className="text-left w-full md:w-1/2">
+            <RenderContent content={job.job?.content!} />
+            </div>
+            <div className="md:w-1/2 w-full rounded-lg border border-white/10 space-y-4 p-8 text-left">
             <div className="space-y-2">
             <Label htmlFor="name">First Name</Label>
             <Input placeholder="Joe" />
