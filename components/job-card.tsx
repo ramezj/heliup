@@ -19,11 +19,13 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
          {job.title}     
         </p>
         <div className="mt-3 -mb-2 flex gap-1">
-        <Badge className="rounded-sm cursor-default"><Briefcase className="w-3 h-3 mr-1" />London, UK</Badge>
+        <Badge variant={"outline"} className="rounded-sm cursor-default"><Briefcase className="w-3 h-3 mr-1" />London, UK</Badge>
         </div>
         </div>
         <div className="m-5 ml-auto">
-        <Badge className=" rounded-sm cursor-default"><Briefcase className="w-3 h-3 mr-1" />{job.type}</Badge>
+        <Button variant={"outline"} size={"sm"}>
+        View
+        </Button>
         </div>
         </Link>
       )
