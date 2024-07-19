@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Separator } from "./ui/separator"
 import { Job, Organization } from "@prisma/client"
 import { Badge } from "./ui/badge"
-import { Briefcase, Navigation, ArrowUpRight } from "lucide-react"
+import { Briefcase, Navigation, ArrowUpRight, SquareArrowOutUpRight, MapPin, Pin } from "lucide-react"
 import { motion } from "framer-motion"
 import { Skeleton } from "./ui/skeleton"
 import ShineBorder from "./magicui/shine-border"
@@ -19,7 +19,7 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
          {job.title}     
         </p>
         <div className="mt-3 -mb-2 flex gap-1">
-        <Badge variant={"outline"} className="rounded-sm cursor-default"><Briefcase className="w-3 h-3 mr-1" />London, UK</Badge>
+        <Badge variant={"outline"} className="rounded-sm"><MapPin className="size-3 mr-1" />Cairo, EG</Badge>
         </div>
         </div>
         <div className="m-5 ml-auto">
@@ -66,11 +66,6 @@ export function JobCardForDashboard({ job }: { job: Job}) {
          View Applicants
         </Link>
       </Button>
-      {/* <Button variant={"outline"} asChild className="gap-1">
-        <Link href={`jobs/${job.id}/edit`}>
-         Edit
-        </Link>
-      </Button> */}
       </div>
       </Link>
     )
@@ -85,13 +80,13 @@ export function LandingPageJobCard({ title, type }: { title: string, type: strin
        {title}     
       </p>
       <div className="mt-3 -mb-2 flex gap-1">
-      <Badge className="rounded-sm cursor-default"><Briefcase className="w-3 h-3 mr-1" />{type}</Badge>
+      <Badge variant={"outline"} className="rounded-sm"><MapPin className="size-3 mr-1" />Los Angeles, CA</Badge>
       </div>
       </div>
       <div className="m-5 ml-auto">
-      <Button variant={"outline"} className="gap-1 hover:cursor-pointer">
+      <Button variant={"outline"} size={"sm"}>
         View
-      </Button>
+        </Button>
       </div>
       </ShineBorder>
     )
