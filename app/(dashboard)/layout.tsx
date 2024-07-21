@@ -17,8 +17,9 @@ export default function DashboardLayout({children, params, req} : any) {
     <div className="grid min-h-screen w-full md:grid-cols-[200px_1fr] lg:grid-cols-[250px_1fr]">
       <div className="hidden border-r md:block ">
         <div className="flex h-full max-h-screen flex-col gap-2 sticky top-0 z-50">
-          <div className="flex h-16 items-center border-b px-3 lg:h-16 text-center">
-          <Link href='/'>
+          <div className="flex h-16 items-center border-b px-3 lg:h-16 text-center justify-center">
+          <Link href='/' className="flex items-center justify-center">
+            <BriefcaseBusiness className="size-4 mr-2" />
             <span className="font-bold text-lg">hirehollo</span>
           </Link>
           </div>
