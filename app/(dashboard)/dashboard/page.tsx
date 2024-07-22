@@ -15,6 +15,7 @@ import { motion } from "framer-motion"
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import EditOrganization from "@/components/edit-organization";
+import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -38,7 +39,37 @@ export default async function Page() {
         </Link>
         </Button>
         </div>
-        <div>
+        <div className="flex sm:flex-row flex-col gap-2">
+        <Card className="w-full">
+      <CardContent className="pt-6">
+        <div className="space-y-2">
+          <Label className="font-bold text-lg">
+            Active Jobs
+          </Label>
+          <p>7</p>
+        </div>
+      </CardContent>
+    </Card>
+    <Card className="w-full">
+      <CardContent className="pt-6">
+        <div className="space-y-2">
+          <Label className="font-bold text-lg">
+            Total Applicants
+          </Label>
+          <p>29</p>
+        </div>
+      </CardContent>
+    </Card>
+    <Card className="w-full">
+      <CardContent className="pt-6">
+        <div className="space-y-2">
+          <Label className="font-bold text-lg">
+            Active Jobs
+          </Label>
+          <p></p>
+        </div>
+      </CardContent>
+    </Card>
         {/* <EditOrganization organization={organization!} /> */}
         </div>
         </>
