@@ -39,7 +39,7 @@ export default async function Page() {
         </Button>
         </div>
         <div>
-        <EditOrganization organization={organization!} />
+        {/* <EditOrganization organization={organization!} /> */}
         </div>
         </>
   );

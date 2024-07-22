@@ -4,15 +4,11 @@ import { Home, Users, BriefcaseBusiness, Settings2, Banknote } from "lucide-reac
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { usePathname } from "next/navigation"
-
-function useLastPathSegment() {
-  const pathname = usePathname();
-  const segments = pathname.split('/');
-  return segments[segments.length - 1];
-}
+import { headers } from "next/headers";
 
 export default function DashboardLayout({children, params, req} : any) {
-  const path = useLastPathSegment();
+  const path = usePathname();
+  console.log(path);
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[200px_1fr] lg:grid-cols-[250px_1fr]">
       <div className="hidden border-r md:block ">
@@ -25,19 +21,19 @@ export default function DashboardLayout({children, params, req} : any) {
           </div>
           <div className="flex-1 ">
             <nav className="grid items-start px-2 text-sm font-medium lg:px-4 gap-2 mt-1">
-              <Link href={`/dashboard`} className={`${path == 'dashboard' ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
+              <Link href={`/dashboard`} className={`${path == '/dashboard' ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
                 <Home className="h-4 w-4" />
                 Board
               </Link>
-              <Link href={`/jobs`} className={`${path == 'jobs' ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
+              <Link href={`/jobs`} className={`${path == '/jobs' ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
                 <BriefcaseBusiness className="h-4 w-4" />
                 Jobs
               </Link>
-              <Link href='/billing' className={`${path == 'billing' ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
+              <Link href='/billing' className={`${path == '/billing' ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
               <Banknote className="h-4 w-4" />
                 Billing
               </Link>
-              <Link href='/settings' className={`${path == 'settings' ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
+              <Link href='/settings' className={`${path == '/settings' ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
               <Settings2 className="h-4 w-4" />
                 Settings
               </Link>
