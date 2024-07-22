@@ -46,7 +46,7 @@ export default async function Page() {
           <Label className="font-bold text-lg">
             Active Jobs
           </Label>
-          <p>7</p>
+          <p className="font-bold text-lg">7</p>
         </div>
       </CardContent>
     </Card>
@@ -56,7 +56,7 @@ export default async function Page() {
           <Label className="font-bold text-lg">
             Total Applicants
           </Label>
-          <p>29</p>
+          <p className="font-bold text-lg">29</p>
         </div>
       </CardContent>
     </Card>
@@ -66,7 +66,7 @@ export default async function Page() {
           <Label className="font-bold text-lg">
             Active Jobs
           </Label>
-          <p></p>
+          <p className="font-bold text-lg"></p>
         </div>
       </CardContent>
     </Card>
