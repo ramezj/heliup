@@ -11,9 +11,10 @@ import {
   import { Trash, Loader2 } from "lucide-react"
   import { useState } from "react"
   import { deleteJob } from "@/server-actions/jobs/delete-job"
-  import { redirect } from "next/navigation"
+  import { useRouter } from "next/navigation"
 
   export default function DeleteJobModal({jobId}: { jobId: string}) {
+    const router = useRouter();
     const [ loading, setLoading ] = useState<boolean>(false);
     const deleteTheJob = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -21,6 +22,7 @@ import {
         const res = await deleteJob(jobId);
         if(res.ok) {
             setLoading(false);
+            router.push('/jobs')
         }
     }
     return (
@@ -31,7 +33,7 @@ import {
             <Trash className="w-4 h-4" />
         </Button>
         </DialogTrigger>
-        <DialogContent className="w-[90%] rounded-lg">
+        <DialogContent className="text-left w-[90%] rounded-md">
             <DialogHeader>
             <DialogTitle>Are you absolutely sure?</DialogTitle>
             <DialogDescription>

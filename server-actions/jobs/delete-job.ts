@@ -34,6 +34,7 @@ export async function deleteJob(jobId: string) {
                 id:jobId
             }
         })
+        revalidatePath('/jobs');
         return {
             ok:true,
             message: "Job Deleted Successfully"

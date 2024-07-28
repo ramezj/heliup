@@ -9,6 +9,7 @@ import { Briefcase, Navigation, ArrowUpRight, SquareArrowOutUpRight, MapPin, Pin
 import { motion } from "framer-motion"
 import { Skeleton } from "./ui/skeleton"
 import ShineBorder from "./magicui/shine-border"
+import { redirect } from "next/navigation"
 
 export function JobCard({ job, organization }: { job: Job, organization:Organization }) {
     return (
@@ -64,7 +65,7 @@ export function JobCardForDashboard({ job }: { job: Job}) {
       </div>
       <div className="m-5 ml-auto flex gap-2">
       <Button size={"sm"} variant={"outline"} asChild className="gap-1">
-        <Link href={`jobs/${job.id}/applicants`}>
+        <Link as={"link"} href={`jobs/${job.id}/applicants`}>
          View Applicants
         </Link>
       </Button>
