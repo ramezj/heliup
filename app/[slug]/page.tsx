@@ -23,7 +23,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <h1 className="font-bold text-2xl">{organization.organization?.name}</h1>
             <p className="text-muted-foreground">{organization.organization?.description}</p>
             <br />
-            <div className="flex flex-col gap-4 sm:w-1/2 w-full">
+            <div className="flex flex-col gap-4 lg:w-1/2 w-full">
             {organization.organization?.jobs.map((job:Job) => {
                 return (
                     <div key={job.id}>
