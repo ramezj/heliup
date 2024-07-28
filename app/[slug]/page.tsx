@@ -19,7 +19,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         notFound() 
     }
     return (
-        <div className="w-full flex flex-col items-center text-center p-8">
+        <div className="w-full flex flex-col items-center text-center p-4">
             <h1 className="font-bold text-2xl">{organization.organization?.name}</h1>
             <p className="text-muted-foreground">{organization.organization?.description}</p>
             <br />
