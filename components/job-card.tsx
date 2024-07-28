@@ -12,8 +12,9 @@ import ShineBorder from "./magicui/shine-border"
 
 export function JobCard({ job, organization }: { job: Job, organization:Organization }) {
     return (
-        <Link href={`/${job.id}`} 
-        className="w-full flex border dark:border-white/10 border-black/10 dark:hover:border-white/20 hover:border-black/30 rounded-lg items-center duration-300">
+      <Link href={`/${job.id}`}>
+      <ShineBorder color={"dark" ? "white" : "black"}
+      className="relative w-full flex border rounded-lg items-center duration-300">
         <div className="m-5 flex flex-col items-start text-left">
         <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
          {job.title}     
@@ -27,6 +28,7 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
         View
         </Button>
         </div>
+        </ShineBorder>
         </Link>
       )
 }
