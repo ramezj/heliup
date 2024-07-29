@@ -26,7 +26,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <div className="flex flex-col gap-4 lg:w-1/2 w-full">
             {organization.organization?.jobs.map((job:Job) => {
                 return (
-                    <div key={job.id}>
+                    <div key={job.id} className="relative">
                     <JobCard job={job} organization={organization.organization} />
                     </div>
                 )
