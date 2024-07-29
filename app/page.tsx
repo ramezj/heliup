@@ -24,7 +24,7 @@ export default async function Page() {
   return (
    <>
    <Navigation session={session}/>
-   <div className="text-center p-8 w-full flex flex-col gap-2 items-center max-h-fit">
+   <div className="text-center w-full p-8 flex flex-col gap-2 items-center max-h-fit">
       <Alert />
       <WordPullUp
         className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem]"
@@ -43,7 +43,7 @@ export default async function Page() {
       </Button>
         </div>
       <div className="w-full items-center flex content-center flex-col mt-3">
-      <div className="flex flex-col gap-4 sm:w-1/2 w-full">
+      <div className="flex flex-col gap-4 lg:w-1/2 w-full">
       <div className="relative">
       <LandingPageJobCard title="Product Manager" type="FULLTIME"/>
       </div>
