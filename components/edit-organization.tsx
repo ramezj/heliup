@@ -30,8 +30,9 @@ export default function EditOrganization({ organization } : { organization:Organ
         <div className="space-y-4 w-full">
             <motion.div 
             className="space-y-2"
-            initial= {{opacity: 0}}
-            animate= {{opacity: 1}}>
+            // initial= {{opacity: 0}}
+            // animate= {{opacity: 1}}
+            >
               <Label htmlFor="name">Name</Label>
               <Input required placeholder="Microsoft" value={org.name!} onChange={((e) => {setOrg((prevOrg) => ({ ...prevOrg, name: e.target.value }))})}/>
               <div>

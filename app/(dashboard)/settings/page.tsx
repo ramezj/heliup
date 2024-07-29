@@ -1,5 +1,9 @@
 import { Metadata } from "next";
 import { Separator } from "@/components/ui/separator";
+import EditOrganization from "@/components/edit-organization";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import { getUserDashboard } from "@/server-actions/dashboard/getUserDashboard";
 
 export const metadata: Metadata = {
     title: "Settings",
@@ -7,6 +11,11 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
+  const session = await auth();
+  if(!session) { redirect('/auth') }
+  if(session.user?.firstTimeUser === true) { redirect('/onboarding') }
+  const organization = await getUserDashboard();
+  if(organization === null) { redirect('/onboarding' ) }
     return (
         <>
         <div className="space-y-0.5">
@@ -16,6 +25,7 @@ export default async function Page() {
           </p>
         </div>
         <Separator className=""/>
+        <EditOrganization organization={organization} />
         </>
     )
 }
