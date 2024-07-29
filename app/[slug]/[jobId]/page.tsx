@@ -28,7 +28,10 @@ export default async function Page({ params }: { params: { jobId: string } }) {
             <div className="text-left w-full md:w-1/2">
             <RenderContent content={job.job?.content!} />
             </div>
-            <div className="lg:w-1/2 w-full rounded-lg border border-white/10 space-y-4 p-8 text-left">
+            <div className="lg:w-1/2 w-full rounded-lg border border-white/10 space-y-4 p-7 text-left">
+            <div className="space-y-2">
+            <h1 className="text-2xl font-bold text-center">Application</h1>
+            </div>
             <div className="space-y-2">
             <Label htmlFor="name">First Name</Label>
             <Input placeholder="Joe" />
