@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Metadata } from "next";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
 
 export async function generateMetadata({ params }: { params: { jobId: string } }): Promise<Metadata> {
     const job = await getJobById(params.jobId)
@@ -40,6 +41,9 @@ export default async function Page({ params }: { params: { jobId: string } }) {
             <Label htmlFor="name">Email Address</Label>
             <Input placeholder="joebiden@gmail.com" />
             </div>
+            <Button className="w-full">
+            Apply Now
+            </Button>
             </div>
         </div>
         </>
