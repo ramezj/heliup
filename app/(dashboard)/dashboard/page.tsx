@@ -26,7 +26,7 @@ export default async function Page() {
   const session = await auth();
   if(!session) { redirect('/auth') }
   if(session.user?.firstTimeUser === true) { redirect('/onboarding') }
-  const organization:Organization | null = await getUserDashboard();
+  const organization = await getUserDashboard();
   if(organization === null) { redirect('/onboarding' ) }
   return (
         <>
@@ -46,7 +46,7 @@ export default async function Page() {
           <Label className="font-bold text-lg">
             Active Jobs
           </Label>
-          <p className="font-bold text-lg">7</p>
+          <p className="font-bold text-lg">{organization.jobs.length}</p>
         </div>
       </CardContent>
     </Card>
@@ -66,7 +66,7 @@ export default async function Page() {
           <Label className="font-bold text-lg">
             Total Applicants
           </Label>
-          <p className="font-bold text-lg">20</p>
+          <p className="font-bold text-lg">0</p>
         </div>
       </CardContent>
     </Card>
