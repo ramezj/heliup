@@ -9,7 +9,7 @@ import { Briefcase, Navigation, ArrowUpRight, SquareArrowOutUpRight, MapPin, Pin
 import { motion } from "framer-motion"
 import { Skeleton } from "./ui/skeleton"
 import ShineBorder from "./magicui/shine-border"
-import { redirect } from "next/navigation"
+import { useRouter } from "next/navigation"
 
 export function JobCard({ job, organization }: { job: Job, organization:Organization }) {
     return (
@@ -52,8 +52,17 @@ export function LoadingJob() {
 }
 
 export function JobCardForDashboard({ job }: { job: Job}) {
+  const router = useRouter();
+  const handleApplicantsClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    router.push(`jobs/${job.id}/applicants`);
+  };
+
+  const handleCardClick = () => {
+    router.push(`jobs/${job.id}/edit`);
+  };
   return (
-      <Link href={`jobs/${job.id}/edit`}
+      <div onClick={handleCardClick}
       className="w-full flex border dark:border-white/10 border-black/10 dark:hover:border-white/20 hover:border-black/30 rounded-lg items-center duration-300 cursor-pointer">
       <div className="m-5 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
@@ -64,13 +73,11 @@ export function JobCardForDashboard({ job }: { job: Job}) {
       </div>
       </div>
       <div className="m-5 ml-auto flex gap-2">
-      <Button size={"sm"} variant={"outline"} asChild className="gap-1">
-        <Link as={"link"} href={`jobs/${job.id}/applicants`}>
+      <Button size={"sm"} variant={"outline"} onClick={handleApplicantsClick} className="gap-1">
          View Applicants
-        </Link>
       </Button>
       </div>
-      </Link>
+      </div>
     )
 }
 
