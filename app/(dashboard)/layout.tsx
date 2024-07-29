@@ -63,21 +63,27 @@ export default function DashboardLayout({children, params, req} : any) {
                 </SheetClose>
               <nav className="grid gap-3 text-lg font-medium mt-1">
                 <SheetClose asChild>
-                <Link href={`/dashboard`} className={`${path == 'dashboard' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+                <Link href="/dashboard" className={`${path == '/dashboard' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <Home className="h-4 w-4" />
-                Dashboard
+                Board
                 </Link>
                 </SheetClose>
                 <SheetClose asChild>
-                <Link href={`/jobs`} className={`${path == 'jobs' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+                <Link href="/jobs" className={`${path == '/jobs' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <BriefcaseBusiness className="h-4 w-4" />
                 Jobs
                 </Link>
                 </SheetClose>
                 <SheetClose asChild>
-                <Link href='/applicants' className={`${path == 'applicants' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+                <Link href='/billing' className={`${path == '/billing' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <Users className="h-4 w-4" />
-                  Applicants
+                  Billing
+                </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                <Link href='/settings' className={`${path == '/settings' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+                <Settings2 className="h-4 w-4" />
+                  Settings
                 </Link>
                 </SheetClose>
               </nav>
