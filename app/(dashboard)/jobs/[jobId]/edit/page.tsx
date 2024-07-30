@@ -21,7 +21,7 @@ export default async function Page({ params }: { params: { jobId: string } }) {
         <div className="flex justify-between items-center w-full">
         <h1 className="font-bold text-3xl">Edit Job</h1>
         <div className="flex gap-2">
-        <DeleteJobModal jobId={params.jobId}/>
+        <DeleteJobModal jobId={job.job?.id!}/>
         </div>
         </div>
         <div className="w-full">
