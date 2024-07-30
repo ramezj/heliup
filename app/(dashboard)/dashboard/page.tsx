@@ -16,6 +16,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import EditOrganization from "@/components/edit-organization";
 import { Card, CardContent } from "@/components/ui/card";
+import { StatisticalCard } from "@/components/statistical-card";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -40,36 +41,9 @@ export default async function Page() {
         </Button>
         </div>
         <div className="flex sm:flex-row flex-col gap-2">
-        <Card className="w-full">
-      <CardContent className="pt-6">
-        <div className="space-y-2">
-          <Label className="font-bold text-lg">
-            Active Jobs
-          </Label>
-          <p className="font-bold text-lg">{organization.jobs.length}</p>
-        </div>
-      </CardContent>
-    </Card>
-    <Card className="w-full">
-      <CardContent className="pt-6">
-        <div className="space-y-2">
-          <Label className="font-bold text-lg">
-            Inactive Jobs
-          </Label>
-          <p className="font-bold text-lg">0</p>
-        </div>
-      </CardContent>
-    </Card>
-    <Card className="w-full">
-      <CardContent className="pt-6">
-        <div className="space-y-2">
-          <Label className="font-bold text-lg">
-            Total Applicants
-          </Label>
-          <p className="font-bold text-lg">0</p>
-        </div>
-      </CardContent>
-    </Card>
+        <StatisticalCard name="Active Jobs" number={organization.jobs.length} />
+        <StatisticalCard name="Inactive Jobs" number={0} />
+        <StatisticalCard name="Total Applicants" number={0} />
         {/* <EditOrganization organization={organization!} /> */}
         </div>
         </>
