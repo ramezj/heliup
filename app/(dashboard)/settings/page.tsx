@@ -24,7 +24,7 @@ export default async function Page() {
             Manage your account settings and set e-mail preferences.
           </p>
         </div>
-        <Separator className=""/>
+        <Separator className="-mb-2"/>
         <EditOrganization organization={organization} />
         </>
     )
