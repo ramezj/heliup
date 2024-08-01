@@ -17,6 +17,25 @@ export async function applyToJob(jobId: string, firstName: string, lastName: str
                 message: "Job Does Not Exist"
             }
         }
+        const applicant = await prisma.applicant.create({
+            data: {
+                jobId: jobId,
+                first_name: firstName,
+                last_name: lastName,
+                email: emailAddress,
+                number: phoneNumber
+            }
+        })
+        if(!applicant) {
+            return { 
+                ok:false,
+                message: "Internl Server Error"
+            }
+        }
+        return {
+            ok:true,
+            message: "Applied Successfully!"
+        }
     } catch (error) {
         return {
             ok:false,
