@@ -24,6 +24,10 @@ import {
             setLoading(false);
             router.push('/jobs')
         }
+        else {
+            setLoading(false);
+            console.error(res.message);
+        }
     }
     return (
         <>
