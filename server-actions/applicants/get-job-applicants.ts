@@ -3,11 +3,14 @@ import prisma from "@/utils/db"
 import { auth } from "@/auth"
 import { Organization } from "@prisma/client";
 
-export async function getJobById(jobId: string) {
+export async function getJobApplicants(jobId: string) {
     try {
         const job = await prisma.job.findUnique({
             where: {
                 id: jobId
+            },
+            include: {
+                applicants:true
             }
         });
         if(!job) {
