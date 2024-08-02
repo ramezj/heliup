@@ -14,10 +14,11 @@ export default function ApplyCard({ jobId }: { jobId: string}) {
     const [ location, setLocation ] = useState<string | null>("New Cairo");
     const [ loading, setLoading ] = useState<boolean>(false);
     const apply = async (e: React.FormEvent) => {
-        setLoading(true);
         e.preventDefault();
+        setLoading(true);
         const res = await applyToJob(jobId, firstName!, lastName!, emailAddress!, phoneNumber!, location!)
         setLoading(false);
+        console.log(res);
     }
     return (
         <>

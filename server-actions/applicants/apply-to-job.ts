@@ -26,6 +26,7 @@ export async function applyToJob(jobId: string, firstName: string, lastName: str
                 number: phoneNumber
             }
         })
+        console.log(applicant);
         if(!applicant) {
             return { 
                 ok:false,
@@ -37,6 +38,7 @@ export async function applyToJob(jobId: string, firstName: string, lastName: str
             message: "Applied Successfully!"
         }
     } catch (error) {
+        console.error(error);
         return {
             ok:false,
             message: "Internal Server Error"

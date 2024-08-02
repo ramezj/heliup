@@ -90,7 +90,7 @@ model Applicant {
   id String @id @default(cuid())
   first_name String
   last_name String
-  number Int
+  number BigInt
   email String
   linkedIn String?
   twitter String?
