@@ -79,8 +79,14 @@ export default function DashboardLayout({children, params, req} : any) {
                 </Link>
                 </SheetClose>
                 <SheetClose asChild>
-                <Link href='/billing' className={`${path == '/billing' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+                <Link href="/applicants" className={`${path == '/applicants' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <Users className="h-4 w-4" />
+                Applicants
+                </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                <Link href='/billing' className={`${path == '/billing' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+                <Banknote className="h-4 w-4" />
                   Billing
                 </Link>
                 </SheetClose>
