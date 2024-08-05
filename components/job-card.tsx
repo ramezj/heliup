@@ -96,7 +96,7 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
   };
 
   const handleCardClick = () => {
-    router.push(`jobs/${job.id}/edit`);
+    router.push(`applicants/${job.id}`);
   };
   return (
     <div onClick={handleCardClick}>
