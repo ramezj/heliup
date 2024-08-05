@@ -5,18 +5,20 @@ import { Button } from "./ui/button"
 import React, { useState } from "react"
 import { applyToJob } from "@/server-actions/applicants/apply-to-job"
 import { Loader2 } from "lucide-react"
+import { Textarea } from "./ui/textarea"
 
 export default function ApplyCard({ jobId }: { jobId: string}) {
     const [ firstName, setFirstName ] = useState<string>();
     const [ lastName, setLastName ] = useState<string>();
     const [ emailAddress, setEmailAddress ] = useState<string>();
     const [ phoneNumber, setPhoneNumber ] = useState<number>();
-    const [ location, setLocation ] = useState<string>("New Cairo");
+    const [ location, setLocation ] = useState<string>();
+    const [ motivation, setMotivation ] = useState<string>();
     const [ loading, setLoading ] = useState<boolean>(false);
     const apply = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
-        const res = await applyToJob(jobId, firstName!, lastName!, emailAddress!, phoneNumber!, location!)
+        const res = await applyToJob(jobId, firstName!, lastName!, emailAddress!, phoneNumber!, location!, motivation!)
         setLoading(false);
         console.log(res);
     }
@@ -46,6 +48,10 @@ export default function ApplyCard({ jobId }: { jobId: string}) {
             <div className="space-y-2">
             <Label htmlFor="name">Location</Label>
             <Input required value={location} onChange={((e) => {setLocation(e.target.value)})} placeholder="Los Angeles, CA"/>
+            </div>
+            <div className="space-y-2"> 
+            <Label htmlFor="motivation">Motivation</Label>
+            <Textarea required value={motivation} onChange={((e) => {setMotivation(e.target.value)})} placeholder="Tell us why you're the best candidate for this position" />
             </div>
             {
                 loading 

@@ -4,7 +4,7 @@ import { auth } from "@/auth"
 import { Organization } from "@prisma/client";
 import { redirect } from "next/navigation";
 
-export async function applyToJob(jobId: string, firstName: string, lastName: string, emailAddress: string, phoneNumber: number, location: string) {
+export async function applyToJob(jobId: string, firstName: string, lastName: string, emailAddress: string, phoneNumber: number, location: string, motivation: string) {
     try {
         const job = await prisma.job.findFirst({
             where: {
@@ -23,7 +23,8 @@ export async function applyToJob(jobId: string, firstName: string, lastName: str
                 first_name: firstName,
                 last_name: lastName,
                 email: emailAddress,
-                number: phoneNumber
+                number: phoneNumber,
+                motivation: motivation
             }
         })
         console.log(applicant);

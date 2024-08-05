@@ -91,6 +91,7 @@ model Applicant {
   first_name String
   last_name String
   number BigInt
+  motivation String @default("")
   email String
   linkedIn String?
   twitter String?
