@@ -12,8 +12,12 @@ import ShineBorder from "./magicui/shine-border"
 import { useRouter } from "next/navigation"
 
 export function ApplicantCard({ applicant }: { applicant: Applicant }) {
+  const router = useRouter();
+  const redirectToApplicant = () => {
+    router.push(`/applicants/${applicant.jobId}/${applicant.id}`)
+  }
     return (
-      <div>
+      <div onClick={redirectToApplicant}>
       <ShineBorder color={"dark" ? "white" : "black"}
       className="w-full flex border rounded-lg items-center duration-300 cursor-pointer">
       <div className="m-5 flex flex-col items-start text-left">

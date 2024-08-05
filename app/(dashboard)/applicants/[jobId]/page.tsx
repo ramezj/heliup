@@ -16,11 +16,10 @@ export const metadata:Metadata = {
 export default async function Page({ params }: { params: { jobId: string } }) {
     const job = await getJobApplicants(params.jobId);
     if(job?.error || job?.job === null) { redirect('/jobs') }
-    console.log(job.job?.applicants)
     return (
         <>
         <div className="flex justify-between items-center w-full">
-        <h1 className="font-bold text-3xl">Applicants</h1>
+        <h1 className="font-bold text-3xl tracking-tight">Applicants</h1>
         </div>
         <div className="flex flex-col gap-4">
         {
