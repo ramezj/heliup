@@ -44,7 +44,11 @@ export async function getOrganizationByUserId(userId: string) {
                 },
               },
             include: {
-                jobs: true
+                jobs: {
+                    include: {
+                        applicants: true
+                    }
+                }
             }
         });
         if(!organization) {

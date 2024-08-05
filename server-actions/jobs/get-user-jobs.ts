@@ -15,6 +15,9 @@ export  async function getUserJobs() {
             jobs: {
                 orderBy: {
                     title: "asc"
+                },
+                include: {
+                    applicants: true
                 }
             }
         },

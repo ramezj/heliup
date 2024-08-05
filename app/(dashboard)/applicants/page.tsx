@@ -1,11 +1,21 @@
-import Image from "next/image";
-import { Toggle } from "@/components/toggle";
-import { Navigation } from "@/components/navbar";
-import { auth } from "@/auth";
-import { Metadata } from "next";
+import { auth } from "@/auth"
+import { getUserJobs } from "@/server-actions/jobs/get-user-jobs";
 import { redirect } from "next/navigation";
-import { getUserDashboard } from "@/server-actions/dashboard/getUserDashboard";
-import { Organization } from "@prisma/client";
+import { JobsTable } from "@/components/jobs-table";
+import { Job } from "@prisma/client";
+import { toast } from "sonner";
+import { Metadata } from "next";
+import { CreateJobButton } from "@/components/create-job";
+import { DataTableDemo } from "@/components/jobs-table-2";
+import { JobCard, JobCardForDashboard } from "@/components/job-card";
+import { getOrganizationByUserId, getOrganizationBySlug } from "@/server-actions/organization/get-organization";
+import { Prisma } from "@prisma/client";
+
+type JobWithApplicants = Prisma.JobGetPayload<{
+  include: {
+    applicants: true
+  }
+}>
 
 export const metadata: Metadata = {
   title: "Applicants",
@@ -16,11 +26,43 @@ export default async function Page() {
   const session = await auth();
   if(!session) { redirect('/auth') }
   if(session.user?.firstTimeUser === true) { redirect('/onboarding') }
-  const organization:Organization | null = await getUserDashboard();
+  const organization = await getOrganizationByUserId(session.user?.id!);
+  if(organization.error) { toast(organization.message ) }
+  const jobs = await getUserJobs();
+  if(jobs?.ok === false) { toast(jobs.message) }
   return (
-   <>
-   <h1 className="font-bold text-3xl">Applicants</h1>
-   {JSON.stringify(organization)}
-   </>
-  );
+    <>
+    {
+      jobs.jobs?.length as number === 0 
+      ? 
+      <>
+      <h1 className="font-bold text-3xl tracking-tight">Jobs</h1>
+      <div className="w-full border border-white/20 h-full rounded-lg items-center flex flex-col gap-3 justify-center">
+        <div>
+          <h1 className="font-bold text-xl text-center">You dont have any jobs yet</h1>
+          <p className="text-muted-foreground">Create some jobs & start hiring immediately.</p>
+        </div>
+        <CreateJobButton />
+      </div>
+      </>
+      : 
+      <> 
+       <div className="flex justify-between items-center w-full">
+        <h1 className="font-bold text-3xl tracking-tight">Applicants</h1>
+        </div>
+        <div className="gap-4 flex flex-col">
+          {
+          jobs.jobs?.map((job:JobWithApplicants) => {
+            return (
+              <div className="relative" key={job.id}>
+              <JobCardForDashboard job={job}/>
+              </div>
+            )
+          })
+         }
+        </div>
+      </>
+    }
+    </>
+  )
 }
