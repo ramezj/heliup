@@ -81,6 +81,36 @@ export function JobCardForDashboard({ job }: { job: JobWithApplicants}) {
       </div>
       </div>
       <div className="m-5 ml-auto flex gap-2">
+       <p className="font-medium mr-4">Edit</p>
+      </div>
+      </ShineBorder>
+      </div>
+    )
+}
+
+export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
+  const router = useRouter();
+  const handleApplicantsClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    router.push(`jobs/${job.id}/applicants`);
+  };
+
+  const handleCardClick = () => {
+    router.push(`jobs/${job.id}/edit`);
+  };
+  return (
+    <div onClick={handleCardClick}>
+    <ShineBorder color={"dark" ? "white" : "black"}
+    className="w-full flex border rounded-lg items-center duration-300 cursor-pointer">
+    <div className="m-5 flex flex-col items-start text-left">
+      <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
+       {job.title}     
+      </p>
+      <div className="mt-3 -mb-2 flex gap-1">
+      <Badge className="rounded-sm cursor-default"><Briefcase className="w-3 h-3 mr-1" />{job.type}</Badge>
+      </div>
+      </div>
+      <div className="m-5 ml-auto flex gap-2">
       <Button size={"sm"} variant={"outline"} onClick={handleApplicantsClick} className="gap-1">
         {job.applicants.length} Applicants
       </Button>

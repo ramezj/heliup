@@ -7,7 +7,7 @@ import { toast } from "sonner";
 import { Metadata } from "next";
 import { CreateJobButton } from "@/components/create-job";
 import { DataTableDemo } from "@/components/jobs-table-2";
-import { JobCard, JobCardForDashboard } from "@/components/job-card";
+import { JobCard, JobCardForApplicants } from "@/components/job-card";
 import { getOrganizationByUserId, getOrganizationBySlug } from "@/server-actions/organization/get-organization";
 import { Prisma } from "@prisma/client";
 
@@ -55,7 +55,7 @@ export default async function Page() {
           jobs.jobs?.map((job:JobWithApplicants) => {
             return (
               <div className="relative" key={job.id}>
-              <JobCardForDashboard job={job}/>
+              <JobCardForApplicants job={job}/>
               </div>
             )
           })
