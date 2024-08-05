@@ -26,7 +26,7 @@ export default async function Page({ params }: { params: { jobId: string } }) {
         {
             job.job?.applicants.map((applicant:Applicant) => {
                 return (
-                    <div className="relative">
+                    <div className="relative" key={applicant.id}>
                     <ApplicantCard applicant={applicant} />
                     </div>
                 )

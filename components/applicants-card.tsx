@@ -15,7 +15,7 @@ export function ApplicantCard({ applicant }: { applicant: Applicant }) {
     return (
       <div>
       <ShineBorder color={"dark" ? "white" : "black"}
-      className="w-full flex border rounded-lg items-center duration-300">
+      className="w-full flex border rounded-lg items-center duration-300 cursor-pointer">
       <div className="m-5 flex flex-col items-start text-left">
         <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
          {applicant.first_name}, {applicant.last_name}   
