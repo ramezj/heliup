@@ -19,7 +19,7 @@ export default async function Page({ params }: { params: { jobId: string } }) {
     return (
         <>
         <div className="flex justify-between items-center w-full">
-        <h1 className="font-bold text-3xl tracking-tight">Applicants</h1>
+        <h1 className="font-bold text-3xl tracking-tight">{job.job?.title}</h1>
         </div>
         <div className="flex flex-col gap-4">
         {
