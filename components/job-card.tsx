@@ -31,11 +31,11 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
         <Badge variant={"outline"} className="rounded-sm"><MapPin className="size-3 mr-1" />Cairo, EG</Badge>
         </div>
         </div>
-        <div className="m-5 ml-auto">
+        {/* <div className="m-5 ml-auto">
         <Button variant={"outline"} size={"sm"}>
         View
         </Button>
-        </div>
+        </div> */}
         </ShineBorder>
         </Link>
       )
