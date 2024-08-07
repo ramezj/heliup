@@ -44,7 +44,7 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
 export function LoadingJob() {
   return (
       <div
-      className="w-full flex border dark:border-white/10 border-black/10 dark:hover:border-white/20 hover:border-black/30 rounded-lg items-center duration-300">
+      className="w-full flex border dark:border-white/10 border-black/10 rounded-lg items-center duration-300">
       <div className="m-5 flex flex-col items-start text-left">
       <Skeleton className="h-4 w-[100px]" />
       <div className="mt-3 -mb-2 flex gap-1">

@@ -11,16 +11,15 @@ export function RenderContent({ content } : { content: string}) {
         content: content,
         extensions: [StarterKit],
   })
-  if (!editor) {
-    return (
-        <div className='flex flex-col gap-3'>
-        <Skeleton className="h-4 w-full" />
-        <Skeleton className="h-4 w-full" />
-        <Skeleton className="h-4 w-full" />
-        <Skeleton className="h-4 w-full" />
-        </div>
-    )
-  }
+    useEffect(() => {
+        if (!editor) {
+        return undefined
+    }
+        editor.setEditable(editable)
+    }, [editor, editable])
+    if (!editor) {
+        return null
+    }
     return (
         <>
         <EditorContent editor={editor!} />
