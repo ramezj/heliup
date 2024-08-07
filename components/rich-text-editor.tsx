@@ -8,7 +8,6 @@ import { Separator } from "@/components/ui/separator";
 const RichTextEditor = ({editor }: { editor:Editor }) => {
   return (
     <>
-      {/* {editor ? <RichTextEditorToolbar editor={editor} /> : null} */}
       {
         editor 
         ? 
@@ -18,6 +17,7 @@ const RichTextEditor = ({editor }: { editor:Editor }) => {
         </>
         : 
         <>
+        Loading..
         </>
       }
     </>

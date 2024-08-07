@@ -46,7 +46,7 @@ export default function EditJobTabs({ job }: { job: Job }) {
         },
         heading: {
           HTMLAttributes: {
-            class: "text-2xl"
+            class: "text-2xl text-red-500"
           }
         },
         
@@ -58,23 +58,19 @@ export default function EditJobTabs({ job }: { job: Job }) {
     },
   });
   if(!editor) {
-    return null;
+    return "Loading Your Precious Job"
   }
     return (
         <>
         <div className="space-y-4 w-full">
               <motion.div 
               className="space-y-2"
-              // initial= {{opacity: 0}}
-              // animate= {{opacity: 1}}
               >
               <Label htmlFor="name">Title</Label>
               <Input placeholder="Product Manager" value={NewJob.title} onChange={((e) => {setNewJob((prev) => ({...prev, title: e.target.value}))})} />
               </motion.div>
               <motion.div 
               className="space-y-2"
-              // initial= {{opacity: 0}}
-              // animate= {{opacity: 1}}
               >
               <Label htmlFor="name">Type</Label>
               <Select defaultValue={NewJob.type}  onValueChange={(e) => { setNewJob((prev) => ({ ...prev, type: e as Type}))}}>
@@ -93,8 +89,6 @@ export default function EditJobTabs({ job }: { job: Job }) {
               </motion.div>
               <motion.div 
               className="space-y-2 w-full"
-              // initial= {{opacity: 0}}
-              // animate= {{opacity: 1}}
               >
               <Label htmlFor="name">Job Description</Label>
               <RichTextEditor editor={editor!}/> 
