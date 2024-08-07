@@ -58,7 +58,7 @@ export default function EditJobTabs({ job }: { job: Job }) {
     },
   });
   if(!editor) {
-    return "I'm working very hard to load your job.";
+    return null;
   }
     return (
         <>
