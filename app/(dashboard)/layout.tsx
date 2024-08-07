@@ -5,6 +5,11 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { usePathname } from "next/navigation"
 import { headers } from "next/headers";
+import { Inter, Bricolage_Grotesque } from "next/font/google";
+
+const bricolageGrotesque = Bricolage_Grotesque({
+  subsets: ['latin']
+})
 
 export default function DashboardLayout({children, params, req} : any) {
   const path = usePathname();
