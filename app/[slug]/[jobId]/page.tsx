@@ -26,8 +26,8 @@ export default async function Page({ params }: { params: { jobId: string } }) {
             <Badge variant={"outline"} className="rounded-sm">{job.job?.type}</Badge>
             <Badge variant={"outline"} className="rounded-sm">{job.job?.type}</Badge>
             </div>
-            <div className="text-left w-full md:w-1/2">
-            <RenderContent content={job.job?.content!} />
+            <div className="text-left w-full md:w-1/2" dangerouslySetInnerHTML={{__html: job.job?.content!}}>
+            {/* <RenderContent content={job.job?.content!} /> */}
             </div>
             <ApplyCard jobId={params.jobId} />
         </div>

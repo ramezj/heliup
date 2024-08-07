@@ -36,7 +36,7 @@ export default async function Page() {
       jobs.jobs?.length as number === 0 
       ? 
       <>
-      <h1 className="font-bold text-3xl tracking-tight">Jobs</h1>
+      <h1 className="font-bold text-3xl tracking-tight">Applicants</h1>
       <div className="w-full border border-white/20 h-full rounded-lg items-center flex flex-col gap-3 justify-center">
         <div>
           <h1 className="font-bold text-xl text-center">You dont have any jobs yet</h1>

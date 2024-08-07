@@ -11,11 +11,12 @@
   import RichTextEditor from "./rich-text-editor"
   import { motion } from "framer-motion"
   import { editJob } from "@/server-actions/jobs/edit-job"
-  import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select"
+  import { Select,  SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export default function EditJobTabs({ job }: { job: Job }) {
   const [ loading, setLoading ] = useState<Boolean>(false);
   const [ NewJob, setNewJob ] = useState<Job>(job);
+  const [ content, setContent ] = useState<any>(null);
   const editTheJob = async (e:React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -60,15 +61,17 @@ export default function EditJobTabs({ job }: { job: Job }) {
         <div className="space-y-4 w-full">
               <motion.div 
               className="space-y-2"
-              initial= {{opacity: 0}}
-              animate= {{opacity: 1}}>
+              // initial= {{opacity: 0}}
+              // animate= {{opacity: 1}}
+              >
               <Label htmlFor="name">Title</Label>
               <Input placeholder="Product Manager" value={NewJob.title} onChange={((e) => {setNewJob((prev) => ({...prev, title: e.target.value}))})} />
               </motion.div>
               <motion.div 
               className="space-y-2"
-              initial= {{opacity: 0}}
-              animate= {{opacity: 1}}>
+              // initial= {{opacity: 0}}
+              // animate= {{opacity: 1}}
+              >
               <Label htmlFor="name">Type</Label>
               <Select defaultValue={NewJob.type}  onValueChange={(e) => { setNewJob((prev) => ({ ...prev, type: e as Type}))}}>
               <SelectTrigger className="">
@@ -86,8 +89,9 @@ export default function EditJobTabs({ job }: { job: Job }) {
               </motion.div>
               <motion.div 
               className="space-y-2 w-full"
-              initial= {{opacity: 0}}
-              animate= {{opacity: 1}}>
+              // initial= {{opacity: 0}}
+              // animate= {{opacity: 1}}
+              >
               <Label htmlFor="name">Job Description</Label>
               <RichTextEditor editor={editor!}/> 
               </motion.div>
