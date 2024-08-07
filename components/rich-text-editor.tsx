@@ -13,7 +13,7 @@ const RichTextEditor = ({editor }: { editor:Editor }) => {
         editor 
         ? 
         <>     
-         <RichTextEditorToolbar editor={editor} />
+        <RichTextEditorToolbar editor={editor} />
         <EditorContent editor={editor} />
         </>
         : 
@@ -26,7 +26,7 @@ const RichTextEditor = ({editor }: { editor:Editor }) => {
 
 const RichTextEditorToolbar = ({ editor }: { editor: Editor }) => {
   return (
-    <div className="border border-input bg-transparent rounded-br-md rounded-bl-md p-1 flex flex-row items-center gap-1 w-full">
+    <div className="rounded-md border border-input bg-transparent rounded-br-md rounded-bl-md p-1 flex flex-row items-center gap-1 w-full">
       <Toggle
         size="sm"
         pressed={editor.isActive("heading")}

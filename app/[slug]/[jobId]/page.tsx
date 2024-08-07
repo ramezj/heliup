@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: { jobId: string } }
 }
 export default async function Page({ params }: { params: { jobId: string } }) {
     const job = await getJobById(params.jobId);
-    if(job?.error) { redirect('/jobs') }
+    if(job?.error) { redirect('/') }
     return (
         <>
         <div className="w-full flex flex-col items-center text-center p-8 gap-y-4">
@@ -26,8 +26,9 @@ export default async function Page({ params }: { params: { jobId: string } }) {
             <Badge variant={"outline"} className="rounded-sm">{job.job?.type}</Badge>
             <Badge variant={"outline"} className="rounded-sm">{job.job?.type}</Badge>
             </div>
-            <div className="text-left w-full md:w-1/2" dangerouslySetInnerHTML={{__html: job.job?.content!}}>
-            {/* <RenderContent content={job.job?.content!} /> */}
+            <div className="text-left w-full md:w-1/2">
+            {/* dangerouslySetInnerHTML={{__html: job.job?.content!}} */}
+            <RenderContent content={job.job?.content!} />
             </div>
             <ApplyCard jobId={params.jobId} />
         </div>

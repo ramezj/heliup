@@ -9,20 +9,33 @@ export function RenderContent({ content } : { content: string}) {
     const editor = useEditor({
         editable,
         content: content,
-        extensions: [StarterKit],
+        extensions: [
+            StarterKit.configure({
+              orderedList: {
+                HTMLAttributes: {
+                  class: "list-decimal pl-4",
+                },
+              },
+              bulletList: {
+                HTMLAttributes: {
+                  class: "list-disc pl-4",
+                },
+              },
+              heading: {
+                HTMLAttributes: {
+                  class: "text-2xl"
+                }
+              },
+              
+            }),
+          ],
   })
-    useEffect(() => {
-        if (!editor) {
-        return undefined
-    }
-        editor.setEditable(editable)
-    }, [editor, editable])
-    if (!editor) {
-        return null
-    }
+  if (!editor) {
+    return null;
+  }
     return (
         <>
-        <EditorContent editor={editor!} />
+        <EditorContent editor={editor} />
         </>
     )
 }
