@@ -9,7 +9,7 @@ import { notFound } from 'next/navigation'
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const organization = await getOrganizationBySlug(params.slug);
     return {
-      title: organization.organization?.slug,
+      title: organization.organization?.name,
     };
 }
 export default async function Page({ params }: { params: { slug: string } }) {
