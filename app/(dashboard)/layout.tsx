@@ -21,15 +21,15 @@ export default function DashboardLayout({children, params, req} : any) {
           </div>
           <div className="flex-1 ">
             <nav className="grid items-start px-2 text-sm font-medium lg:px-4 gap-2 mt-1">
-              <Link href={`/dashboard`} className={`${path == '/dashboard' ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
+              <Link href={`/dashboard`} className={`${path.includes('/dashboard') ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
                 <Home className="h-4 w-4" />
                 Board
               </Link>
-              <Link href={`/jobs`} className={`${path == '/jobs' ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
+              <Link href={`/jobs`} className={`${path.includes('/jobs') ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
                 <BriefcaseBusiness className="h-4 w-4" />
                 Jobs
               </Link>
-              <Link href={`/applicants`} className={`${path == '/applicants' ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
+              <Link href={`/applicants`} className={`${path.includes('/applicants') ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
                 <Users className="h-4 w-4" />
                 Applicants
               </Link>
@@ -67,19 +67,19 @@ export default function DashboardLayout({children, params, req} : any) {
                 </SheetClose>
               <nav className="grid gap-3 text-lg font-medium mt-1">
                 <SheetClose asChild>
-                <Link href="/dashboard" className={`${path == '/dashboard' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+                <Link href="/dashboard" className={`${path.includes('/dashboard') ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <Home className="h-4 w-4" />
                 Board
                 </Link>
                 </SheetClose>
                 <SheetClose asChild>
-                <Link href="/jobs" className={`${path == '/jobs' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+                <Link href="/jobs" className={`${path.includes('/jobs') ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <BriefcaseBusiness className="h-4 w-4" />
                 Jobs
                 </Link>
                 </SheetClose>
                 <SheetClose asChild>
-                <Link href="/applicants" className={`${path == '/applicants' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+                <Link href="/applicants" className={`${path.includes('/applicants') ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <Users className="h-4 w-4" />
                 Applicants
                 </Link>
