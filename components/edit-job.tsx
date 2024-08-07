@@ -46,7 +46,7 @@ export default function EditJobTabs({ job }: { job: Job }) {
         },
         heading: {
           HTMLAttributes: {
-            class: "text-2xl text-red-500"
+            class: "text-2xl"
           }
         },
         
