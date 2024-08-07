@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import ApplyCard from "@/components/apply-card";
+import EditJobTabs from "@/components/edit-job";
 
 export async function generateMetadata({ params }: { params: { jobId: string } }): Promise<Metadata> {
     const job = await getJobById(params.jobId)
@@ -26,9 +27,8 @@ export default async function Page({ params }: { params: { jobId: string } }) {
             <Badge variant={"outline"} className="rounded-sm">{job.job?.type}</Badge>
             <Badge variant={"outline"} className="rounded-sm">{job.job?.type}</Badge>
             </div>
-            <div className="text-left w-full md:w-1/2">
+            <div className="text-left w-full md:w-1/2" dangerouslySetInnerHTML={{__html: job.job?.content!}}>
             {/* dangerouslySetInnerHTML={{__html: job.job?.content!}} */}
-            <RenderContent content={job.job?.content!} />
             </div>
             <ApplyCard jobId={params.jobId} />
         </div>
