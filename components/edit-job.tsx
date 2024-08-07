@@ -56,6 +56,9 @@ export default function EditJobTabs({ job }: { job: Job }) {
       setNewJob((prevJob) => ({...prevJob, content: editor.getHTML()}));
     },
   });
+  if(!editor) {
+    return null;
+  }
     return (
         <>
         <div className="space-y-4 w-full">
