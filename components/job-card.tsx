@@ -19,6 +19,20 @@ type JobWithApplicants = Prisma.JobGetPayload<{
 }>
 
 export function JobCard({ job, organization }: { job: Job, organization:Organization }) {
+  const formatJobType = (type:any) => {
+    switch (type) {
+        case 'FULLTIME':
+            return 'Full Time';
+        case 'CONTRACT':
+            return 'Contract';
+        case 'INTERNSHIP':
+            return 'Internship';
+        case 'PARTTIME':
+            return 'Part Time';
+        default:
+            return type; // Fallback in case of an unknown type
+    }
+  };
     return (
       <Link href={`/${job.id}`}>
       <ShineBorder color={"dark" ? "white" : "black"}
@@ -28,12 +42,12 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
          {job.title}     
         </p>
         <div className="mt-3 -mb-2 flex gap-1">
+        <Badge variant={"outline"} className="rounded-sm"><MapPin className="size-3 mr-1" />{formatJobType(job.type)}</Badge>
           {
             job.location 
             ?  <Badge variant={"outline"} className="rounded-sm"><MapPin className="size-3 mr-1" />{job.location}</Badge>
             :  <></>
           }
-        <Badge variant={"outline"} className="rounded-sm"><MapPin className="size-3 mr-1" />{job.type}</Badge>
         </div>
         </div>
         {/* <div className="m-5 ml-auto">
@@ -64,6 +78,20 @@ export function LoadingJob() {
 }
 
 export function JobCardForDashboard({ job }: { job: JobWithApplicants}) {
+  const formatJobType = (type:any) => {
+    switch (type) {
+        case 'FULLTIME':
+            return 'Full Time';
+        case 'CONTRACT':
+            return 'Contract';
+        case 'INTERNSHIP':
+            return 'Internship';
+        case 'PARTTIME':
+            return 'Part Time';
+        default:
+            return type;
+    }
+  };
   const router = useRouter();
   const handleApplicantsClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -82,7 +110,7 @@ export function JobCardForDashboard({ job }: { job: JobWithApplicants}) {
        {job.title}     
       </p>
       <div className="mt-3 -mb-2 flex gap-1">
-      <Badge className="rounded-sm cursor-default"><Briefcase className="w-3 h-3 mr-1" />{job.type}</Badge>
+      <Badge className="rounded-sm cursor-default"><Briefcase className="w-3 h-3 mr-1" />{formatJobType(job.type)}</Badge>
       </div>
       </div>
       <div className="m-5 ml-auto flex gap-2">
@@ -94,6 +122,20 @@ export function JobCardForDashboard({ job }: { job: JobWithApplicants}) {
 }
 
 export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
+  const formatJobType = (type:any) => {
+    switch (type) {
+        case 'FULLTIME':
+            return 'Full Time';
+        case 'CONTRACT':
+            return 'Contract';
+        case 'INTERNSHIP':
+            return 'Internship';
+        case 'PARTTIME':
+            return 'Part Time';
+        default:
+            return type;
+    }
+  };
   const router = useRouter();
   const handleApplicantsClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -112,7 +154,7 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
        {job.title}     
       </p>
       <div className="mt-3 -mb-2 flex gap-1">
-      <Badge className="rounded-sm cursor-default"><Briefcase className="w-3 h-3 mr-1" />{job.type}</Badge>
+      <Badge className="rounded-sm cursor-default"><Briefcase className="w-3 h-3 mr-1" />{formatJobType(job.type)}</Badge>
       </div>
       </div>
       <div className="m-5 ml-auto flex gap-2">
