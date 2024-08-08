@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { LoadingStatisticalCard } from "@/components/statistical-card";
 
 export const metadata: Metadata = {
     title: "Loading",
@@ -8,7 +9,20 @@ export const metadata: Metadata = {
 export default function Loading() {
     return (
         <>
-        Loading skeleton should appear here.
+        <div className="flex justify-between items-center w-full">
+        <h1 className="font-bold text-3xl tracking-tight">Overview</h1>
+        </div>
+        <div className="flex sm:flex-row flex-col gap-2">
+          <div className="relative w-full">
+          <LoadingStatisticalCard name="Active Jobs"/>
+          </div>
+          <div className="relative w-full">
+          <LoadingStatisticalCard name="Inactive Jobs"/>
+          </div>
+          <div className="relative w-full">
+          <LoadingStatisticalCard name="Total Applicants"/>
+          </div>
+        </div>
         </>
     )
 }
