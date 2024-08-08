@@ -36,7 +36,7 @@ export default async function Page() {
         See Demo
         </Link>
         </Button>
-      <Button className="w-52 bg-blue-600 text-white hover:bg-blue-700" asChild>
+      <Button className="w-52 bg-blue-600 text-white hover:bg-blue-700 duration-200" asChild>
         <Link href='/auth'>
         Try Now
         </Link>
