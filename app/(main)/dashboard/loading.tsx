@@ -1,5 +1,7 @@
 import { Metadata } from "next"
 import { LoadingStatisticalCard } from "@/components/statistical-card";
+import { Button } from "@/components/ui/button";
+import { SquareArrowOutUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Loading",
@@ -11,6 +13,10 @@ export default function Loading() {
         <>
         <div className="flex justify-between items-center w-full">
         <h1 className="font-bold text-3xl tracking-tight">Overview</h1>
+        <Button size={"sm"}>
+        <SquareArrowOutUpRight className="w-4 h-4 mr-2" />
+        Preview
+        </Button>
         </div>
         <div className="flex sm:flex-row flex-col gap-2">
           <div className="relative w-full">
