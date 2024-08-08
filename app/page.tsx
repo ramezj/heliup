@@ -25,7 +25,9 @@ export default async function Page() {
    <>
    <Navigation session={session}/>
    <div className="text-center w-full p-8 flex flex-col gap-2 items-center max-h-fit">
-      <Alert />
+    <div className="relative">
+    <Alert />
+    </div>
       <WordPullUp
         className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem]"
         words="Hiring for startups and small teams."

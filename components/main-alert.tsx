@@ -24,8 +24,10 @@ export async function MainAlert() {
 
 export function Alert() {
   return (
-    <ShineBorder color={"dark" ? "white" : "black"} className="relative max-w-fit p-4 py-1.5 rounded-4xl text-sm font-medium flex items-center justify-center cursor-pointer">
-        🎉 <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
+    <div className="rounded-3xl">
+    <ShineBorder color={"dark" ? "white" : "black"} className="max-w-fit p-4 py-1.5 border text-sm font-medium flex items-center justify-center cursor-pointer">
+        🎉 
+        <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
         <span
           className={cn(
             `inline animate-gradient bg-gradient-to-r dark:text-white text-black`,
@@ -35,5 +37,6 @@ export function Alert() {
         </span>
         <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
     </ShineBorder>
+    </div>
   )
 }
