@@ -73,6 +73,7 @@ model Job {
   id String @id @default(cuid())
   title String
   type Type @default(FULLTIME)
+  location String?
   content String
   applicants Applicant[]
   organizationId String

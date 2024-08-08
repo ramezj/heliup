@@ -13,10 +13,9 @@
   import { editJob } from "@/server-actions/jobs/edit-job"
   import { Select,  SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select"
 
-export default function EditJobTabs({ job }: { job: Job }) {
+export default function ConfigureJob({ job }: { job: Job }) {
   const [ loading, setLoading ] = useState<Boolean>(false);
   const [ NewJob, setNewJob ] = useState<Job>(job);
-  const [ content, setContent ] = useState<any>(null);
   const editTheJob = async (e:React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -85,7 +84,13 @@ export default function EditJobTabs({ job }: { job: Job }) {
                   <SelectItem value="CONTRACT">CONTRACT</SelectItem>
                 </SelectGroup>
               </SelectContent>
-            </Select>
+              </Select>
+              </motion.div>
+              <motion.div 
+              className="space-y-2"
+              >
+              <Label htmlFor="name">Location ( leave empty if remote )</Label>
+              <Input placeholder="Los Angeles, CA" value={NewJob.location!} onChange={((e) => {setNewJob((prev) => ({...prev, location: e.target.value}))})} />
               </motion.div>
               <motion.div 
               className="space-y-2 w-full"

@@ -16,7 +16,8 @@ export async function editJob(job:Job) {
             data: {
                 title:job.title,
                 content: job.content,
-                type: job.type
+                type: job.type,
+                location: job.location
             }
         })
         revalidatePath('/jobs')
