@@ -19,10 +19,10 @@ export default async function Page({ params }: { params: { applicantId: string }
         <div className="flex justify-between items-center w-full">
         <h1 className="font-bold text-3xl tracking-tight">View Applicant</h1>
         </div>
+        <div className="space-y-4">
         <div className="space-y-2">
         <Label>Full Name</Label>
         <Input value={`${applicant.applicant?.first_name} ${applicant.applicant?.last_name}`} readOnly />
-        {/* <h1 className="text-xl font-medium">{applicant.applicant?.first_name} {applicant.applicant?.last_name}</h1> */}
         </div>
         <div className="space-y-2">
         <Label>Email Address</Label>
@@ -32,6 +32,7 @@ export default async function Page({ params }: { params: { applicantId: string }
         <Label className=" text-lg">Motivation Letter</Label>
         <div className="">
         <Textarea value={applicant.applicant?.motivation} readOnly />
+        </div>
         </div>
         </div>
         </>
