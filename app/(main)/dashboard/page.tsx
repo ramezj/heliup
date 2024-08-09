@@ -33,7 +33,7 @@ export default async function Page() {
         <>
         <div className="flex justify-between items-center w-full">
         <h1 className="font-bold text-3xl tracking-tight">Overview</h1>
-        <Button size={"sm"} asChild>
+        <Button size={"sm"} asChild className="bg-blue-600 text-white hover:bg-blue-700 duration-200">
         <Link target="_blank" href={`https://${organization.slug}.${process.env.NEXT_URL}`}>
         <SquareArrowOutUpRight className="w-4 h-4 mr-2" />
         Preview

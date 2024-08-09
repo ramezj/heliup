@@ -35,7 +35,10 @@ export function CreateJobButton() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-      <Button size={"sm"}> <Plus className="w-4 h-4 mr-2"/> Create Job</Button>
+      <Button size={"sm"} className="bg-blue-600 text-white hover:bg-blue-700 duration-200">
+        <Plus className="w-4 h-4 mr-2"/> 
+        Create Job
+      </Button>
       </DialogTrigger>
       <DialogContent onOpenAutoFocus={((e) => {e.preventDefault()})} className="text-left w-[90%] rounded-md">
         <DialogHeader>
