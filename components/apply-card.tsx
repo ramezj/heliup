@@ -12,13 +12,12 @@ export default function ApplyCard({ jobId }: { jobId: string}) {
     const [ lastName, setLastName ] = useState<string>();
     const [ emailAddress, setEmailAddress ] = useState<string>();
     const [ phoneNumber, setPhoneNumber ] = useState<number>();
-    const [ location, setLocation ] = useState<string>();
     const [ motivation, setMotivation ] = useState<string>();
     const [ loading, setLoading ] = useState<boolean>(false);
     const apply = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
-        const res = await applyToJob(jobId, firstName!, lastName!, emailAddress!, phoneNumber!, location!, motivation!)
+        const res = await applyToJob(jobId, firstName!, lastName!, emailAddress!, phoneNumber!, motivation!)
         setLoading(false);
         console.log(res);
     }
@@ -44,10 +43,6 @@ export default function ApplyCard({ jobId }: { jobId: string}) {
             <div className="space-y-2">
             <Label htmlFor="name">Phone Number</Label>
             <Input required type="number" placeholder="+20087163518" value={phoneNumber} onChange={((e) => {setPhoneNumber(Number(e.target.value))})} />
-            </div>
-            <div className="space-y-2">
-            <Label htmlFor="name">Location</Label>
-            <Input required value={location} onChange={((e) => {setLocation(e.target.value)})} placeholder="Los Angeles, CA"/>
             </div>
             <div className="space-y-2"> 
             <Label htmlFor="motivation">Motivation</Label>
