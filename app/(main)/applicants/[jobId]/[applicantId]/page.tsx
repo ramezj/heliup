@@ -20,7 +20,6 @@ export default async function Page({ params }: { params: { applicantId: string }
         <h1 className="font-bold text-3xl tracking-tight">View Applicant</h1>
         </div>
         <div className="space-y-4"> 
-            
         <div className="space-y-2">
         <Label>Full Name</Label>
         <Input value={`${applicant.applicant?.first_name} ${applicant.applicant?.last_name}`} readOnly />

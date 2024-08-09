@@ -22,15 +22,15 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
   const formatJobType = (type:any) => {
     switch (type) {
         case 'FULLTIME':
-            return 'Full Time';
+            return 'Full-Time';
         case 'CONTRACT':
             return 'Contract';
         case 'INTERNSHIP':
             return 'Internship';
         case 'PARTTIME':
-            return 'Part Time';
+            return 'Part-Time';
         default:
-            return type; // Fallback in case of an unknown type
+            return type;
     }
   };
     return (
@@ -81,13 +81,13 @@ export function JobCardForDashboard({ job }: { job: JobWithApplicants}) {
   const formatJobType = (type:any) => {
     switch (type) {
         case 'FULLTIME':
-            return 'Full Time';
+            return 'Full-Time';
         case 'CONTRACT':
             return 'Contract';
         case 'INTERNSHIP':
             return 'Internship';
         case 'PARTTIME':
-            return 'Part Time';
+            return 'Part-Time';
         default:
             return type;
     }
@@ -125,13 +125,13 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
   const formatJobType = (type:any) => {
     switch (type) {
         case 'FULLTIME':
-            return 'Full Time';
+            return 'Full-Time';
         case 'CONTRACT':
             return 'Contract';
         case 'INTERNSHIP':
             return 'Internship';
         case 'PARTTIME':
-            return 'Part Time';
+            return 'Part-Time';
         default:
             return type;
     }
