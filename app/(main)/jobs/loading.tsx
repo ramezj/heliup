@@ -13,8 +13,8 @@ export default function Loading() {
         <> 
         <div className="flex justify-between items-center w-full">
         <h1 className="font-bold text-3xl tracking-tight">Jobs</h1>
-        <Button size={"sm"} className="bg-blue-600 text-white hover:bg-blue-700 duration-200"> 
-            <Plus className="w-4 h-4 mr-2"/> 
+        <Button size={"sm"} className="w-36 bg-blue-600 text-white hover:bg-blue-700 duration-200" variant={"expandIcon"} iconPlacement="right" Icon={Plus}> 
+            {/* <Plus className="w-4 h-4 mr-2"/>  */}
             Create Job
         </Button>
         </div>
