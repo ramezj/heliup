@@ -59,6 +59,10 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "shine": {
+          from: { backgroundPosition: '200% 0' },
+          to: { backgroundPosition: '-200% 0' },
+        },
         "border-beam": {
           "100%": {
             "offset-distance": "100%",
@@ -103,6 +107,7 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "gradient": "gradient 8s linear infinite",
+        "shine": "shine 8s ease-in-out infinite",
       },
     },
   },

@@ -11,6 +11,7 @@ import { JobCard, LandingPageJobCard } from "@/components/job-card";
 import Link from "next/link";
 import { MainAlert } from "@/components/main-alert";
 import { Alert } from "@/components/main-alert";
+import { ArrowRightIcon } from "lucide-react";
 
 export const metadata:Metadata = {
   title: "HireHollo",
@@ -38,7 +39,7 @@ export default async function Page() {
         See Demo
         </Link>
         </Button>
-      <Button className="w-52 bg-blue-600 text-white hover:bg-blue-700 duration-200" asChild>
+      <Button variant={"expandIcon"} Icon={ArrowRightIcon} iconPlacement="right" className="w-52 bg-blue-600 text-white hover:bg-blue-700 duration-200" asChild>
         <Link href='/auth'>
         Try Now
         </Link>
