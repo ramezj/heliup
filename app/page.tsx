@@ -11,7 +11,7 @@ import { JobCard, LandingPageJobCard } from "@/components/job-card";
 import Link from "next/link";
 import { MainAlert } from "@/components/main-alert";
 import { Alert } from "@/components/main-alert";
-import { ArrowRightIcon } from "lucide-react";
+import { ArrowRightIcon, SquareArrowOutUpRight } from "lucide-react";
 
 export const metadata:Metadata = {
   title: "HireHollo",
@@ -34,8 +34,8 @@ export default async function Page() {
         words="Hiring for startups and small teams."
         />
         <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4">
-      <Button asChild className="w-52">
-        <Link href={`https://hirehollo.${process.env.NEXT_URL}`}>
+      <Button asChild className="w-52" variant={"expandIcon"} Icon={SquareArrowOutUpRight} iconPlacement="right">
+        <Link href={`https://hirehollo.${process.env.NEXT_URL}`} target="_blank">
         See Demo
         </Link>
         </Button>
