@@ -48,7 +48,7 @@ export function Navigation(props:any) {
           </SheetTrigger>
           <SheetContent side="left" className="flex flex-col">
               <SheetClose asChild>
-                <Link href="/" className="px-2 flex items-center text-lg font-bold">
+                <Link href="/" className="px-2 flex items-center text-lg font-bold justify-center">
                 <BriefcaseBusiness className="size-4 mr-2" />
                   hirehollo
                 </Link>

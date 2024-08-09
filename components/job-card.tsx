@@ -110,7 +110,7 @@ export function JobCardForDashboard({ job }: { job: JobWithApplicants}) {
        {job.title}     
       </p>
       <div className="mt-3 -mb-2 flex gap-1">
-      <Badge className="rounded-sm cursor-default"><Briefcase className="w-3 h-3 mr-1" />{formatJobType(job.type)}</Badge>
+      <Badge className="rounded-sm"><span className="mr-2">💼</span>{formatJobType(job.type)}</Badge>
       </div>
       </div>
       <div className="m-5 ml-auto flex gap-2">
@@ -154,7 +154,7 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
        {job.title}     
       </p>
       <div className="mt-3 -mb-2 flex gap-1">
-      <Badge className="rounded-sm cursor-default"><Briefcase className="w-3 h-3 mr-1" />{formatJobType(job.type)}</Badge>
+      <Badge className="rounded-sm"><span className="mr-2">💼</span>{formatJobType(job.type)}</Badge>
       </div>
       </div>
       <div className="m-5 ml-auto flex gap-2">
