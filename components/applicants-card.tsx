@@ -10,8 +10,27 @@ import { motion } from "framer-motion"
 import { Skeleton } from "./ui/skeleton"
 import ShineBorder from "./magicui/shine-border"
 import { useRouter } from "next/navigation"
+import { Status } from "@prisma/client"
 
 export function ApplicantCard({ applicant }: { applicant: Applicant }) {
+  const formatApplicantType = (type:Status) => {
+    switch (type) {
+        case 'SUBMITTED':
+            return 'Submitted';
+        case "UNDERREVIEW":
+            return 'Under Review';
+        case "HIRED":
+            return 'Hired';
+        case "OFFER":
+            return 'Part Time';
+        case "INTERVIEW":
+            return "Interview"
+        case "REJECTED":
+            return "Rejected"
+        default:
+            return type;
+    }
+  };
   const router = useRouter();
   const redirectToApplicant = () => {
     router.push(`/applicants/${applicant.jobId}/${applicant.id}`)
@@ -25,7 +44,7 @@ export function ApplicantCard({ applicant }: { applicant: Applicant }) {
          {applicant.first_name} {applicant.last_name}   
         </p>
         <div className="mt-3 -mb-2 flex gap-1">
-        <Badge variant={"outline"} className="rounded-sm"><MapPin className="size-3 mr-1" />{applicant.status}</Badge>
+        <Badge variant={"outline"} className="rounded-sm"><MapPin className="size-3 mr-1" />{formatApplicantType(applicant.status)}</Badge>
         </div>
         </div>
         <div className="m-5 ml-auto">

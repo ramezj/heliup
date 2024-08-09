@@ -82,9 +82,11 @@ model Job {
 
 enum Status {
   SUBMITTED
-  REVIEWED
+  UNDERREVIEW
+  INTERVIEW
+  OFFER
   REJECTED
-  ACCEPTED
+  HIRED
 }
 
 model Applicant {
