@@ -176,7 +176,7 @@ export function LandingPageJobCard({ title, type, location }: { title: string, t
        {title}     
       </p>
       <div className="mt-3 -mb-2 flex gap-1">
-      <Badge className="rounded-sm"><MapPin className="size-3 mr-1" />{location}</Badge>
+      <Badge className="rounded-sm"><span className="mr-2">🌎</span>{location}</Badge>
       </div>
       </div>
       <div className="m-5 ml-auto">
