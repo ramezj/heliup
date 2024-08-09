@@ -89,7 +89,7 @@ export default function ConfigureJob({ job }: { job: Job }) {
               <motion.div 
               className="space-y-2"
               >
-              <Label htmlFor="name">Location ( leave empty if remote )</Label>
+              <Label htmlFor="name">Location</Label>
               <Input placeholder="Los Angeles, CA" value={NewJob.location!} onChange={((e) => {setNewJob((prev) => ({...prev, location: e.target.value}))})} />
               </motion.div>
               <motion.div 

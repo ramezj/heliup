@@ -41,11 +41,11 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
         <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
          {job.title}     
         </p>
-        <div className="mt-3 -mb-2 flex gap-1">
-        <Badge className="rounded-sm"><MapPin className="size-3 mr-1" />{formatJobType(job.type)}</Badge>
+        <div className="mt-3 -mb-2 flex gap-2">
+        <Badge className="rounded-sm"><span className="mr-2">💼</span>{formatJobType(job.type)}</Badge>
           {
             job.location 
-            ?  <Badge className="rounded-sm"><MapPin className="size-3 mr-1" />{job.location}</Badge>
+            ?  <Badge className="rounded-sm"><span className="mr-2">🌎</span>{job.location}</Badge>
             :  <></>
           }
         </div>
