@@ -47,13 +47,13 @@ export default async function Page() {
       <div className="w-full items-center flex content-center flex-col mt-3">
       <div className="flex flex-col gap-4 lg:w-1/2 w-full">
       <div className="relative">
-      <LandingPageJobCard title="Product Manager" type="FULLTIME"/>
+      <LandingPageJobCard title="Product Manager" type="FULLTIME" location="Los Angeles, CA"/>
       </div>
       <div className="relative">
-      <LandingPageJobCard title="Operations Manager" type="CONTRACT"/>
+      <LandingPageJobCard title="Operations Manager" type="CONTRACT" location="Austin, TX"/>
       </div>
       <div className="relative">
-      <LandingPageJobCard title="Software Engineer" type="INTERNSHIP"/>
+      <LandingPageJobCard title="Software Engineer" type="INTERNSHIP" location="San Francisco, CA"/>
       </div>
       </div>
       </div>

@@ -42,10 +42,10 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
          {job.title}     
         </p>
         <div className="mt-3 -mb-2 flex gap-1">
-        <Badge variant={"outline"} className="rounded-sm"><MapPin className="size-3 mr-1" />{formatJobType(job.type)}</Badge>
+        <Badge className="rounded-sm"><MapPin className="size-3 mr-1" />{formatJobType(job.type)}</Badge>
           {
             job.location 
-            ?  <Badge variant={"outline"} className="rounded-sm"><MapPin className="size-3 mr-1" />{job.location}</Badge>
+            ?  <Badge className="rounded-sm"><MapPin className="size-3 mr-1" />{job.location}</Badge>
             :  <></>
           }
         </div>
@@ -167,7 +167,7 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
     )
 }
 
-export function LandingPageJobCard({ title, type }: { title: string, type: string }) {
+export function LandingPageJobCard({ title, type, location }: { title: string, type: string, location: string }) {
   return (
       <ShineBorder color={"dark" ? "white" : "black"}
       className="w-full flex border rounded-lg items-center duration-300">
@@ -176,7 +176,7 @@ export function LandingPageJobCard({ title, type }: { title: string, type: strin
        {title}     
       </p>
       <div className="mt-3 -mb-2 flex gap-1">
-      <Badge variant={"outline"} className="rounded-sm"><MapPin className="size-3 mr-1" />Los Angeles, CA</Badge>
+      <Badge className="rounded-sm"><MapPin className="size-3 mr-1" />{location}</Badge>
       </div>
       </div>
       <div className="m-5 ml-auto">
