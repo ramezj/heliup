@@ -26,7 +26,7 @@ export default function ApplyCard({ jobId }: { jobId: string}) {
             <div className="lg:w-1/2 w-full rounded-lg border border-white/10 p-7 text-left">
             <form onSubmit={apply} className="space-y-4">
             <div className="space-y-2">
-            <h1 className="text-2xl font-bold text-center">Application</h1>
+            <h1 className="text-2xl font-bold text-center">Apply to job</h1>
             </div>
             <div className="space-y-2">
             <Label htmlFor="name">First Name</Label>
