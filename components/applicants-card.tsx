@@ -44,7 +44,7 @@ export function ApplicantCard({ applicant }: { applicant: Applicant }) {
          {applicant.first_name} {applicant.last_name}   
         </p>
         <div className="mt-3 -mb-2 flex gap-1">
-        <Badge variant={"outline"} className="rounded-sm"><MapPin className="size-3 mr-1" />{formatApplicantType(applicant.status)}</Badge>
+        <Badge className="rounded-sm">{formatApplicantType(applicant.status)}</Badge>
         </div>
         </div>
         <div className="m-5 ml-auto">
