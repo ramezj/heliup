@@ -4,7 +4,7 @@ import { auth } from "@/auth"
 import { Organization } from "@prisma/client";
 import { redirect } from "next/navigation";
 
-export  async function getUserJobs() {
+export async function getUserJobs() {
     const session = await auth();
     if(!session) { redirect('/auth') }
     const organization = await prisma.organization.findFirst({
@@ -15,6 +15,40 @@ export  async function getUserJobs() {
             jobs: {
                 orderBy: {
                     title: "asc"
+                },
+                include: {
+                    applicants: true
+                }
+            }
+        },
+    });
+    if(!organization) {
+        return { 
+            ok:false,
+            message: 'Organization not found',
+            jobs: null
+        }
+    }
+    return {
+        ok:true,
+        message: "successful",
+        jobs: organization.jobs
+    }
+}
+
+export async function getUserJobsSortedByApplicants() {
+    const session = await auth();
+    if(!session) { redirect('/auth') }
+    const organization = await prisma.organization.findFirst({
+        where:{
+            userId:session.user?.id
+        },
+        include: {
+            jobs: {
+                orderBy: {
+                    applicants: {
+                        _count: "desc"
+                    }
                 },
                 include: {
                     applicants: true

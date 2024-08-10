@@ -1,5 +1,5 @@
 import { auth } from "@/auth"
-import { getUserJobs } from "@/server-actions/jobs/get-user-jobs";
+import { getUserJobs, getUserJobsSortedByApplicants } from "@/server-actions/jobs/get-user-jobs";
 import { redirect } from "next/navigation";
 import { JobsTable } from "@/components/jobs-table";
 import { Job } from "@prisma/client";
@@ -28,7 +28,7 @@ export default async function Page() {
   if(session.user?.firstTimeUser === true) { redirect('/onboarding') }
   const organization = await getOrganizationByUserId(session.user?.id!);
   if(organization.error) { toast(organization.message ) }
-  const jobs = await getUserJobs();
+  const jobs = await getUserJobsSortedByApplicants();
   if(jobs?.ok === false) { toast(jobs.message) }
   return (
     <>
