@@ -31,7 +31,7 @@ export function Navigation(props:any) {
           <Link href="/" className="text-foreground transition-colors hover:text-foreground font-semibold">
             Demo
           </Link>
-          <Link href="/" className="text-foreground transition-colors hover:text-foreground font-semibold">
+          <Link href="/pricing" className="text-foreground transition-colors hover:text-foreground font-semibold">
             Pricing
           </Link>
         </nav>
@@ -55,21 +55,21 @@ export function Navigation(props:any) {
                 </SheetClose>
                 <nav className="grid gap-3 text-lg font-medium mt-1">
                 <SheetClose asChild>
-                <Link href={`/dashboard`} className={`${path == 'dashboard' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+                <Link href='/' className={`${path == 'dashboard' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <SparklesIcon className="h-4 w-4" />
                 Features
                 </Link>
                 </SheetClose>
                 <SheetClose asChild>
-                <Link href={`/jobs`} className={`${path == 'jobs' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+                <Link href='/' className={`${path == 'jobs' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <Laptop className="h-4 w-4" />
                 Demo
                 </Link>
                 </SheetClose>
                 <SheetClose asChild>
-                <Link href='/applicants' className={`${path == 'applicants' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+                <Link href='/pricing' className={`${path == 'applicants' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <DollarSignIcon className="h-4 w-4" />
-                  Pricing
+                Pricing
                 </Link>
                 </SheetClose>
               </nav>
