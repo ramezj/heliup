@@ -103,4 +103,9 @@ model Applicant {
   jobId String
   job Job @relation(fields: [jobId], references: [id], onDelete: Cascade)
 }
+// model CV {
+//   id String @id @default(cuid())
+//   fileUrl String
+//   applicantId 
+// }
 

@@ -4,7 +4,7 @@ import { Input } from "./ui/input"
 import { Button } from "./ui/button"
 import React, { useState } from "react"
 import { applyToJob } from "@/server-actions/applicants/apply-to-job"
-import { Loader2 } from "lucide-react"
+import { Loader2, Upload } from "lucide-react"
 import { Textarea } from "./ui/textarea"
 
 export default function ApplyCard({ jobId }: { jobId: string}) {
@@ -12,6 +12,7 @@ export default function ApplyCard({ jobId }: { jobId: string}) {
     const [ lastName, setLastName ] = useState<string>();
     const [ emailAddress, setEmailAddress ] = useState<string>();
     const [ phoneNumber, setPhoneNumber ] = useState<number>();
+    const [ file, setFile ] = useState<File | null>();
     const [ motivation, setMotivation ] = useState<string>();
     const [ loading, setLoading ] = useState<boolean>(false);
     const apply = async (e: React.FormEvent) => {
@@ -21,6 +22,11 @@ export default function ApplyCard({ jobId }: { jobId: string}) {
         setLoading(false);
         console.log(res);
     }
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const selectedFile = e.target.files?.[0] || null;
+        setFile(selectedFile);
+        console.log(file);
+      };
     return (
         <>
             <div className="lg:w-1/2 w-full rounded-lg border border-white/10 p-7 text-left">
@@ -43,6 +49,12 @@ export default function ApplyCard({ jobId }: { jobId: string}) {
             <div className="space-y-2">
             <Label htmlFor="name">Phone Number</Label>
             <Input required type="number" placeholder="+20087163518" value={phoneNumber} onChange={((e) => {setPhoneNumber(Number(e.target.value))})} />
+            </div>
+            <div className="space-y-2">
+            <Label htmlFor="name">Upload Resume</Label>
+            <div>
+            <Input type="file" id="file" name="file" accept=".pdf" onChange={handleFileChange} />
+            </div>
             </div>
             <div className="space-y-2"> 
             <Label htmlFor="motivation">Motivation</Label>
