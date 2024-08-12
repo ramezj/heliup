@@ -4,14 +4,7 @@ import { auth } from "@/auth";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Metadata } from "next";
-import WordPullUp from "@/components/magicui/word-pull-up";
-import { BorderBeam } from "@/components/magicui/border-beam";
-import Image from "next/image";
-import { JobCard, LandingPageJobCard } from "@/components/job-card";
-import Link from "next/link";
-import { MainAlert } from "@/components/main-alert";
-import { Alert } from "@/components/main-alert";
-import { ArrowRightIcon, SquareArrowOutUpRight } from "lucide-react";
+import { FreeCard } from "@/components/pricing";
 
 export const metadata:Metadata = {
   title: "Pricing | HireHollo",
@@ -25,6 +18,13 @@ export default async function Page() {
   return (
    <>
    <Navigation session={session}/>
+   <div className="w-full items-center justify-center flex flex-col py-8">
+    <h1 className="font-bold text-4xl justify-center">Simple pricing.</h1>
+    <div className="flex sm:flex-row flex-col pt-8 gap-4">
+    <FreeCard />
+    <FreeCard />
+    </div>
+   </div>
    </>
   );
 }
