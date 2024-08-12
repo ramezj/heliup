@@ -17,8 +17,10 @@ export default function ApplyCard({ jobId }: { jobId: string}) {
     const [ loading, setLoading ] = useState<boolean>(false);
     const apply = async (e: React.FormEvent) => {
         e.preventDefault();
+        const formData = new FormData();
+        formData.append('file', file!);
         setLoading(true);
-        const res = await applyToJob(jobId, firstName!, lastName!, emailAddress!, phoneNumber!, motivation!)
+        const res = await applyToJob(jobId, firstName!, lastName!, emailAddress!, phoneNumber!, motivation!, formData);
         setLoading(false);
         console.log(res);
     }

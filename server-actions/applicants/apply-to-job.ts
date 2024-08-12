@@ -3,8 +3,25 @@ import prisma from "@/utils/db"
 import { auth } from "@/auth"
 import { Organization } from "@prisma/client";
 import { redirect } from "next/navigation";
+import { r2 } from "@/utils/r2";
+import { PutObjectCommand } from "@aws-sdk/client-s3";
 
-export async function applyToJob(jobId: string, firstName: string, lastName: string, emailAddress: string, phoneNumber: number, motivation: string) {
+export async function applyToJob(jobId: string, firstName: string, lastName: string, emailAddress: string, phoneNumber: number, motivation: string, formData: FormData) {
+    const file:File = formData.get("file") as File;
+    const bytes = await file.arrayBuffer();
+    const buffer = Buffer.from(bytes);
+    const test = await new PutObjectCommand({
+        Bucket: "hirehollo",
+        Key: file.name,
+        Body:buffer
+    })
+    try {
+        const response = await r2.send(test);
+        console.log(response);
+        console.log("UPLOADED!");
+    } catch (error) {
+        console.log("ERROR");
+    }
     try {
         const job = await prisma.job.findFirst({
             where: {
