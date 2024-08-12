@@ -4,7 +4,7 @@ import { auth } from "@/auth";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Metadata } from "next";
-import { FreeCard } from "@/components/pricing";
+import { FreeCard, PaidCard } from "@/components/pricing";
 
 export const metadata:Metadata = {
   title: "Pricing | HireHollo",
@@ -19,10 +19,14 @@ export default async function Page() {
    <>
    <Navigation session={session}/>
    <div className="w-full items-center justify-center flex flex-col py-8">
-    <h1 className="font-bold text-4xl justify-center">Simple pricing.</h1>
+    <h1 className="font-bold text-4xl justify-center">Pricing</h1>
     <div className="flex sm:flex-row flex-col pt-8 gap-4">
-    <FreeCard />
-    <FreeCard />
+      <div className="relative">
+      <FreeCard />
+      </div>
+      <div className="relative">
+      <PaidCard />
+      </div>
     </div>
    </div>
    </>
