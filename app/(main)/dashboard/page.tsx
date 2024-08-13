@@ -50,6 +50,9 @@ export default async function Page() {
           <StatisticalCard name="Total Applicants" number={0} />
           </div>
         </div>
+        <div className="space-y-2">
+        <h1 className="font-bold text-3xl tracking-tight">Recent Jobs</h1>
+        </div>
         </>
   );
 }
