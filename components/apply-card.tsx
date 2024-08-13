@@ -6,6 +6,8 @@ import React, { useState } from "react"
 import { applyToJob } from "@/server-actions/applicants/apply-to-job"
 import { Loader2, Upload } from "lucide-react"
 import { Textarea } from "./ui/textarea"
+import { toast } from "sonner"
+
 
 export default function ApplyCard({ jobId }: { jobId: string}) {
     const [ firstName, setFirstName ] = useState<string>();
@@ -22,6 +24,9 @@ export default function ApplyCard({ jobId }: { jobId: string}) {
         setLoading(true);
         const res = await applyToJob(jobId, firstName!, lastName!, emailAddress!, phoneNumber!, motivation!, formData);
         setLoading(false);
+        if(res.ok != true) {
+            toast(res.message)
+        }
         console.log(res);
     }
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -53,9 +58,9 @@ export default function ApplyCard({ jobId }: { jobId: string}) {
             <Input required type="number" placeholder="+20087163518" value={phoneNumber} onChange={((e) => {setPhoneNumber(Number(e.target.value))})} />
             </div>
             <div className="space-y-2">
-            <Label htmlFor="name">Upload Resume</Label>
+            <Label htmlFor="name">Upload Resume ( max 5mb )</Label>
             <div>
-            <Input type="file" id="file" name="file" accept=".pdf" onChange={handleFileChange} />
+            <Input required type="file" id="file" name="file" accept=".pdf" onChange={handleFileChange} />
             </div>
             </div>
             <div className="space-y-2"> 

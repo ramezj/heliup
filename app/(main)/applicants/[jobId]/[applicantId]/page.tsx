@@ -7,6 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { formatApplicantType } from "@/utils/format";
+import { Status } from "@prisma/client";
 
 export const metadata:Metadata = {
     title: "View Applicants",
@@ -33,6 +35,13 @@ export default async function Page({ params }: { params: { applicantId: string }
         <div className="space-y-2"> 
         <Label className=" text-lg">Motivation Letter</Label>
         <Textarea value={applicant.applicant?.motivation} readOnly />
+        </div>
+        <div className="space-y-2"> 
+        <Label className=" text-lg">Status</Label>
+        <div className="flex flex-row gap-2">
+        <Input className="max-w-52" value={formatApplicantType(applicant.applicant?.status as Status)} readOnly />
+        <Button variant={"outline"}>Edit Status</Button>
+        </div>
         </div>
         <div className="space-y-2"> 
         <Label className=" text-lg">Resume</Label>

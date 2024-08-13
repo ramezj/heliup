@@ -20,6 +20,19 @@ export async function applyToJob(jobId: string, firstName: string, lastName: str
             }
         }
         const file:File = formData.get("file") as File;
+        if(!file) {
+            return {
+                ok:false,
+                message:"No Resume Detected"
+            }
+        }
+        const maxSizeBytes = 5* 1024 * 1024;
+        if(file.size > maxSizeBytes) {
+            return {
+                ok:false,
+                message:"Maximum Allowed Size 5MB"
+            }
+        }
         const bytes = await file.arrayBuffer();
         const buffer = Buffer.from(bytes);
         const key = Date.now() + file.name
