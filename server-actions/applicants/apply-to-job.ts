@@ -12,7 +12,7 @@ export async function applyToJob(jobId: string, firstName: string, lastName: str
     const buffer = Buffer.from(bytes);
     const test = await new PutObjectCommand({
         Bucket: "hirehollo",
-        Key: file.name,
+        Key: Date.now() + file.name,
         Body:buffer
     })
     try {
