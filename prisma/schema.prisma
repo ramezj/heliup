@@ -100,6 +100,7 @@ model Applicant {
   twitter String?
   github String?
   status Status @default(SUBMITTED)
+  resumeKey String
   jobId String
   job Job @relation(fields: [jobId], references: [id], onDelete: Cascade)
 }
