@@ -43,7 +43,7 @@ export async function applyToJob(jobId: string, firstName: string, lastName: str
             Body:buffer
         })
         try {
-            const response = await r2.send(putobject);
+            const sendObject = await r2.send(putobject);
         } catch (error) {
             return {
                 ok:false,

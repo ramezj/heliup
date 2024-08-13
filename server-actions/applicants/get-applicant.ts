@@ -24,7 +24,6 @@ export async function getApplicantById(applicantId: string) {
             Key:applicant.resumeKey
         });
         const url = await getSignedUrl(r2, command);
-        console.log(url);
         return { 
             error: false,
             applicant,
