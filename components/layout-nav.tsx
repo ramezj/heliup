@@ -22,7 +22,7 @@ export default function LayoutNav({children, params, req} : any) {
               <nav className="grid items-start px-2 text-sm font-medium lg:px-4 gap-2 mt-1">
                 <Link href={`/dashboard`} className={`${path.includes('/dashboard') ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
                   <Home className="h-4 w-4" />
-                  Board
+                  Home
                 </Link>
                 <Link href={`/jobs`} className={`${path.includes('/jobs') ? 'dark:bg-muted/50 bg-muted text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-3 py-2 text-primary transition-all hover:text-primary dark:hover:bg-muted/50 hover:bg-muted duration-200`}>
                   <BriefcaseBusiness className="h-4 w-4" />
@@ -68,7 +68,7 @@ export default function LayoutNav({children, params, req} : any) {
                   <SheetClose asChild>
                   <Link href="/dashboard" className={`${path.includes('/dashboard') ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                   <Home className="h-4 w-4" />
-                  Board
+                  Home
                   </Link>
                   </SheetClose>
                   <SheetClose asChild>
