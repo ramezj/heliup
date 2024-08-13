@@ -27,7 +27,8 @@ export async function getApplicantById(applicantId: string) {
         console.log(url);
         return { 
             error: false,
-            applicant
+            applicant,
+            url
         }
     } catch (error) {
         return {

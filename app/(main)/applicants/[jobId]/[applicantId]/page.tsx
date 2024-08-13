@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const metadata:Metadata = {
     title: "View Applicants",
@@ -36,8 +37,10 @@ export default async function Page({ params }: { params: { applicantId: string }
         <div className="space-y-2"> 
         <Label className=" text-lg">Resume</Label>
         <div>
-        <Button>
-            View Resume
+        <Button asChild variant={"outline"}>
+            <Link href={applicant.url!} target="_blank" download={applicant.url!}>
+            Download Resume
+            </Link>
         </Button>
         </div>
         </div>
