@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export const metadata:Metadata = {
     title: "View Applicants",
@@ -30,8 +31,14 @@ export default async function Page({ params }: { params: { applicantId: string }
         </div>
         <div className="space-y-2"> 
         <Label className=" text-lg">Motivation Letter</Label>
-        <div className="">
         <Textarea value={applicant.applicant?.motivation} readOnly />
+        </div>
+        <div className="space-y-2"> 
+        <Label className=" text-lg">Resume</Label>
+        <div>
+        <Button>
+            View Resume
+        </Button>
         </div>
         </div>
         </div>
