@@ -33,15 +33,15 @@ export default function Loading() {
         <div className="space-y-4 w-full">
               <div className="space-y-2">
               <Skeleton className="w-24 h-6" />
-              <Skeleton className="w-full h-6" />
+              <Skeleton className="w-full h-10" />
               </div>
               <div className="space-y-2">
               <Skeleton className="w-24 h-6" />
-              <Skeleton className="w-full h-6" />
+              <Skeleton className="w-full h-10" />
               </div>
               <div className="space-y-2">
               <Skeleton className="w-24 h-6" />
-              <Skeleton className="w-full h-12" />
+              <Skeleton className="w-full h-[4.17rem]" />
               </div>
               <div>
               <Button type="submit">Save Changes</Button>
