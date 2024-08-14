@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import { LoadingStatisticalCard } from "@/components/statistical-card";
 import { Button } from "@/components/ui/button";
 import { SquareArrowOutUpRight } from "lucide-react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export const metadata: Metadata = {
     title: "Loading",
@@ -14,7 +15,6 @@ export default function Loading() {
         <div className="flex justify-between items-center w-full">
         <h1 className="font-bold text-3xl tracking-tight">Overview</h1>
         <Button size={"sm"} variant={"expandIcon"} Icon={SquareArrowOutUpRight} iconPlacement="right" className="w-36 bg-blue-600 text-white hover:bg-blue-700 duration-200">
-        {/* <SquareArrowOutUpRight className="w-4 h-4 mr-2" /> */}
         Preview
         </Button>
         </div>
@@ -29,6 +29,25 @@ export default function Loading() {
           <LoadingStatisticalCard name="Total Applicants"/>
           </div>
         </div>
+        <div className="space-y-2">
+        <div className="space-y-4 w-full">
+              <div className="space-y-2">
+              <Skeleton className="w-24 h-6" />
+              <Skeleton className="w-full h-6" />
+              </div>
+              <div className="space-y-2">
+              <Skeleton className="w-24 h-6" />
+              <Skeleton className="w-full h-6" />
+              </div>
+              <div className="space-y-2">
+              <Skeleton className="w-24 h-6" />
+              <Skeleton className="w-full h-12" />
+              </div>
+              <div>
+              <Button type="submit">Save Changes</Button>
+              </div>
+            </div>
+          </div>
         </>
     )
 }
