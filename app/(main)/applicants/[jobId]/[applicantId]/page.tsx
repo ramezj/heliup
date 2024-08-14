@@ -8,7 +8,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { formatApplicantType } from "@/utils/format";
-import { Status } from "@prisma/client";
+import { Applicant, Status } from "@prisma/client";
+import { EditStatus } from "@/components/edit-status";
 
 export const metadata:Metadata = {
     title: "View Applicants",
@@ -40,7 +41,8 @@ export default async function Page({ params }: { params: { applicantId: string }
         <Label className="text-lg">Status</Label>
         <div className="flex flex-row gap-2">
         <Input className="max-w-52" value={formatApplicantType(applicant.applicant?.status as Status)} readOnly />
-        <Button variant={"outline"}>Edit Status</Button>
+        <EditStatus applicant={applicant.applicant as Applicant} />
+        {/* <Button variant={"outline"}>Edit Status</Button> */}
         </div>
         </div>
         <div className="space-y-2"> 

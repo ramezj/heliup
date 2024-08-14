@@ -72,7 +72,7 @@ export default function ConfigureJob({ job }: { job: Job }) {
               className="space-y-2"
               >
               <Label htmlFor="name">Type</Label>
-              <Select defaultValue={NewJob.type}  onValueChange={(e) => { setNewJob((prev) => ({ ...prev, type: e as Type}))}}>
+              <Select defaultValue={NewJob.type} onValueChange={(e) => { setNewJob((prev) => ({ ...prev, type: e as Type}))}}>
               <SelectTrigger className="">
                 <SelectValue />
               </SelectTrigger>
