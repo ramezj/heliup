@@ -26,7 +26,7 @@ export function FreeCard() {
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
                     <CheckIcon className="text-green-500"/>
-                    15 Monthly feedbacks
+                    15 Applicants
                     </h2>
             </div>
             <div className="flex flex-col space-y-1.5">
