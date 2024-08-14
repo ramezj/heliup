@@ -25,26 +25,26 @@ export default async function Page({ params }: { params: { applicantId: string }
         </div>
         <div className="space-y-4"> 
         <div className="space-y-2">
-        <Label>Full Name</Label>
+        <Label className="text-lg">Full Name</Label>
         <Input value={`${applicant.applicant?.first_name} ${applicant.applicant?.last_name}`} readOnly />
         </div>
         <div className="space-y-2">
-        <Label>Email Address</Label>
+        <Label className="text-lg">Email Address</Label>
         <Input value={applicant.applicant?.email} readOnly />
         </div>
         <div className="space-y-2"> 
-        <Label className=" text-lg">Motivation Letter</Label>
+        <Label className="text-lg">Motivation Letter</Label>
         <Textarea value={applicant.applicant?.motivation} readOnly />
         </div>
         <div className="space-y-2"> 
-        <Label className=" text-lg">Status</Label>
+        <Label className="text-lg">Status</Label>
         <div className="flex flex-row gap-2">
         <Input className="max-w-52" value={formatApplicantType(applicant.applicant?.status as Status)} readOnly />
         <Button variant={"outline"}>Edit Status</Button>
         </div>
         </div>
         <div className="space-y-2"> 
-        <Label className=" text-lg">Resume</Label>
+        <Label className="text-lg">Resume</Label>
         <div>
         <Button asChild variant={"outline"}>
             <Link href={applicant.url!} target="_blank" download={applicant.url!}>
