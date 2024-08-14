@@ -46,9 +46,9 @@ export function EditStatus({applicant}: {applicant:Applicant}) {
       </DialogTrigger>
       <DialogContent onOpenAutoFocus={((e) => {e.preventDefault()})} className="text-left w-[90%] rounded-md">
         <DialogHeader>
-          <DialogTitle className="text-left">Edit Applicant's Status</DialogTitle>
+          <DialogTitle className="text-left">Edit Applicant&apos;s Status</DialogTitle>
           <DialogDescription className="text-left">
-          Edit applicant's status, submitted, accepted, rejected, etc.
+          Edit applicant&apos;s status, submitted, accepted, rejected, etc.
           </DialogDescription>
         </DialogHeader>
         <div className="grid py-2">
