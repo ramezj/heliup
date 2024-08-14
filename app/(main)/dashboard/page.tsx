@@ -51,7 +51,7 @@ export default async function Page() {
           </div>
         </div>
         <div className="space-y-2">
-        <h1 className="font-bold text-3xl tracking-tight">Recent Jobs</h1>
+        <EditOrganization organization={organization} />
         </div>
         </>
   );

@@ -45,7 +45,7 @@ export default function LayoutNav({children, params, req} : any) {
           </div>
         </div>
         <div className="flex flex-col sticky">
-          <header className="flex h-16 items-center gap-4 border-b px-3 lg:h-16 sticky z-1 top-0 bg-background/75 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+          <header className="z-50 flex h-16 items-center gap-4 border-b px-3 lg:h-16 sticky top-0 bg-background/75 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="shrink-0 md:hidden">
