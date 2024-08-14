@@ -20,16 +20,22 @@ import {
     SelectTrigger,
     SelectValue,
   } from "@/components/ui/select"
-import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from "react"
 import { Loader2 } from "lucide-react"
 import { EditApplicantStatusById } from "@/server-actions/applicants/edit-applicant-status"
-import { formatApplicantType } from "@/utils/format"
+import { toast } from "sonner"
 
 export function EditStatus({applicant}: {applicant:Applicant}) {
     const [ loading, setLoading ] = useState<boolean>(false);
     const [ newStatus, setNewStatus ] = useState<Status>(applicant.status);
+    const editTheStatus = async (e:React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+        const response = await EditApplicantStatusById(applicant.id, newStatus);
+        setLoading(false);
+        toast(response.message);
+    }
     return (
         <>
         <Dialog>
@@ -50,7 +56,7 @@ export function EditStatus({applicant}: {applicant:Applicant}) {
             <Label className="text-left">
               Status
             </Label>
-            <form id="form">
+            <form id="form" onSubmit={editTheStatus}>
             <Select defaultValue={newStatus} onValueChange={((e) => {console.log(e); setNewStatus(e as Status)})} >
               <SelectTrigger className="">
                 <SelectValue />
