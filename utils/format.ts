@@ -9,7 +9,7 @@ export const formatApplicantType = (type:Status) => {
         case "HIRED":
             return 'Hired';
         case "OFFER":
-            return 'Part Time';
+            return 'Offer';
         case "INTERVIEW":
             return "Interview"
         case "REJECTED":
