@@ -11,26 +11,9 @@ import { Skeleton } from "./ui/skeleton"
 import ShineBorder from "./magicui/shine-border"
 import { useRouter } from "next/navigation"
 import { Status } from "@prisma/client"
+import { formatApplicantType } from "@/utils/format"
 
 export function ApplicantCard({ applicant }: { applicant: Applicant }) {
-  const formatApplicantType = (type:Status) => {
-    switch (type) {
-        case 'SUBMITTED':
-            return 'Submitted';
-        case "UNDERREVIEW":
-            return 'Under Review';
-        case "HIRED":
-            return 'Hired';
-        case "OFFER":
-            return 'Part Time';
-        case "INTERVIEW":
-            return "Interview"
-        case "REJECTED":
-            return "Rejected"
-        default:
-            return type;
-    }
-  };
   const router = useRouter();
   const redirectToApplicant = () => {
     router.push(`/applicants/${applicant.jobId}/${applicant.id}`)
