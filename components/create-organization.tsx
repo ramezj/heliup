@@ -10,6 +10,7 @@ import { createOrganization } from "@/server-actions/organization/createOrganiza
 import { Loader2 } from "lucide-react"
 import { toast } from "sonner"
 import { useRouter } from "next/navigation";
+import { Plus } from "lucide-react";
 
 export function CreateOrganization() {
     const router = useRouter();
@@ -23,11 +24,10 @@ export function CreateOrganization() {
         setLoading(true);
         const response = await createOrganization({name, slug, website});
         setLoading(false);
-        if(response?.error) {
-            toast(response?.error);
+        if(response.ok) {
+            router.push("/dashboard");
         } else {
-            router.push('/dashboard');
-            toast("Organization Created Successfully")
+            toast(response?.error);
         }
     }
     return (
@@ -41,13 +41,13 @@ export function CreateOrganization() {
                     className="w-full grid gap-4"
                     >
                     <Label>Name</Label>
-                    <Input placeholder="Jobspire" required value={name} onChange={((e) => {setName(e.target.value)})}/>
+                    <Input placeholder="Microsoft" required value={name} onChange={((e) => {setName(e.target.value)})}/>
                     <Label>Slug</Label>
-                    <Input placeholder="Jobspire" required value={slug} onChange={((e) => {setSlug(e.target.value)})}/>
+                    <Input placeholder="microsoft" required value={slug} onChange={((e) => {setSlug(e.target.value)})}/>
                     {
                         loading
-                        ? <Button variant={"outline"}><Loader2 className="mr-2 h-4 w-4 animate-spin" />Create</Button>
-                        : <Button variant={"outline"}>Create</Button>
+                        ? <Button size={"sm"} className="bg-blue-600 text-white hover:bg-blue-700 duration-200" disabled><Loader2 className="mr-2 h-4 w-4 animate-spin" />Create</Button>
+                        : <Button size={"sm"} variant={"expandIcon"} iconPlacement="right" Icon={Plus} className="bg-blue-600 text-white hover:bg-blue-700 duration-200">Create </Button>
                     }
                     </div>
               </form>
