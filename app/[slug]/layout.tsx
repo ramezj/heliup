@@ -5,9 +5,7 @@ export default function Layout({children, params, req} : any) {
         <>
         <div className="w-full border-b border-0 h-16 sticky">
         </div>
-        <div>
         {children}
-        </div>
         </>
     )
 }
