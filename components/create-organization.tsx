@@ -9,8 +9,10 @@ import { motion } from "framer-motion"
 import { createOrganization } from "@/server-actions/organization/createOrganization";
 import { Loader2 } from "lucide-react"
 import { toast } from "sonner"
+import { useRouter } from "next/navigation";
 
 export function CreateOrganization() {
+    const router = useRouter();
     const [ name, setName ] = useState<string>("");
     const [ slug, setSlug ] = useState<string>("");
     const [ website, setWebsite ] = useState<string>("");
@@ -20,13 +22,13 @@ export function CreateOrganization() {
         e.preventDefault();
         setLoading(true);
         const response = await createOrganization({name, slug, website});
+        setLoading(false);
         if(response?.error) {
-            toast("" + response?.error);
+            toast(response?.error);
         } else {
+            router.push('/dashboard');
             toast("Organization Created Successfully")
         }
-        setLoading(false);
-        console.log(response);
     }
     return (
         <>
@@ -35,10 +37,8 @@ export function CreateOrganization() {
                 <Separator />
               </div>
               <form onSubmit={createOrg}>
-                    <motion.div 
+                    <div 
                     className="w-full grid gap-4"
-                    initial= {{opacity: 0}}
-                    animate= {{opacity: 1}}
                     >
                     <Label>Name</Label>
                     <Input placeholder="Jobspire" required value={name} onChange={((e) => {setName(e.target.value)})}/>
@@ -46,10 +46,10 @@ export function CreateOrganization() {
                     <Input placeholder="Jobspire" required value={slug} onChange={((e) => {setSlug(e.target.value)})}/>
                     {
                         loading
-                        ? <Button><Loader2 className="mr-2 h-4 w-4 animate-spin" />Create</Button>
-                        : <Button>Create</Button>
+                        ? <Button variant={"outline"}><Loader2 className="mr-2 h-4 w-4 animate-spin" />Create</Button>
+                        : <Button variant={"outline"}>Create</Button>
                     }
-                    </motion.div>
+                    </div>
               </form>
             </div>
         </>

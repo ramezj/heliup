@@ -7,8 +7,7 @@ datasource db {
   provider = "postgresql"
   url = env("DATABASE_URL")
 }
- 
-model Account {
+ model Account {
   userId            String
   type              String
   provider          String
@@ -31,6 +30,8 @@ model User {
   email         String          @unique
   firstTimeUser Boolean @default(true)
   trial         Boolean @default(true)
+  trialStartedAt DateTime?
+  trialEndsAt    DateTime?
   isPremium     Boolean @default(false)
   emailVerified DateTime?
   image         String?
@@ -106,9 +107,3 @@ model Applicant {
   jobId String
   job Job @relation(fields: [jobId], references: [id], onDelete: Cascade)
 }
-// model CV {
-//   id String @id @default(cuid())
-//   fileUrl String
-//   applicantId 
-// }
-
