@@ -17,11 +17,6 @@ export default function Loading() {
         Create Job
         </Button>
         </div>
-        {/* <div className="w-full gap-4 flex flex-col">
-            <LoadingJob />
-            <LoadingJob />
-            <LoadingJob />
-        </div> */}
         <div className="w-full h-full items-center flex flex-col justify-center">
         <Loader2 className="size-8 animate-spin text-gray-200" />
         </div>

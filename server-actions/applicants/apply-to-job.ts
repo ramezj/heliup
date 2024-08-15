@@ -69,7 +69,7 @@ export async function applyToJob(jobId: string, firstName: string, lastName: str
         }
         return {
             ok:true,
-            message: "Applied Successfully!"
+            message: "🎉 Applied to Job Successfully"
         }
     } catch (error) {
         return {

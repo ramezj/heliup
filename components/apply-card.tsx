@@ -24,10 +24,7 @@ export default function ApplyCard({ jobId }: { jobId: string}) {
         setLoading(true);
         const res = await applyToJob(jobId, firstName!, lastName!, emailAddress!, phoneNumber!, motivation!, formData);
         setLoading(false);
-        if(res.ok != true) {
-            toast(res.message)
-        }
-        console.log(res);
+        toast(res.message);
     }
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const selectedFile = e.target.files?.[0] || null;
