@@ -48,7 +48,7 @@ export async function editOrganization(organization:Organization) {
         return {
             error: false,
             organization:updateOrg,
-            message: "Updated Successfully!"
+            message: "🎉 Updated Successfully"
         }
     } catch (error) {
         return {

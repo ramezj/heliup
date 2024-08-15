@@ -24,7 +24,7 @@ export async function editJob(job:Job) {
         return {
             error: false,
             job:updateJobData,
-            message: "Updated Successfully!"
+            message: "🎉 Updated Successfully"
         }
     } catch (error) {
         return {
