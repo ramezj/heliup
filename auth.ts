@@ -4,13 +4,6 @@ import GitHub from "next-auth/providers/github"
 import Google from "next-auth/providers/google"
 import prisma from './utils/db';
 
-// prisma.$use(async(params, next) => {
-//   if(params.model == "User" && params.action == "create") {
-//     const result = await next(params);
-//     console.log(result);
-//   }
-// })
-
 export const { auth, handlers, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),
   pages: {
