@@ -17,4 +17,19 @@ export const formatApplicantType = (type:Status) => {
         default:
             return type;
     }
+};
+
+export const formatJobType = (type:any) => {
+    switch (type) {
+        case 'FULLTIME':
+            return 'Full-Time';
+        case 'CONTRACT':
+            return 'Contract';
+        case 'INTERNSHIP':
+            return 'Internship';
+        case 'PARTTIME':
+            return 'Part-Time';
+        default:
+            return type;
+    }
   };

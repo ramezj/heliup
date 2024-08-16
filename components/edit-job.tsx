@@ -78,10 +78,10 @@ export default function ConfigureJob({ job }: { job: Job }) {
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="FULLTIME">FULLTIME</SelectItem>
-                  <SelectItem value="PARTTIME">PARTTIME</SelectItem>
-                  <SelectItem value="INTERNSHIP">INTERNSHIP</SelectItem>
-                  <SelectItem value="CONTRACT">CONTRACT</SelectItem>
+                  <SelectItem value="FULLTIME">Full-Time</SelectItem>
+                  <SelectItem value="PARTTIME">Part-Time</SelectItem>
+                  <SelectItem value="INTERNSHIP">Internship</SelectItem>
+                  <SelectItem value="CONTRACT">Contract</SelectItem>
                 </SelectGroup>
               </SelectContent>
               </Select>
