@@ -19,6 +19,15 @@ export default async function Page({ params }: { params: { slug: string } }) {
         notFound() 
     }
     return (
+        <>
+        <div className="w-full border-b border-0 h-16 sticky text-center justify-between flex items-center px-6">
+        <div className="flex">
+            <h1>Microsoft</h1>
+        </div>
+        <div className="flex">
+            <h1>website 2</h1>
+        </div>
+        </div>
         <div className="w-full flex flex-col items-center text-center p-4 space-y-1">
             <h1 className="font-bold text-3xl">{organization.organization?.name}</h1>
             <p className="text-muted-foreground max-w-3xl">{organization.organization?.description}</p>
@@ -32,5 +41,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
             })}
             </div>
         </div>
+        </>
     )
 }
