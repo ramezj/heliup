@@ -3,6 +3,7 @@ import prisma from "@/utils/db"
 import { auth } from "@/auth"
 import { Organization } from "@prisma/client";
 import { redirect } from "next/navigation";
+import { addDays } from "date-fns"
 
 type OrganizationProps = {
     name: string,
@@ -49,7 +50,10 @@ export  async function createOrganization(props: OrganizationProps) {
                 id: session.user.id as string
             }, 
             data: {
-                firstTimeUser: false
+                firstTimeUser: false,
+                trial:true,
+                trialStartedAt: new Date(),
+                trialEndsAt: addDays(new Date(), 14)
             }
         })
         return ({
