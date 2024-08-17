@@ -6,6 +6,7 @@ import { Metadata } from "next";
 import { Select,SelectContent,SelectGroup,SelectItem,SelectLabel,SelectTrigger,SelectValue } from "@/components/ui/select"  
 import { notFound } from 'next/navigation'
 import Link from "next/link";
+import { SquareArrowOutUpRight } from "lucide-react"
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const organization = await getOrganizationBySlug(params.slug);
@@ -25,9 +26,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <div className="flex">
             <h1 className="font-bold text-sm sm:text-base">{organization.organization?.name}</h1>
         </div>
-        <div className="flex text-sm sm:text-base">
-            <Link href={`${organization.organization?.website}`}>visit website</Link>
-        </div>
+        {/* <div className="flex text-sm sm:text-base">
+            <Link className="flex items-center" href={`${organization.organization?.website}`}>visit website<SquareArrowOutUpRight className="size-4 ml-2" /></Link>
+        </div> */}
         </div>
         <div className="w-full flex flex-col items-center text-center p-4 space-y-1">
             <h1 className="font-bold text-3xl">{organization.organization?.name}</h1>
