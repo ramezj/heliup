@@ -5,6 +5,7 @@ import { JobCard } from "@/components/job-card";
 import { Metadata } from "next";
 import { Select,SelectContent,SelectGroup,SelectItem,SelectLabel,SelectTrigger,SelectValue } from "@/components/ui/select"  
 import { notFound } from 'next/navigation'
+import Link from "next/link";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const organization = await getOrganizationBySlug(params.slug);
@@ -22,10 +23,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <>
         <div className="w-full border-b border-0 h-16 sticky text-center justify-between flex items-center px-6">
         <div className="flex">
-            <h1>Microsoft</h1>
+            <h1 className="font-bold text-sm sm:text-base">{organization.organization?.name}</h1>
         </div>
-        <div className="flex">
-            <h1>website 2</h1>
+        <div className="flex text-sm sm:text-base">
+            <Link href={`${organization.organization?.website}`}>visit website</Link>
         </div>
         </div>
         <div className="w-full flex flex-col items-center text-center p-4 space-y-1">
