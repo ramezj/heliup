@@ -24,7 +24,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <>
         <div className="w-full border-b border-0 h-16 sticky text-center justify-between flex items-center px-6">
         <div className="flex">
-            <h1 className="font-bold text-sm sm:text-base">{organization.organization?.name}</h1>
+            <h1 className="font-bold text-sm sm:text-base">{params.slug}</h1>
         </div>
         </div>
         <div className="w-full flex flex-col items-center text-center p-4 space-y-1">
