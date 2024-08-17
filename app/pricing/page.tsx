@@ -19,8 +19,13 @@ export default async function Page() {
    <>
    <Navigation session={session}/>
    <div className="w-full items-center justify-center flex flex-col py-8">
-    <h1 className="font-bold text-4xl justify-center">Pricing</h1>
-    <div className="flex sm:flex-row flex-col pt-8 gap-4">
+    <div className="space-y-1">
+    <h1 className="font-bold text-4xl justify-center text-center">Pricing</h1>
+    <p className="text-muted-foreground">
+      Prices listed reflect the monthly subscription fee.
+    </p>
+    </div>
+    <div className="flex flex-wrap pt-8 gap-4 w-full items-center justify-center">
       <div className="relative">
       <FreeCard />
       </div>

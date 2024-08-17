@@ -20,7 +20,7 @@ export function FreeCard() {
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
                     <CheckIcon className="text-green-500"/>
-                    1 Free board
+                    1 Organization
                     </h2>
             </div>
             <div className="flex flex-col space-y-1.5">
@@ -32,13 +32,7 @@ export function FreeCard() {
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
                     <CheckIcon className="text-green-500"/>
-                    Upvote Feedback
-                    </h2>
-            </div>
-            <div className="flex flex-col space-y-1.5">
-                <h2 className="flex gap-2">
-                    <CheckIcon className="text-green-500"/>
-                    Authentication Check
+                    Subdomain
                     </h2>
             </div>
           </div>
@@ -70,25 +64,19 @@ export function PaidCard() {
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
                     <CheckIcon className="text-green-500"/>
-                    1 Free board
+                    1 Organization
                     </h2>
             </div>
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
                     <CheckIcon className="text-green-500"/>
-                    15 Monthly feedbacks
+                    Unlimited Applicants
                     </h2>
             </div>
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
                     <CheckIcon className="text-green-500"/>
-                    Upvote Feedback
-                    </h2>
-            </div>
-            <div className="flex flex-col space-y-1.5">
-                <h2 className="flex gap-2">
-                    <CheckIcon className="text-green-500"/>
-                    Authentication Check
+                    Subdomain
                     </h2>
             </div>
           </div>
