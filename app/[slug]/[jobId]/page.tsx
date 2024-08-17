@@ -9,6 +9,8 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import ApplyCard from "@/components/apply-card";
 import EditJobTabs from "@/components/edit-job";
+import { getOrganizationBySlug } from "@/server-actions/organization/get-organization";
+import { notFound } from 'next/navigation'
 
 export async function generateMetadata({ params }: { params: { jobId: string } }): Promise<Metadata> {
     const job = await getJobById(params.jobId)
@@ -16,11 +18,21 @@ export async function generateMetadata({ params }: { params: { jobId: string } }
       title: job.job?.title
     };
 }
-export default async function Page({ params }: { params: { jobId: string } }) {
+export default async function Page({ params }: { params: { jobId: string, slug:string } }) {
+    const organization = await getOrganizationBySlug(params.slug);
+    if(organization?.error) { 
+        console.error("Not Found")
+        notFound() 
+    }
     const job = await getJobById(params.jobId);
     if(job?.error) { redirect('/') }
     return (
         <>
+            <div className="w-full border-b border-0 h-16 sticky text-center justify-between flex items-center px-6">
+            <div className="flex">
+                <h1 className="font-bold text-sm sm:text-base">{organization.organization?.name}</h1>
+            </div>
+            </div>
             <div className="w-full flex flex-col items-center text-center py-8 px-4 gap-y-4">
             <h1 className="font-bold text-2xl">{job.job?.title}</h1>
             <div className="grid grid-cols-2 gap-4">

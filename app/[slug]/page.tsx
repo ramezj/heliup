@@ -26,12 +26,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <div className="flex">
             <h1 className="font-bold text-sm sm:text-base">{organization.organization?.name}</h1>
         </div>
-        {/* <div className="flex text-sm sm:text-base">
-            <Link className="flex items-center" href={`${organization.organization?.website}`}>visit website<SquareArrowOutUpRight className="size-4 ml-2" /></Link>
-        </div> */}
         </div>
         <div className="w-full flex flex-col items-center text-center p-4 space-y-1">
-            <h1 className="font-bold text-3xl">{organization.organization?.name}</h1>
+            <h1 className="font-bold text-3xl pt-4">{organization.organization?.name}</h1>
             <p className="text-muted-foreground max-w-3xl">{organization.organization?.description}</p>
             <div className="flex flex-col gap-4 lg:w-1/2 w-full pt-2">
             {organization.organization?.jobs.map((job:Job) => {
