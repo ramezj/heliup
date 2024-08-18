@@ -40,29 +40,29 @@ export default function ApplyCard({ jobId }: { jobId: string}) {
             </div>
             <div className="space-y-2">
             <Label htmlFor="name">First Name</Label>
-            <Input required placeholder="Joe" value={firstName} onChange={((e) => {setFirstName(e.target.value)})} />
+            <Input className="bg-inherit" required placeholder="Joe" value={firstName} onChange={((e) => {setFirstName(e.target.value)})} />
             </div>
             <div className="space-y-2">
             <Label htmlFor="name">Last Name</Label>
-            <Input required placeholder="Biden" value={lastName} onChange={((e) => {setLastName(e.target.value)})} />
+            <Input className="bg-inherit" required placeholder="Biden" value={lastName} onChange={((e) => {setLastName(e.target.value)})} />
             </div>
             <div className="space-y-2">
             <Label htmlFor="name">Email Address</Label>
-            <Input required placeholder="joebiden@gmail.com" value={emailAddress} onChange={((e) => {setEmailAddress(e.target.value)})} />
+            <Input className="bg-inherit" required placeholder="joebiden@gmail.com" value={emailAddress} onChange={((e) => {setEmailAddress(e.target.value)})} />
             </div>
             <div className="space-y-2">
             <Label htmlFor="name">Phone Number</Label>
-            <Input required type="number" placeholder="+20087163518" value={phoneNumber} onChange={((e) => {setPhoneNumber(Number(e.target.value))})} />
+            <Input className="bg-inherit" required type="number" placeholder="+20087163518" value={phoneNumber} onChange={((e) => {setPhoneNumber(Number(e.target.value))})} />
             </div>
             <div className="space-y-2">
             <Label htmlFor="name">Upload Resume ( max 5mb )</Label>
             <div>
-            <Input required type="file" id="file" name="file" accept=".pdf" onChange={handleFileChange} />
+            <Input className="bg-inherit" required type="file" id="file" name="file" accept=".pdf" onChange={handleFileChange} />
             </div>
             </div>
             <div className="space-y-2"> 
             <Label htmlFor="motivation">Motivation</Label>
-            <Textarea required value={motivation} onChange={((e) => {setMotivation(e.target.value)})} placeholder="Tell us why you're the best candidate for this position" />
+            <Textarea className="bg-inherit" required value={motivation} onChange={((e) => {setMotivation(e.target.value)})} placeholder="Tell us why you're the best candidate for this position" />
             </div>
             {
                 loading 
