@@ -7,12 +7,12 @@ export default function Loading() {
     const params = useParams<{ slug: string}>()
     return (
         <>
-        <div className="w-full border-b border-0 h-16 sticky text-center justify-between flex items-center px-6">
+        <div className="w-full border-b border-0 h-16 sticky text-center justify-between flex items-center px-6 bg-black">
         <div className="flex">
         <h1 className="font-bold text-sm sm:text-base">{params.slug}</h1>
         </div>
         </div>
-        <div className="w-full h-screen items-center flex flex-col justify-center">
+        <div className="w-full h-screen items-center flex flex-col justify-center bg-black">
         <Loader2 className="size-8 animate-spin text-gray-200" />
         </div>
         </>

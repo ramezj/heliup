@@ -22,12 +22,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
     }
     return (
         <>
-        <div className="w-full border-b bg-background/75 backdrop-blur supports-[backdrop-filter]:bg-background/60 top-0 z-50 border-0 h-16 sticky text-center justify-between flex items-center px-6">
+        <div className="w-full border-b bg-black top-0 z-50 border-0 h-16 sticky text-center justify-between flex items-center px-6">
         <div className="flex">
             <h1 className="font-bold text-sm sm:text-base">{params.slug}</h1>
         </div>
         </div>
-        <div className="w-full flex flex-col items-center text-center p-4 space-y-1">
+        <div className="w-full flex flex-col items-center text-center p-4 space-y-1 bg-black min-h-screen overflow-hidden">
             <h1 className="font-bold text-3xl pt-4">{organization.organization?.name}</h1>
             <p className="text-muted-foreground max-w-3xl">{organization.organization?.description}</p>
             <div className="flex flex-col gap-4 lg:w-1/2 w-full pt-2">

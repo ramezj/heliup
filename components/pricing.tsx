@@ -7,10 +7,10 @@ import ShineBorder from "./magicui/shine-border";
 export function FreeCard() {
     return (
         <>
-        <Card className="w-[350px] ">
+        <Card className="w-[350px] bg-black ">
       <CardHeader>
         <CardTitle className='flex gap-2 font-bold tracking-normal'>Trial</CardTitle>
-        <CardDescription>Free for 14 days</CardDescription>
+        <CardDescription className="text-left">Free for 14 days</CardDescription>
       </CardHeader>
       <CardContent>
           <div className="grid w-full items-center gap-4">
@@ -50,11 +50,11 @@ export function FreeCard() {
 export function PaidCard() {
     return (
         <>
-        <Card className="w-[350px] ">
+        <Card className="w-[350px] bg-black ">
         <ShineBorder color={"dark" ? "white" : "black"}>
       <CardHeader>
         <CardTitle className='flex gap-2 font-bold tracking-normal'>Premium</CardTitle>
-        <CardDescription>Free for 14 days</CardDescription>
+        <CardDescription className="text-left">Free for 14 days</CardDescription>
       </CardHeader>
       <CardContent>
           <div className="grid w-full items-center gap-4">

@@ -25,7 +25,7 @@ export default async function Page() {
   return (
    <>
    <Navigation session={session}/>
-   <div className="text-center w-full p-8 flex flex-col gap-2 items-center max-h-fit">
+   <div className="text-center w-full p-8 flex flex-col gap-2 items-center h-screen bg-black">
     <div className="relative">
     <Alert />
     </div>
