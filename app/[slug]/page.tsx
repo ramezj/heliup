@@ -27,7 +27,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <h1 className="font-bold text-sm sm:text-base">{params.slug}</h1>
         </div>
         </div>
-        <div className="w-full flex flex-col items-center text-center p-4 space-y-1 bg-black min-h-screen overflow-hidden">
+        <div className="w-full flex flex-col items-center text-center p-4 space-y-1 overflow-hidden">
             <h1 className="font-bold text-3xl pt-4">{organization.organization?.name}</h1>
             <p className="text-muted-foreground max-w-3xl">{organization.organization?.description}</p>
             <div className="flex flex-col gap-4 lg:w-1/2 w-full pt-2">

@@ -28,7 +28,7 @@ export default async function Page({ params }: { params: { jobId: string, slug:s
                 <h1 className="font-bold text-sm sm:text-base">{params.slug}</h1>
             </div>
             </div>
-            <div className="w-full flex flex-col items-center text-center py-8 px-4 gap-y-4 bg-black">
+            <div className="w-full flex flex-col items-center text-center py-8 px-4 gap-y-4">
             <h1 className="font-bold text-2xl">{job.job?.title}</h1>
             <div className="grid grid-cols-2 gap-4">
             <Badge variant={"outline"} className="rounded-sm">{job.job?.type}</Badge>

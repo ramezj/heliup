@@ -2,6 +2,10 @@
   @tailwind components;
   @tailwind utilities;
 
+  body {
+    background-color:black
+  }
+
   p:empty::before {
     content: '';
     display: inline-block;

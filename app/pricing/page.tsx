@@ -18,7 +18,7 @@ export default async function Page() {
   return (
    <>
    <Navigation session={session}/>
-   <div className="w-full text-center flex flex-col py-8 bg-black min-h-screen">
+   <div className="w-full text-center flex flex-col py-8">
     <div className="space-y-1">
     <h1 className="font-bold text-4xl justify-center text-center">Pricing</h1>
     <p className="text-muted-foreground">
