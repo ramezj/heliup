@@ -11,6 +11,7 @@ import { Skeleton } from "./ui/skeleton"
 import ShineBorder from "./magicui/shine-border"
 import { useRouter } from "next/navigation"
 import { Prisma } from "@prisma/client"
+import { UsersRound, Users } from "lucide-react"
 
 type JobWithApplicants = Prisma.JobGetPayload<{
   include: {
@@ -42,10 +43,10 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
          {job.title}     
         </p>
         <div className="mt-3 -mb-2 flex gap-2">
-        <Badge className="rounded-sm"><span className="mr-2">💼</span>{formatJobType(job.type)}</Badge>
+        <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">💼</span>{formatJobType(job.type)}</Badge>
           {
             job.location 
-            ?  <Badge className="rounded-sm"><span className="mr-2">🌎</span>{job.location}</Badge>
+            ?  <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">🌎</span>{job.location}</Badge>
             :  <></>
           }
         </div>
@@ -110,7 +111,12 @@ export function JobCardForDashboard({ job }: { job: JobWithApplicants}) {
        {job.title}     
       </p>
       <div className="mt-3 -mb-2 flex gap-1">
-      <Badge className="rounded-sm"><span className="mr-2">💼</span>{formatJobType(job.type)}</Badge>
+      <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">💼</span>{formatJobType(job.type)}</Badge>
+      {
+        job.location
+        ?  <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">🌎</span>{job?.location}</Badge>
+        : <></>
+      }
       </div>
       </div>
       <div className="m-5 ml-auto flex gap-2">
@@ -154,12 +160,18 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
        {job.title}     
       </p>
       <div className="mt-3 -mb-2 flex gap-1">
-      <Badge className="rounded-sm"><span className="mr-2">💼</span>{formatJobType(job.type)}</Badge>
+      <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">💼</span>{formatJobType(job.type)}</Badge>
+      {
+        job.location
+        ?  <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">🌎</span>{job?.location}</Badge>
+        : <></>
+      }
       </div>
       </div>
       <div className="m-5 ml-auto flex gap-2">
       <Button size={"sm"} variant={"outline"} onClick={handleApplicantsClick} className="gap-1">
-        {job.applicants.length} Applicants
+        <Users className="size-4 mr-2" />
+        {job.applicants.length} 
       </Button>
       </div>
       </ShineBorder>
@@ -176,14 +188,15 @@ export function LandingPageJobCard({ title, type, location }: { title: string, t
        {title}     
       </p>
       <div className="mt-3 -mb-2 flex gap-1">
-      <Badge className="rounded-sm"><span className="mr-2">🌎</span>{location}</Badge>
+      <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">💼</span>{type}</Badge>
+      <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">🌎</span>{location}</Badge>
       </div>
       </div>
-      <div className="m-5 ml-auto">
+      {/* <div className="m-5 ml-auto">
       <Button variant={"outline"} size={"sm"}>
         View
         </Button>
-      </div>
+      </div> */}
       </ShineBorder>
     )
 }
