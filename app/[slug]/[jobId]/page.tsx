@@ -23,7 +23,7 @@ export default async function Page({ params }: { params: { jobId: string, slug:s
     if(job?.error) { redirect('/') }
     return (
         <>
-            <div className="w-full border-b border-0 h-16 sticky text-center justify-between flex items-center px-6">
+            <div className="w-full border-b bg-background z-50 border-0 h-16 sticky top-0 text-center justify-between flex items-center px-6">
             <div className="flex">
                 <h1 className="font-bold text-sm sm:text-base">{params.slug}</h1>
             </div>
