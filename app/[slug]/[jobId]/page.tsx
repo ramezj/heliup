@@ -11,6 +11,7 @@ import ApplyCard from "@/components/apply-card";
 import EditJobTabs from "@/components/edit-job";
 import { getOrganizationBySlug } from "@/server-actions/organization/get-organization";
 import { notFound } from 'next/navigation'
+import Link from "next/link";
 
 export async function generateMetadata({ params }: { params: { jobId: string } }): Promise<Metadata> {
     const job = await getJobById(params.jobId)
@@ -25,7 +26,7 @@ export default async function Page({ params }: { params: { jobId: string, slug:s
         <>
             <div className="w-full border-b bg-black z-50 border-0 h-16 sticky top-0 text-center justify-between flex items-center px-6">
             <div className="flex">
-                <h1 className="font-bold text-sm sm:text-base">{params.slug}</h1>
+                <Link className="font-bold text-sm sm:text-base" href='/'>{params.slug}</Link>
             </div>
             </div>
             <div className="w-full flex flex-col items-center text-center py-8 px-4 gap-y-4">
