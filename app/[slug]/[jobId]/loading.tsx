@@ -12,7 +12,7 @@ export default function Loading() {
         <h1 className="font-bold text-sm sm:text-base">{params.slug}</h1>
         </div>
         </div>
-        <div className="w-full h-screen items-center flex flex-col justify-center bg-black">
+        <div className="w-full items-center flex flex-col justify-center">
         <Loader2 className="size-8 animate-spin text-gray-200" />
         </div>
         </>
