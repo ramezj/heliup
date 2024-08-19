@@ -54,12 +54,12 @@ export function PaidCard() {
         <ShineBorder color={"dark" ? "white" : "black"}>
       <CardHeader>
         <CardTitle className='flex gap-2 font-bold tracking-normal'>Premium</CardTitle>
-        <CardDescription className="text-left">Free for 14 days</CardDescription>
+        <CardDescription className="text-left">Monthly Subscription</CardDescription>
       </CardHeader>
       <CardContent>
           <div className="grid w-full items-center gap-4">
           <h2 className="flex text-2xl font-semibold -mt-3">
-            $15
+            $15/mo
           </h2>
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
