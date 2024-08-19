@@ -1,5 +1,5 @@
 
-import { ArrowRightIcon, SquareArrowOutUpRight, CheckIcon } from "lucide-react";
+import { ArrowRightIcon, SquareArrowOutUpRight, CheckIcon, XIcon } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "./ui/button";
 import ShineBorder from "./magicui/shine-border";
@@ -9,13 +9,13 @@ export function FreeCard() {
         <>
         <Card className="w-[350px] bg-black ">
       <CardHeader>
-        <CardTitle className='flex gap-2 font-bold tracking-normal'>Trial</CardTitle>
-        <CardDescription className="text-left">Free for 14 days</CardDescription>
+        <CardTitle className='flex gap-2 font-bold tracking-normal'>Free</CardTitle>
+        <CardDescription className="text-left">Free forever</CardDescription>
       </CardHeader>
       <CardContent>
           <div className="grid w-full items-center gap-4">
           <h2 className="flex text-2xl font-semibold -mt-3">
-            Free
+            $0/mo
           </h2>
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
@@ -26,13 +26,13 @@ export function FreeCard() {
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
                     <CheckIcon className="text-green-500"/>
-                    15 Applicants
+                    20 Applicants
                     </h2>
             </div>
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
-                    <CheckIcon className="text-green-500"/>
-                    Subdomain
+                    <XIcon className="text-red-500"/>
+                    Custom Domain
                     </h2>
             </div>
           </div>
@@ -59,7 +59,7 @@ export function PaidCard() {
       <CardContent>
           <div className="grid w-full items-center gap-4">
           <h2 className="flex text-2xl font-semibold -mt-3">
-            $15/mo
+            $20/mo
           </h2>
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
@@ -76,7 +76,7 @@ export function PaidCard() {
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
                     <CheckIcon className="text-green-500"/>
-                    Subdomain
+                    Custom Domain
                     </h2>
             </div>
           </div>
