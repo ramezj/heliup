@@ -34,12 +34,12 @@ export default async function Page() {
         words="Hiring for startups and small teams."
         />
         <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4">
-      <Button asChild className="w-52" variant={"expandIcon"} Icon={SquareArrowOutUpRight} iconPlacement="right">
+      <Button asChild className="w-52 font-bold" variant={"expandIcon"} Icon={SquareArrowOutUpRight} iconPlacement="right">
         <Link href={`https://hirehollo.${process.env.NEXT_URL}`} target="_blank">
         See Demo
         </Link>
         </Button>
-      <Button variant={"expandIcon"} Icon={ArrowRightIcon} iconPlacement="right" className="w-52 bg-blue-600 text-white hover:bg-blue-700 duration-200" asChild>
+      <Button variant={"expandIcon"} Icon={ArrowRightIcon} iconPlacement="right" className="w-52 bg-blue-600 text-white hover:bg-blue-700 duration-200 font-bold" asChild>
         <Link href='/auth'>
         Try Now
         </Link>
