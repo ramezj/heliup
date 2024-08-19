@@ -57,7 +57,7 @@ export default function LayoutNav({children, params, req} : any) {
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
-              <SheetContent side="left" className="flex flex-col">
+              <SheetContent side="left" className="flex flex-col bg-black">
                 <SheetClose asChild>
                   <Link href="/" className="px-2 flex items-center text-lg font-bold justify-center">
                   <BriefcaseBusiness className="size-4 mr-2" />
