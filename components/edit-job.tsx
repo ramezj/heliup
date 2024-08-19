@@ -66,17 +66,17 @@ export default function ConfigureJob({ job }: { job: Job }) {
               className="space-y-2"
               >
               <Label htmlFor="name">Title</Label>
-              <Input placeholder="Product Manager" value={NewJob.title} onChange={((e) => {setNewJob((prev) => ({...prev, title: e.target.value}))})} />
+              <Input className="bg-inherit" placeholder="Product Manager" value={NewJob.title} onChange={((e) => {setNewJob((prev) => ({...prev, title: e.target.value}))})} />
               </motion.div>
               <motion.div 
               className="space-y-2"
               >
               <Label htmlFor="name">Type</Label>
               <Select defaultValue={NewJob.type} onValueChange={(e) => { setNewJob((prev) => ({ ...prev, type: e as Type}))}}>
-              <SelectTrigger className="">
+              <SelectTrigger className="bg-inherit">
                 <SelectValue />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-black">
                 <SelectGroup>
                   <SelectItem value="FULLTIME">Full-Time</SelectItem>
                   <SelectItem value="PARTTIME">Part-Time</SelectItem>
@@ -90,7 +90,7 @@ export default function ConfigureJob({ job }: { job: Job }) {
               className="space-y-2"
               >
               <Label htmlFor="name">Location</Label>
-              <Input placeholder="Los Angeles, CA" value={NewJob.location!} onChange={((e) => {setNewJob((prev) => ({...prev, location: e.target.value}))})} />
+              <Input className="bg-inherit" placeholder="Los Angeles, CA" value={NewJob.location!} onChange={((e) => {setNewJob((prev) => ({...prev, location: e.target.value}))})} />
               </motion.div>
               <motion.div 
               className="space-y-2 w-full"

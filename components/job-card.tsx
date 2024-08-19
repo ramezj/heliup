@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Separator } from "./ui/separator"
 import { Job, Organization } from "@prisma/client"
 import { Badge } from "./ui/badge"
-import { Briefcase, Navigation, ArrowUpRight, SquareArrowOutUpRight, MapPin, Pin } from "lucide-react"
+import { Briefcase, Navigation, ArrowUpRight, SquareArrowOutUpRight, MapPin, Pin, Settings } from "lucide-react"
 import { motion } from "framer-motion"
 import { Skeleton } from "./ui/skeleton"
 import ShineBorder from "./magicui/shine-border"
@@ -119,8 +119,12 @@ export function JobCardForDashboard({ job }: { job: JobWithApplicants}) {
       }
       </div>
       </div>
+      
       <div className="m-5 ml-auto flex gap-2">
-       <p className="font-medium mr-4">Edit</p>
+      <Button size={"sm"} variant={"outline"} className="gap-1">
+        <Settings className="size-4"/>
+        
+      </Button>
       </div>
       </ShineBorder>
       </div>
