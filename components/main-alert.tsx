@@ -33,7 +33,7 @@ export function Alert() {
             `inline animate-gradient bg-gradient-to-r dark:text-white text-black`,
           )}
         >
-          Introducing HireHollo
+          Introducing CareerTella
         </span>
         <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
     </ShineBorder>

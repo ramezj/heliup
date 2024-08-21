@@ -14,9 +14,9 @@ import { Alert } from "@/components/main-alert";
 import { ArrowRightIcon, SquareArrowOutUpRight } from "lucide-react";
 
 export const metadata:Metadata = {
-  title: "HireHollo",
-  description: "HireHollo, Your one-stop platform for creating and managing custom job boards.",
-  applicationName: "HireHollo"
+  title: "CareerTella",
+  description: "CareerTella, Your one-stop platform for creating and managing custom job boards.",
+  applicationName: "CareerTella"
 
 }
 
