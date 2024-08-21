@@ -28,7 +28,7 @@ export function Navigation(props:any) {
           <Link href="/" className="text-foreground transition-colors hover:text-foreground font-semibold">
             Features
           </Link>
-          <Link href="/" className="text-foreground transition-colors hover:text-foreground font-semibold">
+          <Link href={`https://careertella.${process.env.NEXT_URL}`} target="_blank" className="text-foreground transition-colors hover:text-foreground font-semibold">
             Demo
           </Link>
           <Link href="/pricing" className="text-foreground transition-colors hover:text-foreground font-semibold">

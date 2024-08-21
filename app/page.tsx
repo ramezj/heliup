@@ -35,7 +35,7 @@ export default async function Page() {
         />
         <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4">
       <Button asChild className="w-52 font-bold" variant={"expandIcon"} Icon={SquareArrowOutUpRight} iconPlacement="right">
-        <Link href={`https://hirehollo.${process.env.NEXT_URL}`} target="_blank">
+        <Link href={`https://careertella.${process.env.NEXT_URL}`} target="_blank">
         See Demo
         </Link>
         </Button>
