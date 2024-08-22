@@ -1,5 +1,5 @@
 import { getOrganizationBySlug } from "@/server-actions/organization/get-organization";
-import { Job } from "@prisma/client"
+import { Job, Organization } from "@prisma/client"
 import { redirect } from "next/navigation";
 import { JobCard } from "@/components/job-card";
 import { Metadata } from "next";
@@ -8,6 +8,14 @@ import { notFound } from 'next/navigation'
 import Link from "next/link";
 import { SquareArrowOutUpRight } from "lucide-react"
 import { SelectLocation } from "@/components/select-location";
+import { ViewSlug } from "@/components/view-slug";
+import { Prisma } from "@prisma/client";
+
+type OrganizationWithJobs = Prisma.OrganizationGetPayload<{
+  include: {
+      jobs: true
+  }
+}>
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const organization = await getOrganizationBySlug(params.slug);
@@ -28,57 +36,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <Link className="font-bold text-sm sm:text-base" href='/'>{params.slug}</Link>
         </div>
         </div>
-        <div className="w-full flex flex-col items-center text-center p-4 space-y-1 overflow-hidden">
-            <h1 className="font-bold text-3xl pt-4">{organization.organization?.name}</h1>
-            <p className="text-muted-foreground max-w-3xl">{organization.organization?.description}</p>
-            <div className="flex sm:flex-row flex-col gap-4 sm:w-1/2 w-full pt-2 justify-center">
-            <div className="w-full">
-            <SelectLocation locations={organization.locations as Array<string>} />
-            {/* <Select onValueChange={(e) => redirect(`?location=${location || ''}&type=${e}`)}>
-              <SelectTrigger className="bg-inherit w-full">
-              <SelectValue placeholder="Location" />
-              </SelectTrigger>
-              <SelectContent className="bg-black">
-                <SelectGroup>
-                  {
-                    organization.locations?.map((location) => {
-                      return (
-                        <>
-                        <SelectItem value={location.location!}>{location.location}</SelectItem>
-                        </>
-                      )
-                    })
-                  }
-                </SelectGroup>
-              </SelectContent>
-              </Select> */}
-            </div>
-            <div className="w-full">
-            <Select>
-              <SelectTrigger className="bg-inherit w-full">
-              <SelectValue placeholder="Employment" />
-              </SelectTrigger>
-              <SelectContent className="bg-black">
-                <SelectGroup>
-                  <SelectItem value="FULLTIME">Full-Time</SelectItem>
-                  <SelectItem value="PARTTIME">Part-Time</SelectItem>
-                  <SelectItem value="INTERNSHIP">Internship</SelectItem>
-                  <SelectItem value="CONTRACT">Contract</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-              </Select>
-            </div>
-            </div>
-            <div className="flex flex-col gap-4 lg:w-1/2 w-full pt-2">
-            {organization.organization?.jobs.map((job:Job) => {
-                return (
-                    <div key={job.id} className="relative">
-                    <JobCard job={job} organization={organization.organization} />
-                    </div>
-                )
-            })}
-            </div>
-        </div>
+        <ViewSlug organization={organization.organization as OrganizationWithJobs} locations={organization.locations as Array<string>} />
         </>
     )
 }

@@ -12,7 +12,6 @@ import Link from "next/link";
 import { MainAlert } from "@/components/main-alert";
 import { Alert } from "@/components/main-alert";
 import { ArrowRightIcon, SquareArrowOutUpRight } from "lucide-react"
-import GridPattern from "@/components/magicui/grid-pattern";
 
 export const metadata:Metadata = {
   title: "CareerTella",
