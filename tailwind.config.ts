@@ -59,6 +59,14 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        "ripple": {
+          "0%, 100%": {
+            transform: "translate(-50%, -50%) scale(1)",
+          },
+          "50%": {
+            transform: "translate(-50%, -50%) scale(0.9)",
+          },
+        },
         "shine": {
           from: { backgroundPosition: '200% 0' },
           to: { backgroundPosition: '-200% 0' },
@@ -102,6 +110,7 @@ const config = {
         },
       },
       animation: {
+        "ripple": "ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         "meteor": "meteor 5s linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",

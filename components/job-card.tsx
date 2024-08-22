@@ -186,7 +186,7 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
 export function LandingPageJobCard({ title, type, location }: { title: string, type: string, location: string }) {
   return (
       <ShineBorder color={"dark" ? "white" : "black"}
-      className="w-full flex border rounded-lg items-center duration-300">
+      className="w-full flex border rounded-lg items-center duration-300 bg-black">
       <div className="m-5 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
        {title}     
