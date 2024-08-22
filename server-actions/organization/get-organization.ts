@@ -22,9 +22,23 @@ export async function getOrganizationBySlug(slug: string) {
                 message: "Organization doesnt exist"
             }
         }
+        const uniqueLocations = await prisma.job.findMany({
+            where: {
+                organizationId: organization.id,
+                location: { 
+                    not: null
+                }
+            },
+            select: {
+                location: true
+            },
+            distinct: ['location']
+        })
+        const locations = uniqueLocations.map(job => job.location);
         return { 
             error: false,
-            organization
+            organization,
+            locations:locations
         }
     } catch (error) {
         return {

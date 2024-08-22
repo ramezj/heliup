@@ -7,6 +7,7 @@ import { Select,SelectContent,SelectGroup,SelectItem,SelectLabel,SelectTrigger,S
 import { notFound } from 'next/navigation'
 import Link from "next/link";
 import { SquareArrowOutUpRight } from "lucide-react"
+import { SelectLocation } from "@/components/select-location";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const organization = await getOrganizationBySlug(params.slug);
@@ -32,19 +33,25 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <p className="text-muted-foreground max-w-3xl">{organization.organization?.description}</p>
             <div className="flex sm:flex-row flex-col gap-4 sm:w-1/2 w-full pt-2 justify-center">
             <div className="w-full">
-            <Select>
+            <SelectLocation locations={organization.locations as Array<string>} />
+            {/* <Select onValueChange={(e) => redirect(`?location=${location || ''}&type=${e}`)}>
               <SelectTrigger className="bg-inherit w-full">
               <SelectValue placeholder="Location" />
               </SelectTrigger>
               <SelectContent className="bg-black">
                 <SelectGroup>
-                  <SelectItem value="FULLTIME">Full-Time</SelectItem>
-                  <SelectItem value="PARTTIME">Part-Time</SelectItem>
-                  <SelectItem value="INTERNSHIP">Internship</SelectItem>
-                  <SelectItem value="CONTRACT">Contract</SelectItem>
+                  {
+                    organization.locations?.map((location) => {
+                      return (
+                        <>
+                        <SelectItem value={location.location!}>{location.location}</SelectItem>
+                        </>
+                      )
+                    })
+                  }
                 </SelectGroup>
               </SelectContent>
-              </Select>
+              </Select> */}
             </div>
             <div className="w-full">
             <Select>
