@@ -17,13 +17,11 @@ type OrganizationWithJobs = Prisma.OrganizationGetPayload<{
 export function ViewSlug({ organization, locations } : { organization:OrganizationWithJobs, locations:Array<string>}) {
     const [ originalJobs, setOriginalJobs ] = useState<Array<Job>>(organization.jobs);
     const [ jobs, setJobs ] = useState<Array<Job>>(organization.jobs);
-    const [ location, setLocation ] = useState<string>();
-    const [ employment, setEmployment ] = useState<string>();
-    const filterItemsByLocation =(loc: string) => {
-        if (loc === "All") {
+    const filterJobs = (location : string) => {
+        if (location === "All") {
             setJobs(originalJobs);
         } else {
-            const updateItems = originalJobs.filter((job) => job.location === loc);
+            const updateItems = originalJobs.filter((job) => job.location === location);
             setJobs(updateItems);
         }
     }
@@ -34,7 +32,7 @@ export function ViewSlug({ organization, locations } : { organization:Organizati
     <div className="flex sm:flex-row flex-col gap-4 sm:w-1/2 w-full pt-2 justify-center">
     <div className="w-full">
     {/* <SelectLocation locations={locations as Array<string>} /> */}
-    <Select onValueChange={((e) => {filterItemsByLocation(e)})}>
+    <Select onValueChange={((e) => {filterJobs(e);})}>
         <SelectTrigger className="bg-inherit w-full">
         <SelectValue placeholder="Location" />
         </SelectTrigger>
