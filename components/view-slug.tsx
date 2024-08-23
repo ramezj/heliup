@@ -34,11 +34,11 @@ export function ViewSlug({ organization, locations } : { organization:Organizati
     {/* <SelectLocation locations={locations as Array<string>} /> */}
     <Select onValueChange={((e) => {filterJobs(e);})}>
         <SelectTrigger className="bg-inherit w-full">
-        <SelectValue placeholder="Location" />
+        <SelectValue placeholder="All Locations" />
         </SelectTrigger>
         <SelectContent className="bg-black">
           <SelectGroup>
-            <SelectItem value="All">All</SelectItem>
+            <SelectItem key={"All"} value="All">All Locations</SelectItem>
             {
               locations.map((location, index) => {
                 return (
