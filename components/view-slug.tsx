@@ -45,7 +45,7 @@ export function ViewSlug({ organization, locations } : { organization:Organizati
         <SelectValue placeholder="All Locations" />
         </SelectTrigger>
         <SelectContent className="bg-black">
-          <SelectGroup>
+          <SelectGroup key={"Items"}>
             <SelectItem key={"All"} value="All">All Locations</SelectItem>
             {
               locations.map((location, index) => {
@@ -70,12 +70,12 @@ export function ViewSlug({ organization, locations } : { organization:Organizati
       <SelectValue placeholder="Employment" />
       </SelectTrigger>
       <SelectContent className="bg-black">
-        <SelectGroup>
+        <SelectGroup key={"Items2"}>
           <SelectItem key={"All"} value="All">All Employment</SelectItem>
-          <SelectItem value="FULLTIME">Full-Time</SelectItem>
-          <SelectItem value="PARTTIME">Part-Time</SelectItem>
-          <SelectItem value="INTERNSHIP">Internship</SelectItem>
-          <SelectItem value="CONTRACT">Contract</SelectItem>
+          <SelectItem key={"FULLTIME"} value="FULLTIME">Full-Time</SelectItem>
+          <SelectItem key={"PARTTIME"} value="PARTTIME">Part-Time</SelectItem>
+          <SelectItem key={"INTERNSHIP"} value="INTERNSHIP">Internship</SelectItem>
+          <SelectItem key={"CONTRACT"} value="CONTRACT">Contract</SelectItem>
         </SelectGroup>
       </SelectContent>
       </Select>
@@ -89,7 +89,7 @@ export function ViewSlug({ organization, locations } : { organization:Organizati
             animate={{ opacity:1}}
             transition={{ duration: 0.3, delay: index * 0.2}}
             key={job.id} className="relative">
-            <JobCard job={job} organization={organization} />
+            <JobCard key={index} job={job} organization={organization} />
             </motion.div>
         )
     })}
