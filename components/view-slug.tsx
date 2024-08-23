@@ -17,14 +17,18 @@ type OrganizationWithJobs = Prisma.OrganizationGetPayload<{
 export function ViewSlug({ organization, locations } : { organization:OrganizationWithJobs, locations:Array<string>}) {
     const [ originalJobs, setOriginalJobs ] = useState<Array<Job>>(organization.jobs);
     const [ jobs, setJobs ] = useState<Array<Job>>(organization.jobs);
-    const filterJobs = (location : string) => {
-        if (location === "All") {
-            setJobs(originalJobs);
-        } else {
-            const updateItems = originalJobs.filter((job) => job.location === location);
-            setJobs(updateItems);
-        }
-    }
+    const [ selectedLocation, setSelectedLocation ] = useState<string>("All");
+    const [ selectedEmploymentType, setSelectedEmploymentType ] = useState<string>("All");
+    const filterJobs = (location: string, employmentType: string) => {
+      let filteredJobs = originalJobs;
+      if (location !== "All") {
+          filteredJobs = filteredJobs.filter((job) => job.location === location);
+      }
+      if (employmentType !== "All") {
+          filteredJobs = filteredJobs.filter((job) => job.type === employmentType);
+      }
+      setJobs(filteredJobs);
+  };
     return (
     <div className="w-full flex flex-col items-center text-center p-4 space-y-1 overflow-hidden">
     <h1 className="font-bold text-3xl pt-4">{organization?.name}</h1>
@@ -32,7 +36,11 @@ export function ViewSlug({ organization, locations } : { organization:Organizati
     <div className="flex sm:flex-row flex-col gap-4 sm:w-1/2 w-full pt-2 justify-center">
     <div className="w-full">
     {/* <SelectLocation locations={locations as Array<string>} /> */}
-    <Select onValueChange={((e) => {filterJobs(e);})}>
+    <Select
+      onValueChange={(loc) => {
+      setSelectedLocation(loc); 
+      filterJobs(loc, selectedEmploymentType); // Call filterJobs with current selected values
+      }}>
         <SelectTrigger className="bg-inherit w-full">
         <SelectValue placeholder="All Locations" />
         </SelectTrigger>
@@ -53,12 +61,17 @@ export function ViewSlug({ organization, locations } : { organization:Organizati
     </Select>
     </div>
     <div className="w-full">
-    <Select>
+    <Select 
+      onValueChange={(type) => {
+      setSelectedEmploymentType(type); 
+      filterJobs(selectedLocation, type);
+    }}>
       <SelectTrigger className="bg-inherit w-full">
       <SelectValue placeholder="Employment" />
       </SelectTrigger>
       <SelectContent className="bg-black">
         <SelectGroup>
+          <SelectItem key={"All"} value="All">All Employment</SelectItem>
           <SelectItem value="FULLTIME">Full-Time</SelectItem>
           <SelectItem value="PARTTIME">Part-Time</SelectItem>
           <SelectItem value="INTERNSHIP">Internship</SelectItem>
