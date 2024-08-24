@@ -1,6 +1,3 @@
-import Image from "next/image";
-import { Toggle } from "@/components/toggle";
-import { Navigation } from "@/components/navbar";
 import { auth } from "@/auth";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
@@ -8,14 +5,8 @@ import { getUserDashboard } from "@/server-actions/dashboard/getUserDashboard";
 import { Organization } from "@prisma/client";
 import { Button } from "@/components/ui/button";
 import { Plus, ArrowUpRight, SquareArrowOutUpRight } from "lucide-react";
-import { JobCard } from "@/components/job-card";
-import { CreateJobButton } from "@/components/create-job";
 import Link from "next/link";
-import { motion } from "framer-motion"
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import EditOrganization from "@/components/edit-organization";
-import { Card, CardContent } from "@/components/ui/card";
 import { StatisticalCard } from "@/components/statistical-card";
 
 export const metadata: Metadata = {
@@ -28,7 +19,7 @@ export default async function Page() {
   if(!session) { redirect('/auth') }
   if(session.user?.firstTimeUser === true) { redirect('/onboarding') }
   const organization = await getUserDashboard();
-  if(organization === null) { redirect('/onboarding' ) }
+  if(organization.ok === false) {redirect('/onboarding')}
   return (
         <>
         <div className="flex justify-between items-center w-full">
@@ -41,17 +32,17 @@ export default async function Page() {
         </div>
         <div className="flex sm:flex-row flex-col gap-2">
           <div className="relative w-full">
-          <StatisticalCard name="Active Jobs" number={organization.jobs.length} />
+          <StatisticalCard name="Active Jobs" number={organization.organization?.jobs.length as number} />
           </div>
           <div className="relative w-full">
           <StatisticalCard name="Inactive Jobs" number={0} />
           </div>
           <div className="relative w-full">
-          <StatisticalCard name="Total Applicants" number={0} />
+          <StatisticalCard name="Total Applicants" number={organization.totalApplicants as number} />
           </div>
         </div>
         <div className="space-y-2">
-        <EditOrganization organization={organization} />
+        <EditOrganization organization={organization.organization as Organization} />
         </div>
         </>
   );
