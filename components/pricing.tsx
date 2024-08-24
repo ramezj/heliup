@@ -31,6 +31,12 @@ export function FreeCard() {
             </div>
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
+                    <CheckIcon className="text-green-500"/>
+                    CareerTella Branding
+                    </h2>
+            </div>
+            <div className="flex flex-col space-y-1.5">
+                <h2 className="flex gap-2">
                     <XIcon className="text-red-500"/>
                     Custom Domain
                     </h2>
@@ -51,7 +57,7 @@ export function PaidCard() {
     return (
         <>
         <Card className="w-[350px] bg-black ">
-        <ShineBorder color={"dark" ? "white" : "black"}>
+        <ShineBorder color={"white"}>
       <CardHeader>
         <CardTitle className='flex gap-2 font-bold tracking-normal'>Premium</CardTitle>
         <CardDescription className="text-left">Monthly Subscription</CardDescription>
@@ -71,6 +77,12 @@ export function PaidCard() {
                 <h2 className="flex gap-2">
                     <CheckIcon className="text-green-500"/>
                     Unlimited Applicants
+                    </h2>
+            </div>
+            <div className="flex flex-col space-y-1.5">
+                <h2 className="flex gap-2">
+                    <XIcon className="text-red-500"/>
+                    CareerTella Branding
                     </h2>
             </div>
             <div className="flex flex-col space-y-1.5">
