@@ -4,6 +4,7 @@ import EditOrganization from "@/components/edit-organization";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { getUserDashboard } from "@/server-actions/dashboard/getUserDashboard";
+import { Organization } from "@prisma/client";
 
 export const metadata: Metadata = {
     title: "Settings",
@@ -15,7 +16,7 @@ export default async function Page() {
   if(!session) { redirect('/auth') }
   if(session.user?.firstTimeUser === true) { redirect('/onboarding') }
   const organization = await getUserDashboard();
-  if(organization === null) { redirect('/onboarding' ) }
+  if(organization.organization === null) { redirect('/onboarding' ) }
     return (
         <>
         <div className="space-y-0.5">
@@ -25,7 +26,7 @@ export default async function Page() {
           </p>
         </div>
         <Separator className="-mb-2"/>
-        <EditOrganization organization={organization} />
+        <EditOrganization organization={organization.organization as Organization} />
         </>
     )
 }
