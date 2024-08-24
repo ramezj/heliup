@@ -40,7 +40,7 @@ export function EditStatus({applicant}: {applicant:Applicant}) {
         <>
         <Dialog>
       <DialogTrigger asChild>
-      <Button variant="outline">
+      <Button variant="outline" className="bg-inherit">
         Edit Status
       </Button>
       </DialogTrigger>
