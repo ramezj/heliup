@@ -4,7 +4,7 @@ import { auth } from "@/auth"
 import { Organization } from "@prisma/client";
 import { redirect } from "next/navigation";
 
-export  async function getUserDashboard() {
+export async function getUserDashboard() {
     const session = await auth();
     if(!session) { redirect('/auth') }
     try {

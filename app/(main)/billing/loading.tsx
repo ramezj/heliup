@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import { Separator } from "@/components/ui/separator";
+import { Loader2 } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Loading",
@@ -16,6 +17,9 @@ export default function Loading() {
           </p>
         </div>
         <Separator className="-mb-2"/>
+        <div className="w-full h-full items-center flex flex-col justify-center">
+        <Loader2 className="size-8 animate-spin text-gray-200" />
+        </div>
         </>
     )
 }
