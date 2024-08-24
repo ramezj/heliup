@@ -27,7 +27,7 @@ export default async function Page({ params }: { params: { applicantId: string }
         <div className="space-y-4"> 
         <div className="space-y-2">
         <Label className="text-lg">Full Name</Label>
-        <Input value={`${applicant.applicant?.first_name} ${applicant.applicant?.last_name}`} readOnly />
+        <Input value={`${applicant.applicant?.name}`} readOnly />
         </div>
         <div className="space-y-2">
         <Label className="text-lg">Email Address</Label>
