@@ -67,11 +67,11 @@ export function ViewSlug({ organization, locations } : { organization:Organizati
       filterJobs(selectedLocation, type);
     }}>
       <SelectTrigger className="bg-inherit w-full">
-      <SelectValue placeholder="Employment" />
+      <SelectValue placeholder="All Types" />
       </SelectTrigger>
       <SelectContent className="bg-black">
         <SelectGroup key={"Items2"}>
-          <SelectItem key={"All"} value="All">All Employment</SelectItem>
+          <SelectItem key={"All"} value="All">All Types</SelectItem>
           <SelectItem key={"FULLTIME"} value="FULLTIME">Full-Time</SelectItem>
           <SelectItem key={"PARTTIME"} value="PARTTIME">Part-Time</SelectItem>
           <SelectItem key={"INTERNSHIP"} value="INTERNSHIP">Internship</SelectItem>
