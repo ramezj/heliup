@@ -23,7 +23,7 @@ export function Navigation(props:any) {
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <Link href="/" className="flex items-center text-lg font-bold">
           <BriefcaseBusiness className="size-4 mr-2 " />
-          CareerTella
+          Heliup
           </Link>
           <Link href="/" className="text-foreground transition-colors hover:text-foreground font-semibold">
             Features
@@ -50,7 +50,7 @@ export function Navigation(props:any) {
               <SheetClose asChild>
                 <Link href="/" className="px-2 flex items-center text-lg font-bold justify-center">
                 <BriefcaseBusiness className="size-4 mr-2" />
-                  CareerTella
+                  Heliup
                 </Link>
                 </SheetClose>
                 <nav className="grid gap-3 text-lg font-medium mt-1">

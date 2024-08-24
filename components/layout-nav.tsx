@@ -15,7 +15,7 @@ export default function LayoutNav({children, params, req} : any) {
             <div className="flex h-16 items-center border-b px-3 lg:h-16 text-center justify-center">
             <Link href='/' className="flex items-center justify-center">
               <BriefcaseBusiness className="size-4 mr-2" />
-              <span className="font-bold text-lg">CareerTella</span>
+              <span className="font-bold text-lg">Heliup</span>
             </Link>
             </div>
             <div className="flex-1 ">
@@ -61,7 +61,7 @@ export default function LayoutNav({children, params, req} : any) {
                 <SheetClose asChild>
                   <Link href="/" className="px-2 flex items-center text-lg font-bold justify-center">
                   <BriefcaseBusiness className="size-4 mr-2" />
-                    CareerTella
+                    Heliup
                   </Link>
                   </SheetClose>
                 <nav className="grid gap-3 text-lg font-medium mt-1">
