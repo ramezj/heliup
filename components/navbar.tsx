@@ -93,7 +93,7 @@ export function Navigation(props:any) {
             <>
                   <Button variant="default" asChild className="bg-blue-600 text-white hover:bg-blue-700 duration-200">
                   <Link href='/auth'>
-                  Sign In
+                  Start Hiring
                   </Link>
                   </Button>
             </>
