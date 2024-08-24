@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 import { r2 } from "@/utils/r2";
 import { GetObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
 
-export async function applyToJob(jobId: string, firstName: string, lastName: string, emailAddress: string, phoneNumber: number, motivation: string, formData: FormData) {
+export async function applyToJob(jobId: string, name: string, emailAddress: string, phoneNumber: number, motivation: string, formData: FormData) {
     try {
         const job = await prisma.job.findFirst({
             where: {
@@ -53,8 +53,7 @@ export async function applyToJob(jobId: string, firstName: string, lastName: str
         const applicant = await prisma.applicant.create({
             data: {
                 jobId: jobId,
-                first_name: firstName,
-                last_name: lastName,
+                name: name,
                 email: emailAddress,
                 number: phoneNumber,
                 motivation: motivation,

@@ -10,8 +10,7 @@ import { toast } from "sonner"
 
 
 export default function ApplyCard({ jobId }: { jobId: string}) {
-    const [ firstName, setFirstName ] = useState<string>();
-    const [ lastName, setLastName ] = useState<string>();
+    const [ name, setName ] = useState<string>();
     const [ emailAddress, setEmailAddress ] = useState<string>();
     const [ phoneNumber, setPhoneNumber ] = useState<number>();
     const [ file, setFile ] = useState<File | null>();
@@ -22,7 +21,7 @@ export default function ApplyCard({ jobId }: { jobId: string}) {
         const formData = new FormData();
         formData.append('file', file!);
         setLoading(true);
-        const res = await applyToJob(jobId, firstName!, lastName!, emailAddress!, phoneNumber!, motivation!, formData);
+        const res = await applyToJob(jobId, name!, emailAddress!, phoneNumber!, motivation!, formData);
         setLoading(false);
         toast(res.message);
     }
@@ -39,12 +38,8 @@ export default function ApplyCard({ jobId }: { jobId: string}) {
             <h1 className="text-2xl font-bold text-center">Apply to job</h1>
             </div>
             <div className="space-y-2">
-            <Label htmlFor="name">First Name</Label>
-            <Input className="bg-inherit" required placeholder="Joe" value={firstName} onChange={((e) => {setFirstName(e.target.value)})} />
-            </div>
-            <div className="space-y-2">
-            <Label htmlFor="name">Last Name</Label>
-            <Input className="bg-inherit" required placeholder="Biden" value={lastName} onChange={((e) => {setLastName(e.target.value)})} />
+            <Label htmlFor="name">Full Name</Label>
+            <Input className="bg-inherit" required placeholder="Joe" value={name} onChange={((e) => {setName(e.target.value)})} />
             </div>
             <div className="space-y-2">
             <Label htmlFor="name">Email Address</Label>

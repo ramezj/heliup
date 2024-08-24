@@ -24,7 +24,7 @@ export function ApplicantCard({ applicant }: { applicant: Applicant }) {
       className="w-full flex border rounded-lg items-center duration-300 cursor-pointer">
       <div className="m-5 flex flex-col items-start text-left">
         <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
-         {applicant.first_name} {applicant.last_name}   
+         {applicant.name}  
         </p>
         <div className="mt-3 -mb-2 flex gap-1">
         <Badge variant={"outline"} className="rounded-sm">{formatApplicantType(applicant.status)}</Badge>
