@@ -8,7 +8,7 @@ export const getValidSubdomain = (host?: string | null) => {
     if (!host && typeof window !== 'undefined') {
       host = window.location.host;
     }
-    if(host === 'localhost:3000' || host === 'astralics.com') {
+    if(host === 'localhost:3000' || host === 'heliup.xyz') {
         return;
     }
     if (host && host.includes('.')) {
