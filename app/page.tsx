@@ -16,7 +16,7 @@ import { BentoDemo } from "@/components/feature";
 
 export const metadata:Metadata = {
   title: "Heliup",
-  description: "Heliup, Your one-stop platform for creating and managing custom job boards.",
+  description: "Heliup, Hiring for startups & small teams.",
   applicationName: "Heliup"
 
 }
