@@ -62,7 +62,7 @@ export default async function Page() {
       <div className="pt-12">
       <h1 className="font-bold text-4xl">Everything you need, In one place.</h1>
       </div>
-      <div className="flex flex-wrap gap-3 items-center content-center justify-center pt-12 text-left sm:w-[70%] w-full">
+      <div className="flex flex-wrap gap-3 items-center content-center justify-center pt-12 text-left lg:w-2/3 w-full">
         <BentoDemo />
         </div>
    </div>
