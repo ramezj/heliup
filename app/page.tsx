@@ -21,6 +21,8 @@ export const metadata:Metadata = {
 
 }
 
+// Landing Page
+
 export default async function Page() {
   const session = await auth();
   return (
