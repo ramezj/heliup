@@ -12,7 +12,7 @@ import Link from "next/link";
 import { MainAlert } from "@/components/main-alert";
 import { Alert } from "@/components/main-alert";
 import { ArrowRightIcon, SquareArrowOutUpRight } from "lucide-react"
-import { Feature } from "@/components/feature";
+import { BentoDemo } from "@/components/feature";
 
 export const metadata:Metadata = {
   title: "Heliup",
@@ -63,10 +63,8 @@ export default async function Page() {
       <h1 className="font-bold text-4xl">Everything you need, In one place.</h1>
       </div>
       <div className="flex flex-wrap gap-3 items-center content-center justify-center pt-12">
-        <Feature />
-        <Feature />
-        <Feature />
-      </div>
+        <BentoDemo />
+        </div>
    </div>
    </>
   );
