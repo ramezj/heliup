@@ -1,5 +1,6 @@
 import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
-import { BellIcon, Share2Icon } from "lucide-react";
+import { BellIcon, Link, Share2Icon, Users } from "lucide-react";
+import ShineBorder from "./magicui/shine-border";
 
 import { cn } from "@/lib/utils";
 import { Calendar } from "@/components/ui/calendar";
@@ -114,10 +115,69 @@ const features = [
 
 export function BentoDemo() {
   return (
+    // <BentoGrid>
+    //   {features.map((feature, idx) => (
+    //     <BentoCard key={idx} {...feature} />
+    //   ))}
+    // </BentoGrid>
     <BentoGrid>
-      {features.map((feature, idx) => (
-        <BentoCard key={idx} {...feature} />
-      ))}
+        <BentoCard key={1} 
+        Icon={Link} 
+        name="Custom Domain" 
+        description="Use your own custom domain and attract more applicants." 
+        className="col-span-3 lg:col-span-1"
+        href="#"
+        cta="Learn More"
+        background={
+        <Calendar
+        mode="single"
+        selected={new Date(2022, 4, 11, 0, 0, 0)}
+        className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
+        />}/>
+
+
+        <BentoCard key={1} 
+        Icon={Users} 
+        name="Applicant Management" 
+        description="Use your own custom domain and attract more applicants." 
+        className="col-span-3 lg:col-span-2"
+        href="#"
+        cta="Learn More"
+        background={
+        <Calendar
+        mode="single"
+        selected={new Date(2022, 4, 11, 0, 0, 0)}
+        className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
+        />}/>
+
+
+        <BentoCard key={1} 
+        Icon={FileTextIcon} 
+        name="Review All Resumes" 
+        description="Use your own custom domain and attract more applicants." 
+        className="col-span-3 lg:col-span-2"
+        href="#"
+        cta="Learn More"
+        background={
+        <Calendar
+        mode="single"
+        selected={new Date(2022, 4, 11, 0, 0, 0)}
+        className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
+        />}/>
+
+        <BentoCard key={1} 
+        Icon={Link} 
+        name="Custom Domain" 
+        description="Use your own custom domain and attract more applicants." 
+        className="col-span-3 lg:col-span-1"
+        href="#"
+        cta="Learn More"
+        background={
+        <Calendar
+        mode="single"
+        selected={new Date(2022, 4, 11, 0, 0, 0)}
+        className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
+        />}/>
     </BentoGrid>
   );
 }
