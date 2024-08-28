@@ -129,11 +129,14 @@ export function BentoDemo() {
         href="#"
         cta="Learn More"
         background={
+        <>
         <Calendar
         mode="single"
         selected={new Date(2022, 4, 11, 0, 0, 0)}
         className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
-        />}/>
+        />
+        </>
+        }/>
 
 
         <BentoCard key={1} 
