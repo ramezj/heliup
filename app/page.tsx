@@ -26,8 +26,7 @@ export default async function Page() {
   return (
    <>
    <Navigation session={session}/>
-   <div className="">
-    <div className="h-screen text-center w-full p-8 flex flex-col gap-2 items-center">
+   <div className="text-center w-full p-8 flex flex-col gap-2 items-center">
     <div className="relative">
     <Alert />
     </div>
@@ -60,19 +59,16 @@ export default async function Page() {
       </div>
       </div>
       </div>
-      </div>
-      <div className="">
+      <div className="pt-12">
       <WordPullUp
         className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-5xl md:leading-[5rem]"
         words="Everything you need, In one place."
         />
       {/* <h1 className="font-bold text-4xl md:text-5xl">Everything you need, In one place.</h1> */}
       </div>
-      <div className="text-center w-full flex flex-col gap-2 items-center">
-      <div className="flex flex-wrap gap-3 items-center content-center justify-center pt-12 text-left lg:w-2/3 w-full ">
+      <div className="flex flex-wrap gap-3 items-center content-center justify-center pt-12 text-left lg:w-2/3 w-full">
         <BentoDemo />
         </div>
-      </div>
    </div>
    </>
   );
