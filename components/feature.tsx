@@ -115,11 +115,6 @@ const features = [
 
 export function BentoDemo() {
   return (
-    // <BentoGrid>
-    //   {features.map((feature, idx) => (
-    //     <BentoCard key={idx} {...feature} />
-    //   ))}
-    // </BentoGrid>
     <BentoGrid>
         <BentoCard key={1} 
         Icon={Link} 
@@ -127,7 +122,7 @@ export function BentoDemo() {
         description="Use your own custom domain and attract more applicants." 
         className="col-span-3 lg:col-span-1"
         href="#"
-        cta="Learn More"
+        cta="Start Hiring"
         background={
         <>
         <Calendar
@@ -145,7 +140,7 @@ export function BentoDemo() {
         description="Use your own custom domain and attract more applicants." 
         className="col-span-3 lg:col-span-2"
         href="#"
-        cta="Learn More"
+        cta="Start Hiring"
         background={
         <Calendar
         mode="single"
@@ -160,7 +155,7 @@ export function BentoDemo() {
         description="Use your own custom domain and attract more applicants." 
         className="col-span-3 lg:col-span-2"
         href="#"
-        cta="Learn More"
+        cta="Start Hiring"
         background={
         <Calendar
         mode="single"
@@ -174,7 +169,7 @@ export function BentoDemo() {
         description="Use your own custom domain and attract more applicants." 
         className="col-span-3 lg:col-span-1"
         href="#"
-        cta="Learn More"
+        cta="Start Hiring"
         background={
         <Calendar
         mode="single"
