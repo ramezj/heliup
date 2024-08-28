@@ -12,6 +12,7 @@ import ShineBorder from "./magicui/shine-border"
 import { useRouter } from "next/navigation"
 import { Prisma } from "@prisma/client"
 import { UsersRound, Users } from "lucide-react"
+import { formatDistanceToNow } from "date-fns"
 
 type JobWithApplicants = Prisma.JobGetPayload<{
   include: {
@@ -36,7 +37,7 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
   };
     return (
       <Link href={`/${job.id}`}>
-      <ShineBorder color={"dark" ? "white" : "black"}
+      <ShineBorder color={"white"}
       className="w-full flex border rounded-lg items-center duration-300">
       <div className="m-5 flex flex-col items-start text-left">
         <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
@@ -56,6 +57,9 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
         View
         </Button>
         </div> */}
+        <div className="ml-auto m-5">
+          <p className="text-sm">{formatDistanceToNow(job.createdAt)} ago</p>
+        </div>
         </ShineBorder>
         </Link>
       )
@@ -104,7 +108,7 @@ export function JobCardForDashboard({ job }: { job: JobWithApplicants}) {
   };
   return (
     <div onClick={handleCardClick}>
-    <ShineBorder color={"dark" ? "white" : "black"}
+    <ShineBorder color={"white"}
     className="w-full flex border rounded-lg items-center duration-300 cursor-pointer">
     <div className="m-5 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
@@ -157,7 +161,7 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
   };
   return (
     <div onClick={handleCardClick}>
-    <ShineBorder color={"dark" ? "white" : "black"}
+    <ShineBorder color={"white"}
     className="w-full flex border rounded-lg items-center duration-300 cursor-pointer">
     <div className="m-5 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
@@ -185,7 +189,7 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
 
 export function LandingPageJobCard({ title, type, location }: { title: string, type: string, location: string }) {
   return (
-      <ShineBorder color={"dark" ? "white" : "black"}
+      <ShineBorder color={"white"}
       className="w-full flex border rounded-lg items-center duration-300 bg-black">
       <div className="m-5 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
