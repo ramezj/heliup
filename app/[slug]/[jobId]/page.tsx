@@ -21,13 +21,18 @@ export async function generateMetadata({ params }: { params: { jobId: string } }
     };
 }
 export default async function Page({ params }: { params: { jobId: string, slug:string } }) {
+    const organization = await getOrganizationBySlug(params.slug);
+    if(organization?.error) { 
+        console.error("Not Found")
+        notFound() 
+    }
     const job = await getJobById(params.jobId);
     if(job?.error) { redirect('/') }
     return (
         <>
             <div className="w-full border-b bg-black z-50 border-0 h-16 sticky top-0 text-center justify-between flex items-center px-6">
             <div className="flex">
-                <Link className="font-bold text-sm sm:text-base" href='/'>{params.slug}</Link>
+                <Link className="font-bold text-sm sm:text-base" href='/'>{organization.organization?.name}</Link>
             </div>
             </div>
             <div className="w-full flex flex-col items-center text-center py-8 px-4 gap-y-4">

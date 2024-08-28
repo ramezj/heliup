@@ -33,7 +33,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <>
         <div className="w-full border-b bg-black top-0 z-50 border-0 h-16 sticky text-center justify-between flex items-center px-6">
         <div className="flex">
-        <Link className="font-bold text-sm sm:text-base" href='/'>{params.slug}</Link>
+        <Link className="font-bold text-sm sm:text-base" href='/'>{organization.organization?.name}</Link>
         </div>
         </div>
         <ViewSlug organization={organization.organization as OrganizationWithJobs} locations={organization.locations as Array<string>} />
