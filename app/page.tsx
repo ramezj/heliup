@@ -46,8 +46,8 @@ export default async function Page() {
         </Link>
       </Button>
         </div>
-      <div className="w-full items-center flex content-center flex-col mt-3">
-      <div className="flex flex-col gap-4 lg:w-1/2 w-full">
+      <div className="w-full items-center flex content-center flex-col mt-5">
+      <div className="flex flex-col gap-6 lg:w-1/2 w-full">
       <div className="relative">
       <LandingPageJobCard title="Product Manager" type="Full-Time" location="Remote"/>
       </div>
@@ -60,7 +60,11 @@ export default async function Page() {
       </div>
       </div>
       <div className="pt-12">
-      <h1 className="font-bold text-4xl">Everything you need, In one place.</h1>
+      <WordPullUp
+        className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-5xl md:leading-[5rem]"
+        words="Everything you need, In one place."
+        />
+      {/* <h1 className="font-bold text-4xl md:text-5xl">Everything you need, In one place.</h1> */}
       </div>
       <div className="flex flex-wrap gap-3 items-center content-center justify-center pt-12 text-left lg:w-2/3 w-full">
         <BentoDemo />
