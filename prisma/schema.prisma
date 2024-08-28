@@ -78,6 +78,7 @@ model Job {
   type Type @default(FULLTIME)
   location String?
   content String
+  createdAt DateTime @default(now())
   applicants Applicant[]
   organizationId String
   organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
@@ -101,6 +102,7 @@ model Applicant {
   linkedIn String?
   twitter String?
   github String?
+  createdAt DateTime @default(now())
   status Status @default(SUBMITTED)
   resumeKey String
   jobId String
