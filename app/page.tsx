@@ -30,10 +30,13 @@ export default async function Page() {
     <div className="relative">
     <Alert />
     </div>
-      <WordPullUp
+      {/* <WordPullUp
         className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem]"
         words="Hiring for startups and small teams."
-        />
+        /> */}
+        <h1 className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-bold">
+          Hiring, for startups & small teams.
+        </h1>
         <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4">
       <Button asChild className="w-52 font-bold" variant={"expandIcon"} Icon={SquareArrowOutUpRight} iconPlacement="right">
         <Link href={`https://demo.${process.env.NEXT_URL}`} target="_blank">
@@ -60,10 +63,13 @@ export default async function Page() {
       </div>
       </div>
       <div className="pt-12">
-      <WordPullUp
+      {/* <WordPullUp
         className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-5xl md:leading-[5rem]"
         words="Everything you need, In one place."
-        />
+        /> */}
+         <h1 className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-bold">
+          Everything you need, In one place.
+        </h1>
       {/* <h1 className="font-bold text-4xl md:text-5xl">Everything you need, In one place.</h1> */}
       </div>
       <div className="flex flex-wrap gap-3 items-center content-center justify-center pt-12 text-left lg:w-2/3 w-full">
