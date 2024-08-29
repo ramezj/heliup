@@ -116,9 +116,15 @@ export default async function Page() {
     </div>
 
     {/* Second Section Here */}
-    <div className="h-screen max-h-fit bg-blue-200">
+    <div className="h-screen max-h-fit items-center content-center justify-center flex flex-wrap">
+    <h1 className="text-center text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-bold">
+      Everything you need, In one place.
+    </h1>
 
+    <div className="flex flex-wrap gap-3 items-center content-center justify-center pt-12 text-left lg:w-2/3 w-full">
+         <BentoDemo />
     </div>
+    </div>  
     </>
   )
 }
