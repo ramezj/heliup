@@ -105,7 +105,7 @@ export default async function Page() {
        </Button>
     </div>
 
-    <div className="w-full items-center flex content-center flex-col mt-9">
+    <div className="w-full items-center flex content-center flex-col pt-4">
        <div className="flex flex-col gap-2 lg:w-1/2 w-full">
        <LandingPageJobCard title="Product Manager" type="Full-Time" location="Remote"/>
        <LandingPageJobCard title="Operations Manager" type="Contract" location="Austin, TX"/>
