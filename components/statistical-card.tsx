@@ -7,7 +7,7 @@ import { Loader2 } from "lucide-react"
 export function StatisticalCard({ name, number} : { name: string, number: number}) {
     return (
         <>
-        <ShineBorder color={"dark" ? "white" : "black"} >
+        <div>
         <Card className="w-full bg-inherit">
         <CardContent className="pt-6">
         <div className="space-y-2">
@@ -18,7 +18,7 @@ export function StatisticalCard({ name, number} : { name: string, number: number
         </div>
       </CardContent>
     </Card>
-    </ShineBorder>
+    </div>
         </>
     )
 }
@@ -27,7 +27,6 @@ export function LoadingStatisticalCard({ name} : { name: string}) {
   return (
       <>
       <Card className="w-full relative">
-      <ShineBorder color={"dark" ? "white" : "black"}>
       <CardContent className="pt-6">
       <div className="space-y-2">
         <Label className="font-bold text-lg">
@@ -37,7 +36,6 @@ export function LoadingStatisticalCard({ name} : { name: string}) {
         <p className="text-lg">loading</p>
       </div>
     </CardContent>
-    </ShineBorder>
   </Card>
       </>
   )
