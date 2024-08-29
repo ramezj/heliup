@@ -28,18 +28,17 @@ export default async function Page() {
   return (
    <>
    <Navigation session={session}/>
-   <div className="text-center w-full p-8 flex flex-col gap-2 items-center">
+   <div className="text-center w-full p-8 flex flex-col gap-4 items-center">
     <div className="relative">
     <Alert />
     </div>
-      {/* <WordPullUp
-        className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem]"
-        words="Hiring for startups and small teams."
-        /> */}
+        <div className="text-center items-center flex flex-col">
         <h1 className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-bold">
           Hiring, for startups & small teams.
         </h1>
-        <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4">
+        <p className="text-sm max-w-3xl text-muted-foreground items-center text-center align-middle">Create stunning career pages, receive applicants & start the hiring process. All in one place.</p>
+        </div>
+      <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4 mt-4">
       <Button asChild className="w-52 font-bold" variant={"expandIcon"} Icon={SquareArrowOutUpRight} iconPlacement="right">
         <Link href={`https://demo.${process.env.NEXT_URL}`} target="_blank">
         See Demo
@@ -51,7 +50,7 @@ export default async function Page() {
         </Link>
       </Button>
         </div>
-      <div className="w-full items-center flex content-center flex-col mt-5">
+      <div className="w-full items-center flex content-center flex-col mt-9">
       <div className="flex flex-col gap-2 lg:w-1/2 w-full">
       <div className="relative">
       <LandingPageJobCard title="Product Manager" type="Full-Time" location="Remote"/>

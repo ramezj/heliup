@@ -26,13 +26,19 @@ export function FreeCard() {
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
                     <CheckIcon className="text-green-500"/>
+                    2 Jobs
+                    </h2>
+            </div>
+            <div className="flex flex-col space-y-1.5">
+                <h2 className="flex gap-2">
+                    <CheckIcon className="text-green-500"/>
                     20 Applicants
                     </h2>
             </div>
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
                     <CheckIcon className="text-green-500"/>
-                    CareerTella Branding
+                    Heliup Branding
                     </h2>
             </div>
             <div className="flex flex-col space-y-1.5">
@@ -76,13 +82,19 @@ export function PaidCard() {
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
                     <CheckIcon className="text-green-500"/>
+                    Unlimited Jobs
+                    </h2>
+            </div>
+            <div className="flex flex-col space-y-1.5">
+                <h2 className="flex gap-2">
+                    <CheckIcon className="text-green-500"/>
                     Unlimited Applicants
                     </h2>
             </div>
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
                     <XIcon className="text-red-500"/>
-                    CareerTella Branding
+                    Heliup Branding
                     </h2>
             </div>
             <div className="flex flex-col space-y-1.5">
