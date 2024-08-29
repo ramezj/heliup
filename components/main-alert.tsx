@@ -24,8 +24,8 @@ export async function MainAlert() {
 
 export function Alert() {
   return (
-    <div className="rounded-3xl bg-black">
-    <ShineBorder color={"dark" ? "white" : "black"} className="max-w-fit p-4 py-1.5 border text-sm font-medium flex items-center justify-center cursor-pointer bg-black">
+    <div className="rounded-3xl bg-black relative">
+    <ShineBorder color={"white"} className="max-w-fit p-4 py-1.5 border text-sm font-medium flex items-center justify-center cursor-pointer bg-black">
         🎉 
         <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
         <span
