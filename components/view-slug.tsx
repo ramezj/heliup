@@ -91,7 +91,8 @@ export function ViewSlug({ organization, locations } : { organization:Organizati
             initial={{ opacity:0}}
             animate={{ opacity:1}}
             transition={{ duration: 0.3, delay: index * 0.2}}
-            key={job.id} className="relative">
+            key={job.id} 
+            className="relative">
             <JobCard key={index} job={job} organization={organization} />
             </motion.div>
         )
