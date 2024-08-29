@@ -25,7 +25,9 @@ export default async function Page() {
   const session = await auth();
   return (
    <>
+   <div className="top-0 sticky z-50">
    <Navigation session={session}/>
+   </div>
    <div className="text-center w-full p-8 flex flex-col gap-4 items-center">
     <div className="relative">
     <Alert />
