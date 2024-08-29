@@ -78,21 +78,23 @@ export default async function Page() {
   const session = await auth();
   return (
     <>
-    <Navigation session={session} />
     
     {/* First Section */}
-    <div className="h-screen max-h-fit bg-black flex flex-col items-center text-center p-8 gap-6">
+    <div className="h-screen max-h-fit bg-black flex flex-col items-center text-center gap-6">
+      <div className="top-0 w-full z-50">
+      <Navigation session={session} />
+      </div>
     <Alert />
     <div className="text-center flex flex-col items-center justify-center">
-    <h1 className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-bold">
+    <h1 className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-bold pl-4 pr-4">
       Hiring, for startups & small teams.
     </h1>
-    <p className="text-sm max-w-3xl text-muted-foreground items-center text-center align-middle">
+    <p className="text-sm max-w-3xl text-muted-foreground items-center text-center align-middle pl-4 pr-4">
       Create stunning career pages, receive applicants & start the hiring process. All in one place.
     </p>
     </div>
     
-    <div className="flex flex-row gap-4 w-full items-center justify-center">
+    <div className="flex flex-row gap-4 w-full items-center justify-center pr-4 pl-4">
     <Button asChild className="w-52 font-bold" variant={"expandIcon"} Icon={SquareArrowOutUpRight} iconPlacement="right">
          <Link href={`https://demo.${process.env.NEXT_URL}`} target="_blank">
          See Demo
@@ -105,7 +107,7 @@ export default async function Page() {
        </Button>
     </div>
 
-    <div className="w-full items-center flex content-center flex-col pt-4">
+    <div className="w-full items-center flex content-center flex-col pt-4 p-4">
        <div className="flex flex-col gap-2 lg:w-1/2 w-full">
        <LandingPageJobCard title="Product Manager" type="Full-Time" location="Remote"/>
        <LandingPageJobCard title="Operations Manager" type="Contract" location="Austin, TX"/>
@@ -116,12 +118,11 @@ export default async function Page() {
     </div>
 
     {/* Second Section Here */}
-    <div className="h-screen max-h-fit items-center content-center justify-center flex flex-wrap">
+    <div className="h-screen max-h-fit items-center content-center justify-center">
     <h1 className="text-center text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-bold">
       Everything you need, In one place.
     </h1>
-
-    <div className="flex flex-wrap gap-3 items-center content-center justify-center pt-12 text-left lg:w-2/3 w-full">
+    <div className="gap-3 items-center content-center justify-center pt-12 text-left lg:w-2/3 w-full align-middle justify-items-center">
          <BentoDemo />
     </div>
     </div>  
