@@ -37,7 +37,7 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
   };
     return (
       <Link href={`/${job.id}`}>
-      <ShineBorder color={"white"}
+      <div 
       className="w-full flex border rounded-lg items-center duration-300">
       <div className="m-5 flex flex-col items-start text-left">
         <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
@@ -60,7 +60,7 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
         <div className="ml-auto m-5">
           <p className="text-sm">{formatDistanceToNow(job.createdAt)} ago</p>
         </div>
-        </ShineBorder>
+        </div>
         </Link>
       )
 }
@@ -108,7 +108,7 @@ export function JobCardForDashboard({ job }: { job: JobWithApplicants}) {
   };
   return (
     <div onClick={handleCardClick}>
-    <ShineBorder color={"white"}
+    <div color={"white"}
     className="w-full flex border rounded-lg items-center duration-300 cursor-pointer">
     <div className="m-5 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
@@ -130,7 +130,7 @@ export function JobCardForDashboard({ job }: { job: JobWithApplicants}) {
         
       </Button>
       </div>
-      </ShineBorder>
+      </div>
       </div>
     )
 }
@@ -161,7 +161,7 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
   };
   return (
     <div onClick={handleCardClick}>
-    <ShineBorder color={"white"}
+    <div color={"white"}
     className="w-full flex border rounded-lg items-center duration-300 cursor-pointer">
     <div className="m-5 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
@@ -182,14 +182,14 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
         {job.applicants.length} 
       </Button>
       </div>
-      </ShineBorder>
+      </div>
       </div>
     )
 }
 
 export function LandingPageJobCard({ title, type, location }: { title: string, type: string, location: string }) {
   return (
-      <ShineBorder color={"white"}
+      <div color={"white"}
       className="w-full flex border rounded-lg items-center duration-300 bg-black">
       <div className="m-5 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
@@ -205,6 +205,6 @@ export function LandingPageJobCard({ title, type, location }: { title: string, t
         View
         </Button>
       </div> */}
-      </ShineBorder>
+      </div>
     )
 }
