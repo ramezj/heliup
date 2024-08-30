@@ -14,7 +14,7 @@ export async function getUserJobs() {
         include: {
             jobs: {
                 orderBy: {
-                    title: "asc"
+                    createdAt: 'desc'
                 },
                 include: {
                     applicants: true
@@ -46,9 +46,7 @@ export async function getUserJobsSortedByApplicants() {
         include: {
             jobs: {
                 orderBy: {
-                    applicants: {
-                        _count: "desc"
-                    }
+                    createdAt: 'desc'
                 },
                 include: {
                     applicants: true

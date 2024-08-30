@@ -13,7 +13,11 @@ export async function getOrganizationBySlug(slug: string) {
                 },
               },
             include: {
-                jobs: true
+                jobs: {
+                    orderBy: {
+                        createdAt: 'desc'
+                    }
+                }
             }
         });
         if(!organization) {
