@@ -90,7 +90,7 @@ export function ViewSlug({ organization, locations, types } : { organization:Org
       </Select>
     </div>
     </div>
-    <div className="flex flex-col gap-4 lg:w-1/2 w-full pt-4">
+    <div className="flex flex-col gap-4 lg:w-1/2 w-full pt-6">
     {jobs.map((job:Job, index) => {
         return (
             <motion.div
