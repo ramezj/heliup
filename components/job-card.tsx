@@ -52,11 +52,6 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
           }
         </div>
         </div>
-        {/* <div className="m-5 ml-auto">
-        <Button variant={"outline"} size={"sm"}>
-        View
-        </Button>
-        </div> */}
         <div className="ml-auto m-5 hidden sm:block">
           <p className="text-sm">{formatDistanceToNow(job.createdAt)} ago</p>
         </div>

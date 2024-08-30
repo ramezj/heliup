@@ -17,7 +17,9 @@ export default async function Page() {
   const session = await auth();
   return (
    <>
+    <div className="top-0 sticky z-50">
    <Navigation session={session}/>
+   </div>
    <div className="w-full text-center flex flex-col py-8">
     <div className="space-y-1">
     <h1 className="font-bold text-4xl justify-center text-center">Pricing</h1>

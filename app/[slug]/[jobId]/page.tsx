@@ -13,6 +13,7 @@ import { getOrganizationBySlug } from "@/server-actions/organization/get-organiz
 import { notFound } from 'next/navigation'
 import Link from "next/link";
 import { formatJobType } from "@/utils/format";
+import { formatDistanceToNow } from "date-fns";
 
 export async function generateMetadata({ params }: { params: { jobId: string } }): Promise<Metadata> {
     const job = await getJobById(params.jobId)
@@ -36,7 +37,10 @@ export default async function Page({ params }: { params: { jobId: string, slug:s
             </div>
             </div>
             <div className="w-full flex flex-col items-center text-center py-8 px-4 gap-y-4">
+            <div>
             <h1 className="font-bold text-2xl">{job.job?.title}</h1>
+            <p className="text-sm max-w-3xl text-muted-foreground">{formatDistanceToNow(job.job?.createdAt!)} ago </p>
+            </div>
             <div className="flex flex-row gap-2">
             <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">💼</span>{formatJobType(job.job?.type)}</Badge>
             <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">🌎</span>{job.job?.location}</Badge>
