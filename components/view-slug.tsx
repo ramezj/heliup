@@ -7,6 +7,7 @@ import { SelectLocation } from "./select-location"
 import { Job } from "@prisma/client"
 import { JobCard } from "./job-card"
 import { motion } from "framer-motion"
+import { formatJobType } from "@/utils/format"
 
 type OrganizationWithJobs = Prisma.OrganizationGetPayload<{
     include: {
@@ -14,7 +15,7 @@ type OrganizationWithJobs = Prisma.OrganizationGetPayload<{
     }
 }>
   
-export function ViewSlug({ organization, locations } : { organization:OrganizationWithJobs, locations:Array<string>}) {
+export function ViewSlug({ organization, locations, types } : { organization:OrganizationWithJobs, locations:Array<string>, types:Array<string>}) {
     const [ originalJobs, setOriginalJobs ] = useState<Array<Job>>(organization.jobs);
     const [ jobs, setJobs ] = useState<Array<Job>>(organization.jobs);
     const [ selectedLocation, setSelectedLocation ] = useState<string>("All");
@@ -70,15 +71,20 @@ export function ViewSlug({ organization, locations } : { organization:Organizati
       filterJobs(selectedLocation, type);
     }}>
       <SelectTrigger className="bg-inherit w-full">
-      <SelectValue placeholder="All Types" />
+      <SelectValue placeholder="All Employment" />
       </SelectTrigger>
       <SelectContent className="bg-black">
         <SelectGroup key={"Items2"}>
-          <SelectItem key={"All"} value="All">All Types</SelectItem>
-          <SelectItem key={"FULLTIME"} value="FULLTIME">Full-Time</SelectItem>
-          <SelectItem key={"PARTTIME"} value="PARTTIME">Part-Time</SelectItem>
-          <SelectItem key={"INTERNSHIP"} value="INTERNSHIP">Internship</SelectItem>
-          <SelectItem key={"CONTRACT"} value="CONTRACT">Contract</SelectItem>
+          <SelectItem key={"All"} value="All">All Employment</SelectItem>
+          {
+              types.map((type, index) => {
+                return (
+                  <>
+                  <SelectItem key={index} value={type}>{formatJobType(type)}</SelectItem>
+                  </>
+                )
+              })
+            }
         </SelectGroup>
       </SelectContent>
       </Select>

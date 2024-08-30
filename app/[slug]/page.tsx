@@ -36,7 +36,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <Link className="font-bold text-sm sm:text-base" href='/'>{organization.organization?.name}</Link>
         </div>
         </div>
-        <ViewSlug organization={organization.organization as OrganizationWithJobs} locations={organization.locations as Array<string>} />
+        <ViewSlug organization={organization.organization as OrganizationWithJobs} locations={organization.locations as Array<string>} types={organization.types as Array<string>} />
         </>
     )
 }
