@@ -24,7 +24,7 @@ export const metadata:Metadata = {
 export default async function Page() {
   const session = await auth();
   return (
-   <>
+   <div className="max-h-fit">
    <div className="top-0 sticky z-50">
    <Navigation session={session}/>
    </div>
@@ -67,7 +67,7 @@ export default async function Page() {
         </div>
     </div> */}
     </div>
-   </>
+   </div>
   );
 }
 
