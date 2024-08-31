@@ -38,7 +38,7 @@ export default async function Page() {
         </h1>
         <p className="text-sm max-w-3xl text-muted-foreground items-center text-center align-middle">Create stunning career pages, receive applicants & start the hiring process. All in one place.</p>
         </div>
-      <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4 mt-2">
+      <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4">
       <Button asChild className="w-52 font-bold" variant={"expandIcon"} Icon={SquareArrowOutUpRight} iconPlacement="right">
         <Link href={`https://demo.${process.env.NEXT_URL}`} target="_blank">
         See Demo
