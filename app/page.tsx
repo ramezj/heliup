@@ -33,7 +33,7 @@ export default async function Page() {
     <Alert />
     </div>
         <div className="text-center items-center flex flex-col">
-        <h1 className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-bold -mt-1">
+        <h1 className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-bold -mt-4">
           Hiring, for startups & small teams.
         </h1>
         <p className="text-sm max-w-3xl text-muted-foreground items-center text-center align-middle">Create stunning career pages, receive applicants & start the hiring process. All in one place.</p>
