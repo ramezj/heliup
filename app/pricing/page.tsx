@@ -23,8 +23,8 @@ export default async function Page() {
    <div className="w-full text-center flex flex-col py-8">
     <div className="space-y-1">
     <h1 className="font-bold text-4xl justify-center text-center">Pricing</h1>
-    <p className="text-muted-foreground">
-      Prices listed reflect the monthly subscription fee.
+    <p className="text-muted-foreground w-full pr-8 pl-8">
+    Hiring shouldn&apos;t be a financial burden, which is why we provide a cost-effective solution.
     </p>
     </div>
     <div className="flex flex-wrap pt-8 gap-4 w-full items-center justify-center">

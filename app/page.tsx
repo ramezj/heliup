@@ -38,7 +38,7 @@ export default async function Page() {
         </h1>
         <p className="text-sm max-w-3xl text-muted-foreground items-center text-center align-middle">Create stunning career pages, receive applicants & start the hiring process. All in one place.</p>
         </div>
-      <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4 mt-4">
+      <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4 mt-2">
       <Button asChild className="w-52 font-bold" variant={"expandIcon"} Icon={SquareArrowOutUpRight} iconPlacement="right">
         <Link href={`https://demo.${process.env.NEXT_URL}`} target="_blank">
         See Demo
@@ -50,20 +50,14 @@ export default async function Page() {
         </Link>
       </Button>
         </div>
-      <div className="w-full items-center flex content-center flex-col mt-9">
+      <div className="w-full items-center flex content-center flex-col mt-4">
       <div className="flex flex-col gap-2 lg:w-1/2 w-full">
-      <div className="relative">
       <LandingPageJobCard title="Product Manager" type="Full-Time" location="Remote"/>
-      </div>
-      <div className="relative">
       <LandingPageJobCard title="Operations Manager" type="Contract" location="Austin, TX"/>
-      </div>
-      <div className="relative">
       <LandingPageJobCard title="Software Engineer" type="Internship" location="Cairo, EG"/>
       </div>
       </div>
-      </div>
-      <div className="pt-12">
+      {/* <div className="pt-12">
          <h1 className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-bold">
           Everything you need, In one place.
         </h1>
@@ -71,61 +65,9 @@ export default async function Page() {
       <div className="flex flex-wrap gap-3 items-center content-center justify-center pt-12 text-left lg:w-2/3 w-full">
         <BentoDemo />
         </div>
-   </div>
+    </div> */}
+    </div>
    </>
   );
 }
 
-// export default async function Page() {
-//   const session = await auth();
-//   return (
-//     <>
-//     <div className="h-screen max-h-fit bg-black flex flex-col items-center text-center gap-6">
-//       <div className="top-0 w-full z-50">
-//       <Navigation session={session} />
-//       </div>
-//     <Alert />
-//     <div className="text-center flex flex-col items-center justify-center">
-//     <h1 className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-bold pl-4 pr-4">
-//       Hiring, for startups & small teams.
-//     </h1>
-//     <p className="text-sm max-w-3xl text-muted-foreground items-center text-center align-middle pl-4 pr-4">
-//       Create stunning career pages, receive applicants & start the hiring process. All in one place.
-//     </p>
-//     </div>
-    
-//     <div className="flex flex-row gap-4 w-full items-center justify-center pr-4 pl-4">
-//     <Button asChild className="w-52 font-bold" variant={"expandIcon"} Icon={SquareArrowOutUpRight} iconPlacement="right">
-//          <Link href={`https://demo.${process.env.NEXT_URL}`} target="_blank">
-//          See Demo
-//          </Link>
-//          </Button>
-//        <Button variant={"expandIcon"} Icon={ArrowRightIcon} iconPlacement="right" className="w-52 bg-blue-600 text-white hover:bg-blue-700 duration-200 font-bold" asChild>
-//          <Link href='/auth'>
-//          Start Hiring
-//          </Link>
-//        </Button>
-//     </div>
-
-//     <div className="w-full items-center flex content-center flex-col pt-4 p-4">
-//        <div className="flex flex-col gap-2 lg:w-1/2 w-full">
-//        <LandingPageJobCard title="Product Manager" type="Full-Time" location="Remote"/>
-//        <LandingPageJobCard title="Operations Manager" type="Contract" location="Austin, TX"/>
-//        <LandingPageJobCard title="Software Engineer" type="Internship" location="Cairo, EG"/>
-//        </div>
-//        </div>
-
-//     </div>
-
-
-//     <div className="h-screen max-h-fit items-center content-center justify-center w-full">
-//     <h1 className="text-center text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-bold">
-//       Everything you need, In one place.
-//     </h1>
-//     <div className="flex flex-auto gap-3 items-center content-center justify-center pt-12 text-left lg:w-2/3 w-full align-middle justify-items-center">
-//          <BentoDemo />
-//     </div>
-//     </div>  
-//     </>
-//   )
-// }
