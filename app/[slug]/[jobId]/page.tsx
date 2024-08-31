@@ -43,7 +43,11 @@ export default async function Page({ params }: { params: { jobId: string, slug:s
             </div>
             <div className="flex flex-row gap-2">
             <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">💼</span>{formatJobType(job.job?.type)}</Badge>
-            <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">🌎</span>{job.job?.location}</Badge>
+            {
+                job?.job?.location
+                ? <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">🌎</span>{job.job?.location}</Badge>
+                : <></>
+            }
             </div>
             {
                 job.job?.content
