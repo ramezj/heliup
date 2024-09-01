@@ -103,8 +103,7 @@ export function JobCardForDashboard({ job }: { job: JobWithApplicants}) {
   };
   return (
     <div onClick={handleCardClick}>
-    <div color={"white"}
-    className="w-full flex border rounded-lg items-center duration-300 cursor-pointer">
+    <div className="w-full flex border hover:border-white/20 rounded-lg items-center duration-300 cursor-pointer">
     <div className="m-5 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
        {job.title}     
@@ -120,9 +119,8 @@ export function JobCardForDashboard({ job }: { job: JobWithApplicants}) {
       </div>
       
       <div className="m-5 ml-auto flex gap-2">
-      <Button size={"sm"} variant={"outline"} className="gap-1">
+      <Button size={"sm"} variant={"outline"} className="gap-1 bg-inherit">
         <Settings className="size-4"/>
-        
       </Button>
       </div>
       </div>
@@ -156,8 +154,8 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
   };
   return (
     <div onClick={handleCardClick}>
-    <div color={"white"}
-    className="w-full flex border rounded-lg items-center duration-300 cursor-pointer">
+    <div
+    className="w-full flex border hover:border-white/20 rounded-lg items-center duration-300 cursor-pointer">
     <div className="m-5 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
        {job.title}     
@@ -172,7 +170,7 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
       </div>
       </div>
       <div className="m-5 ml-auto flex gap-2">
-      <Button size={"sm"} variant={"outline"} onClick={handleApplicantsClick} className="gap-1">
+      <Button size={"sm"} variant={"outline"} onClick={handleApplicantsClick} className="gap-1 bg-inherit">
         <Users className="size-4 mr-2" />
         {job.applicants.length} 
       </Button>
