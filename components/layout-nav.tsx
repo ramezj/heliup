@@ -1,12 +1,14 @@
 'use client'
 
 import Link from "next/link"
-import { Home, Users, BriefcaseBusiness, Settings2, Banknote } from "lucide-react"
+import { Home, Users, BriefcaseBusiness, Settings2, Banknote, LogOut } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { usePathname } from "next/navigation"
+import { Session } from "next-auth"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
-export default function LayoutNav({children, params, req} : any) {
+export default function LayoutNav({ children, session }: { children: React.ReactNode; session: Session }) {
     const path = usePathname();
     return (
       <div className="grid min-h-screen w-full md:grid-cols-[200px_1fr] lg:grid-cols-[250px_1fr]">
@@ -41,6 +43,10 @@ export default function LayoutNav({children, params, req} : any) {
                   Settings
                 </Link>
               </nav>
+            </div>
+            <div className="p-4 w-full flex gap-2">
+            <Button variant={"outline"} size={"icon"} className="bg-inherit w-full"><LogOut className="text-white size-4 mr-2"/>Log out</Button>
+            {/* <Button variant={"outline"} className="w-full bg-inherit">{session.user?.name}</Button> */}
             </div>
           </div>
         </div>
