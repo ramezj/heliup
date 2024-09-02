@@ -24,7 +24,7 @@ export const metadata:Metadata = {
 export default async function Page() {
   const session = await auth();
   return (
-   <div className="max-h-full">
+  <>
    <div className="top-0 sticky z-50">
    <Navigation session={session}/>
    </div>
@@ -57,17 +57,8 @@ export default async function Page() {
       <LandingPageJobCard title="Software Engineer" type="Internship" location="Cairo, EG"/>
       </div>
       </div>
-      {/* <div className="pt-12">
-         <h1 className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-bold">
-          Everything you need, In one place.
-        </h1>
-      </div>
-      <div className="flex flex-wrap gap-3 items-center content-center justify-center pt-12 text-left lg:w-2/3 w-full">
-        <BentoDemo />
-        </div>
-    </div> */}
     </div>
-   </div>
+    </>
   );
 }
 
