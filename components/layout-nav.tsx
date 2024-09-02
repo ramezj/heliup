@@ -7,6 +7,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/s
 import { usePathname } from "next/navigation"
 import { Session } from "next-auth"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { signOut } from "next-auth/react"
 
 export default function LayoutNav({ children, session }: { children: React.ReactNode; session: Session }) {
     const path = usePathname();
@@ -45,7 +46,7 @@ export default function LayoutNav({ children, session }: { children: React.React
               </nav>
             </div>
             <div className="p-4 w-full flex gap-2">
-            <Button variant={"outline"} size={"icon"} className="bg-inherit w-full"><LogOut className="text-white size-4 mr-2"/>Log out</Button>
+            <Button onClick={((e) => { signOut({ callbackUrl: "/" })})} variant={"outline"} size={"icon"} className="bg-inherit w-full"><LogOut className="text-white size-4 mr-2"/>Log out</Button>
             </div>
           </div>
         </div>
@@ -102,7 +103,7 @@ export default function LayoutNav({ children, session }: { children: React.React
                   </SheetClose>
                 </nav>
                 <div className="w-full flex gap-2 pt-4">
-                <Button variant={"outline"} size={"icon"} className="bg-inherit w-full"><LogOut className="text-white size-4 mr-2"/>Log out</Button>
+                <Button onClick={((e) => { signOut({ callbackUrl: "/" })})} variant={"outline"} size={"icon"} className="bg-inherit w-full"><LogOut className="text-white size-4 mr-2"/>Log out</Button>
                 </div>
               </SheetContent>
             </Sheet>
