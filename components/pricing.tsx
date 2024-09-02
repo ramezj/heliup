@@ -65,7 +65,7 @@ export function PaidCard() {
       <CardContent>
           <div className="grid w-full items-center gap-4">
           <h2 className="flex text-2xl font-semibold -mt-3">
-            $20/mo
+            $10/mo
           </h2>
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
