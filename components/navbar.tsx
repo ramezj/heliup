@@ -22,7 +22,7 @@ export function Navigation(props:any) {
       <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-black px-3 z-50">
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <Link href="/" className="flex items-center text-lg font-bold">
-          <BriefcaseBusiness className="size-4 mr-2 " />
+          {/* <BriefcaseBusiness className="size-4 mr-2 " /> */}
           Heliup
           </Link>
           <Link href="/" className="text-foreground transition-colors hover:text-foreground font-semibold">
@@ -49,7 +49,7 @@ export function Navigation(props:any) {
           <SheetContent side="left" className="flex flex-col bg-black">
               <SheetClose asChild>
                 <Link href="/" className="px-2 flex items-center text-lg font-bold justify-center">
-                <BriefcaseBusiness className="size-4 mr-2" />
+                {/* <BriefcaseBusiness className="size-4 mr-2" /> */}
                   Heliup
                 </Link>
                 </SheetClose>

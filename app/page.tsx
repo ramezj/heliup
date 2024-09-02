@@ -25,15 +25,13 @@ export default async function Page() {
   const session = await auth();
   return (
   <>
-   <div className="top-0 sticky z-50">
    <Navigation session={session}/>
-   </div>
    <div className="text-center w-full p-8 flex flex-col gap-4 items-center">
-    <div className="relative">
+    <div className="relative sm:-mt-1">
     <Alert />
     </div>
         <div className="text-center items-center flex flex-col">
-        <h1 className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-bold">
+        <h1 className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-bold sm:-mt-2">
           Hiring, for startups & small teams.
         </h1>
         <p className="text-sm max-w-3xl text-muted-foreground items-center text-center align-middle">Create stunning career pages, receive applicants & start the hiring process. All in one place.</p>

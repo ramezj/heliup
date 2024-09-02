@@ -35,7 +35,7 @@ export function CreateJobButton() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-      <Button size={"sm"} variant={"expandIcon"} iconPlacement="right" Icon={Plus} className="w-36 bg-blue-600 text-white hover:bg-blue-700 duration-200">
+      <Button size={"sm"} variant={"expandIcon"} iconPlacement="right" Icon={Plus} className="w-36">
         Create Job
         {/* <Plus className="w-4 h-4 ml-2"/>  */}
       </Button>
