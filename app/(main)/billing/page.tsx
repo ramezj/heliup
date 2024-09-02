@@ -30,11 +30,11 @@ export default async function Page() {
         <div className="space-y-4">
           <div className="w-full border rounded-lg p-6 space-y-6">
             <div>
-            <h1 className="font-bold text-2xl">Subscription Plan</h1>
+            <h1 className="font-bold text-xl">Subscription Plan</h1>
             </div>
             <div className="flex justify-between items-center w-full">
-              <h1 className="font-medium text-lg text-muted-foreground">{user?.isPremium ? "Premium Plan" : "Free Plan"}</h1>
-              <Button variant={"outline"}>Change Plan</Button>
+              <h1 className="font-medium text-base text-muted-foreground">{user?.isPremium ? "Premium Plan" : "Free Plan"}</h1>
+              <Button variant={"outline"} className="bg-inherit">Change Plan</Button>
             </div>
           </div>
           {/* <div className="w-full border rounded-lg p-6 space-y-4">
@@ -47,11 +47,11 @@ export default async function Page() {
           </div> */}
           <div className="w-full border rounded-lg p-6 space-y-6">
             <div>
-            <h1 className="font-bold text-2xl">Cancel Subscription</h1>
+            <h1 className="font-bold text-xl">Cancel Subscription</h1>
             </div>
             <div className="space-y-4">
-              <h1 className="font-medium text-lg text-muted-foreground">If you wish to cancel your subscription, please click the button below. Note that you will lose all the benefits of your current plan.</h1>
-              <Button variant={"outline"}>Cancel Subscription</Button>
+              <h1 className="font-medium text-base text-muted-foreground">If you wish to cancel your subscription, please click the button below. Note that you will lose all the benefits of your current plan.</h1>
+              <Button variant={"outline"} className="bg-inherit">Cancel Subscription</Button>
             </div>
           </div>
         </div>
