@@ -44,7 +44,7 @@ export function EditStatus({applicant}: {applicant:Applicant}) {
         Edit Status
       </Button>
       </DialogTrigger>
-      <DialogContent onOpenAutoFocus={((e) => {e.preventDefault()})} className="text-left w-[90%] rounded-md">
+      <DialogContent onOpenAutoFocus={((e) => {e.preventDefault()})} className="text-left w-[90%] rounded-md bg-black">
         <DialogHeader>
           <DialogTitle className="text-left">Edit Applicant&apos;s Status</DialogTitle>
           <DialogDescription className="text-left">
@@ -58,11 +58,11 @@ export function EditStatus({applicant}: {applicant:Applicant}) {
             </Label>
             <form id="form" onSubmit={editTheStatus}>
             <Select defaultValue={newStatus} onValueChange={((e) => {console.log(e); setNewStatus(e as Status)})} >
-              <SelectTrigger className="">
+              <SelectTrigger className="bg-black">
                 <SelectValue />
               </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
+              <SelectContent className="bg-black">
+                <SelectGroup className="bg-black">
                   <SelectItem value="SUBMITTED">Submitted</SelectItem>
                   <SelectItem value="UNDERREVIEW">Under Review</SelectItem>
                   <SelectItem value="INTERVIEW">Interview</SelectItem>

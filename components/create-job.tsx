@@ -40,7 +40,7 @@ export function CreateJobButton() {
         {/* <Plus className="w-4 h-4 ml-2"/>  */}
       </Button>
       </DialogTrigger>
-      <DialogContent onOpenAutoFocus={((e) => {e.preventDefault()})} className="text-left w-[90%] rounded-md">
+      <DialogContent onOpenAutoFocus={((e) => {e.preventDefault()})} className="text-left w-[90%] rounded-md bg-black">
         <DialogHeader>
           <DialogTitle className="text-left">Create Job</DialogTitle>
           <DialogDescription className="text-left">
@@ -60,7 +60,7 @@ export function CreateJobButton() {
               value={name}
               onChange={((e) => {setName(e.target.value)})}
               placeholder="Name"
-              className="col-span-3"
+              className="col-span-3 bg-black"
             />
             </form>
           </div>

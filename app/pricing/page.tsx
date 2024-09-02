@@ -7,9 +7,9 @@ import { Metadata } from "next";
 import { FreeCard, PaidCard } from "@/components/pricing";
 
 export const metadata:Metadata = {
-  title: "Pricing | CareerTella",
-  description: "CareerTella, Your one-stop platform for creating and managing custom job boards.",
-  applicationName: "CareerTella"
+  title: "Pricing",
+  description: "Heliup, Your one-stop platform for creating and managing custom job boards.",
+  applicationName: "Heliup"
 
 }
 
