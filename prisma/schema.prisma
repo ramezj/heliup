@@ -29,9 +29,6 @@ model User {
   name          String?
   email         String          @unique
   firstTimeUser Boolean @default(true)
-  trial         Boolean @default(true)
-  trialStartedAt DateTime?
-  trialEndsAt    DateTime?
   isPremium     Boolean @default(false)
   emailVerified DateTime?
   image         String?

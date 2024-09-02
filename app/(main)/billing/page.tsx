@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import { getUserBilling } from "@/server-actions/billing/get-user-billing";
 import { getUserDashboard } from "@/server-actions/dashboard/getUserDashboard";
 import { Organization } from "@prisma/client";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Billing",
@@ -26,8 +27,33 @@ export default async function Page() {
           </p>
         </div>
         <Separator className=""/>
-        <div>
-          <h1>You are currntly subscribed to : {user?.isPremium ? "Premium Plan" : "Free Plan"}</h1>
+        <div className="space-y-4">
+          <div className="w-full border rounded-lg p-6 space-y-6">
+            <div>
+            <h1 className="font-bold text-2xl">Subscription Plan</h1>
+            </div>
+            <div className="flex justify-between items-center w-full">
+              <h1 className="font-medium text-lg text-muted-foreground">{user?.isPremium ? "Premium Plan" : "Free Plan"}</h1>
+              <Button variant={"outline"}>Change Plan</Button>
+            </div>
+          </div>
+          {/* <div className="w-full border rounded-lg p-6 space-y-4">
+            <div>
+            <h1 className="font-bold text-2xl">Billing History</h1>
+            </div>
+            <div>
+              <h1 className="font-medium text-lg text-muted-foreground">nothing to show here.</h1>
+            </div>
+          </div> */}
+          <div className="w-full border rounded-lg p-6 space-y-6">
+            <div>
+            <h1 className="font-bold text-2xl">Cancel Subscription</h1>
+            </div>
+            <div className="space-y-4">
+              <h1 className="font-medium text-lg text-muted-foreground">If you wish to cancel your subscription, please click the button below. Note that you will lose all the benefits of your current plan.</h1>
+              <Button variant={"outline"}>Cancel Subscription</Button>
+            </div>
+          </div>
         </div>
         </>
     )
