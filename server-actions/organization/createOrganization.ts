@@ -51,9 +51,6 @@ export  async function createOrganization(props: OrganizationProps) {
             }, 
             data: {
                 firstTimeUser: false,
-                trial:true,
-                trialStartedAt: new Date(),
-                trialEndsAt: addDays(new Date(), 14)
             }
         })
         return ({
