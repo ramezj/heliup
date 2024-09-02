@@ -101,9 +101,9 @@ export default function LayoutNav({ children, session }: { children: React.React
                   </Link>
                   </SheetClose>
                 </nav>
-                <div className="p-4 w-full flex gap-2">
-                  <Button variant={"outline"} size={"icon"} className="bg-inherit w-full"><LogOut className="text-white size-4 mr-2"/>Log out</Button>
-                  </div>
+                <div className="w-full flex gap-2 pt-4">
+                <Button variant={"outline"} size={"icon"} className="bg-inherit w-full"><LogOut className="text-white size-4 mr-2"/>Log out</Button>
+                </div>
               </SheetContent>
             </Sheet>
             <div className="w-full flex-1">
