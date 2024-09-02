@@ -12,6 +12,7 @@ import ShineBorder from "./magicui/shine-border"
 import { useRouter } from "next/navigation"
 import { Status } from "@prisma/client"
 import { formatApplicantType } from "@/utils/format"
+import { formatDistanceToNow } from "date-fns"
 
 export function ApplicantCard({ applicant }: { applicant: Applicant }) {
   const router = useRouter();
@@ -30,10 +31,8 @@ export function ApplicantCard({ applicant }: { applicant: Applicant }) {
         <Badge variant={"outline"} className="rounded-sm">{formatApplicantType(applicant.status)}</Badge>
         </div>
         </div>
-        <div className="m-5 ml-auto">
-        <Button variant={"outline"} size={"sm"} className="bg-inherit">
-        View
-        </Button>
+        <div className="ml-auto m-5 hidden sm:block">
+          <p className="text-sm">{formatDistanceToNow(applicant.createdAt)} ago</p>
         </div>
         </div>
         </div>
