@@ -47,7 +47,7 @@ export function CreateOrganization() {
                     {
                         loading
                         ? <Button size={"sm"} className="bg-blue-600 text-white hover:bg-blue-700 duration-200" disabled><Loader2 className="mr-2 h-4 w-4 animate-spin" />Create</Button>
-                        : <Button size={"sm"} variant={"expandIcon"} iconPlacement="right" Icon={Plus} className="bg-blue-600 text-white hover:bg-blue-700 duration-200">Create </Button>
+                        : <Button size={"sm"} variant={"expandIcon"} iconPlacement="right" Icon={Plus} className="">Create </Button>
                     }
                     </div>
               </form>
