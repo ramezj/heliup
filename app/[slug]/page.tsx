@@ -31,7 +31,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     }
     return (
         <>
-        <link rel="icon" href="/logo.jpg" />
+        <link rel="icon" href="/logo.jpg?v=2" />
         <div className="w-full border-b bg-black top-0 z-50 border-0 h-16 sticky text-center justify-between flex items-center px-6">
         <div className="flex">
         <Link className="font-bold text-sm sm:text-base" href='/'>{organization.organization?.name}</Link>
