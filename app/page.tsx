@@ -9,7 +9,7 @@ import { Alert } from "@/components/main-alert";
 import { ArrowRightIcon, SquareArrowOutUpRight } from "lucide-react"
 
 export const metadata:Metadata = {
-  title: "Heliup",
+  title: "Heliup Public Beta",
   description: "Heliup, Hiring for startups & small teams.",
   applicationName: "Heliup"
 

@@ -183,7 +183,7 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
 export function LandingPageJobCard({ title, type, location }: { title: string, type: string, location: string }) {
   return (
       <div color={"white"}
-      className="w-full flex border rounded-lg items-center duration-300 bg-black">
+      className="w-full flex border hover:border-white/20 rounded-lg items-center duration-300 bg-black">
       <div className="m-5 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
        {title}     
