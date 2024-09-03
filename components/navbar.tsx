@@ -25,9 +25,9 @@ export function Navigation(props:any) {
           {/* <BriefcaseBusiness className="size-4 mr-2 " /> */}
           Heliup
           </Link>
-          <Link href="/" className="text-foreground transition-colors hover:text-foreground font-semibold">
+          {/* <Link href="/" className="text-foreground transition-colors hover:text-foreground font-semibold">
             Features
-          </Link>
+          </Link> */}
           <Link href={`https://demo.heliup.xyz`} target="_blank" className="text-foreground transition-colors hover:text-foreground font-semibold">
             Demo
           </Link>
@@ -54,12 +54,12 @@ export function Navigation(props:any) {
                 </Link>
                 </SheetClose>
                 <nav className="grid gap-3 text-lg font-medium mt-1">
-                <SheetClose asChild>
+                {/* <SheetClose asChild>
                 <Link href='/' className={`${path == 'dashboard' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <SparklesIcon className="h-4 w-4" />
                 Features
                 </Link>
-                </SheetClose>
+                </SheetClose> */}
                 <SheetClose asChild>
                 <Link href='https://demo.heliup.xyz' className={`${path == 'jobs' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
                 <Laptop className="h-4 w-4" />

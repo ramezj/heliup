@@ -35,7 +35,7 @@ export default async function Page() {
         See Demo
         </Link>
         </Button>
-      <Button variant={"expandIcon"} Icon={ArrowRightIcon} iconPlacement="right" className="w-52 bg-blue-600 text-white hover:bg-blue-700 duration-200 font-bold" asChild>
+      <Button variant={"expandIcon"} Icon={ArrowRightIcon} iconPlacement="right" className="w-52 font-bold" asChild>
         <Link href='/auth'>
         Start Hiring
         </Link>
