@@ -7,7 +7,6 @@ import { LandingPageJobCard } from "@/components/job-card";
 import Link from "next/link";
 import { Alert } from "@/components/main-alert";
 import { ArrowRightIcon, SquareArrowOutUpRight } from "lucide-react"
-import ShineBorder from "@/components/magicui/shine-border";
 
 export const metadata:Metadata = {
   title: "Heliup Public Beta",
@@ -31,12 +30,12 @@ export default async function Page() {
         <p className="text-sm max-w-3xl text-muted-foreground items-center text-center align-middle">Create stunning career pages, receive applicants & start the hiring process. All in one place.</p>
         </div>
       <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4">
-      <Button asChild className="w-52 font-bold" variant={"expandIcon"} Icon={SquareArrowOutUpRight} iconPlacement="right">
+      <Button asChild className="w-52 font-medium" variant={"expandIcon"} Icon={SquareArrowOutUpRight} iconPlacement="right">
         <Link href={`https://demo.${process.env.NEXT_URL}`} target="_blank">
         See Demo
         </Link>
         </Button>
-      <Button variant={"expandIcon"} Icon={ArrowRightIcon} iconPlacement="right" className="w-52 font-bold" asChild>
+      <Button variant={"expandIcon"} Icon={ArrowRightIcon} iconPlacement="right" className="w-52 font-medium" asChild>
         <Link target="_blank" href='/auth'>
         Start Hiring
         </Link>
