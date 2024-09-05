@@ -42,10 +42,9 @@ export default async function Page() {
         </Link>
       </Button>
         </div>
-        <div className="border rounded-lg w-full lg:w-2/3 relative mt-4">
-        <ShineBorder color={"white"}>
+        <div className="border rounded-xl w-full lg:w-2/3 relative mt-4">
           <img src="/screenshot.png" className="rounded-[inherit]" />
-          </ShineBorder>
+          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-[inherit]"></div>
         </div>
       {/* <div className="w-full items-center flex content-center flex-col mt-4">
       <div className="flex flex-col gap-2 lg:w-1/2 w-full">
