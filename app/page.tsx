@@ -7,6 +7,7 @@ import { LandingPageJobCard } from "@/components/job-card";
 import Link from "next/link";
 import { Alert } from "@/components/main-alert";
 import { ArrowRightIcon, SquareArrowOutUpRight } from "lucide-react"
+import ShineBorder from "@/components/magicui/shine-border";
 
 export const metadata:Metadata = {
   title: "Heliup Public Beta",
@@ -41,8 +42,10 @@ export default async function Page() {
         </Link>
       </Button>
         </div>
-        <div className="border rounded-lg w-full lg:w-2/3">
+        <div className="border rounded-lg w-full lg:w-2/3 relative mt-4">
+        <ShineBorder color={"white"}>
           <img src="/screenshot.png" className="rounded-[inherit]" />
+          </ShineBorder>
         </div>
       {/* <div className="w-full items-center flex content-center flex-col mt-4">
       <div className="flex flex-col gap-2 lg:w-1/2 w-full">
