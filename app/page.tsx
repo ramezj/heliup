@@ -37,20 +37,20 @@ export default async function Page() {
         </Link>
         </Button>
       <Button variant={"expandIcon"} Icon={ArrowRightIcon} iconPlacement="right" className="w-52 font-medium" asChild>
-        <Link target="_blank" href='/auth'>
+        <Link href='/auth'>
         Start Hiring
         </Link>
       </Button>
         </div>
-        <div className="border rounded-xl w-full lg:w-2/3 relative mt-1">
-          <img src="/screenshot2.png" className="rounded-[inherit]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-[inherit]"></div>
+        <div className="border rounded-xl w-full lg:w-2/3 relative mt-1 shadow-xl backdrop-blur-md">
+          <img src="/screenshot2.png" className="rounded-[inherit] shadow-xl" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-[inherit] shadow-xl"></div>
         </div>
-        <VelocityScroll
+        {/* <VelocityScroll
         text="Start Hiring"
         default_velocity={1}
         className="font-display text-center text-4xl font-medium tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem]"
-          />
+        /> */}
       {/* <div className="w-full items-center flex content-center flex-col mt-4">
       <div className="flex flex-col gap-2 lg:w-1/2 w-full">
       <LandingPageJobCard title="Product Manager" type="Full-Time" location="Remote"/>
