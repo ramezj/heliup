@@ -42,7 +42,7 @@ export default async function Page() {
       </Button>
         </div>
         <div className="border rounded-xl w-full lg:w-2/3 relative mt-1">
-          <img src="/screenshot.png" className="rounded-[inherit]" />
+          <img src="/screenshot2.png" className="rounded-[inherit]" />
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-[inherit]"></div>
         </div>
       {/* <div className="w-full items-center flex content-center flex-col mt-4">
