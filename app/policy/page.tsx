@@ -31,18 +31,20 @@ export default async function Page() {
     <p>To access some features, you’ll need to create an account. Please provide accurate information and keep your login details safe. You’re responsible for anything that happens under your account.</p>
     <p className="font-bold text-xl pt-4">4. Subscriptions and Payments</p>
     <p>Heliup offers subscription plans. When you sign up, you agree to the pricing and billing terms for your plan. If you don’t pay on time, we may suspend or cancel your access to the service.</p>
-    <p className="font-bold text-xl pt-4">5. Free Trials</p>
+    <p className="font-bold text-xl pt-4">5. Refund Policy</p>
+    <p>We want you to be happy with Heliup. If you are unsatisfied, you may request a refund within 7 days of your initial purchase. After this period, refunds are not available. For any refund inquiries, please contact us at ramezjoseph8@gmail.com.</p>
+    <p className="font-bold text-xl pt-4">6. Free Trials</p>
     <p>We may offer free trials. Once the trial ends, you’ll need to subscribe to keep using Heliup.</p>
-    <p className="font-bold text-xl pt-4">6. Your Responsibilities</p>
+    <p className="font-bold text-xl pt-4">7. Your Responsibilities</p>
     <p>When using Heliup, you agree not to:</p>
     <li>Break any laws or do anything harmful or illegal.</li>
     <li>Try to hack or misuse our platform.</li>
     <li>Upload anything that violates others’ rights.</li>
-    <p className="font-bold text-xl pt-4">7. Service Changes</p>
+    <p className="font-bold text-xl pt-4">8. Service Changes</p>
     <p>We’re always improving Heliup, so we may add or remove features or stop offering the service entirely. We’ll try to give notice if something big changes.</p>
-    <p className="font-bold text-xl pt-4">8. Cancellation and Termination</p>
+    <p className="font-bold text-xl pt-4">9. Cancellation and Termination</p>
     <p>You can cancel your subscription at any time via your account settings. If you violate these terms, we may suspend or terminate your account.</p>
-    <p className="font-bold text-xl pt-4">9. Contact Us</p>
+    <p className="font-bold text-xl pt-4">10. Contact Us</p>
     <p>If you have any questions or need help, you can reach us at ramezjoseph8@gmail.com</p>
    </div>
    </>
