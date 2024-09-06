@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Metadata } from "next";
 import { FreeCard, PaidCard } from "@/components/pricing";
+import Link from "next/link";
 
 export const metadata:Metadata = {
   title: "Pricing",
@@ -26,6 +27,7 @@ export default async function Page() {
     <p className="text-muted-foreground w-full pr-8 pl-8">
     Hiring shouldn&apos;t be a financial burden, which is why we provide a cost-effective solution.
     </p>
+    <Link href="/policy" className="underline">terms and conditions</Link>
     </div>
     <div className="flex flex-wrap pt-8 gap-4 w-full items-center justify-center">
       <div className="relative">

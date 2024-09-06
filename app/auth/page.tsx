@@ -29,7 +29,7 @@ export default async function Page() {
             </div>
                 <GoogleSignIn />
                 <div className="text-center">
-                <p className="text-muted-foreground text-sm">by signing up you agree to our <Link className="underline" href={'/'}>terms and conditions</Link></p>
+                <p className="text-muted-foreground text-sm">by signing up you agree to our <Link className="underline" href={'/policy'}>terms and conditions</Link></p>
                 </div>
                 {/* <GithubSignIn /> */}
           </div>
