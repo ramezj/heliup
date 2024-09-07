@@ -12,11 +12,11 @@ export async function POST(req: NextRequest) {
     //         error:"Invalid Signature"
     //     });
     // };
-    const parsedbody = await JSON.parse(body);
-    console.log(parsedbody);
+    // const parsedbody = await JSON.parse(body);
+    console.log(body);
     return NextResponse.json({
         ok:true,
         error: null,
-        message:parsedbody
+        message:body
     })
 }
