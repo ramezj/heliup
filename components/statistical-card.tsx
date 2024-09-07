@@ -7,7 +7,7 @@ import { Loader2 } from "lucide-react"
 export function StatisticalCard({ name, number} : { name: string, number: number}) {
     return (
         <>
-        <div>
+        <div className="w-full">
         <Card className="w-full bg-inherit">
         <CardContent className="pt-6">
         <div className="space-y-2">

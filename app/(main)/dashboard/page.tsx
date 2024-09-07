@@ -31,15 +31,9 @@ export default async function Page() {
         </Button>
         </div>
         <div className="flex sm:flex-row flex-col gap-2">
-          <div className="relative w-full">
-          <StatisticalCard name="Active Jobs" number={organization.organization?.jobs.length as number} />
-          </div>
-          <div className="relative w-full">
-          <StatisticalCard name="Inactive Jobs" number={0} />
-          </div>
-          <div className="relative w-full">
+          <StatisticalCard name="Total Jobs" number={organization.organization?.jobs.length as number} />
           <StatisticalCard name="Total Applicants" number={organization.totalApplicants as number} />
-          </div>
+          <StatisticalCard name="Inactive Jobs" number={0} />
         </div>
         <div className="space-y-2">
         <EditOrganization organization={organization.organization as Organization} />
