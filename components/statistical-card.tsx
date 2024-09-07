@@ -23,20 +23,21 @@ export function StatisticalCard({ name, number} : { name: string, number: number
     )
 }
 
-export function LoadingStatisticalCard({ name} : { name: string}) {
+export function OrganizationName({ name} : { name: string}) {
   return (
       <>
-      <Card className="w-full relative">
+      <div className="w-full">
+      <Card className="w-full bg-inherit">
       <CardContent className="pt-6">
       <div className="space-y-2">
         <Label className="font-bold text-lg">
-          {name}
+          Organization Name
         </Label>
-        {/* <Skeleton className="h-4 w-[75px]" /> */}
-        <p className="text-lg">loading</p>
+        <p className="font-bold text-lg">{name}</p>
       </div>
     </CardContent>
   </Card>
+  </div>
       </>
   )
 }

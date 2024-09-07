@@ -8,6 +8,7 @@ import { Plus, ArrowUpRight, SquareArrowOutUpRight } from "lucide-react";
 import Link from "next/link";
 import EditOrganization from "@/components/edit-organization";
 import { StatisticalCard } from "@/components/statistical-card";
+import { OrganizationName } from "@/components/statistical-card";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -31,9 +32,9 @@ export default async function Page() {
         </Button>
         </div>
         <div className="flex sm:flex-row flex-col gap-2">
+          <OrganizationName name={organization.organization?.name!}/>
           <StatisticalCard name="Total Jobs" number={organization.organization?.jobs.length as number} />
           <StatisticalCard name="Total Applicants" number={organization.totalApplicants as number} />
-          <StatisticalCard name="Inactive Jobs" number={0} />
         </div>
         <div className="space-y-2">
         <EditOrganization organization={organization.organization as Organization} />
