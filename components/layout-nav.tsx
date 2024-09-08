@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation"
 import { Session } from "next-auth"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { signOut } from "next-auth/react"
+import { Gem } from "lucide-react"
 
 export default function LayoutNav({ children, session }: { children: React.ReactNode; session: Session }) {
     const path = usePathname();
@@ -17,7 +18,6 @@ export default function LayoutNav({ children, session }: { children: React.React
           <div className="flex h-full max-h-screen flex-col gap-2 sticky top-0 z-50">
             <div className="flex h-16 items-center border-b px-3 lg:h-16 text-center justify-center">
             <Link href='/' className="flex items-center justify-center">
-              {/* <BriefcaseBusiness className="size-4 mr-2" /> */}
               <span className="font-bold text-lg">Heliup</span>
             </Link>
             </div>
@@ -66,7 +66,6 @@ export default function LayoutNav({ children, session }: { children: React.React
               <SheetContent side="left" className="flex flex-col bg-black">
                 <SheetClose asChild>
                   <Link href="/" className="px-2 flex items-center text-lg font-bold justify-center">
-                  {/* <BriefcaseBusiness className="size-4 mr-2" /> */}
                     Heliup
                   </Link>
                   </SheetClose>
@@ -108,6 +107,10 @@ export default function LayoutNav({ children, session }: { children: React.React
               </SheetContent>
             </Sheet>
             <div className="w-full flex-1">
+            </div>
+            <div className="flex-1"></div> 
+            <div className="ml-auto">
+              <Button variant={"outline"}><Gem className="size-4 mr-2"/>Upgrade to Premium</Button>
             </div>
           </header>
               {children}
