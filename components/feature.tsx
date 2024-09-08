@@ -18,7 +18,7 @@ export function BentoDemo() {
         name="Custom Branding" 
         description="Bring your own branding" 
         className="col-span-3 lg:col-span-1"
-        href="#"
+        href="/auth"
         cta="Start Hiring"
         background={
         <>
@@ -31,7 +31,7 @@ export function BentoDemo() {
         name="Custom Job Board" 
         description="Create stunning career pages" 
         className="col-span-3 lg:col-span-2"
-        href="#"
+        href="/auth"
         cta="Start Hiring"
         background={
           <>
@@ -45,7 +45,7 @@ export function BentoDemo() {
         name="Review All Resumes" 
         description="Receive & Review all applicant Resumes." 
         className="col-span-3 lg:col-span-2"
-        href="#"
+        href="/auth"
         cta="Start Hiring"
         background={
           <>
@@ -59,7 +59,7 @@ export function BentoDemo() {
         name="Custom Domain" 
         description="Use your own custom domain and attract more applicants." 
         className="col-span-3 lg:col-span-1"
-        href="#"
+        href="/auth"
         cta="Start Hiring"
         background={
         <Calendar
