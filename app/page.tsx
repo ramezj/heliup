@@ -6,8 +6,6 @@ import { Metadata } from "next";
 import { LandingPageJobCard } from "@/components/job-card";
 import Link from "next/link";
 import { Alert } from "@/components/main-alert";
-import { ArrowRightIcon, SquareArrowOutUpRight } from "lucide-react"
-import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 import { BentoDemo } from "@/components/feature";
 
 export const metadata:Metadata = {
@@ -41,7 +39,7 @@ export default async function Page() {
         </Button>
       <Button variant={"expandIcon"} className="w-52 font-medium" asChild>
         <Link href='/auth'>
-        Start Hiring <i>&nbsp;- It's Free</i>
+        Start Hiring <i>&nbsp;- It&apos;s Free</i>
         </Link>
       </Button>
         </div>
@@ -49,11 +47,6 @@ export default async function Page() {
           <img src="/screenshot.png" className="rounded-[inherit] shadow-xl" alt="Heliup Image"/>
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-[inherit] shadow-xl"></div>
         </div>
-        {/* <VelocityScroll
-        text="Start Hiring"
-        default_velocity={1}
-        className="font-display text-center text-4xl font-medium tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem]"
-        /> */}
       {/* <div className="w-full items-center flex content-center flex-col mt-4">
       <div className="flex flex-col gap-2 lg:w-1/2 w-full">
       <LandingPageJobCard title="Product Manager" type="Full-Time" location="Remote"/>
