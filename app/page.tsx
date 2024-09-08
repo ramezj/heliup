@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Alert } from "@/components/main-alert";
 import { ArrowRightIcon, SquareArrowOutUpRight } from "lucide-react"
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
+import { BentoDemo } from "@/components/feature";
 
 export const metadata:Metadata = {
   title: "Heliup Beta",
@@ -38,9 +39,9 @@ export default async function Page() {
         See Demo
         </Link>
         </Button>
-      <Button variant={"expandIcon"} Icon={ArrowRightIcon} iconPlacement="right" className="w-52 font-medium" asChild>
+      <Button variant={"expandIcon"} className="w-52 font-medium" asChild>
         <Link href='/auth'>
-        Start Hiring
+        Start Hiring <i>&nbsp;- It's Free</i>
         </Link>
       </Button>
         </div>
@@ -59,6 +60,10 @@ export default async function Page() {
       <LandingPageJobCard title="Operations Manager" type="Contract" location="Austin, TX"/>
       </div>
       </div> */}
+      <h1 className="font-medium text-5xl pt-4 pb-4">Some Features</h1>
+      <div className="lg:w-3/4 w-full">
+      <BentoDemo />
+      </div>
     </div>
     </>
   );
