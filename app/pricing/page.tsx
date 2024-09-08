@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Metadata } from "next";
 import { FreeCard, PaidCard } from "@/components/pricing";
 import Link from "next/link";
+import { SiteFooter } from "@/components/site-footer";
 
 export const metadata:Metadata = {
   title: "Pricing",

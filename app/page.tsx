@@ -7,6 +7,7 @@ import { LandingPageJobCard } from "@/components/job-card";
 import Link from "next/link";
 import { Alert } from "@/components/main-alert";
 import { BentoDemo } from "@/components/feature";
+import { SiteFooter } from "@/components/site-footer";
 
 export const metadata:Metadata = {
   title: "Heliup Beta",
@@ -59,6 +60,9 @@ export default async function Page() {
       <div className="w-full lg:w-2/3 text-left">
       <BentoDemo />
       </div>
+    </div>
+    <div>
+      <SiteFooter />
     </div>
     </>
   );
