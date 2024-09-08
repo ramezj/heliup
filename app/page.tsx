@@ -53,8 +53,10 @@ export default async function Page() {
       <LandingPageJobCard title="Operations Manager" type="Contract" location="Austin, TX"/>
       </div>
       </div> */}
-      <h1 className="font-medium text-5xl pt-4 pb-4">Some Features</h1>
-      <div className="lg:w-3/4 w-full">
+      <h1 className="pt-5 pb-5 text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-medium sm:-mt-2">
+          Some <i>Features</i>
+        </h1>
+      <div className="w-full lg:w-2/3 text-left">
       <BentoDemo />
       </div>
     </div>
