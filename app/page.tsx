@@ -10,7 +10,7 @@ import { ArrowRightIcon, SquareArrowOutUpRight } from "lucide-react"
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
 
 export const metadata:Metadata = {
-  title: "Heliup Public Beta",
+  title: "Heliup Beta",
   description: "Heliup, Hiring for startups & small teams.",
   applicationName: "Heliup"
 
