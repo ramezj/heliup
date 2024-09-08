@@ -93,7 +93,7 @@ export function Navigation(props:any) {
             <>
                   <Button variant="default" asChild className="duration-200">
                   <Link href='/auth'>
-                  Start Hiring
+                  Start Hiring <i>&nbsp;- It&apos;s Free</i>
                   </Link>
                   </Button>
             </>
