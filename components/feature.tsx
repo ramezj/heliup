@@ -8,7 +8,7 @@ import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import Marquee from "@/components/magicui/marquee";
 import { Input } from "./ui/input";
 import { LandingPageJobCard } from "./job-card";
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck, TabletSmartphone } from "lucide-react";
 
 export function BentoDemo() {
   return (
@@ -55,18 +55,16 @@ export function BentoDemo() {
        }/>
 
         <BentoCard key={4} 
-        Icon={Link} 
-        name="Custom Domain" 
-        description="Use your own custom domain and attract more applicants." 
+        Icon={TabletSmartphone} 
+        name="Mobile First" 
+        description="Mobile first by nature, responsive & friendly." 
         className="col-span-3 lg:col-span-1"
         href="/auth"
         cta="Start Hiring"
         background={
-        <Calendar
-        mode="single"
-        selected={new Date(2022, 4, 11, 0, 0, 0)}
-        className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
-        />}/>
+         <>
+         </>
+        }/>
     </BentoGrid>
   );
 }
