@@ -45,7 +45,7 @@ export default async function Page() {
       </Button>
         </div>
         <div className="border rounded-xl w-full lg:w-2/3 relative mt-1 shadow-xl backdrop-blur-md">
-          <img src="/screenshot.png" className="rounded-[inherit] shadow-xl" alt="Heliup Image"/>
+          <img src="/demo.png" className="rounded-[inherit] shadow-xl" alt="Heliup Image"/>
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-[inherit] shadow-xl"></div>
         </div>
       {/* <div className="w-full items-center flex content-center flex-col mt-4">
