@@ -26,13 +26,19 @@ export function FreeCard() {
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
                     <CheckIcon className="text-green-500"/>
-                    2 Jobs
+                    3 Jobs
                     </h2>
             </div>
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
                     <CheckIcon className="text-green-500"/>
-                    20 Applicants
+                    25 Total Applicants
+                    </h2>
+            </div>
+            <div className="flex flex-col space-y-1.5">
+                <h2 className="flex gap-2">
+                <XIcon className="text-red-500"/>
+                    Candidate CV Upload
                     </h2>
             </div>
             <div className="flex flex-col space-y-1.5">
@@ -83,6 +89,12 @@ export function PaidCard() {
                 <h2 className="flex gap-2">
                     <CheckIcon className="text-green-500"/>
                     Unlimited Applicants
+                    </h2>
+            </div>
+            <div className="flex flex-col space-y-1.5">
+                <h2 className="flex gap-2">
+                    <CheckIcon className="text-green-500"/>
+                    Candidate CV Upload
                     </h2>
             </div>
             <div className="flex flex-col space-y-1.5">
