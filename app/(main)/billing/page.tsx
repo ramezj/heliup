@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import { getUserBilling } from "@/server-actions/billing/get-user-billing";
 import { getUserDashboard } from "@/server-actions/dashboard/getUserDashboard";
 import { Organization } from "@prisma/client";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
@@ -34,7 +35,13 @@ export default async function Page() {
             </div>
             <div className="flex justify-between items-center w-full">
               <h1 className="font-medium text-base text-muted-foreground">{user?.isPremium ? "Premium Plan" : "Free Plan"}</h1>
-              <Button variant={"outline"} className="bg-inherit">Change Plan</Button>
+              {
+                user?.isPremium 
+                ? <Button variant={"outline"} className="bg-inherit">Manage Plan</Button>
+                : <Link href={`https://heliup.gumroad.com/l/heliup?custom_field=${session.user?.id}?email=${session.user?.email}`}>
+                  <Button variant={"outline"} className="bg-inherit">Upgrade to Premium</Button>
+                  </Link>
+              }
             </div>
           </div>
           {/* <div className="w-full border rounded-lg p-6 space-y-4">
