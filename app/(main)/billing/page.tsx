@@ -38,7 +38,7 @@ export default async function Page() {
               {
                 user?.isPremium 
                 ? <Button variant={"outline"} className="bg-inherit">Manage Plan</Button>
-                : <Link href={`https://heliup.gumroad.com/l/heliup?custom_field=${session.user?.id}?email=${session.user?.email}`}>
+                : <Link target="_blank" href={`https://heliup.gumroad.com/l/heliup?email=${session.user?.email}&custom_field=${session.user?.id}`}>
                   <Button variant={"outline"} className="bg-inherit">Upgrade to Premium</Button>
                   </Link>
               }
