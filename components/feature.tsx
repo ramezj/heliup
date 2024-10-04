@@ -35,8 +35,8 @@ export function BentoDemo() {
         cta="Start Hiring"
         background={
           <>
-          <Image src={"/demo.png"} width={500} height={500} alt="dashboard" 
-          className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105" />
+          {/* <Image src={"/demo.png"} width={500} height={500} alt="dashboard" 
+          className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105" /> */}
           </>
           }/>
 
@@ -49,8 +49,8 @@ export function BentoDemo() {
         cta="Start Hiring"
         background={
           <>
-          <Image src={"/dashboard.png"} width={500} height={500} alt="dashboard" 
-          className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105" />
+          {/* <Image src={"/dashboard.png"} width={500} height={500} alt="dashboard" 
+          className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105" /> */}
           </>
        }/>
 
