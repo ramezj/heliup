@@ -41,12 +41,12 @@ export function CreateOrganization() {
                     className="w-full grid gap-4"
                     >
                     <Label>Name</Label>
-                    <Input placeholder="Microsoft" required value={name} onChange={((e) => {setName(e.target.value)})}/>
+                    <Input className="bg-inherit" placeholder="Microsoft" required value={name} onChange={((e) => {setName(e.target.value)})}/>
                     <Label>Slug</Label>
-                    <Input placeholder="microsoft" required value={slug} onChange={((e) => {setSlug(e.target.value)})}/>
+                    <Input className="bg-inherit" placeholder="microsoft" required value={slug} onChange={((e) => {setSlug(e.target.value)})}/>
                     {
                         loading
-                        ? <Button size={"sm"} className="bg-blue-600 text-white hover:bg-blue-700 duration-200" disabled><Loader2 className="mr-2 h-4 w-4 animate-spin" />Create</Button>
+                        ? <Button size={"sm"} disabled><Loader2 className="mr-2 h-4 w-4 animate-spin" />Create</Button>
                         : <Button size={"sm"} variant={"expandIcon"} iconPlacement="right" Icon={Plus} className="">Create </Button>
                     }
                     </div>

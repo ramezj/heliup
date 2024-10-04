@@ -44,10 +44,12 @@ export default async function Page() {
         </Link>
       </Button>
         </div>
-        <div className="border rounded-xl w-full lg:w-2/3 relative mt-1 shadow-xl backdrop-blur-md">
+        {/* <div className="border rounded-xl w-full lg:w-2/3 relative mt-1 shadow-xl backdrop-blur-md">
           <img src="/demo.png" className="rounded-[inherit] shadow-xl" alt="Heliup Image"/>
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-[inherit] shadow-xl"></div>
-        </div>
+        </div> */}
+
+        
       {/* <div className="w-full items-center flex content-center flex-col mt-4">
       <div className="flex flex-col gap-2 lg:w-1/2 w-full">
       <LandingPageJobCard title="Product Manager" type="Full-Time" location="Remote"/>
