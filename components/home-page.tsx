@@ -21,7 +21,7 @@ const HeroSection = () => {
         <div>
           <Button
             asChild
-            className="mb-6 w-fit"
+            className="mb-6 w-fit bg-inherit"
             size={"sm"}
             variant={"outline"}
           >
@@ -40,16 +40,17 @@ const HeroSection = () => {
             </Balancer>
           </h3>
           <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4 mt-6">
-            <Button asChild className="w-36 font-medium" variant={"secondary"}>
-                <Link href={`https://demo.${process.env.NEXT_URL}`} target="_blank">
-                See Demo
-                </Link>
-                </Button>
             <Button variant={"expandIcon"} className="font-medium" asChild>
                 <Link href='/auth'>
-                Start Hiring <i>&nbsp;- It&apos;s Free</i>
+                Start Hiring
                 </Link>
             </Button>
+            <Button asChild className="font-medium bg-inherit" variant={"outline"}>
+                <Link href={`https://demo.${process.env.NEXT_URL}`} target="_blank">
+                See Demo
+                <ArrowUpRight className="w-4 ml-2" />
+                </Link>
+                </Button>
             </div>
           <div className="not-prose my-8 h-96 w-full overflow-hidden rounded-lg border md:h-[480px] md:rounded-xl">
             <Image
