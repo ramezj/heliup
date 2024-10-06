@@ -12,7 +12,7 @@ import { Button } from "./ui/button";
 import { Alert } from "./main-alert";
 
 // Asset imports
-import Placeholder from "@/public/dashboard.png";
+import Placeholder from "@/public/dashboard.webp";
 
 const HeroSection = () => {
   return (
@@ -36,9 +36,7 @@ const HeroSection = () => {
           </h1>
           <h3 className="text-muted-foreground text-xl mt-4">
             <Balancer>
-              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Create stunning career pages, receive applicants & start the hiring process. All in one place.
             </Balancer>
           </h3>
           <div className="not-prose my-8 h-96 w-full overflow-hidden rounded-lg border md:h-[480px] md:rounded-xl">

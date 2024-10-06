@@ -23,7 +23,7 @@ export default async function Page() {
   <div className="top-0 z-10 sticky">
   <Navigation session={session}/>
   </div>
-  <div className="-mt-10">
+  <div className="-mt-6 sm:-mt-10">
   <HeroSection />
   </div>
    {/* <div className="text-center w-full p-8 flex flex-col gap-4 items-center">
