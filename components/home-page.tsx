@@ -4,7 +4,7 @@ import Link from "next/link";
 
 // Third-party library imports
 import Balancer from "react-wrap-balancer";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 // Local component imports
 import { Section, Container } from "@/components/craft";
@@ -26,7 +26,7 @@ const HeroSection = () => {
             variant={"outline"}
           >
             <Link className="not-prose" href="https://9d8.dev">
-              Lorem ipsum dolor sit amet <ArrowRight className="w-4" />
+                Introducing Heliup <ArrowUpRight className="w-4 ml-2" />
             </Link>
           </Button>
           <h1 className="text-4xl">
@@ -34,7 +34,7 @@ const HeroSection = () => {
                 Create stunning career pages, effortlessly.
             </Balancer>
           </h1>
-          <h3 className="text-muted-foreground text-xl">
+          <h3 className="text-muted-foreground text-xl mt-4">
             <Balancer>
               Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
