@@ -1,3 +1,4 @@
+"use client"
 import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
 import { BellIcon, Link, Share2Icon, Users } from "lucide-react";
 import ShineBorder from "./magicui/shine-border";
@@ -9,6 +10,7 @@ import Marquee from "@/components/magicui/marquee";
 import { Input } from "./ui/input";
 import { LandingPageJobCard } from "./job-card";
 import { ShieldCheck, TabletSmartphone } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function BentoDemo() {
   return (
@@ -25,7 +27,6 @@ export function BentoDemo() {
         <Input className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_5%,#000_50%)]  group-hover:scale-105" value={"demo.heliup.xyz"} disabled />
         </>
         }/>
-
         <BentoCard key={2} 
         Icon={Users} 
         name="Custom Job Board" 
