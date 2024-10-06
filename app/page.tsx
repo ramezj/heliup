@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Alert } from "@/components/main-alert";
 import { BentoDemo } from "@/components/feature";
 import { SiteFooter } from "@/components/site-footer";
+import HeroSection from "@/components/home-page";
 
 export const metadata:Metadata = {
   title: "Heliup, Create stunning career pages, effortlessly.",
@@ -22,7 +23,10 @@ export default async function Page() {
   <div className="top-0 z-10 sticky">
   <Navigation session={session}/>
   </div>
-   <div className="text-center w-full p-8 flex flex-col gap-4 items-center">
+  <div className="-mt-10">
+  <HeroSection />
+  </div>
+   {/* <div className="text-center w-full p-8 flex flex-col gap-4 items-center">
     <div className="relative sm:-mt-1">
     <Alert />
     </div>
@@ -44,28 +48,18 @@ export default async function Page() {
         </Link>
       </Button>
         </div>
-        {/* <div className="border rounded-xl w-full lg:w-2/3 relative mt-1 shadow-xl backdrop-blur-md">
+        <div className="border rounded-xl w-full lg:w-2/3 relative mt-1 shadow-xl backdrop-blur-md">
           <img src="/demo.png" className="rounded-[inherit] shadow-xl" alt="Heliup Image"/>
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-[inherit] shadow-xl"></div>
-        </div> */}
-
-        
-      {/* <div className="w-full items-center flex content-center flex-col mt-4">
-      <div className="flex flex-col gap-2 lg:w-1/2 w-full">
-      <LandingPageJobCard title="Product Manager" type="Full-Time" location="Remote"/>
-      <LandingPageJobCard title="Operations Manager" type="Contract" location="Austin, TX"/>
-      </div>
-      </div> */}
+        </div>
       <h1 className="pt-6 pb-6 text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-medium sm:-mt-2">
           Some <i>Features</i>
         </h1>
       <div className="w-full lg:w-2/3 text-left">
       <BentoDemo />
       </div>
-    </div>
-    {/* <div>
-      <SiteFooter />
     </div> */}
+
     </>
   );
 }
