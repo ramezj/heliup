@@ -10,8 +10,8 @@ import { BentoDemo } from "@/components/feature";
 import { SiteFooter } from "@/components/site-footer";
 
 export const metadata:Metadata = {
-  title: "Heliup Beta",
-  description: "Heliup, Create stunning career pages effortlessly.",
+  title: "Heliup, Create stunning career pages, effortlessly.",
+  description: "Heliup, Create stunning career pages, effortlessly.",
   applicationName: "Heliup"
 
 }
@@ -28,7 +28,7 @@ export default async function Page() {
     </div>
         <div className="text-center items-center flex flex-col">
         <h1 className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-medium sm:-mt-2">
-          Create stunning career pages effortlessly
+          Create stunning career pages, effortlessly.
         </h1>
         <p className="text-sm max-w-3xl text-muted-foreground items-center text-center align-middle font-light">Create stunning career pages, receive applicants & start the hiring process. All in one place.</p>
         </div>
