@@ -29,12 +29,12 @@ const HeroSection = () => {
                 Introducing Heliup <ArrowUpRight className="w-4 ml-2" />
             </Link>
           </Button>
-          <h1 className="text-4xl">
+          <h1 className="text-4xl font-extralight">
             <Balancer>
                 Create stunning career pages, effortlessly.
             </Balancer>
           </h1>
-          <h3 className="text-muted-foreground text-xl mt-4">
+          <h3 className="text-muted-foreground text-lg mt-1 font-extralight">
             <Balancer>
             Create stunning career pages, receive applicants & start the hiring process. All in one place.
             </Balancer>
