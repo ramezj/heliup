@@ -180,7 +180,7 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
     )
 }
 
-export function LandingPageJobCard({ title, type, location }: { title: string, type: string, location: string }) {
+export function LandingPageJobCard({ title, type, location, age }: { title: string, type: string, location: string, age:string }) {
   return (
       <div color={"white"}
       className="w-full flex border hover:border-white/20 rounded-lg items-center duration-300 bg-black">
@@ -193,6 +193,9 @@ export function LandingPageJobCard({ title, type, location }: { title: string, t
       <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">🌎</span>{location}</Badge>
       </div>
       </div>
+      <div className="ml-auto m-5 hidden sm:block">
+          <p className="text-sm">{age}</p>
+        </div>
       {/* <div className="m-5 ml-auto">
       <Button variant={"outline"} size={"sm"}>
         View

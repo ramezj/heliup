@@ -10,6 +10,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Section, Container } from "@/components/craft";
 import { Button } from "./ui/button";
 import { Alert } from "./main-alert";
+import { LandingPageJobCard } from "./job-card";
 
 // Asset imports
 import Placeholder from "@/public/dashboard.webp";
@@ -52,15 +53,18 @@ const HeroSection = () => {
                 </Link>
                 </Button>
             </div>
-          <div className="not-prose my-8 h-96 w-full overflow-hidden rounded-lg border md:h-[480px] md:rounded-xl">
-            <Image
+          <div className="not-prose my-8 h-96 w-full overflow-hidden space-y-4">
+          <LandingPageJobCard title="Operations Manager" type="Full-Time" location="Cairo, EG" age="3 hours ago" />
+          <LandingPageJobCard title="Backend Engineer" type="Part-Time" location="Cairo, EG" age="22 hours ago" />
+            <LandingPageJobCard title="Software Engineer" type="Full-Time" location="Cairo, EG" age="about 1 month ago" />
+            {/* <Image
               className="h-full w-full object-cover object-bottom"
               src={Placeholder}
               width={1920}
               height={1080}
               alt="hero image"
               placeholder="blur"
-            />
+            /> */}
           </div>
         </div>
       </Container>
