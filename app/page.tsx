@@ -9,6 +9,7 @@ import { Alert } from "@/components/main-alert";
 import { BentoDemo } from "@/components/feature";
 import { SiteFooter } from "@/components/site-footer";
 import HeroSection from "@/components/home-page";
+import { Features } from "@/components/features";
 
 export const metadata:Metadata = {
   title: "Heliup | Create sexy career pages, effortlessly.",
@@ -25,6 +26,9 @@ export default async function Page() {
   </div>
   <div className="-mt-6 sm:-mt-10">
   <HeroSection />
+  <div className="sm:-mt-48 -mt-44">
+  <Features />
+  </div>
   </div>
    {/* <div className="text-center w-full p-8 flex flex-col gap-4 items-center">
     <div className="relative sm:-mt-1">
