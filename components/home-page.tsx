@@ -54,8 +54,8 @@ const HeroSection = () => {
                 </Button>
             </div>
           <div className="not-prose my-8 h-96 w-full overflow-hidden space-y-4">
-          <LandingPageJobCard title="Operations Manager" type="Full-Time" location="Cairo, EG" age="3 hours ago" />
-          <LandingPageJobCard title="Backend Engineer" type="Part-Time" location="Cairo, EG" age="22 hours ago" />
+          <LandingPageJobCard title="Operations Manager" type="Full-Time" location="Cairo, EG" age="about 1 month ago" />
+          <LandingPageJobCard title="Backend Engineer" type="Part-Time" location="Cairo, EG" age="about 1 month ago" />
             <LandingPageJobCard title="Software Engineer" type="Full-Time" location="Cairo, EG" age="about 1 month ago" />
             {/* <Image
               className="h-full w-full object-cover object-bottom"
