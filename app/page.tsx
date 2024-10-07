@@ -11,8 +11,8 @@ import { SiteFooter } from "@/components/site-footer";
 import HeroSection from "@/components/home-page";
 
 export const metadata:Metadata = {
-  title: "Heliup, Create stunning career pages, effortlessly.",
-  description: "Heliup, Create stunning career pages, effortlessly.",
+  title: "Heliup | Create sexy career pages, effortlessly.",
+  description: "Heliup, Create sexy career pages, effortlessly.",
   applicationName: "Heliup"
 
 }

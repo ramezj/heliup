@@ -32,12 +32,12 @@ const HeroSection = () => {
           </Button>
           <h1 className="text-5xl font-extralight">
             <Balancer>
-                Create stunning career pages, effortlessly.
+                Create sexy career pages, effortlessly.
             </Balancer>
           </h1>
           <h3 className="text-muted-foreground text-xl mt-2 font-extralight">
             <Balancer>
-            Create stunning career pages, receive applicants & start the hiring process. All in one place.
+            Create sexy career pages, receive applicants & start the hiring process. All in one place.
             </Balancer>
           </h3>
           <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4 mt-6">
