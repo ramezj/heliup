@@ -4,7 +4,7 @@ import Balancer from "react-wrap-balancer";
 import Link from "next/link";
 
 // Icons
-import { Coins, ArrowRight } from "lucide-react";
+import { Coins, ArrowRight, MonitorSmartphone, Notebook } from "lucide-react";
 
 type FeatureText = {
   icon: JSX.Element;
@@ -17,29 +17,29 @@ type FeatureText = {
 const featureText: FeatureText[] = [
   {
     icon: <Coins className="h-6 w-6" />,
-    title: "Lorem Ipsum",
+    title: "Custom Branding",
     href: "/",
     description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "Bring your company's branding for a fully customized experience.",
     cta: "Learn More",
   },
   {
-    icon: <Coins className="h-6 w-6" />,
-    title: "Lorem Ipsum",
+    icon: <MonitorSmartphone className="h-6 w-6" />,
+    title: "Mobile First",
     href: "/",
     description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "Experience a mobile-first design with full responsiveness across all devices.",
     cta: "Learn More",
   },
 ];
 
 const singleFeatureText: FeatureText[] = [
   {
-    icon: <Coins className="h-6 w-6" />,
-    title: "Lorem Ipsum",
+    icon: <Notebook className="h-6 w-6" />,
+    title: "Review All Resumes",
     href: "/",
     description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "Quickly review all resumes in one place, using intuitive tools for sorting and filtering candidates.",
     cta: "Learn More",
   },
 ];
@@ -49,17 +49,11 @@ export const Features = () => {
     <Section>
       <Container className="not-prose">
         <div className="flex flex-col gap-6">
-          <h3 className="text-4xl">
+          <h3 className="text-4xl font-thin">
             <Balancer>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                Innovative features for effortless candidate management.
             </Balancer>
           </h3>
-          <h4 className="text-2xl font-light opacity-70">
-            <Balancer>
-              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-            </Balancer>
-          </h4>
-
           <div className="mt-6 grid gap-6 md:mt-12 md:grid-cols-2">
             {featureText.map(
               ({ icon, title, description, href, cta }, index) => (
