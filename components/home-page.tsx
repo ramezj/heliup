@@ -35,10 +35,7 @@ const HeroSection = () => {
           </Button>
           <h1 className="text-5xl font-thin">
             <Balancer>
-            <WordPullUp
-              className="text-5xl font-thin"
-              words="Create sexy career pages, effortlessly."
-              />
+                Create sexy career pages, effortlessly.
             </Balancer>
           </h1>
           <h3 className="text-muted-foreground text-xl mt-2 font-thin">
@@ -60,24 +57,9 @@ const HeroSection = () => {
                 </Button>
             </div>
           <div className="not-prose my-8 h-96 w-full overflow-hidden space-y-4">
-          <motion.div
-            initial={{ opacity:0}}
-            animate={{ opacity:1}}
-            transition={{ duration: 0.3, delay: 0.2}}>
             <LandingPageJobCard title="Operations Manager" type="Full-Time" location="Cairo, EG" age="about 1 month ago" />
-            </motion.div>
-            <motion.div
-            initial={{ opacity:0}}
-            animate={{ opacity:1}}
-            transition={{ duration: 0.3, delay: 0.4}}>
             <LandingPageJobCard title="Backend Engineer" type="Full-Time" location="Cairo, EG" age="about 1 month ago" />
-            </motion.div>
-            <motion.div
-            initial={{ opacity:0}}
-            animate={{ opacity:1}}
-            transition={{ duration: 0.3, delay: 0.6}}>
             <LandingPageJobCard title="Software Engineer" type="Full-Time" location="Cairo, EG" age="about 1 month ago" />
-            </motion.div>
           </div>
         </div>
       </Container>
