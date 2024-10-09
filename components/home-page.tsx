@@ -1,3 +1,5 @@
+"use client"
+import { motion } from "framer-motion";
 // React and Next.js imports
 import Image from "next/image";
 import Link from "next/link";
@@ -26,7 +28,7 @@ const HeroSection = () => {
             size={"sm"}
             variant={"outline"}
           >
-            <Link className="not-prose" href="https://9d8.dev">
+            <Link className="not-prose" href="/">
                 Introducing Heliup <ArrowUpRight className="w-4 ml-2" />
             </Link>
           </Button>
@@ -54,17 +56,24 @@ const HeroSection = () => {
                 </Button>
             </div>
           <div className="not-prose my-8 h-96 w-full overflow-hidden space-y-4">
-          <LandingPageJobCard title="Operations Manager" type="Full-Time" location="Cairo, EG" age="about 1 month ago" />
-          <LandingPageJobCard title="Backend Engineer" type="Part-Time" location="Cairo, EG" age="about 1 month ago" />
+          <motion.div
+            initial={{ opacity:0}}
+            animate={{ opacity:1}}
+            transition={{ duration: 0.3, delay: 0.2}}>
+            <LandingPageJobCard title="Operations Manager" type="Full-Time" location="Cairo, EG" age="about 1 month ago" />
+            </motion.div>
+            <motion.div
+            initial={{ opacity:0}}
+            animate={{ opacity:1}}
+            transition={{ duration: 0.3, delay: 0.4}}>
+            <LandingPageJobCard title="Backend Engineer" type="Full-Time" location="Cairo, EG" age="about 1 month ago" />
+            </motion.div>
+            <motion.div
+            initial={{ opacity:0}}
+            animate={{ opacity:1}}
+            transition={{ duration: 0.3, delay: 0.6}}>
             <LandingPageJobCard title="Software Engineer" type="Full-Time" location="Cairo, EG" age="about 1 month ago" />
-            {/* <Image
-              className="h-full w-full object-cover object-bottom"
-              src={Placeholder}
-              width={1920}
-              height={1080}
-              alt="hero image"
-              placeholder="blur"
-            /> */}
+            </motion.div>
           </div>
         </div>
       </Container>
