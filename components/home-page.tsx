@@ -7,6 +7,7 @@ import Link from "next/link";
 // Third-party library imports
 import Balancer from "react-wrap-balancer";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import WordPullUp from "@/components/magicui/word-pull-up";
 
 // Local component imports
 import { Section, Container } from "@/components/craft";
@@ -34,7 +35,10 @@ const HeroSection = () => {
           </Button>
           <h1 className="text-5xl font-thin">
             <Balancer>
-                Create sexy career pages, effortlessly.
+            <WordPullUp
+              className="text-5xl font-thin"
+              words="Create sexy career pages, effortlessly."
+              />
             </Balancer>
           </h1>
           <h3 className="text-muted-foreground text-xl mt-2 font-thin">
