@@ -3,6 +3,7 @@ import { validateSignature } from "@/utils/validate-signature";
 
 export async function POST(req: NextRequest) {
     const body = await req.text();
+    console.log(body);
     const parsedbody = new URLSearchParams(body);
     console.log(parsedbody);
     return NextResponse.json({
