@@ -30,6 +30,7 @@ model User {
   email         String          @unique
   firstTimeUser Boolean @default(true)
   isPremium     Boolean @default(false)
+  subscription_id String?
   emailVerified DateTime?
   image         String?
   accounts      Account[]
