@@ -37,21 +37,17 @@ export default async function Page() {
               <h1 className="font-medium text-base text-muted-foreground">{user?.isPremium ? "Premium Plan" : "Free Plan"}</h1>
               {
                 user?.isPremium 
-                ? <Button variant={"outline"} className="bg-inherit">Manage Plan</Button>
+                ? <Button variant={"outline"} className="bg-inherit" asChild>
+                  <Link target="_blank" href={`https://app.gumroad.com/subscriptions/${user.subscription_id}/manage`}>
+                  Manage Plan
+                  </Link>
+                  </Button>
                 : <Link target="_blank" href={`https://heliup.gumroad.com/l/heliup?email=${session.user?.email}&custom_field=${session.user?.id}`}>
                   <Button variant={"outline"} className="bg-inherit">Upgrade to Premium</Button>
                   </Link>
               }
             </div>
           </div>
-          {/* <div className="w-full border rounded-lg p-6 space-y-4">
-            <div>
-            <h1 className="font-bold text-2xl">Billing History</h1>
-            </div>
-            <div>
-              <h1 className="font-medium text-lg text-muted-foreground">nothing to show here.</h1>
-            </div>
-          </div> */}
           <div className="w-full border rounded-lg p-6 space-y-6">
             <div>
             <h1 className="font-bold text-xl">Cancel Subscription</h1>
