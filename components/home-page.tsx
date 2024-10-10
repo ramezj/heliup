@@ -50,7 +50,7 @@ const HeroSection = () => {
                 </Link>
             </Button>
             <Button asChild className="font-medium bg-inherit" variant={"outline"}>
-                <Link href={`https://demo.${process.env.NEXT_URL}`} target="_blank">
+                <Link href={`https://demo.heliup.xyz`} target="_blank">
                 See Demo
                 <ArrowUpRight className="w-4 ml-2" />
                 </Link>
