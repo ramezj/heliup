@@ -28,10 +28,10 @@ export function Navigation(props:any) {
           {/* <Link href="/" className="text-foreground transition-colors hover:text-foreground font-semibold">
             Features
           </Link> */}
-          <Link href={`https://demo.heliup.xyz`} target="_blank" className="text-foreground transition-colors hover:text-foreground font-semibold">
+          <Link href={`https://demo.heliup.xyz`} target="_blank" className="text-foreground transition-colors hover:text-foreground font-medium">
             Demo
           </Link>
-          <Link href="/pricing" className="text-foreground transition-colors hover:text-foreground font-semibold">
+          <Link href="/pricing" className="text-foreground transition-colors hover:text-foreground font-medium">
             Pricing
           </Link>
         </nav>
@@ -61,13 +61,13 @@ export function Navigation(props:any) {
                 </Link>
                 </SheetClose> */}
                 <SheetClose asChild>
-                <Link href='https://demo.heliup.xyz' className={`${path == 'jobs' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+                <Link href='https://demo.heliup.xyz' className={`${path == 'jobs' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200 font-medium`}>
                 <Laptop className="h-4 w-4" />
                 Demo
                 </Link>
                 </SheetClose>
                 <SheetClose asChild>
-                <Link href='/pricing' className={`${path == 'applicants' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
+                <Link href='/pricing' className={`${path == 'applicants' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200 font-medium`}>
                 <DollarSignIcon className="h-4 w-4" />
                 Pricing
                 </Link>
