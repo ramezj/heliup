@@ -33,7 +33,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     return (
         <>
         <div className="z-50 top-0 border-b sticky">
-        <div className="max-w-3xl mx-auto bg-black h-16 sticky text-center justify-between flex items-center px-6">
+        <div className="lg:w-1/2 w-full mx-auto bg-black h-16 sticky text-center justify-between flex items-center lg:px-0 px-4">
         <div className="flex">
         <Link className="font-medium text-xl sm:text-2xl align-middle" href='/'>{organization.organization?.name}</Link>
         </div>
