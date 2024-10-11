@@ -10,6 +10,7 @@ import { SquareArrowOutUpRight } from "lucide-react"
 import { SelectLocation } from "@/components/select-location";
 import { ViewSlug } from "@/components/view-slug";
 import { Prisma } from "@prisma/client";
+import { Toggle } from "@/components/toggle";
 
 type OrganizationWithJobs = Prisma.OrganizationGetPayload<{
   include: {
@@ -31,10 +32,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
     }
     return (
         <>
-        <link rel="icon" href="/logo.jpg?v=2" />
-        <div className="w-full border-b bg-black top-0 z-50 border-0 h-16 sticky text-center justify-between flex items-center px-6">
+        <div className="z-50 top-0 border-b sticky">
+        <div className="max-w-3xl mx-auto bg-black h-16 sticky text-center justify-between flex items-center px-6">
         <div className="flex">
-        <Link className="font-bold text-sm sm:text-base" href='/'>{organization.organization?.name}</Link>
+        <Link className="font-medium text-xl sm:text-2xl align-middle" href='/'>{organization.organization?.name}</Link>
+        </div>
+        <div className="flex">
+            <Toggle />
+        </div>
         </div>
         </div>
         <ViewSlug organization={organization.organization as OrganizationWithJobs} locations={organization.locations as Array<string>} types={organization.types as Array<string>} />

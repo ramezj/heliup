@@ -14,6 +14,7 @@ import { notFound } from 'next/navigation'
 import Link from "next/link";
 import { formatJobType } from "@/utils/format";
 import { formatDistanceToNow } from "date-fns";
+import { Toggle } from "@/components/toggle";
 
 export async function generateMetadata({ params }: { params: { jobId: string } }): Promise<Metadata> {
     const job = await getJobById(params.jobId)
@@ -31,11 +32,16 @@ export default async function Page({ params }: { params: { jobId: string, slug:s
     if(job?.error) { redirect('/') }
     return (
         <>
-            <div className="w-full border-b bg-black z-50 border-0 h-16 sticky top-0 text-center justify-between flex items-center px-6">
-            <div className="flex">
-                <Link className="font-bold text-sm sm:text-base" href='/'>{organization.organization?.name}</Link>
-            </div>
-            </div>
+        <div className="z-50 top-0 border-b sticky">
+        <div className="max-w-3xl mx-auto bg-black h-16 sticky text-center justify-between flex items-center px-6">
+        <div className="flex">
+        <Link className="font-medium text-xl sm:text-2xl align-middle" href='/'>{organization.organization?.name}</Link>
+        </div>
+        <div className="flex">
+        <Toggle />
+        </div>
+        </div>
+        </div>
             <div className="w-full flex flex-col items-center text-center py-8 px-4 gap-y-4">
             <div>
             <h1 className="font-bold text-2xl">{job.job?.title}</h1>
