@@ -38,7 +38,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <Link className="font-medium text-xl sm:text-2xl align-middle" href='/'>{organization.organization?.name}</Link>
         </div>
         <div className="flex">
-            <Toggle />
+        <Toggle />
         </div>
         </div>
         </div>
