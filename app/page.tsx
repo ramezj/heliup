@@ -12,8 +12,8 @@ import HeroSection from "@/components/home-page";
 import { Features } from "@/components/features";
 
 export const metadata:Metadata = {
-  title: "Heliup | Create sexy career pages, effortlessly.",
-  description: "Heliup, Create sexy career pages, effortlessly.",
+  title: "Heliup | Create Stunning Career Pages.",
+  description: "Heliup, Create Stunning Career Pages.",
   applicationName: "Heliup"
 
 }
