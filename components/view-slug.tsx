@@ -48,7 +48,7 @@ export function ViewSlug({ organization, locations, types } : { organization:Org
         <SelectTrigger className="bg-inherit w-full">
         <SelectValue placeholder="All Locations" />
         </SelectTrigger>
-        <SelectContent className="bg-black">
+        <SelectContent className="dark:bg-black bg-white">
           <SelectGroup key={"Items"}>
             <SelectItem key={"All"} value="All">All Locations</SelectItem>
             {
@@ -73,7 +73,7 @@ export function ViewSlug({ organization, locations, types } : { organization:Org
       <SelectTrigger className="bg-inherit w-full">
       <SelectValue placeholder="All Employment" />
       </SelectTrigger>
-      <SelectContent className="bg-black">
+      <SelectContent className="dark:bg-black bg-white">
         <SelectGroup key={"Items2"}>
           <SelectItem key={"All"} value="All">All Employment</SelectItem>
           {
