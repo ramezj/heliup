@@ -31,9 +31,9 @@ export default async function Page({ params }: { params: { jobId: string, slug:s
     const job = await getJobById(params.jobId);
     if(job?.error) { redirect('/') }
     return (
-        <>
+        <div className="dark:bg-black bg-white">
         <div className="z-50 top-0 border-b sticky">
-        <div className="lg:w-1/2 w-full mx-auto bg-black h-16 sticky text-center justify-between flex items-center lg:px-0 px-4">
+        <div className="lg:w-1/2 w-full mx-auto dark:bg-black bg-white h-16 sticky text-center justify-between flex items-center lg:px-0 px-4">
         <div className="flex">
         <Link className="font-medium text-xl sm:text-2xl align-middle" href='/'>{organization.organization?.name}</Link>
         </div>
@@ -67,6 +67,6 @@ export default async function Page({ params }: { params: { jobId: string, slug:s
             }
             <ApplyCard jobId={params.jobId} />
         </div>
-        </>
+        </div>
     )
 }
