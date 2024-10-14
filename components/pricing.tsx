@@ -37,14 +37,14 @@ export function FreeCard() {
             </div>
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
-                <XIcon className="text-red-500"/>
-                    Candidate CV Upload
+                    <CheckIcon className="text-green-500"/>
+                    Heliup Branding
                     </h2>
             </div>
             <div className="flex flex-col space-y-1.5">
                 <h2 className="flex gap-2">
-                    <CheckIcon className="text-green-500"/>
-                    Heliup Branding
+                <XIcon className="text-red-500"/>
+                    Candidate CV Upload
                     </h2>
             </div>
           </div>
