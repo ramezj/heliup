@@ -12,8 +12,8 @@ import { Section, Container } from "@/components/craft";
 
 const CTA = () => {
   return (
-    <Section className="px-4">
-      <Container className="flex flex-col items-center gap-6 rounded-lg border bg-muted/25 p-6 text-center md:rounded-xl md:p-12">
+    <Section className="">
+      <Container className="flex flex-col items-center gap-6 rounded-lg border bg-inherit p-6 text-center md:rounded-xl">
         <h2 className="!my-0 text-2xl">Start Hiring Now.</h2>
         <h3 className="!mb-0 text-muted-foreground">
           <Balancer>
