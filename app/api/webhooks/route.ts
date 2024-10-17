@@ -8,6 +8,7 @@ export async function POST(req: NextRequest) {
     const body = Object.fromEntries(parsedbody.entries());
     const resource_name = body?.resource_name;
     const subscription_id = body?.subscription_id;
+    const userEmail = body?.user_email;
     const email = body?.email;
     console.log(body);
     // New Subscription
@@ -27,7 +28,8 @@ export async function POST(req: NextRequest) {
     if(resource_name == "cancellation") {
         const user = await prisma.user.update({
             where: {
-                email: email
+                email: userEmail,
+                subscription_id: subscription_id
             },
             data: {
                 isPremium: false,
