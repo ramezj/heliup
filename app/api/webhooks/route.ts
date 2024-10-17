@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
     const resource_name = body?.resource_name;
     const subscription_id = body?.subscription_id;
     const email = body?.email;
-
+    console.log(body);
     // New Subscription
     if(resource_name == "sale") {
         const user = await prisma.user.update({
@@ -34,7 +34,6 @@ export async function POST(req: NextRequest) {
             }
         })
     }
-    console.log(body);
     return NextResponse.json({
         ok:true,
         error: null,
