@@ -48,15 +48,24 @@ export default async function Page() {
               }
             </div>
           </div>
-          <div className="w-full border rounded-lg p-6 space-y-6">
+          {
+            user?.isPremium 
+            ? 
+            <>
+            <div className="w-full border rounded-lg p-6 space-y-6">
             <div>
             <h1 className="font-bold text-xl">Cancel Subscription</h1>
             </div>
             <div className="space-y-4">
-              <h1 className="font-medium text-base text-muted-foreground">If you wish to cancel your subscription, please click the button below. Note that you will lose all the benefits of your current plan.</h1>
-              <Button variant={"outline"} className="bg-inherit">Cancel Subscription</Button>
+            <h1 className="font-medium text-base text-muted-foreground">If you wish to cancel your subscription, please click the button below. Note that you will lose all the benefits of your current plan.</h1>
+            <Button variant={"outline"} className="bg-inherit">Cancel Subscription</Button>
             </div>
-          </div>
+            </div>
+            </>
+            : 
+            <>
+            </>
+          }
         </div>
         </>
     )
