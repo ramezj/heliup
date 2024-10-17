@@ -45,7 +45,7 @@ export function ViewSlug({ organization, locations, types } : { organization:Org
       setSelectedLocation(loc); 
       filterJobs(loc, selectedEmploymentType); 
       }}>
-        <SelectTrigger className="bg-inherit w-full">
+        <SelectTrigger className="bg-muted/25 w-full">
         <SelectValue placeholder="All Locations" />
         </SelectTrigger>
         <SelectContent className="dark:bg-black bg-white">
@@ -70,7 +70,7 @@ export function ViewSlug({ organization, locations, types } : { organization:Org
       setSelectedEmploymentType(type); 
       filterJobs(selectedLocation, type);
     }}>
-      <SelectTrigger className="bg-inherit w-full">
+      <SelectTrigger className="bg-muted/25 w-full">
       <SelectValue placeholder="All Employment" />
       </SelectTrigger>
       <SelectContent className="dark:bg-black bg-white">
