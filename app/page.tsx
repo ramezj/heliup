@@ -30,9 +30,9 @@ export default async function Page() {
   <div className="sm:-mt-48 -mt-44">
   <Features />
   </div>
-  <div className="sm:-mt-12 -mt-10">
+  {/* <div className="sm:-mt-12 -mt-10">
   <CTA />
-  </div>
+  </div> */}
   </div>
    {/* <div className="text-center w-full p-8 flex flex-col gap-4 items-center">
     <div className="relative sm:-mt-1">

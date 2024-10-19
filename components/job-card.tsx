@@ -38,7 +38,7 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
     return (
       <Link href={`/${job.id}`}>
       <div 
-      className="w-full flex border dark:hover:border-white/20 hover:border-black/20 bg-muted/25 rounded-lg items-center duration-300">
+      className="w-full flex border dark:hover:border-white/20 hover:border-black/20 bg-muted/10 rounded-lg items-center duration-300">
       <div className="m-5 flex flex-col items-start text-left">
         <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
          {job.title}     

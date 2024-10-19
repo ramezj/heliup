@@ -38,7 +38,7 @@ const HeroSection = () => {
                 Create <i className="font-normal">Stunning</i> Career Pages.
             </Balancer>
           </h1>
-          <h3 className="text-muted-foreground text-xl mt-2 font-thin">
+          <h3 className="text-muted-foreground text-xl mt-2 font-thin text-balance">
             <Balancer>
             Create stunning career pages, create jobs, receive applicants & start the hiring process. All in one place.
             </Balancer>
