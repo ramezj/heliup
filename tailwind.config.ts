@@ -69,7 +69,7 @@ const config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		keyframes: {
-  			'ripple': {
+  			ripple: {
   				'0%, 100%': {
   					transform: 'translate(-50%, -50%) scale(1)'
   				},
@@ -77,7 +77,7 @@ const config = {
   					transform: 'translate(-50%, -50%) scale(0.9)'
   				}
   			},
-  			'shine': {
+  			shine: {
   				from: {
   					backgroundPosition: '200% 0'
   				},
@@ -101,7 +101,7 @@ const config = {
   					'background-position': '0% 0%'
   				}
   			},
-  			'meteor': {
+  			meteor: {
   				'0%': {
   					transform: 'rotate(215deg) translateX(0)',
   					opacity: '1'
@@ -137,13 +137,13 @@ const config = {
   			}
   		},
   		animation: {
-  			'ripple': 'ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite',
+  			ripple: 'ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite',
   			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
-  			'meteor': 'meteor 5s linear infinite',
+  			meteor: 'meteor 5s linear infinite',
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
-  			'gradient': 'gradient 8s linear infinite',
-  			'shine': 'shine 8s ease-in-out infinite'
+  			gradient: 'gradient 8s linear infinite',
+  			shine: 'shine 8s ease-in-out infinite'
   		}
   	}
   },
