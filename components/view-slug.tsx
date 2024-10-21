@@ -8,6 +8,7 @@ import { Job } from "@prisma/client"
 import { JobCard } from "./job-card"
 import { motion } from "framer-motion"
 import { formatJobType } from "@/utils/format"
+import Balancer from "react-wrap-balancer"
 
 type OrganizationWithJobs = Prisma.OrganizationGetPayload<{
     include: {
@@ -35,7 +36,12 @@ export function ViewSlug({ organization, locations, types } : { organization:Org
     <h1 className="font-medium text-4xl pt-6">Jobs at {organization?.name}</h1>
     {
       organization.description 
-      ?  <p className="text-muted-foreground max-w-2xl text-sm p-3">{organization?.description}</p>
+      ? 
+      <>
+      <Balancer>
+      <p className="text-muted-foreground max-w-3xl text-sm pt-3 pb-3">{organization?.description}</p>
+      </Balancer>
+      </>
       :  <div className="p-3"></div>
     }
     <div className="flex sm:flex-row flex-col gap-4 lg:w-1/2 w-full pt-2 justify-center">
@@ -45,7 +51,7 @@ export function ViewSlug({ organization, locations, types } : { organization:Org
       setSelectedLocation(loc); 
       filterJobs(loc, selectedEmploymentType); 
       }}>
-        <SelectTrigger className="bg-muted/10 w-full">
+        <SelectTrigger className="dark:bg-black bg-white w-full">
         <SelectValue placeholder="All Locations" />
         </SelectTrigger>
         <SelectContent className="dark:bg-black bg-white">
@@ -70,7 +76,7 @@ export function ViewSlug({ organization, locations, types } : { organization:Org
       setSelectedEmploymentType(type); 
       filterJobs(selectedLocation, type);
     }}>
-      <SelectTrigger className="bg-muted/10 w-full">
+      <SelectTrigger className="dark:bg-black bg-white w-full">
       <SelectValue placeholder="All Employment" />
       </SelectTrigger>
       <SelectContent className="dark:bg-black bg-white">

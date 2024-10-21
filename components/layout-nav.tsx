@@ -47,7 +47,6 @@ export default function LayoutNav({ children, session }: { children: React.React
               </nav>
             </div>
             <div className="p-4 w-full flex gap-2">
-            
             <Button onClick={((e) => { signOut({ callbackUrl: "/" })})} variant={"outline"} size={"icon"} className="bg-inherit w-full"><LogOut className="text-white size-4 mr-2"/>Log out</Button>
             </div>
           </div>
