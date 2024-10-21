@@ -44,7 +44,7 @@ const HeroSection = () => {
             </Balancer>
           </h3>
           <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4 mt-6">
-            <Button variant={"expandIcon"} className="font-medium" asChild>
+            <Button variant={"default"} className="font-medium" asChild>
                 <Link href='/auth'>
                 Start Hiring
                 </Link>

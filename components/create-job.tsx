@@ -35,9 +35,9 @@ export function CreateJobButton() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-      <Button size={"sm"} variant={"expandIcon"} iconPlacement="right" Icon={Plus} className="w-36">
+      <Button size={"sm"} variant={"default"} className="w-36">
         Create Job
-        {/* <Plus className="w-4 h-4 ml-2"/>  */}
+        <Plus className="size-4 ml-2"/> 
       </Button>
       </DialogTrigger>
       <DialogContent onOpenAutoFocus={((e) => {e.preventDefault()})} className="text-left w-[90%] rounded-md bg-black">

@@ -50,7 +50,7 @@ export function FreeCard() {
           </div>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button className='w-full font-bold' variant={"expandIcon"} Icon={ArrowRightIcon} iconPlacement="right" >
+        <Button className='w-full font-bold' variant={"default"}>
               Start Hiring
         </Button>
       </CardFooter>
@@ -63,7 +63,6 @@ export function PaidCard() {
     return (
         <>
         <Card className="w-[350px] bg-black ">
-        <ShineBorder color={"white"}>
       <CardHeader>
         <CardTitle className='flex gap-2 font-bold tracking-normal'>Premium</CardTitle>
         <CardDescription className="text-left">Monthly Subscription</CardDescription>
@@ -106,11 +105,10 @@ export function PaidCard() {
           </div>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button className='w-full font-bold' variant={"expandIcon"} Icon={ArrowRightIcon} iconPlacement="right" >
+        <Button className='w-full font-bold' variant={"default"}>
               Start Hiring
         </Button>
       </CardFooter>
-      </ShineBorder>
     </Card>
         </>
     )

@@ -25,9 +25,10 @@ export default async function Page() {
         <>
         <div className="flex justify-between items-center w-full">
         <h1 className="font-bold text-3xl tracking-tight">Overview</h1>
-        <Button size={"sm"} variant={"expandIcon"} asChild Icon={SquareArrowOutUpRight} iconPlacement="right" className="w-36">
+        <Button size={"sm"} variant={"default"} asChild className="w-36">
         <Link target="_blank" href={`https://${organization.organization?.slug}.${process.env.NEXT_URL}`}>
         Preview
+        <SquareArrowOutUpRight className="size-4 ml-2"/>
         </Link>
         </Button>
         </div>

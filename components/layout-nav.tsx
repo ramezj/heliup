@@ -9,6 +9,7 @@ import { Session } from "next-auth"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { signOut } from "next-auth/react"
 import { Gem } from "lucide-react"
+import { SidebarFooter } from "./ui/sidebar"
 
 export default function LayoutNav({ children, session }: { children: React.ReactNode; session: Session }) {
     const path = usePathname();
@@ -46,6 +47,7 @@ export default function LayoutNav({ children, session }: { children: React.React
               </nav>
             </div>
             <div className="p-4 w-full flex gap-2">
+            
             <Button onClick={((e) => { signOut({ callbackUrl: "/" })})} variant={"outline"} size={"icon"} className="bg-inherit w-full"><LogOut className="text-white size-4 mr-2"/>Log out</Button>
             </div>
           </div>
