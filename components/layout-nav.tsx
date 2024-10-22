@@ -10,6 +10,7 @@ import { Session } from "next-auth"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { signOut } from "next-auth/react"
 import { Gem } from "lucide-react"
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
 import { SidebarFooter } from "./ui/sidebar"
 
 export default function LayoutNav({ children, session }: { children: React.ReactNode; session: Session }) {
@@ -51,22 +52,26 @@ export default function LayoutNav({ children, session }: { children: React.React
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant={"outline"} className="w-full dark:bg-black bg-white">
+                    <Avatar className="size-5 mr-2 items-center">
+                    <AvatarImage src={session?.user?.image!} />
+                    <AvatarFallback>{session.user?.name}</AvatarFallback>
+                    </Avatar>
                     {session.user?.name}
                     <ChevronUp className="ml-auto size-4" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
                   side="top"
-                  className="w-[--radix-popper-anchor-width] dark:bg-black bg-white"
+                  className="w-[--radix-popper-anchor-width] dark:bg-black bg-white space-y-2"
                 >
-                  <DropdownMenuItem>
-                    <span>Account</span>
+                  <DropdownMenuItem className="cursor-pointer">
+                  <span className="flex align-middle items-center"><Settings2 className="size-4 mr-2" />Settings</span>
                   </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <span>Billing</span>
+                  <DropdownMenuItem className="cursor-pointer">
+                  <span className="flex align-middle items-center"><Banknote className="size-4 mr-2" />Billing</span>
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={(() => { signOut({ callbackUrl: "/" })})}>
-                    <span>Sign out</span>
+                  <DropdownMenuItem onClick={(() => { signOut({ callbackUrl: "/" })})} className="cursor-pointer">
+                    <span className="flex align-middle items-center"><LogOut className="size-4 mr-2" />Sign out</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
