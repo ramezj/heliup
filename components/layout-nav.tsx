@@ -1,7 +1,8 @@
 'use client'
 
 import Link from "next/link"
-import { Home, Users, BriefcaseBusiness, Settings2, Banknote, LogOut } from "lucide-react"
+import { Home, Users, BriefcaseBusiness, Settings2, Banknote, LogOut, ChevronUp, User2 } from "lucide-react"
+import { SidebarMenuItem } from "./ui/sidebar"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { usePathname } from "next/navigation"
@@ -47,7 +48,29 @@ export default function LayoutNav({ children, session }: { children: React.React
               </nav>
             </div>
             <div className="p-4 w-full flex gap-2">
-            <Button onClick={((e) => { signOut({ callbackUrl: "/" })})} variant={"outline"} size={"icon"} className="bg-inherit w-full"><LogOut className="text-white size-4 mr-2"/>Log out</Button>
+            <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant={"outline"} className="w-full dark:bg-black bg-white">
+                    {session.user?.name}
+                    <ChevronUp className="ml-auto size-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent
+                  side="top"
+                  className="w-[--radix-popper-anchor-width] dark:bg-black bg-white"
+                >
+                  <DropdownMenuItem>
+                    <span>Account</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <span>Billing</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={(() => { signOut({ callbackUrl: "/" })})}>
+                    <span>Sign out</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            {/* <Button onClick={((e) => { signOut({ callbackUrl: "/" })})} variant={"outline"} size={"icon"} className="bg-inherit w-full"><LogOut className="text-white size-4 mr-2"/>Log out</Button> */}
             </div>
           </div>
         </div>
