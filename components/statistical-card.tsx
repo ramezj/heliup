@@ -8,7 +8,7 @@ export function StatisticalCard({ name, number} : { name: string, number: number
     return (
         <>
         <div className="w-full">
-        <Card className="w-full bg-inherit">
+        <Card className="w-full dark:bg-zinc-950 bg-zinc-100">
         <CardContent className="pt-6">
         <div className="space-y-2">
           <Label className="font-bold text-lg">
@@ -27,7 +27,7 @@ export function OrganizationName({ name} : { name: string}) {
   return (
       <>
       <div className="w-full">
-      <Card className="w-full bg-inherit">
+      <Card className="w-full dark:bg-zinc-950 bg-zinc-100">
       <CardContent className="pt-6">
       <div className="space-y-2">
         <Label className="font-bold text-lg">

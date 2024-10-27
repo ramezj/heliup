@@ -32,14 +32,14 @@ export default function EditOrganization({ organization } : { organization:Organ
             className="space-y-2"
             >
               <Label htmlFor="name">Name</Label>
-              <Input className="bg-inherit" required placeholder="Microsoft" value={org.name!} onChange={((e) => {setOrg((prevOrg) => ({ ...prevOrg, name: e.target.value }))})}/>
+              <Input className="dark:bg-zinc-950 bg-zinc-100" required placeholder="Microsoft" value={org.name!} onChange={((e) => {setOrg((prevOrg) => ({ ...prevOrg, name: e.target.value }))})}/>
               <div>
               <Label htmlFor="name">Slug</Label>
-              <Input className="bg-inherit" required placeholder="microsoft.jobspire.co" value={org.slug!} onChange={((e) => {setOrg((prevOrg) => ({ ...prevOrg, slug:e.target.value}))})}/>
+              <Input className="dark:bg-zinc-950 bg-zinc-100" required placeholder="microsoft.jobspire.co" value={org.slug!} onChange={((e) => {setOrg((prevOrg) => ({ ...prevOrg, slug:e.target.value}))})}/>
               </div>
               <div>
                 <Label htmlFor="name">Slogan</Label>
-                <Textarea className="bg-inherit" placeholder="I'm Lovin' it!" value={org.description!} onChange={((e) => {setOrg((prevOrg) => ({...prevOrg, description: e.target.value}))})} rows={4} />  
+                <Textarea className="dark:bg-zinc-950 bg-zinc-100" placeholder="I'm Lovin' it!" value={org.description!} onChange={((e) => {setOrg((prevOrg) => ({...prevOrg, description: e.target.value}))})} rows={4} />  
               </div>
               </motion.div>
             {
