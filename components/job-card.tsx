@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Separator } from "./ui/separator"
 import { Job, Organization } from "@prisma/client"
 import { Badge } from "./ui/badge"
-import { Briefcase, Navigation, ArrowUpRight, SquareArrowOutUpRight, MapPin, Pin, Settings } from "lucide-react"
+import { Briefcase, Navigation, ArrowUpRight, SquareArrowOutUpRight, MapPin, Pin, Settings, ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { Skeleton } from "./ui/skeleton"
 import ShineBorder from "./magicui/shine-border"
@@ -38,22 +38,30 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
     return (
       <Link href={`/${job.id}`}>
       <div 
-      className="w-full flex border dark:hover:border-white/20 hover:border-black/20 rounded-lg items-center duration-300">
+      className="w-full flex border dark:hover:border-white/20 hover:border-black/20 rounded-lg items-center duration-300 pt-3 pb-3">
       <div className="m-5 flex flex-col items-start text-left">
         <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
          {job.title}     
         </p>
-        <div className="mt-3 -mb-2 flex gap-2">
+        <div className="mt-1 -mb-2 flex">
+        <p className="text-xs text-muted-foreground">{formatDistanceToNow(job.createdAt)} ago</p>
+        </div>
+        {/* <div className="mt-3 -mb-2 flex gap-2">
         <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">💼</span>{formatJobType(job.type)}</Badge>
           {
             job.location 
             ?  <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">🌎</span>{job.location}</Badge>
             :  <></>
           }
+        </div> */}
         </div>
-        </div>
-        <div className="ml-auto m-5 hidden sm:block">
+        {/* <div className="ml-auto m-5 hidden sm:block">
           <p className="text-sm">{formatDistanceToNow(job.createdAt)} ago</p>
+        </div> */}
+        <div className="ml-auto mr-5">
+          <Button size={"icon"} variant={"outline"} className="rounded-lg">
+            <ArrowRight className="size-4" />
+          </Button>
         </div>
         </div>
         </Link>
