@@ -43,7 +43,7 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
         <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
          {job.title}     
         </p>
-        <div className="mt-1 -mb-2 flex">
+        <div className="mt-1 flex">
         <p className="text-xs text-muted-foreground">{formatDistanceToNow(job.createdAt)} ago</p>
         </div>
         {/* <div className="mt-3 -mb-2 flex gap-2">
@@ -59,7 +59,7 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
           <p className="text-sm">{formatDistanceToNow(job.createdAt)} ago</p>
         </div> */}
         <div className="ml-auto mr-5">
-          <Button size={"icon"} variant={"outline"} className="rounded-lg">
+          <Button size={"icon"} variant={"outline"} className="rounded-lg bg-inherit">
             <ArrowRight className="size-4" />
           </Button>
         </div>
