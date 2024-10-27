@@ -111,22 +111,24 @@ export function JobCardForDashboard({ job }: { job: JobWithApplicants}) {
   };
   return (
     <div onClick={handleCardClick}>
-    <div className="w-full flex border hover:border-white/20 rounded-lg items-center duration-300 cursor-pointer">
-    <div className="m-5 flex flex-col items-start text-left">
+    <div className="w-full flex border dark:hover:border-white/20 hover:border-black/20 rounded-lg items-center duration-300 pt-3 pb-3 cursor-pointer">
+    <div className="mx-5 my-3 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
        {job.title}     
       </p>
-      <div className="mt-3 -mb-2 flex gap-1">
+      <div className="mt-1 flex">
+        <p className="text-xs text-muted-foreground">{formatDistanceToNow(job.createdAt)} ago</p>
+        </div>
+      {/* <div className="mt-3 -mb-2 flex gap-1">
       <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">💼</span>{formatJobType(job.type)}</Badge>
       {
         job.location
         ?  <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">🌎</span>{job?.location}</Badge>
         : <></>
       }
+      </div> */}
       </div>
-      </div>
-      
-      <div className="m-5 ml-auto flex gap-2">
+      <div className="mr-5 ml-auto">
       <Button size={"sm"} variant={"outline"} className="gap-1 bg-inherit">
         <Settings className="size-4"/>
       </Button>
@@ -163,21 +165,16 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
   return (
     <div onClick={handleCardClick}>
     <div
-    className="w-full flex border hover:border-white/20 rounded-lg items-center duration-300 cursor-pointer">
-    <div className="m-5 flex flex-col items-start text-left">
+    className="w-full flex border dark:hover:border-white/20 hover:border-black/20 rounded-lg items-center duration-300 pt-3 pb-3 cursor-pointer">
+    <div className="mx-5 my-3 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
        {job.title}     
       </p>
-      <div className="mt-3 -mb-2 flex gap-1">
-      <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">💼</span>{formatJobType(job.type)}</Badge>
-      {
-        job.location
-        ?  <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">🌎</span>{job?.location}</Badge>
-        : <></>
-      }
+      <div className="mt-1 flex">
+        <p className="text-xs text-muted-foreground">{formatDistanceToNow(job.createdAt)} ago</p>
       </div>
       </div>
-      <div className="m-5 ml-auto flex gap-2">
+      <div className="ml-auto mr-5">
       <Button size={"sm"} variant={"outline"} onClick={handleApplicantsClick} className="gap-1 bg-inherit">
         <Users className="size-4 mr-2" />
         {job.applicants.length} 
@@ -191,24 +188,20 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
 export function LandingPageJobCard({ title, type, location, age }: { title: string, type: string, location: string, age:string }) {
   return (
       <div color={"white"}
-      className="w-full flex border hover:border-white/20 rounded-lg items-center duration-300 bg-black">
-      <div className="m-5 flex flex-col items-start text-left">
+      className="w-full flex border dark:hover:border-white/20 hover:border-black/20 rounded-lg items-center duration-300 pt-3 pb-3 cursor-pointer">
+      <div className="mx-5 my-3 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
        {title}     
       </p>
-      <div className="mt-3 -mb-2 flex gap-1">
-      <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">💼</span>{type}</Badge>
-      <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">🌎</span>{location}</Badge>
+      <div className="mt-1 flex">
+        <p className="text-xs text-muted-foreground">{age}</p>
       </div>
       </div>
-      <div className="ml-auto m-5 hidden sm:block">
-          <p className="text-sm">{age}</p>
-        </div>
-      {/* <div className="m-5 ml-auto">
-      <Button variant={"outline"} size={"sm"}>
-        View
-        </Button>
-      </div> */}
+      <div className="ml-auto mr-5">
+      <Button className="bg-inherit" variant={"outline"} size={"icon"}>
+        <ArrowRight className="size-4" />
+      </Button>
+      </div>
       </div>
     )
 }
