@@ -30,7 +30,7 @@ export const HeroSection = () => {
           </Button>
           <h1 className="text-5xl font-thin">
             <Balancer>
-                Create <i className="font-normal">Stunning</i> Career Pages.
+                Create <b>Stunning</b> Career Pages.
             </Balancer>
           </h1>
           <h3 className="text-muted-foreground text-xl mt-2 font-thin text-balance">
