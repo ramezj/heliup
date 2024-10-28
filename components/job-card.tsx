@@ -48,7 +48,7 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
         </div>
         </div>
         <div className="ml-auto mr-5">
-          <Button size={"icon"} variant={"outline"} className="rounded-lg bg-inherit">
+          <Button size={"icon"} variant={"outline"} className="rounded-lg bg-inherit border border-foreground/20">
             <ArrowRight className="size-4" />
           </Button>
         </div>
@@ -100,7 +100,7 @@ export function JobCardForDashboard({ job }: { job: JobWithApplicants}) {
   };
   return (
     <div onClick={handleCardClick}>
-    <div className="w-full flex border dark:hover:border-white/20 hover:border-black/20 rounded-lg items-center duration-300 pt-3 pb-3 cursor-pointer">
+    <div className="w-full flex border border-foreground/20 hover:border-foreground/30 rounded-lg items-center duration-300 pt-3 pb-3 cursor-pointer">
     <div className="mx-5 my-3 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
        {job.title}     
@@ -108,17 +108,9 @@ export function JobCardForDashboard({ job }: { job: JobWithApplicants}) {
       <div className="mt-1 flex">
         <p className="text-xs text-muted-foreground">{formatDistanceToNow(job.createdAt)} ago</p>
         </div>
-      {/* <div className="mt-3 -mb-2 flex gap-1">
-      <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">💼</span>{formatJobType(job.type)}</Badge>
-      {
-        job.location
-        ?  <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">🌎</span>{job?.location}</Badge>
-        : <></>
-      }
-      </div> */}
       </div>
       <div className="mr-5 ml-auto">
-      <Button size={"sm"} variant={"outline"} className="gap-1 bg-inherit">
+      <Button size={"sm"} variant={"outline"} className="rounded-lg bg-inherit border border-foreground/20">
         <Settings className="size-4"/>
       </Button>
       </div>
@@ -154,7 +146,7 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
   return (
     <div onClick={handleCardClick}>
     <div
-    className="w-full flex border dark:hover:border-white/20 hover:border-black/20 rounded-lg items-center duration-300 pt-3 pb-3 cursor-pointer">
+    className="w-full flex border border-foreground/20 hover:border-foreground/30 rounded-lg items-center duration-300 pt-3 pb-3 cursor-pointer">
     <div className="mx-5 my-3 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
        {job.title}     
@@ -164,7 +156,7 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
       </div>
       </div>
       <div className="ml-auto mr-5">
-      <Button size={"sm"} variant={"outline"} onClick={handleApplicantsClick} className="gap-1 bg-inherit">
+      <Button size={"sm"} variant={"outline"} onClick={handleApplicantsClick} className="rounded-lg bg-inherit border border-foreground/20">
         <Users className="size-4 mr-2" />
         {job.applicants.length} 
       </Button>
@@ -177,7 +169,7 @@ export function JobCardForApplicants({ job }: { job: JobWithApplicants}) {
 export function LandingPageJobCard({ title, type, location, age }: { title: string, type: string, location: string, age:string }) {
   return (
       <div color={"white"}
-      className="w-full flex border dark:hover:border-white/20 hover:border-black/20 rounded-lg items-center duration-300 pt-3 pb-3 cursor-pointer">
+      className="w-full flex border border-foreground/20 hover:border-foreground/30 rounded-lg items-center duration-300 pt-3 pb-3 cursor-pointer">
       <div className="mx-5 my-3 flex flex-col items-start text-left">
       <p className='sm:text-lg text-md font-bold text-left text-black dark:text-white'>
        {title}     
@@ -187,7 +179,7 @@ export function LandingPageJobCard({ title, type, location, age }: { title: stri
       </div>
       </div>
       <div className="ml-auto mr-5">
-      <Button className="bg-inherit" variant={"outline"} size={"icon"}>
+      <Button className="rounded-lg bg-inherit border border-foreground/20" variant={"outline"} size={"icon"}>
         <ArrowRight className="size-4" />
       </Button>
       </div>
