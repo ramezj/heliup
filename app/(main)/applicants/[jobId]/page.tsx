@@ -23,6 +23,12 @@ export default async function Page({ params }: { params: { jobId: string } }) {
         </div>
         <div className="flex flex-col gap-4">
         {
+            job?.job?.applicants.length === 0 && 
+            <>
+            <p className="text-muted-foreground font-normal">No Applicants Yet</p>
+            </>
+        }
+        {
             job.job?.applicants.map((applicant:Applicant) => {
                 return (
                     <div className="relative" key={applicant.id}>
