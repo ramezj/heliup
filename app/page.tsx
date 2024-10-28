@@ -8,7 +8,7 @@ import Link from "next/link";
 import { Alert } from "@/components/main-alert";
 import { BentoDemo } from "@/components/feature";
 import { SiteFooter } from "@/components/site-footer";
-import HeroSection from "@/components/home-page";
+import { HeroSection } from "@/components/home-page";
 import { Features } from "@/components/features";
 import CTA from "@/components/cta";
 

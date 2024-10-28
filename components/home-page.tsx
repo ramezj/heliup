@@ -18,17 +18,12 @@ import { LandingPageJobCard } from "./job-card";
 // Asset imports
 import Placeholder from "@/public/dashboard.webp";
 
-const HeroSection = () => {
+export const HeroSection = () => {
   return (
     <Section>
       <Container>
-        <div>
-          <Button
-            asChild
-            className="mb-6 w-fit bg-inherit"
-            size={"sm"}
-            variant={"outline"}
-          >
+        <div className="flex flex-col items-center text-center">
+          <Button asChild className="mb-6 w-fit bg-inherit" size={"sm"} variant={"outline"}>
             <Link className="not-prose" href="/">
                 Introducing Heliup <ArrowUpRight className="w-4 ml-2" />
             </Link>
@@ -67,4 +62,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+
