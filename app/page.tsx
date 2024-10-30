@@ -13,8 +13,8 @@ import { Features } from "@/components/features";
 import CTA from "@/components/cta";
 
 export const metadata:Metadata = {
-  title: "Heliup | Create Stunning Career Pages.",
-  description: "Heliup, Create Stunning Career Pages.",
+  title: "Build Career Pages Effortlessly.",
+  description: "Heliup, Build Career Pages Effortlessly.",
   applicationName: "Heliup"
 
 }
