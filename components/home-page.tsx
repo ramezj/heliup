@@ -39,12 +39,12 @@ export const HeroSection = () => {
             </Balancer>
           </h3>
           <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4 mt-6">
-            <Button variant={"default"} className="font-medium w-52" asChild>
+            <Button variant={"default"} className="font-medium w-60" asChild>
                 <Link href='/auth'>
                 Start Hiring
                 </Link>
             </Button>
-            <Button asChild className="font-medium bg-inherit w-52" variant={"outline"}>
+            <Button asChild className="font-medium bg-inherit w-60" variant={"outline"}>
                 <Link href="https://demo.heliup.xyz" target="_blank">
                 See Demo
                 <ArrowUpRight className="w-4 ml-2" />
