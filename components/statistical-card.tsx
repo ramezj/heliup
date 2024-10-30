@@ -14,7 +14,7 @@ export function StatisticalCard({ name, number} : { name: string, number: number
           <Label className="font-bold text-lg">
             {name}
           </Label>
-          <p className="font-bold text-lg">{number}</p>
+          <p className="font-bold text-lg text-muted-foreground">{number}</p>
         </div>
       </CardContent>
     </Card>
@@ -31,9 +31,9 @@ export function OrganizationName({ name} : { name: string}) {
       <CardContent className="pt-6">
       <div className="space-y-2">
         <Label className="font-bold text-lg">
-          Organization Name
+          Organization
         </Label>
-        <p className="font-bold text-lg">{name}</p>
+        <p className="font-bold text-lg text-muted-foreground">{name}</p>
       </div>
     </CardContent>
   </Card>
