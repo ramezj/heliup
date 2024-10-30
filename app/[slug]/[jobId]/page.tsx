@@ -59,7 +59,7 @@ export default async function Page({ params }: { params: { jobId: string, slug:s
                 job.job?.content
                 ?  
                 <>
-                <div className="lg:w-1/2 w-full rounded-lg border border-white/10 p-7 text-left" dangerouslySetInnerHTML={{__html: job.job?.content!}} />
+                <div className="lg:w-1/2 w-full rounded-lg border border-foreground/20 p-7 text-left" dangerouslySetInnerHTML={{__html: job.job?.content!}} />
                 </>
                 :
                 <>
