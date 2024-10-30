@@ -23,17 +23,17 @@ export const HeroSection = () => {
     <Section>
       <Container>
         <div className="flex flex-col items-center text-center">
-          <Button asChild className="mb-6 w-fit bg-inherit" size={"sm"} variant={"outline"}>
+          <Button asChild className="mb-6 w-fit bg-inherit px-12" size={"sm"} variant={"outline"}>
             <Link className="not-prose" href="/">
                 Introducing Heliup <ArrowUpRight className="w-4 ml-2" />
             </Link>
           </Button>
-          <h1 className="sm:text-5xl text-4xl font-thin">
+          <h1 className="sm:text-6xl text-3xl font-light">
             <Balancer>
                 Create Stunning Career Pages.
             </Balancer>
           </h1>
-          <h3 className="text-muted-foreground sm:text-lg text-md mt-2 font-thin text-balance">
+          <h3 className="text-muted-foreground sm:text-lg text-sm mt-2 font-thin text-balance">
             <Balancer>
             Create stunning career pages, create jobs, receive applicants & start the hiring process. All in one place.
             </Balancer>
