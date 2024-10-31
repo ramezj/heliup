@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { Toggle } from "./toggle"
 import { usePathname } from "next/navigation"
-import { Home, BriefcaseBusiness, Users, SparklesIcon, DollarSignIcon, Laptop, StarIcon } from "lucide-react"
+import { Home, BriefcaseBusiness, Users, SparklesIcon, DollarSignIcon, Laptop, StarIcon, Globe } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { Icons } from "./ui/icons"
@@ -19,15 +19,11 @@ export function Navigation(props:any) {
   const path = useLastPathSegment();
   return (
     <div className="flex w-full flex-col">
-      <header className="sticky top-2 mt-4 flex h-16 items-center gap-4 bg-black px-6 z-50 md:mx-12 mx-4 rounded-lg border border-foreground/20">
+      <header className="sticky top-2 mt-6 flex h-16 items-center gap-4 bg-black px-6 z-50 md:mx-12 mx-4 rounded-lg border border-foreground/20">
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
-          <Link href="/" className="flex items-center text-lg font-bold">
-          {/* <BriefcaseBusiness className="size-4 mr-2 " /> */}
+          <Link href="/" className="flex items-center text-lg font-semibold">
           Heliup
           </Link>
-          {/* <Link href="/" className="text-foreground transition-colors hover:text-foreground font-semibold">
-            Features
-          </Link> */}
           <Link href={`https://demo.heliup.xyz`} target="_blank" className="text-muted-foreground transition-colors hover:text-foreground font-medium">
             Demo
           </Link>
@@ -48,7 +44,7 @@ export function Navigation(props:any) {
           </SheetTrigger>
           <SheetContent side="left" className="flex flex-col bg-black">
               <SheetClose asChild>
-                <Link href="/" className="px-2 flex items-center text-lg font-bold justify-center">
+                <Link href="/" className="px-2 flex items-center text-lg font-semibold justify-center">
                 {/* <BriefcaseBusiness className="size-4 mr-2" /> */}
                   Heliup
                 </Link>
