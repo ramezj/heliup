@@ -19,7 +19,7 @@ export function Navigation(props:any) {
   const path = useLastPathSegment();
   return (
     <div className="flex w-full flex-col">
-      <header className="sticky top-2 mt-6 flex h-16 items-center gap-4 bg-black px-6 z-50 md:mx-12 mx-4 rounded-xl border border-foreground/20">
+      <header className="sticky top-2 mt-6 flex h-16 items-center gap-4 bg-black px-4 z-50 md:mx-12 mx-4 rounded-xl border border-foreground/20">
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <Link href="/" className="flex items-center text-lg font-semibold">
           Heliup
