@@ -64,11 +64,11 @@ export default function LayoutNav({ children, session }: { children: React.React
                   side="top"
                   className="w-[--radix-popper-anchor-width] dark:bg-black bg-white space-y-2"
                 >
-                  <DropdownMenuItem className="cursor-pointer">
-                  <span className="flex align-middle items-center"><Settings2 className="size-4 mr-2" />Settings</span>
+                  <DropdownMenuItem className="cursor-pointer" asChild>
+                  <Link href={"/settings"} className="flex align-middle items-center"><Settings2 className="size-4 mr-2" />Settings</Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem className="cursor-pointer">
-                  <span className="flex align-middle items-center"><Banknote className="size-4 mr-2" />Billing</span>
+                  <DropdownMenuItem className="cursor-pointer" asChild>
+                  <Link href={"/billing"} className="flex align-middle items-center"><Banknote className="size-4 mr-2" />Billing</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={(() => { signOut({ callbackUrl: "/" })})} className="cursor-pointer">
                     <span className="flex align-middle items-center"><LogOut className="size-4 mr-2" />Sign out</span>
@@ -141,11 +141,11 @@ export default function LayoutNav({ children, session }: { children: React.React
                 <DropdownMenuContent
                   side="top"
                   className="w-[--radix-popper-anchor-width] dark:bg-black bg-white space-y-2">
-                  <DropdownMenuItem className="cursor-pointer">
-                  <span className="flex align-middle items-center"><Settings2 className="size-4 mr-2" />Settings</span>
+                 <DropdownMenuItem className="cursor-pointer" asChild>
+                  <Link href={"/settings"} className="flex align-middle items-center"><Settings2 className="size-4 mr-2" />Settings</Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem className="cursor-pointer">
-                  <span className="flex align-middle items-center"><Banknote className="size-4 mr-2" />Billing</span>
+                  <DropdownMenuItem className="cursor-pointer" asChild>
+                  <Link href={"/billing"} className="flex align-middle items-center"><Banknote className="size-4 mr-2" />Billing</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={(() => { signOut({ callbackUrl: "/" })})} className="cursor-pointer">
                     <span className="flex align-middle items-center"><LogOut className="size-4 mr-2" />Sign out</span>
