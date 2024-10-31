@@ -29,9 +29,9 @@ export default async function Page() {
   </div>
   <div className="-mt-6 sm:-mt-10">
   <HeroSection />
-  <div className="sm:-mt-48 -mt-44">
+  {/* <div className="sm:-mt-48 -mt-44">
   <Features />
-  </div>
+  </div> */}
   </div>
  {/* <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
         <h1 className="text-4xl font-bold text-center sm:text-5xl lg:text-6xl">
