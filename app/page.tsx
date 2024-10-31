@@ -23,7 +23,7 @@ export const metadata:Metadata = {
 export default async function Page() {
   const session = await auth();
   return (
-  <>
+  <main>
   <div className="top-0 z-10 sticky">
   <Navigation session={session}/>
   </div>
@@ -33,29 +33,7 @@ export default async function Page() {
   <Features />
   </div> */}
   </div>
- {/* <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
-        <h1 className="text-4xl font-bold text-center sm:text-5xl lg:text-6xl">
-          Build Career Pages, Effortlessly
-        </h1>
-        <p className="mt-4 text-lg text-center text-muted-foreground">
-          Build career pages effortlessly, create jobs, receive applicants & start the hiring process. All in one place.
-        </p>
-        <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4 mt-6">
-            <Button variant={"default"} className="font-medium w-60" asChild>
-                <Link href='/auth'>
-                Start Hiring
-                </Link>
-            </Button>
-            
-            <Button asChild className="font-medium bg-inherit w-60" variant={"outline"}>
-                <Link href="https://demo.heliup.xyz" target="_blank">
-                See Demo
-                <ArrowUpRight className="w-4 ml-2" />
-                </Link>
-                </Button>
-            </div>
-      </div> */}
-  </>
+  </main>
   );
 }
 
