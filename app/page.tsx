@@ -15,7 +15,7 @@ import Balancer from "react-wrap-balancer";
 import { ArrowUpRight } from "lucide-react";
 
 export const metadata:Metadata = {
-  title: "Build Career Pages Effortlessly.",
+  title: "Heliup",
   description: "Heliup, Build Career Pages Effortlessly.",
   applicationName: "Heliup"
 
