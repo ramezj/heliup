@@ -6,12 +6,6 @@ import { SidebarMenuButton } from "@/components/ui/sidebar";
 export default function Page() {
     return (
         <>
-        <SidebarProvider>
-            <AppSidebar />
-            <SidebarTrigger>
-                trigger
-            </SidebarTrigger>
-        </SidebarProvider>
         </>
     )
 }

@@ -19,7 +19,7 @@ export function Navigation(props:any) {
   const path = useLastPathSegment();
   return (
     <div className="flex w-full flex-col">
-      <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-black px-3 z-50">
+      <header className="sticky top-2 mt-4 flex h-16 items-center gap-4 bg-black px-6 z-50 md:mx-12 mx-4 rounded-lg border border-foreground/20">
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <Link href="/" className="flex items-center text-lg font-bold">
           {/* <BriefcaseBusiness className="size-4 mr-2 " /> */}
@@ -28,10 +28,10 @@ export function Navigation(props:any) {
           {/* <Link href="/" className="text-foreground transition-colors hover:text-foreground font-semibold">
             Features
           </Link> */}
-          <Link href={`https://demo.heliup.xyz`} target="_blank" className="text-foreground transition-colors hover:text-foreground font-medium">
+          <Link href={`https://demo.heliup.xyz`} target="_blank" className="text-muted-foreground transition-colors hover:text-foreground font-medium">
             Demo
           </Link>
-          <Link href="/pricing" className="text-foreground transition-colors hover:text-foreground font-medium">
+          <Link href="/pricing" className="text-muted-foreground transition-colors hover:text-foreground font-medium">
             Pricing
           </Link>
         </nav>
