@@ -11,6 +11,8 @@ import { SiteFooter } from "@/components/site-footer";
 import { HeroSection } from "@/components/home-page";
 import { Features } from "@/components/features";
 import CTA from "@/components/cta";
+import Balancer from "react-wrap-balancer";
+import { ArrowUpRight } from "lucide-react";
 
 export const metadata:Metadata = {
   title: "Build Career Pages Effortlessly.",
@@ -30,45 +32,30 @@ export default async function Page() {
   <div className="sm:-mt-48 -mt-44">
   <Features />
   </div>
-  {/* <div className="sm:-mt-12 -mt-10">
-  <CTA />
-  </div> */}
   </div>
-   {/* <div className="text-center w-full p-8 flex flex-col gap-4 items-center">
-    <div className="relative sm:-mt-1">
-    <Alert />
-    </div>
-        <div className="text-center items-center flex flex-col">
-        <h1 className="text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-medium sm:-mt-2">
-          Create stunning career pages, effortlessly.
+ {/* <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
+        <h1 className="text-4xl font-bold text-center sm:text-5xl lg:text-6xl">
+          Build Career Pages, Effortlessly
         </h1>
-        <p className="text-sm max-w-3xl text-muted-foreground items-center text-center align-middle font-light">Create stunning career pages, receive applicants & start the hiring process. All in one place.</p>
-        </div>
-      <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4">
-      <Button asChild className="w-52 font-medium" variant={"secondary"}>
-        <Link href={`https://demo.${process.env.NEXT_URL}`} target="_blank">
-        See Demo
-        </Link>
-        </Button>
-      <Button variant={"expandIcon"} className="w-52 font-medium" asChild>
-        <Link href='/auth'>
-        Start Hiring <i>&nbsp;- It&apos;s Free</i>
-        </Link>
-      </Button>
-        </div>
-        <div className="border rounded-xl w-full lg:w-2/3 relative mt-1 shadow-xl backdrop-blur-md">
-          <img src="/demo.png" className="rounded-[inherit] shadow-xl" alt="Heliup Image"/>
-          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-[inherit] shadow-xl"></div>
-        </div>
-      <h1 className="pt-6 pb-6 text-4xl tracking-[-0.05em] text-black dark:text-white md:text-6xl md:leading-[5rem] font-medium sm:-mt-2">
-          Some <i>Features</i>
-        </h1>
-      <div className="w-full lg:w-2/3 text-left">
-      <BentoDemo />
-      </div>
-    </div> */}
-
-    </>
+        <p className="mt-4 text-lg text-center text-muted-foreground">
+          Build career pages effortlessly, create jobs, receive applicants & start the hiring process. All in one place.
+        </p>
+        <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4 mt-6">
+            <Button variant={"default"} className="font-medium w-60" asChild>
+                <Link href='/auth'>
+                Start Hiring
+                </Link>
+            </Button>
+            
+            <Button asChild className="font-medium bg-inherit w-60" variant={"outline"}>
+                <Link href="https://demo.heliup.xyz" target="_blank">
+                See Demo
+                <ArrowUpRight className="w-4 ml-2" />
+                </Link>
+                </Button>
+            </div>
+      </div> */}
+  </>
   );
 }
 

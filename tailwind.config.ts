@@ -69,6 +69,16 @@ const config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		keyframes: {
+			spotlight: {
+				"0%": {
+				  opacity: '0',
+				  transform: "translate(-72%, -62%) scale(0.5)",
+				},
+				"100%": {
+				  opacity: '1',
+				  transform: "translate(-50%,-40%) scale(1)",
+				},
+			  },
   			ripple: {
   				'0%, 100%': {
   					transform: 'translate(-50%, -50%) scale(1)'
@@ -137,6 +147,7 @@ const config = {
   			}
   		},
   		animation: {
+			spotlight: "spotlight 2s ease .75s 1 forwards",
   			ripple: 'ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite',
   			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
   			meteor: 'meteor 5s linear infinite',
