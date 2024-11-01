@@ -32,8 +32,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
         notFound() 
     }
     return (
-        <div className="dark:bg-black bg-white min-h-screen overflow-y-auto">
+        <div className="dark:bg-black bg-white">
+        <div className="top-0 z-10 sticky">
         <SlugNavbar organization={organization.organization as Organization} />
+        </div>
         <ViewSlug organization={organization.organization as OrganizationWithJobs} locations={organization.locations as Array<string>} types={organization.types as Array<string>} />
         </div>
     )
