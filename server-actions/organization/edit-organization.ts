@@ -42,7 +42,8 @@ export async function editOrganization(organization:Organization) {
                 slug: organization.slug,
                 name: organization.name,
                 description: organization.description,
-                twitter: organization.twitter
+                twitter: organization.twitter,
+                website: organization.website
             }
         })
         revalidatePath('/dashboard');

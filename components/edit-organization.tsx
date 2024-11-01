@@ -40,9 +40,14 @@ export default function EditOrganization({ organization } : { organization:Organ
               <Textarea className="bg-inherit" placeholder="I'm Lovin' it!" value={org.description!} onChange={((e) => {setOrg((prevOrg) => ({...prevOrg, description: e.target.value}))})} rows={4} />  
               </div>
               <div className="space-y-2">
+              <Label htmlFor="website">Website URL</Label>
+              <Input className="bg-inherit" placeholder="https://heliup.xyz" value={org.website!} onChange={((e) => {setOrg((prevOrg) => ({ ...prevOrg, website: e.target.value }))})}/>
+              </div>
+              <div className="space-y-2">
               <Label htmlFor="twitter">Twitter</Label>
               <Input className="bg-inherit" placeholder="Handle" value={org.twitter!} onChange={((e) => {setOrg((prevOrg) => ({ ...prevOrg, twitter: e.target.value }))})}/>
               </div>
+              
               </div>
             {
               loading

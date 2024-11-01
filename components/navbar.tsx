@@ -101,9 +101,22 @@ export function SlugNavbar({ organization } : { organization: Organization}) {
           </Link>
         </nav>
         <div className="flex flex-1 w-full items-center gap-3 ml-auto justify-end">
-          <Button className="bg-inherit" size={"icon"} variant={"outline"}><TwitterLogoIcon className="size-5" /></Button>
-          <Button className="bg-inherit" size={"icon"} variant={"outline"}><Globe className="size-5" /></Button>
-            {/* <Toggle /> */}
+          {
+            organization.twitter &&
+            <Button className="bg-inherit" size={"icon"} variant={"outline"} asChild>
+            <Link href={`https://x.com/${organization.twitter}`} target="_blank">
+            <TwitterLogoIcon className="size-5" />
+            </Link>
+            </Button>
+          }
+          {
+            organization.website &&
+            <Button className="bg-inherit" size={"icon"} variant={"outline"} asChild>
+            <Link href={organization.website!} target="_blank">
+            <Globe className="size-5" />
+            </Link>
+            </Button>
+          }
         </div>
       </header>
     </div>
