@@ -5,10 +5,9 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/s
 import { Toggle } from "./toggle"
 import { usePathname } from "next/navigation"
 import { Home, BriefcaseBusiness, Users, SparklesIcon, DollarSignIcon, Laptop, StarIcon, Globe } from "lucide-react"
-import { buttonVariants } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-import { Icons } from "./ui/icons"
 import { Organization } from "@prisma/client"
+import { Input } from "./ui/input"
+import { TwitterLogoIcon } from "@radix-ui/react-icons"
 
 function useLastPathSegment() {
   const pathname = usePathname();
@@ -102,19 +101,19 @@ export function Navigation(props:any) {
 
 export function SlugNavbar({ organization } : { organization: Organization}) {
   return (
-    <>
+    <div className="flex w-full flex-col">
     <header className="sticky top-2 mt-8 flex h-16 items-center gap-4 dark:bg-black/70 bg-white/70 px-4 z-50 md:mx-12 mx-4 rounded-xl border border-foreground/20 backdrop-blur-md">
         <nav className="flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <Link href="/" className="flex items-center text-lg font-semibold">
           {organization.name}
           </Link>
         </nav>
-        <div className="flex flex-1 w-full items-center gap-3">
-          <div className="ml-auto">
-            <Toggle />
-          </div>
+        <div className="flex flex-1 w-full items-center gap-3 ml-auto justify-end">
+          <Button className="bg-inherit" size={"icon"} variant={"outline"}><TwitterLogoIcon className="size-5" /></Button>
+          <Button className="bg-inherit" size={"icon"} variant={"outline"}><Globe className="size-5" /></Button>
+            {/* <Toggle /> */}
         </div>
       </header>
-    </>
+    </div>
   )
 }
