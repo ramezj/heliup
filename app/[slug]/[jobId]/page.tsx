@@ -15,6 +15,8 @@ import Link from "next/link";
 import { formatJobType } from "@/utils/format";
 import { formatDistanceToNow } from "date-fns";
 import { Toggle } from "@/components/toggle";
+import { SlugNavbar } from "@/components/navbar";
+import { Organization } from "@prisma/client";
 
 export async function generateMetadata({ params }: { params: { jobId: string } }): Promise<Metadata> {
     const job = await getJobById(params.jobId)
@@ -31,16 +33,9 @@ export default async function Page({ params }: { params: { jobId: string, slug:s
     const job = await getJobById(params.jobId);
     if(job?.error) { redirect('/') }
     return (
-        <div className="dark:bg-black bg-white min-h-screen h-full">
-        <div className="z-50 top-0 border-b sticky">
-        <div className="lg:w-1/2 w-full mx-auto dark:bg-black bg-white h-16 sticky text-center justify-between flex items-center lg:px-0 px-4">
-        <div className="flex">
-        <Link className="font-medium text-xl sm:text-2xl align-middle" href='/'>{organization.organization?.name}</Link>
-        </div>
-        <div className="flex">
-        <Toggle />
-        </div>
-        </div>
+        <main className="dark:bg-black bg-white min-h-screen h-full">
+        <div className="top-0 z-10 sticky">
+        <SlugNavbar organization={organization.organization as Organization} />
         </div>
             <div className="w-full flex flex-col items-center text-center py-8 px-4 gap-y-4">
             <div>
@@ -67,6 +62,6 @@ export default async function Page({ params }: { params: { jobId: string, slug:s
             }
             <ApplyCard jobId={params.jobId} />
         </div>
-        </div>
+        </main>
     )
 }
