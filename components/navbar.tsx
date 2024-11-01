@@ -8,6 +8,7 @@ import { Home, BriefcaseBusiness, Users, SparklesIcon, DollarSignIcon, Laptop, S
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { Icons } from "./ui/icons"
+import { Organization } from "@prisma/client"
 
 function useLastPathSegment() {
   const pathname = usePathname();
@@ -71,10 +72,8 @@ export function Navigation(props:any) {
               </nav>
             </SheetContent>
         </Sheet>
-        <div className="flex w-full items-center gap-3 md:ml-auto">
-          <div className="ml-auto flex-1 sm:flex-initial">
-          </div>
-          {/* <Toggle /> */}
+        <div className="flex w-full items-center gap-3">
+          <div className="ml-auto">
           {
             props.session 
             ? 
@@ -94,8 +93,28 @@ export function Navigation(props:any) {
                   </Button>
             </>
           }
+          </div>
         </div>
       </header>
     </div>
+  )
+}
+
+export function SlugNavbar({ organization } : { organization: Organization}) {
+  return (
+    <>
+    <header className="sticky top-2 mt-8 flex h-16 items-center gap-4 bg-black/70 px-4 z-50 md:mx-12 mx-4 rounded-xl border border-foreground/20 backdrop-blur-md">
+        <nav className="flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
+          <Link href="/" className="flex items-center text-lg font-semibold">
+          {organization.name}
+          </Link>
+        </nav>
+        <div className="flex flex-1 w-full items-center gap-3">
+          <div className="ml-auto">
+            <Toggle />
+          </div>
+        </div>
+      </header>
+    </>
   )
 }
