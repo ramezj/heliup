@@ -41,7 +41,8 @@ export async function editOrganization(organization:Organization) {
             data: {
                 slug: organization.slug,
                 name: organization.name,
-                description: organization.description
+                description: organization.description,
+                twitter: organization.twitter
             }
         })
         revalidatePath('/dashboard');

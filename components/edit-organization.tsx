@@ -28,20 +28,22 @@ export default function EditOrganization({ organization } : { organization:Organ
         <>
         <form onSubmit={editOrg}>
         <div className="space-y-4 w-full">
-            <motion.div 
-            className="space-y-2"
-            >
+            <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
               <Input className="bg-inherit" required placeholder="Microsoft" value={org.name!} onChange={((e) => {setOrg((prevOrg) => ({ ...prevOrg, name: e.target.value }))})}/>
-              <div>
+              <div className="space-y-2"> 
               <Label htmlFor="name">Slug</Label>
               <Input className="bg-inherit" required placeholder="microsoft.jobspire.co" value={org.slug!} onChange={((e) => {setOrg((prevOrg) => ({ ...prevOrg, slug:e.target.value}))})}/>
               </div>
-              <div>
-                <Label htmlFor="name">Slogan</Label>
-                <Textarea className="bg-inherit" placeholder="I'm Lovin' it!" value={org.description!} onChange={((e) => {setOrg((prevOrg) => ({...prevOrg, description: e.target.value}))})} rows={4} />  
+              <div className="space-y-2">
+              <Label htmlFor="name">Slogan</Label>
+              <Textarea className="bg-inherit" placeholder="I'm Lovin' it!" value={org.description!} onChange={((e) => {setOrg((prevOrg) => ({...prevOrg, description: e.target.value}))})} rows={4} />  
               </div>
-              </motion.div>
+              <div className="space-y-2">
+              <Label htmlFor="twitter">Twitter</Label>
+              <Input className="bg-inherit" placeholder="Handle" value={org.twitter!} onChange={((e) => {setOrg((prevOrg) => ({ ...prevOrg, twitter: e.target.value }))})}/>
+              </div>
+              </div>
             {
               loading
               ? <Button disabled>

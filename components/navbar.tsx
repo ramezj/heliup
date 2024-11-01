@@ -6,7 +6,6 @@ import { Toggle } from "./toggle"
 import { usePathname } from "next/navigation"
 import { Home, BriefcaseBusiness, Users, SparklesIcon, DollarSignIcon, Laptop, StarIcon, Globe } from "lucide-react"
 import { Organization } from "@prisma/client"
-import { Input } from "./ui/input"
 import { TwitterLogoIcon } from "@radix-ui/react-icons"
 
 function useLastPathSegment() {
@@ -45,17 +44,10 @@ export function Navigation(props:any) {
           <SheetContent side="left" className="flex flex-col bg-black">
               <SheetClose asChild>
                 <Link href="/" className="px-2 flex items-center text-lg font-semibold justify-center">
-                {/* <BriefcaseBusiness className="size-4 mr-2" /> */}
                   Heliup
                 </Link>
                 </SheetClose>
                 <nav className="grid gap-3 text-lg font-medium mt-1">
-                {/* <SheetClose asChild>
-                <Link href='/' className={`${path == 'dashboard' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200`}>
-                <SparklesIcon className="h-4 w-4" />
-                Features
-                </Link>
-                </SheetClose> */}
                 <SheetClose asChild>
                 <Link href='https://demo.heliup.xyz' className={`${path == 'jobs' ? 'bg-muted/50 text-foreground' : ' text-muted-foreground'} flex items-center gap-3 rounded-lg px-2 py-2 text-primary transition-all hover:text-primary hover:bg-muted/50 duration-200 font-medium`}>
                 <Laptop className="h-4 w-4" />
