@@ -22,7 +22,7 @@ export default async function Page() {
         <div className="space-y-0.5">
           <h2 className="text-3xl font-bold tracking-tight">Settings</h2>
           <p className="text-muted-foreground">
-            Manage your organization's settings and set information
+            Manage your organization&apos;s settings and set information
           </p>
         </div>
         <Separator className="-mb-2"/>
