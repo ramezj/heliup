@@ -17,7 +17,7 @@ import { formatDistanceToNow } from "date-fns";
 import { Toggle } from "@/components/toggle";
 import { SlugNavbar } from "@/components/navbar";
 import { Organization } from "@prisma/client";
-import { Separator } from "@/components/ui/separator";
+import { MapPin, Briefcase, Banknote } from "lucide-react";
 
 export async function generateMetadata({ params }: { params: { jobId: string } }): Promise<Metadata> {
     const job = await getJobById(params.jobId)
@@ -44,10 +44,10 @@ export default async function Page({ params }: { params: { jobId: string, slug:s
             <p className="text-sm max-w-3xl text-muted-foreground">{formatDistanceToNow(job.job?.createdAt!)} ago </p>
             </div>
             <div className="flex flex-row gap-2">
-            <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">💼</span>{formatJobType(job.job?.type)}</Badge>
+            <Button variant={"outline"} className="rounded-sm bg-inherit"><Briefcase className="size-4 mr-2"/>{formatJobType(job.job?.type)}</Button>
             {
                 job?.job?.location
-                ? <Badge variant={"outline"} className="rounded-sm"><span className="mr-2">🌎</span>{job.job?.location}</Badge>
+                ? <Button variant={"outline"} className="rounded-sm bg-inherit"><MapPin className="size-4 mr-2" />{job.job?.location}</Button>
                 : <></>
             }
             </div>

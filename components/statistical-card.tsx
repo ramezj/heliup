@@ -35,9 +35,9 @@ export function OrganizationName({ name} : { name: string}) {
         </Label>
         <p className="font-bold text-lg text-muted-foreground">{name}</p>
       </div>
-    </CardContent>
-  </Card>
-  </div>
+      </CardContent>
+      </Card>
+      </div>
       </>
   )
 }
