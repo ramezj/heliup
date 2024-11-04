@@ -44,10 +44,10 @@ export default async function Page({ params }: { params: { jobId: string, slug:s
             <p className="text-sm max-w-3xl text-muted-foreground">{formatDistanceToNow(job.job?.createdAt!)} ago </p>
             </div>
             <div className="flex flex-row gap-2">
-            <Button variant={"outline"} className="rounded-sm bg-inherit"><Briefcase className="size-4 mr-2"/>{formatJobType(job.job?.type)}</Button>
+            <Button size={"sm"} variant={"outline"} className="rounded-sm bg-inherit"><Briefcase className="size-4 mr-2"/>{formatJobType(job.job?.type)}</Button>
             {
                 job?.job?.location
-                ? <Button variant={"outline"} className="rounded-sm bg-inherit"><MapPin className="size-4 mr-2" />{job.job?.location}</Button>
+                ? <Button size={"sm"} variant={"outline"} className="rounded-sm bg-inherit"><MapPin className="size-4 mr-2" />{job.job?.location}</Button>
                 : <></>
             }
             </div>
