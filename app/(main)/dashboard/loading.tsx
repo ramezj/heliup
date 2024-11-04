@@ -14,8 +14,9 @@ export default function Loading() {
         <>
         <div className="flex justify-between items-center w-full">
         <h1 className="font-bold text-3xl tracking-tight">Overview</h1>
-        <Button size={"sm"} variant={"expandIcon"} Icon={SquareArrowOutUpRight} iconPlacement="right" className="w-36">
+        <Button size={"sm"} variant={"default"} className="w-36">
         Preview
+        <SquareArrowOutUpRight className="size-4 ml-2"/>
         </Button>
         </div>
         <div className="w-full h-full items-center flex flex-col justify-center">

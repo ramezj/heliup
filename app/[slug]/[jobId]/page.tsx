@@ -17,6 +17,7 @@ import { formatDistanceToNow } from "date-fns";
 import { Toggle } from "@/components/toggle";
 import { SlugNavbar } from "@/components/navbar";
 import { Organization } from "@prisma/client";
+import { Separator } from "@/components/ui/separator";
 
 export async function generateMetadata({ params }: { params: { jobId: string } }): Promise<Metadata> {
     const job = await getJobById(params.jobId)
