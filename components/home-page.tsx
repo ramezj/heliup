@@ -23,12 +23,12 @@ export const HeroSection = () => {
     <Section>
       <Container>
         <div className="flex flex-col items-center text-center">
-          {/* <Button asChild className="mb-6 w-fit bg-inherit px-12" size={"sm"} variant={"outline"}>
+          <Button asChild className="mb-6 w-fit bg-inherit px-12" size={"sm"} variant={"outline"}>
             <Link className="not-prose" href="/">
                 Introducing Heliup <ArrowUpRight className="w-4 ml-2" />
             </Link>
-          </Button> */}
-          <h1 className="sm:text-6xl text-4xl font-light mt-4">
+          </Button>
+          <h1 className="sm:text-6xl text-4xl font-light">
             <Balancer>
               Build Career Pages Effortlessly.
             </Balancer>
@@ -38,7 +38,7 @@ export const HeroSection = () => {
               Build career pages, create jobs, receive applicants & start the hiring process. All in one place.
             </Balancer>
           </h3>
-          <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4 mt-8">
+          <div className="flex flex-row w-full max-w-fit items-center justify-center gap-4 mt-6">
             <Button variant={"default"} className="font-medium w-60" asChild>
                 <Link href='/auth'>
                 Start Hiring
@@ -51,10 +51,10 @@ export const HeroSection = () => {
                 </Link>
                 </Button>
             </div>
-          <div className="my-12 w-full overflow-hidden space-y-4">
+          <div className="not-prose my-8 w-full overflow-hidden space-y-4">
             <LandingPageJobCard title="Operations Manager" type="Full-Time" location="Cairo, EG" age="about 1 month ago" />
             <LandingPageJobCard title="Backend Engineer" type="Full-Time" location="Cairo, EG" age="about 1 month ago" />
-            {/* <LandingPageJobCard title="Software Engineer" type="Full-Time" location="Cairo, EG" age="about 1 month ago" /> */}
+            <LandingPageJobCard title="Software Engineer" type="Full-Time" location="Cairo, EG" age="about 1 month ago" />
           </div>
         </div>
       </Container>
