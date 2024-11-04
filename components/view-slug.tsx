@@ -33,7 +33,7 @@ export function ViewSlug({ organization, locations, types } : { organization:Org
   };
     return (
     <div className="w-full flex flex-col items-center text-center p-4 space-y-1 overflow-hidden">
-    <h1 className="font-medium text-4xl pt-6">Jobs at {organization?.name}</h1>
+    <h1 className="font-medium text-4xl pt-6">Open Positions at {organization?.name}</h1>
     {
       organization.description 
       ? 
