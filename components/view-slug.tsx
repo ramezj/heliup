@@ -54,7 +54,7 @@ export function ViewSlug({ organization, locations, types } : { organization:Org
         <SelectTrigger className="dark:bg-black bg-white border-foreground/20 w-full">
         <SelectValue placeholder="All Locations" />
         </SelectTrigger>
-        <SelectContent className="dark:bg-black bg-white">
+        <SelectContent className="dark:bg-black bg-white border-foreground/20">
           <SelectGroup key={"Items"}>
             <SelectItem key={"All"} value="All">All Locations</SelectItem>
             {
@@ -79,7 +79,7 @@ export function ViewSlug({ organization, locations, types } : { organization:Org
       <SelectTrigger className="dark:bg-black bg-white border-foreground/20 w-full">
       <SelectValue placeholder="All Employment" />
       </SelectTrigger>
-      <SelectContent className="dark:bg-black bg-white">
+      <SelectContent className="dark:bg-black bg-white border-foreground/20">
         <SelectGroup key={"Items2"}>
           <SelectItem key={"All"} value="All">All Employment</SelectItem>
           {
