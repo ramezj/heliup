@@ -4,7 +4,7 @@ import { Prisma } from "@prisma/client"
 import { Select,SelectContent,SelectGroup,SelectItem,SelectLabel,SelectTrigger,SelectValue } from "@/components/ui/select"  
 import { Job } from "@prisma/client"
 import { JobCard } from "./job-card"
-// import { motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { formatJobType } from "@/utils/format"
 import Balancer from "react-wrap-balancer"
 
@@ -49,7 +49,7 @@ export function ViewSlug({ organization, locations, types } : { organization:Org
       setSelectedLocation(loc); 
       filterJobs(loc, selectedEmploymentType); 
       }}>
-        <SelectTrigger className="dark:bg-black bg-white border-foreground/20 w-full">
+        <SelectTrigger aria-label="Select Locations" className="dark:bg-black bg-white border-foreground/20 w-full">
         <SelectValue placeholder="All Locations" />
         </SelectTrigger>
         <SelectContent className="dark:bg-black bg-white border-foreground/20">
@@ -74,7 +74,7 @@ export function ViewSlug({ organization, locations, types } : { organization:Org
       setSelectedEmploymentType(type); 
       filterJobs(selectedLocation, type);
     }}>
-      <SelectTrigger className="dark:bg-black bg-white border-foreground/20 w-full">
+      <SelectTrigger aria-label="Select Employment" className="dark:bg-black bg-white border-foreground/20 w-full">
       <SelectValue placeholder="All Employment" />
       </SelectTrigger>
       <SelectContent className="dark:bg-black bg-white border-foreground/20">
@@ -95,23 +95,17 @@ export function ViewSlug({ organization, locations, types } : { organization:Org
     </div>
     </div>
     <div className="flex flex-col gap-4 lg:w-1/2 w-full pt-6">
-    {/* {jobs.map((job:Job, index) => {
+    {jobs.map((job:Job, index) => {
         return (
             <motion.div
             initial={{ opacity:0}}
             animate={{ opacity:1}}
             transition={{ duration: 0.3, delay: index * 0.2}}
-            key={job.id} 
-            className="relative">
+            key={job.id}
+            aria-label="Job"
+            >
             <JobCard key={index} job={job} organization={organization} />
             </motion.div>
-        )
-    })} */}
-    {jobs.map((job:Job, index) => {
-        return (
-            <div key={job.id}>
-            <JobCard key={index} job={job} organization={organization} />
-            </div>
         )
     })}
     {
