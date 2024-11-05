@@ -4,7 +4,7 @@ import { Prisma } from "@prisma/client"
 import { Select,SelectContent,SelectGroup,SelectItem,SelectLabel,SelectTrigger,SelectValue } from "@/components/ui/select"  
 import { Job } from "@prisma/client"
 import { JobCard } from "./job-card"
-import { motion } from "framer-motion"
+// import { motion } from "framer-motion"
 import { formatJobType } from "@/utils/format"
 import Balancer from "react-wrap-balancer"
 
@@ -95,7 +95,7 @@ export function ViewSlug({ organization, locations, types } : { organization:Org
     </div>
     </div>
     <div className="flex flex-col gap-4 lg:w-1/2 w-full pt-6">
-    {jobs.map((job:Job, index) => {
+    {/* {jobs.map((job:Job, index) => {
         return (
             <motion.div
             initial={{ opacity:0}}
@@ -106,6 +106,13 @@ export function ViewSlug({ organization, locations, types } : { organization:Org
             >
             <JobCard key={index} job={job} organization={organization} />
             </motion.div>
+        )
+    })} */}
+    {jobs.map((job:Job, index) => {
+        return (
+            <div key={job.id} aria-label="Job">
+            <JobCard key={index} job={job} organization={organization} />
+            </div>
         )
     })}
     {
