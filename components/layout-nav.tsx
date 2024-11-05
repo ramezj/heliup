@@ -1,7 +1,7 @@
 'use client'
 
 import Link from "next/link"
-import { Home, Users, BriefcaseBusiness, Settings2, Banknote, LogOut, ChevronUp, User2 } from "lucide-react"
+import { Home, Users, BriefcaseBusiness, Settings2, Banknote, LogOut, ChevronUp, User2, ChevronsUpDown } from "lucide-react"
 import { SidebarMenuItem } from "./ui/sidebar"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
@@ -52,12 +52,12 @@ export default function LayoutNav({ children, session }: { children: React.React
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant={"outline"} className="w-full dark:bg-black bg-white">
-                    {/* <Avatar className="size-5 mr-2 items-center">
+                    <Avatar className="size-5 mr-2 items-center">
                     <AvatarImage src={session?.user?.image!} />
                     <AvatarFallback>{session.user?.name}</AvatarFallback>
-                    </Avatar> */}
+                    </Avatar>
                     {session.user?.name}
-                    <ChevronUp className="ml-auto size-4" />
+                    <ChevronsUpDown className="ml-auto size-4" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
