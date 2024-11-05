@@ -33,11 +33,11 @@ import {
         <>
         <Dialog>
         <DialogTrigger asChild>
-        <Button variant={"outline"} size={"sm"}>
+        <Button variant={"outline"} size={"sm"} className="bg-inherit">
             <Trash className="w-4 h-4" />
         </Button>
         </DialogTrigger>
-        <DialogContent className="text-left w-[90%] rounded-md">
+        <DialogContent className="text-left w-[90%] rounded-md bg-black">
             <DialogHeader>
             <DialogTitle>Are you absolutely sure?</DialogTitle>
             <DialogDescription>
