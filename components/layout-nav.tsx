@@ -52,10 +52,10 @@ export default function LayoutNav({ children, session }: { children: React.React
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant={"outline"} className="w-full bg-inherit">
-                    <Avatar className="size-5 mr-2 items-center">
+                    {/* <Avatar className="size-5 mr-2 items-center">
                     <AvatarImage src={session?.user?.image!} />
                     <AvatarFallback>{session.user?.name}</AvatarFallback>
-                    </Avatar>
+                    </Avatar> */}
                     {session.user?.name}
                     <ChevronsUpDown className="ml-auto size-4" />
                   </Button>
@@ -130,12 +130,12 @@ export default function LayoutNav({ children, session }: { children: React.React
                   </Link>
                   </SheetClose>
                 </nav>
-                <div className="w-full flex gap-2 pt-4 bottom-0">
+                <div className="w-full flex gap-2 pt-4 bottom-0 mt-auto">
                 <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant={"outline"} className="w-full dark:bg-black bg-white">
+                  <Button variant={"outline"} className="w-full bg-inherit">
                     {session.user?.name}
-                    <ChevronUp className="ml-auto size-4" />
+                    <ChevronsUpDown className="ml-auto size-4" />
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
