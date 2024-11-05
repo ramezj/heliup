@@ -51,7 +51,7 @@ export default function LayoutNav({ children, session }: { children: React.React
             <div className="p-4 w-full flex gap-2">
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant={"outline"} className="w-full dark:bg-black bg-white">
+                  <Button variant={"outline"} className="w-full bg-inherit">
                     <Avatar className="size-5 mr-2 items-center">
                     <AvatarImage src={session?.user?.image!} />
                     <AvatarFallback>{session.user?.name}</AvatarFallback>
