@@ -26,7 +26,7 @@ export function CreateJobButton() {
     setLoading(true);
     const res = await createJob(name);
     if(res?.ok) {
-      toast("Job Created Successfully")
+      toast(<>Job Created Successfully</>)
     } else {
       toast("Something went wrong")
     }
