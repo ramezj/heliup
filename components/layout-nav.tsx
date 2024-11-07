@@ -80,7 +80,7 @@ export default function LayoutNav({ children, session }: { children: React.React
           </div>
         </div>
         <div className="flex flex-col sticky">
-          <header className="z-50 flex h-16 items-center gap-4 border-b px-3 lg:h-16 sticky top-0 bg-background">
+          <header className="z-50 flex h-16 items-center gap-4 border-b px-3 lg:h-16 sticky top-0 bg-white dark:bg-black">
             <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="shrink-0 md:hidden">
