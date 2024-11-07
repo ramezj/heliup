@@ -62,7 +62,7 @@ export default function LayoutNav({ children, session }: { children: React.React
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
                   side="top"
-                  className="w-[--radix-popper-anchor-width] dark:bg-black bg-white space-y-2"
+                  className="w-[--radix-popper-anchor-width] bg-background space-y-2"
                 >
                   <DropdownMenuItem className="cursor-pointer" asChild>
                   <Link href={"/settings"} className="flex align-middle items-center"><Settings2 className="size-4 mr-2" />Settings</Link>
@@ -80,7 +80,7 @@ export default function LayoutNav({ children, session }: { children: React.React
           </div>
         </div>
         <div className="flex flex-col sticky">
-          <header className="z-50 flex h-16 items-center gap-4 border-b px-3 lg:h-16 sticky top-0 bg-white dark:bg-black">
+          <header className="z-50 flex h-16 items-center gap-4 border-b px-3 lg:h-16 sticky top-0 bg-background">
             <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="shrink-0 md:hidden">
@@ -92,7 +92,7 @@ export default function LayoutNav({ children, session }: { children: React.React
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
-              <SheetContent side="left" className="flex flex-col bg-black">
+              <SheetContent side="left" className="flex flex-col bg-background">
                 <SheetClose asChild>
                   <Link href="/" className="px-2 flex items-center text-lg font-bold justify-center">
                     Heliup
@@ -140,7 +140,7 @@ export default function LayoutNav({ children, session }: { children: React.React
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
                   side="top"
-                  className="w-[--radix-popper-anchor-width] dark:bg-black bg-white space-y-2">
+                  className="w-[--radix-popper-anchor-width] bg-background space-y-2">
                  <DropdownMenuItem className="cursor-pointer" asChild>
                   <Link href={"/settings"} className="flex align-middle items-center"><Settings2 className="size-4 mr-2" />Settings</Link>
                   </DropdownMenuItem>

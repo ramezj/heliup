@@ -32,7 +32,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         notFound() 
     }
     return (
-        <main className="dark:bg-black bg-white">
+        <main className="">
         <div className="top-0 z-10 sticky">
         <SlugNavbar organization={organization.organization as Organization} />
         </div>
