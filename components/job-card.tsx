@@ -36,7 +36,7 @@ export function JobCard({ job, organization }: { job: Job, organization:Organiza
     }
   };
     return (
-      <Link href={`/${job.id}`}>
+      <Link href={`/${job.id}`} target="_blank">
       <div 
       className="w-full flex border border-foreground/20 hover:border-foreground/30 rounded-lg items-center duration-300 pt-3 pb-3">
       <div className="mx-5 my-3 flex flex-col items-start text-left">
