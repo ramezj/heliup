@@ -64,7 +64,8 @@ export function Navigation(props:any) {
             </SheetContent>
         </Sheet>
         <div className="flex w-full items-center gap-3">
-          <div className="ml-auto">
+          <div className="ml-auto align-middle flex gap-3">
+            <Toggle />
           {
             props.session 
             ? 
@@ -101,6 +102,7 @@ export function SlugNavbar({ organization } : { organization: Organization}) {
           </Link>
         </nav>
         <div className="flex flex-1 w-full items-center gap-3 ml-auto justify-end">
+          <Toggle />
           {
             organization.twitter &&
             <Button aria-label="twitter" className="bg-inherit" size={"icon"} variant={"outline"} asChild>

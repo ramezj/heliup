@@ -13,6 +13,7 @@ import { Features } from "@/components/features";
 import CTA from "@/components/cta";
 import Balancer from "react-wrap-balancer";
 import { ArrowUpRight } from "lucide-react";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata:Metadata = {
   title: "Heliup",
