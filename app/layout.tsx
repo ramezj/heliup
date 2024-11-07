@@ -19,7 +19,7 @@ export default function RootLayout({
       <link rel="icon" href="/logo.jpg?v=2" />
       <body className="bg-background">
         <Toaster />
-        <ThemeProvider attribute="class" defaultTheme="dark">
+        <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
         {children}
         </ThemeProvider>
       </body>
