@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={bricolageGrotesque.className}>
       <link rel="icon" href="/logo.jpg?v=2" />
-      <body className="bg-white dark:bg-black">
+      <body className="bg-background">
         <Toaster />
         <ThemeProvider attribute="class" defaultTheme="dark">
         {children}
