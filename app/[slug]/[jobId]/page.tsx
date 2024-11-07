@@ -34,7 +34,7 @@ export default async function Page({ params }: { params: { jobId: string, slug:s
     const job = await getJobById(params.jobId);
     if(job?.error) { redirect('/') }
     return (
-        <main className="dark:bg-black bg-white min-h-screen h-full">
+        <main className="">
         <div className="top-0 z-10 sticky">
         <SlugNavbar organization={organization.organization as Organization} />
         </div>
