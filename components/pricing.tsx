@@ -8,7 +8,7 @@ import { Separator } from "./ui/separator";
 export function FreeCard() {
     return (
         <>
-        <Card className="w-[350px] bg-black ">
+        <Card className="w-[350px] bg-background">
       <CardHeader>
         <CardTitle className='flex gap-2 font-bold tracking-normal'>Free</CardTitle>
         <CardDescription className="text-left">Free forever</CardDescription>
@@ -64,7 +64,7 @@ export function FreeCard() {
 export function PaidCard() {
     return (
         <>
-        <Card className="w-[350px] bg-black ">
+        <Card className="w-[350px] bg-background">
       <CardHeader>
         <CardTitle className='flex gap-2 font-bold tracking-normal'>Premium</CardTitle>
         <CardDescription className="text-left">Monthly Subscription</CardDescription>
