@@ -41,7 +41,7 @@ export function Navigation(props:any) {
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="flex flex-col bg-black">
+          <SheetContent side="left" className="flex flex-col dark:bg-black bg-white">
               <SheetClose asChild>
                 <Link href="/" className="px-2 flex items-center text-lg font-semibold justify-center">
                   Heliup
