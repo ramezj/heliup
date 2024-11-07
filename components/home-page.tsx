@@ -23,7 +23,7 @@ export const HeroSection = () => {
     <Section>
       <Container>
         <div className="flex flex-col items-center text-center">
-          <Button asChild className="mb-6 w-fit bg-inherit px-12" size={"sm"} variant={"outline"}>
+          <Button asChild className="mb-6 w-fit bg-inherit px-12 border-foreground/20" size={"sm"} variant={"outline"}>
             <Link className="not-prose" href="/">
                 Introducing Heliup <ArrowUpRight className="w-4 ml-2" />
             </Link>
@@ -44,7 +44,7 @@ export const HeroSection = () => {
                 Start Hiring
                 </Link>
             </Button>
-            <Button asChild className="font-medium bg-inherit w-60" variant={"outline"}>
+            <Button asChild className="font-medium bg-inherit w-60 border-foreground/20" variant={"outline"}>
                 <Link href="https://demo.heliup.xyz" target="_blank">
                 See Demo
                 <ArrowUpRight className="w-4 ml-2" />
