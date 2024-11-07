@@ -51,11 +51,7 @@ export default function LayoutNav({ children, session }: { children: React.React
             <div className="p-4 w-full flex gap-2">
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant={"outline"} className="w-full bg-inherit">
-                    {/* <Avatar className="size-5 mr-2 items-center">
-                    <AvatarImage src={session?.user?.image!} />
-                    <AvatarFallback>{session.user?.name}</AvatarFallback>
-                    </Avatar> */}
+                  <Button variant={"outline"} className="w-full bg-inherit border-foreground/20">
                     {session.user?.name}
                     <ChevronsUpDown className="ml-auto size-4" />
                   </Button>
@@ -133,7 +129,7 @@ export default function LayoutNav({ children, session }: { children: React.React
                 <div className="w-full flex gap-2 pt-4 bottom-0 mt-auto">
                 <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant={"outline"} className="w-full bg-inherit">
+                  <Button variant={"outline"} className="w-full bg-inherit border-foreground/20">
                     {session.user?.name}
                     <ChevronsUpDown className="ml-auto size-4" />
                   </Button>

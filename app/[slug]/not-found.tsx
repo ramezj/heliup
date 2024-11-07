@@ -5,7 +5,7 @@ import { HeartCrack } from "lucide-react"
 export default function NotFound() {
     return (
         <>
-            <div className="w-full flex flex-col items-center text-center p-8 pt-12">
+            <div className="w-full flex flex-col items-center text-center p-8 pt-12 bg-background">
             <h1 className="font-bold text-5xl flex align-middle items-center"><HeartCrack className="size-10 mr-2" />404</h1>
             <p className="text-muted-foreground pt-2">The page you are looking for does not exist, maybe try something else?</p>
             <br />

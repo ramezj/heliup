@@ -4,7 +4,7 @@ export default function Loading() {
     return (
         <>
         <div className="w-full h-screen items-center flex flex-col justify-center bg-background">
-        <Loader2 className="size-8 animate-spin dark:text-gray-200 text-gray-800" />
+        <Loader2 className="size-8 animate-spin dark:text-white text-black" />
         </div>
         </>
     )
