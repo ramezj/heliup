@@ -37,14 +37,17 @@ export default async function Page() {
               <h1 className="font-medium text-base text-muted-foreground">{user?.isPremium ? "Premium Plan" : "Free Plan"}</h1>
               {
                 user?.isPremium 
-                ? <Button variant={"outline"} className="bg-inherit" asChild>
+                ? <Button variant={"outline"} className="bg-inherit border-foreground/20" asChild>
                   <Link target="_blank" href={`https://app.gumroad.com/subscriptions/${user.subscription_id}/manage`}>
                   Manage Plan
                   </Link>
                   </Button>
-                : <Link target="_blank" href={`https://heliup.gumroad.com/l/heliup?email=${session.user?.email}&custom_field=${session.user?.id}`}>
-                  <Button variant={"outline"} className="bg-inherit">Upgrade to Premium</Button>
-                  </Link>
+                : 
+                  <Button asChild variant={"outline"} className="bg-inherit border-foreground/20">
+                    <Link target="_blank" href={`https://heliup.gumroad.com/l/heliup?email=${session.user?.email}&custom_field=${session.user?.id}`}>
+                    Upgrade to Premium
+                    </Link>
+                    </Button>
               }
             </div>
           </div>
@@ -58,7 +61,7 @@ export default async function Page() {
             </div>
             <div className="space-y-4">
             <h1 className="font-medium text-base text-muted-foreground">If you wish to cancel your subscription, please click the button below. Note that you will lose all the benefits of your current plan.</h1>
-            <Button variant={"outline"} className="bg-inherit" asChild>
+            <Button variant={"outline"} className="bg-inherit border-foreground/20" asChild>
               <Link href={`https://app.gumroad.com/subscriptions/${user.subscription_id}/manage`}>
               Cancel Subscription
               </Link>

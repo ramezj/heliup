@@ -107,7 +107,7 @@ export function SlugNavbar({ organization } : { organization: Organization}) {
           <Toggle />
           {
             organization.twitter &&
-            <Button aria-label="twitter" className="bg-inherit" size={"icon"} variant={"outline"} asChild>
+            <Button aria-label="twitter" className="bg-background border-foreground/20" size={"icon"} variant={"outline"} asChild>
             <Link aria-label="twitter" href={`https://x.com/${organization.twitter}`} target="_blank">
             <TwitterLogoIcon className="size-5" />
             </Link>
@@ -115,7 +115,7 @@ export function SlugNavbar({ organization } : { organization: Organization}) {
           }
           {
             organization.website &&
-            <Button aria-label="website" className="bg-inherit" size={"icon"} variant={"outline"} asChild>
+            <Button aria-label="website" className="bg-background border-foreground/20" size={"icon"} variant={"outline"} asChild>
             <Link aria-label="website" href={organization.website!} target="_blank">
             <Globe className="size-5" />
             </Link>

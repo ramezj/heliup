@@ -76,7 +76,7 @@ export default function ConfigureJob({ job }: { job: Job }) {
               <SelectTrigger className="bg-inherit">
                 <SelectValue />
               </SelectTrigger>
-              <SelectContent className="bg-black">
+              <SelectContent className="bg-background">
                 <SelectGroup>
                   <SelectItem value="FULLTIME">Full-Time</SelectItem>
                   <SelectItem value="PARTTIME">Part-Time</SelectItem>
