@@ -70,8 +70,7 @@ export default function LayoutNav({ children, session }: { children: React.React
                     <span className="flex align-middle items-center"><LogOut className="size-4 mr-2" />Sign out</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
-              </DropdownMenu>
-            {/* <Button onClick={((e) => { signOut({ callbackUrl: "/" })})} variant={"outline"} size={"icon"} className="bg-inherit w-full"><LogOut className="text-white size-4 mr-2"/>Log out</Button> */}
+            </DropdownMenu>
             </div>
           </div>
         </div>

@@ -2,13 +2,12 @@ import { auth } from "@/auth";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { getUserDashboard } from "@/server-actions/dashboard/getUserDashboard";
-import { Organization } from "@prisma/client";
+import { Team } from "@prisma/client";
 import { Button } from "@/components/ui/button";
 import { Plus, ArrowUpRight, SquareArrowOutUpRight } from "lucide-react";
 import Link from "next/link";
 import EditOrganization from "@/components/edit-organization";
-import { StatisticalCard } from "@/components/statistical-card";
-import { OrganizationName } from "@/components/statistical-card";
+import { StatisticalCard, TeamName } from "@/components/statistical-card";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -19,26 +18,26 @@ export default async function Page() {
   const session = await auth();
   if(!session) { redirect('/auth') }
   if(session.user?.firstTimeUser === true) { redirect('/onboarding') }
-  const organization = await getUserDashboard();
-  if(organization.ok === false) {redirect('/onboarding')}
+  const team = await getUserDashboard();
+  if(team.ok === false) {redirect('/onboarding')}
   return (
         <>
         <div className="flex justify-between items-center w-full">
         <h1 className="font-bold text-3xl tracking-tight">Overview</h1>
         <Button size={"sm"} variant={"default"} asChild className="w-36">
-        <Link target="_blank" href={`https://${organization.organization?.slug}.${process.env.NEXT_URL}`}>
+        <Link target="_blank" href={`https://${team.team?.slug}.${process.env.NEXT_URL}`}>
         Preview
         <SquareArrowOutUpRight className="size-4 ml-2"/>
         </Link>
         </Button>
         </div>
         <div className="flex sm:flex-row flex-col gap-2">
-          <OrganizationName name={organization.organization?.name!}/>
-          <StatisticalCard name="Total Jobs" number={organization.organization?.jobs.length as number} />
-          <StatisticalCard name="Total Applicants" number={organization.totalApplicants as number} />
+          <TeamName name={team.team?.name!}/>
+          <StatisticalCard name="Total Jobs" number={team.team?.jobs.length as number} />
+          <StatisticalCard name="Total Applicants" number={team.totalApplicants as number} />
         </div>
         <div className="space-y-2">
-        <EditOrganization organization={organization.organization as Organization} />
+        <EditOrganization team={team.team as Team} />
         </div>
         </>
   );

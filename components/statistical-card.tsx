@@ -23,7 +23,7 @@ export function StatisticalCard({ name, number} : { name: string, number: number
     )
 }
 
-export function OrganizationName({ name} : { name: string}) {
+export function TeamName({ name} : { name: string}) {
   return (
       <>
       <div className="w-full">

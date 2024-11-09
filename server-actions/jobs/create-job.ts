@@ -13,7 +13,7 @@ export  async function createJob(name: string) {
                 id: session.user?.id
             },
             include: {
-                organization: true
+                team: true
             }
         });
         const Job = await prisma.job.create({
@@ -21,7 +21,7 @@ export  async function createJob(name: string) {
                 title: name,
                 type: "FULLTIME",
                 content: "",
-                organizationId: user?.organization?.id as string
+                teamId: user?.team?.id as string
             }
         })
         revalidatePath('/jobs');

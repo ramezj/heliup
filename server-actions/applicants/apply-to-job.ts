@@ -1,7 +1,7 @@
 "use server"
 import prisma from "@/utils/db"
 import { auth } from "@/auth"
-import { Organization } from "@prisma/client";
+import { Team } from "@prisma/client";
 import { redirect } from "next/navigation";
 import { r2 } from "@/utils/r2";
 import { GetObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3";
