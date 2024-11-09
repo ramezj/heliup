@@ -12,7 +12,7 @@
   import { motion } from "framer-motion"
   import { editJob } from "@/server-actions/jobs/edit-job"
   import { Textarea } from "./ui/textarea"
-import { editOrganization } from "@/server-actions/organization/edit-organization"
+  import { editOrganization } from "@/server-actions/organization/edit-organization"
 
 export default function EditOrganization({ organization } : { organization:Organization}) {
     const [ currentOrganization, setCurrentOrganization ] = useState<Organization>(organization);
@@ -20,7 +20,7 @@ export default function EditOrganization({ organization } : { organization:Organ
     const editOrg = async (e:React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
-        const res = await editOrganization(organization);
+        const res = await editOrganization(currentOrganization);
         toast(res.message);
         setLoading(false);
     }
@@ -30,18 +30,18 @@ export default function EditOrganization({ organization } : { organization:Organ
         <div className="space-y-4 w-full">
             <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
-              <Input className="bg-inherit" required placeholder="Microsoft" value={organization.name!} onChange={((e) => {setCurrentOrganization((prevOrg) => ({ ...prevOrg, name: e.target.value }))})}/>
+              <Input className="bg-inherit" required placeholder="Microsoft" value={currentOrganization.name!} onChange={((e) => {setCurrentOrganization((prevOrg) => ({ ...prevOrg, name: e.target.value }))})}/>
               <div className="space-y-2"> 
               <Label htmlFor="name">Slug</Label>
-              <Input className="bg-inherit" required placeholder="microsoft.jobspire.co" value={organization.slug!} onChange={((e) => {setCurrentOrganization((prevOrg) => ({ ...prevOrg, slug:e.target.value}))})}/>
+              <Input className="bg-inherit" required placeholder="microsoft.jobspire.co" value={currentOrganization.slug!} onChange={((e) => {setCurrentOrganization((prevOrg) => ({ ...prevOrg, slug:e.target.value}))})}/>
               </div>
               <div className="space-y-2">
               <Label htmlFor="name">Slogan</Label>
-              <Textarea className="bg-inherit" placeholder="I'm Lovin' it!" value={organization.description!} onChange={((e) => {setCurrentOrganization((prevOrg) => ({...prevOrg, description: e.target.value}))})} rows={4} />  
+              <Textarea className="bg-inherit" placeholder="I'm Lovin' it!" value={currentOrganization.description!} onChange={((e) => {setCurrentOrganization((prevOrg) => ({...prevOrg, description: e.target.value}))})} rows={4} />  
               </div>
               <div className="space-y-2">
               <Label htmlFor="website">Website URL</Label>
-              <Input className="bg-inherit" placeholder="https://heliup.xyz" value={organization.website!} onChange={((e) => {setCurrentOrganization((prevOrg) => ({ ...prevOrg, website: e.target.value }))})}/>
+              <Input className="bg-inherit" placeholder="https://heliup.xyz" value={currentOrganization.website!} onChange={((e) => {setCurrentOrganization((prevOrg) => ({ ...prevOrg, website: e.target.value }))})}/>
               </div>
               <div className="space-y-2">
               <Label htmlFor="twitter">Twitter</Label>
