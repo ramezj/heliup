@@ -1,7 +1,7 @@
 "use server"
 import prisma from "@/utils/db"
 import { auth } from "@/auth"
-import { Organization } from "@prisma/client";
+import { Team } from "@prisma/client";
 import { redirect } from "next/navigation";
 import { addDays } from "date-fns"
 
@@ -22,7 +22,7 @@ export  async function createOrganization(props: OrganizationProps) {
         });
     }
     try {
-        const organizationExist = await prisma.organization.findFirst({
+        const organizationExist = await prisma.team.findFirst({
             where: {
                 slug: {
                     equals: props.slug,
@@ -37,9 +37,9 @@ export  async function createOrganization(props: OrganizationProps) {
                 error:"Slug In Use, Please try something else."
             })
         }
-        const organization = await prisma.organization.create({
+        const organization = await prisma.team.create({
             data: {
-                userId: session.user.id as string,
+                ownerId: session.user.id as string,
                 name: props.name,
                 slug: props.slug,
                 website: props.website

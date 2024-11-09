@@ -2,7 +2,7 @@ import { auth } from "@/auth";
 import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { getUserDashboard } from "@/server-actions/dashboard/getUserDashboard";
-import { Organization } from "@prisma/client";
+import { Team } from "@prisma/client";
 import { Button } from "@/components/ui/button";
 import { Plus, ArrowUpRight, SquareArrowOutUpRight } from "lucide-react";
 import Link from "next/link";
@@ -38,7 +38,7 @@ export default async function Page() {
           <StatisticalCard name="Total Applicants" number={organization.totalApplicants as number} />
         </div>
         <div className="space-y-2">
-        <EditOrganization organization={organization.organization as Organization} />
+        <EditOrganization organization={organization.organization as Team} />
         </div>
         </>
   );

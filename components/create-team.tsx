@@ -6,13 +6,13 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Label } from "./ui/label";
 import { motion } from "framer-motion"
-import { createOrganization } from "@/server-actions/organization/createOrganization";
+import { createOrganization } from "@/server-actions/team/create-team";
 import { Loader2 } from "lucide-react"
 import { toast } from "sonner"
 import { useRouter } from "next/navigation";
 import { Plus } from "lucide-react";
 
-export function CreateOrganization() {
+export function CreateTeam() {
     const router = useRouter();
     const [ name, setName ] = useState<string>("");
     const [ slug, setSlug ] = useState<string>("");
@@ -46,8 +46,8 @@ export function CreateOrganization() {
                     <Input className="bg-inherit" placeholder="microsoft" required value={slug} onChange={((e) => {setSlug(e.target.value)})}/>
                     {
                         loading
-                        ? <Button size={"sm"} disabled><Loader2 className="mr-2 h-4 w-4 animate-spin" />Create</Button>
-                        : <Button size={"sm"} variant={"expandIcon"} iconPlacement="right" Icon={Plus} className="">Create </Button>
+                        ? <Button size={"sm"} variant={"outline"} disabled><Loader2 className="mr-2 h-4 w-4 animate-spin" />Create</Button>
+                        : <Button size={"sm"} variant={"outline"}>Create </Button>
                     }
                     </div>
               </form>

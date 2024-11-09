@@ -12,7 +12,7 @@
   import { motion } from "framer-motion"
   import { editJob } from "@/server-actions/jobs/edit-job"
   import { Textarea } from "./ui/textarea"
-import { editOrganization } from "@/server-actions/organization/edit-organization"
+import { editOrganization } from "@/server-actions/team/edit-team"
 
 export default function EditOrganization({ organization } : { organization:Organization}) {
     const [ org, setOrg ] = useState<Organization>(organization);

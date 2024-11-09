@@ -1,7 +1,7 @@
 "use server"
 import prisma from "@/utils/db"
 import { auth } from "@/auth"
-import { Job, Organization, Type } from "@prisma/client";
+import { Job, Team, Type } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
@@ -14,7 +14,7 @@ export async function deleteJob(jobId: string) {
                 id: jobId
             },
             include: {
-                organization: true
+                team: true
             }
         })
         if(!job) {
@@ -23,7 +23,7 @@ export async function deleteJob(jobId: string) {
                 message: "Job Not Found."
             }
         }
-        if(job.organization.userId != session.user?.id) {
+        if(job.team.ownerId != session.user?.id) {
             return {
                 ok:false,
                 message: "User MissMatch"

@@ -1,7 +1,6 @@
 "use server"
 import prisma from "@/utils/db"
 import { auth } from "@/auth"
-import { Organization } from "@prisma/client";
 
 export async function getJobApplicants(jobId: string) {
     try {

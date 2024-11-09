@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import ApplyCard from "@/components/apply-card";
 import EditJobTabs from "@/components/edit-job";
-import { getOrganizationBySlug } from "@/server-actions/organization/get-organization";
+import { getOrganizationBySlug } from "@/server-actions/team/get-team";
 import { notFound } from 'next/navigation'
 import Link from "next/link";
 import { formatJobType } from "@/utils/format";

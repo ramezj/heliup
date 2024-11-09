@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { redirect } from "next/navigation";
-import { CreateOrganization } from "@/components/create-organization";
+import { CreateTeam } from "@/components/create-team";
 
 export const metadata: Metadata = {
     title: "Onboarding",
@@ -21,9 +21,9 @@ export default async function Page() {
         <div className="flex items-center justify-center py-24">
           <div className="mx-auto grid w-[350px] gap-6">
             <div className="grid gap-2 text-center">
-              <h1 className="text-3xl font-bold">Create Organization</h1>
+              <h1 className="text-3xl font-medium">Create Your Team</h1>
             </div>
-            <CreateOrganization />
+            <CreateTeam />
           </div>
         </div>
         </>

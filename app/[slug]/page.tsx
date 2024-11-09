@@ -1,4 +1,4 @@
-import { getOrganizationBySlug } from "@/server-actions/organization/get-organization";
+import { getOrganizationBySlug } from "@/server-actions/team/get-team";
 import { Job, Organization } from "@prisma/client"
 import { redirect } from "next/navigation";
 import { JobCard } from "@/components/job-card";

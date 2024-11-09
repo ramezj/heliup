@@ -1,11 +1,11 @@
 "use server"
 import prisma from "@/utils/db"
 import { auth } from "@/auth"
-import { Organization } from "@prisma/client";
+import { Team } from "@prisma/client";
 
 export async function getOrganizationBySlug(slug: string) {
     try {
-        const organization = await prisma.organization.findFirst({
+        const team = await prisma.team.findFirst({
             where: {
                 slug: {
                   equals: slug,
@@ -20,7 +20,7 @@ export async function getOrganizationBySlug(slug: string) {
                 }
             }
         });
-        if(!organization) {
+        if(!team) {
             return {
                 error:true,
                 message: "Organization doesnt exist"
@@ -28,7 +28,7 @@ export async function getOrganizationBySlug(slug: string) {
         }
         const uniqueLocations = await prisma.job.findMany({
             where: {
-                organizationId: organization.id,
+                teamId: team.id,
                 location: { 
                     not: null
                 }
@@ -41,7 +41,7 @@ export async function getOrganizationBySlug(slug: string) {
         const locations = uniqueLocations.map(job => job.location);
         const uniqueEmploymentTypes = await prisma.job.findMany({
             where: {
-                organizationId: organization.id,
+                teamId: team.id,
             },
             select: {
                 type: true
@@ -51,7 +51,7 @@ export async function getOrganizationBySlug(slug: string) {
         const types = uniqueEmploymentTypes.map(job => job.type);
         return { 
             error: false,
-            organization,
+            team,
             locations:locations,
             types: types
         }
@@ -65,9 +65,9 @@ export async function getOrganizationBySlug(slug: string) {
 
 export async function getOrganizationByUserId(userId: string) {
     try {
-        const organization = await prisma.organization.findFirst({
+        const organization = await prisma.team.findFirst({
             where: {
-                userId: {
+                ownerId: {
                   equals: userId,
                   mode: 'insensitive',
                 },
@@ -100,9 +100,9 @@ export async function getOrganizationByUserId(userId: string) {
 
 export async function getOrganizationByUserIdSortedByApplicants(userId: string) {
     try {
-        const organization = await prisma.organization.findFirst({
+        const organization = await prisma.team.findFirst({
             where: {
-                userId: {
+                ownerId: {
                   equals: userId,
                   mode: 'insensitive',
                 },
