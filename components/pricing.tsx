@@ -66,7 +66,7 @@ export function PaidCard() {
         <>
         <Card className="w-[350px] bg-background">
       <CardHeader>
-        <CardTitle className='flex gap-2 font-bold tracking-normal'>Team</CardTitle>
+        <CardTitle className='flex gap-2 font-bold tracking-normal'>Professional</CardTitle>
         <CardDescription className="text-left">Monthly Subscription</CardDescription>
       </CardHeader>
       <CardContent>
