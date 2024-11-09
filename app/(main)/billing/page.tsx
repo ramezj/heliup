@@ -5,7 +5,6 @@ import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { getUserBilling } from "@/server-actions/billing/get-user-billing";
 import { getUserDashboard } from "@/server-actions/dashboard/getUserDashboard";
-import { Organization } from "@prisma/client";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 

@@ -4,7 +4,7 @@ import EditOrganization from "@/components/edit-organization";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { getUserDashboard } from "@/server-actions/dashboard/getUserDashboard";
-import { Organization } from "@prisma/client";
+import { Team } from "@prisma/client";
 
 export const metadata: Metadata = {
     title: "Settings",
@@ -26,7 +26,7 @@ export default async function Page() {
           </p>
         </div>
         <Separator className="-mb-2"/>
-        <EditOrganization organization={organization.organization as Organization} />
+        <EditOrganization organization={organization.organization as Team} />
         </>
     )
 }
