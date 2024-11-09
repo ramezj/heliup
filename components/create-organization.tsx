@@ -6,13 +6,13 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Label } from "./ui/label";
 import { motion } from "framer-motion"
-import { createOrganization } from "@/server-actions/team/create-team";
+import { createOrganization } from "@/server-actions/organization/create-organization";
 import { Loader2 } from "lucide-react"
 import { toast } from "sonner"
 import { useRouter } from "next/navigation";
 import { Plus } from "lucide-react";
 
-export function CreateTeam() {
+export function CreateOrganization() {
     const router = useRouter();
     const [ name, setName ] = useState<string>("");
     const [ slug, setSlug ] = useState<string>("");

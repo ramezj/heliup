@@ -35,7 +35,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  team  Team?
+  organization  Organization?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -54,15 +54,15 @@ model VerificationToken {
   expires    DateTime
   @@id([identifier, token])
 }
-model Team {
+model Organization {
   id String @id @default(cuid())
   name      String?
   slug String @unique
   website   String?
   twitter String?
   description String @default("")
-  ownerId    String @unique
-  owner User @relation(fields: [ownerId], references: [id])
+  userId    String @unique
+  user User @relation(fields: [userId], references: [id])
   jobs Job[]
 }
 enum Type {
@@ -79,8 +79,8 @@ model Job {
   content String
   createdAt DateTime @default(now())
   applicants Applicant[]
-  teamId String
-  team Team @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  organizationId String
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
 }
 
 enum Status {

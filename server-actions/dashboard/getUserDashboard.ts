@@ -1,23 +1,23 @@
 "use server"
 import prisma from "@/utils/db"
 import { auth } from "@/auth"
-import { Team } from "@prisma/client";
+import { Organization } from "@prisma/client";
 import { redirect } from "next/navigation";
 
 export async function getUserDashboard() {
     const session = await auth();
     if(!session) { redirect('/auth') }
     try {
-        const team = await prisma.team.findFirst({
+        const organization = await prisma.organization.findFirst({
             where:{
-                ownerId:session.user?.id
+                userId: session.user?.id
             },
             include: {
                 jobs:true
             }
         });
-        const totalApplicants = await prisma.team.findUnique({
-            where: { ownerId: session.user?.id },
+        const totalApplicants = await prisma.organization.findUnique({
+            where: { userId: session.user?.id },
             select: {
               jobs: {
                 select: {
@@ -36,14 +36,14 @@ export async function getUserDashboard() {
           ) ?? 0;
           return {
             ok:true,
-            team,
+            organization,
             totalApplicants: totalApplicantCount
           }
     } catch (error) {
         console.error(error);
         return {
             ok:false,
-            team:null,
+            organization:null,
             totalApplicants: null
         }
     }

@@ -5,7 +5,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/s
 import { Toggle } from "./toggle"
 import { usePathname } from "next/navigation"
 import { Home, BriefcaseBusiness, Users, SparklesIcon, DollarSignIcon, Laptop, StarIcon, Globe } from "lucide-react"
-import { Team } from "@prisma/client"
+import { Organization } from "@prisma/client"
 import { TwitterLogoIcon } from "@radix-ui/react-icons"
 import { NavigationMenuDemo } from "./nav-menu-demo"
 
@@ -94,29 +94,29 @@ export function Navigation(props:any) {
   )
 }
 
-export function SlugNavbar({ team } : { team: Team}) {
+export function SlugNavbar({ organization } : { organization : Organization}) {
   return (
     <div className="flex w-full flex-col">
     <header className="sticky top-2 mt-8 flex h-16 items-center gap-4 bg-background px-4 z-50 md:mx-12 mx-4 rounded-xl border border-foreground/20 backdrop-blur-md">
         <nav className="flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <Link href="/" className="flex items-center text-lg font-semibold">
-          {team.name}
+          {organization.name}
           </Link>
         </nav>
         <div className="flex flex-1 w-full items-center gap-3 ml-auto justify-end">
           <Toggle />
           {
-            team.twitter &&
+            organization.twitter &&
             <Button aria-label="twitter" className="bg-background border-foreground/20" size={"icon"} variant={"outline"} asChild>
-            <Link aria-label="twitter" href={`https://x.com/${team.twitter}`} target="_blank">
+            <Link aria-label="twitter" href={`https://x.com/${organization.twitter}`} target="_blank">
             <TwitterLogoIcon className="size-5" />
             </Link>
             </Button>
           }
           {
-            team.website &&
+            organization.website &&
             <Button aria-label="website" className="bg-background border-foreground/20" size={"icon"} variant={"outline"} asChild>
-            <Link aria-label="website" href={team.website!} target="_blank">
+            <Link aria-label="website" href={organization.website!} target="_blank">
             <Globe className="size-5" />
             </Link>
             </Button>

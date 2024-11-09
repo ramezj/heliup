@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Button } from "./ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card"
 import { Separator } from "./ui/separator"
-import { Job, Team } from "@prisma/client"
+import { Job, Organization } from "@prisma/client"
 import { Badge } from "./ui/badge"
 import { Briefcase, Navigation, ArrowUpRight, SquareArrowOutUpRight, MapPin, Pin, Settings, ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
@@ -20,7 +20,7 @@ type JobWithApplicants = Prisma.JobGetPayload<{
   }
 }>
 
-export function JobCard({ job, team }: { job: Job, team:Team }) {
+export function JobCard({ job }: { job: Job }) {
   const formatJobType = (type:any) => {
     switch (type) {
         case 'FULLTIME':

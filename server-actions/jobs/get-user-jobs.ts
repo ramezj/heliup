@@ -1,15 +1,14 @@
 "use server"
 import prisma from "@/utils/db"
 import { auth } from "@/auth"
-import { Team } from "@prisma/client";
 import { redirect } from "next/navigation";
 
 export async function getUserJobs() {
     const session = await auth();
     if(!session) { redirect('/auth') }
-    const organization = await prisma.team.findFirst({
+    const organization = await prisma.organization.findFirst({
         where:{
-            ownerId:session.user?.id
+            userId:session.user?.id
         },
         include: {
             jobs: {
@@ -39,9 +38,9 @@ export async function getUserJobs() {
 export async function getUserJobsSortedByApplicants() {
     const session = await auth();
     if(!session) { redirect('/auth') }
-    const organization = await prisma.team.findFirst({
+    const organization = await prisma.organization.findFirst({
         where:{
-            ownerId:session.user?.id
+            userId:session.user?.id
         },
         include: {
             jobs: {

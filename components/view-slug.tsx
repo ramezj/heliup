@@ -8,15 +8,15 @@ import { JobCard } from "./job-card"
 import { formatJobType } from "@/utils/format"
 import Balancer from "react-wrap-balancer"
 
-type TeamWithJobs = Prisma.TeamGetPayload<{
+type OrganizationWithJobs = Prisma.OrganizationGetPayload<{
     include: {
         jobs: true
     }
 }>
   
-export function ViewSlug({ team, locations, types } : { team:TeamWithJobs, locations:Array<string>, types:Array<string>}) {
-    const [ originalJobs, setOriginalJobs ] = useState<Array<Job>>(team.jobs);
-    const [ jobs, setJobs ] = useState<Array<Job>>(team.jobs);
+export function ViewSlug({ organization, locations, types } : { organization:OrganizationWithJobs, locations:Array<string>, types:Array<string>}) {
+    const [ originalJobs, setOriginalJobs ] = useState<Array<Job>>(organization.jobs);
+    const [ jobs, setJobs ] = useState<Array<Job>>(organization.jobs);
     const [ selectedLocation, setSelectedLocation ] = useState<string>("All");
     const [ selectedEmploymentType, setSelectedEmploymentType ] = useState<string>("All");
     const filterJobs = (location: string, employmentType: string) => {
@@ -31,13 +31,13 @@ export function ViewSlug({ team, locations, types } : { team:TeamWithJobs, locat
   };
     return (
     <div className="w-full flex flex-col items-center text-center p-4 space-y-1 overflow-hidden">
-    <h1 className="font-medium text-4xl pt-6">Positions at {team?.name}</h1>
+    <h1 className="font-medium text-4xl pt-6">Positions at {organization?.name}</h1>
     {
-      team.description 
+      organization.description 
       ? 
       <>
       <Balancer>
-      <p className="text-muted-foreground max-w-3xl text-sm pt-3 pb-3">{team?.description}</p>
+      <p className="text-muted-foreground max-w-3xl text-sm pt-3 pb-3">{organization?.description}</p>
       </Balancer>
       </>
       :  <div className="p-3"></div>
@@ -111,7 +111,7 @@ export function ViewSlug({ team, locations, types } : { team:TeamWithJobs, locat
     {jobs.map((job:Job, index) => {
         return (
             <div key={job.id} aria-label="Job">
-            <JobCard key={index} job={job} team={team} />
+            <JobCard key={index} job={job}/>
             </div>
         )
     })}

@@ -9,14 +9,14 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import ApplyCard from "@/components/apply-card";
 import EditJobTabs from "@/components/edit-job";
-import { getOrganizationBySlug } from "@/server-actions/team/get-team";
+import { getOrganizationBySlug } from "@/server-actions/organization/get-organization";
 import { notFound } from 'next/navigation'
 import Link from "next/link";
 import { formatJobType } from "@/utils/format";
 import { formatDistanceToNow } from "date-fns";
 import { Toggle } from "@/components/toggle";
 import { SlugNavbar } from "@/components/navbar";
-import { Team } from "@prisma/client";
+import { Organization } from "@prisma/client";
 import { MapPin, Briefcase, Banknote } from "lucide-react";
 
 export async function generateMetadata({ params }: { params: { jobId: string } }): Promise<Metadata> {
@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: { params: { jobId: string } }
     };
 }
 export default async function Page({ params }: { params: { jobId: string, slug:string } }) {
-    const team = await getOrganizationBySlug(params.slug);
-    if(team?.error) { 
+    const organization = await getOrganizationBySlug(params.slug);
+    if(organization?.error) { 
         console.error("Not Found")
         notFound() 
     }
@@ -36,7 +36,7 @@ export default async function Page({ params }: { params: { jobId: string, slug:s
     return (
         <main className="">
         <div className="top-0 z-10 sticky">
-        <SlugNavbar team={team.team as Team} />
+        <SlugNavbar organization={organization.organization as Organization} />
         </div>
             <div className="w-full flex flex-col items-center text-center py-8 px-4 gap-y-4">
             <div>

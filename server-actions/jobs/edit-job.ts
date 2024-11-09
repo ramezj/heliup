@@ -1,7 +1,7 @@
 "use server"
 import prisma from "@/utils/db"
 import { auth } from "@/auth"
-import { Job, Team, Type } from "@prisma/client";
+import { Job, Organization, Type } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 

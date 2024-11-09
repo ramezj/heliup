@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { redirect } from "next/navigation";
-import { CreateTeam } from "@/components/create-team";
+import { CreateOrganization } from "@/components/create-organization";
 
 export const metadata: Metadata = {
     title: "Onboarding",
@@ -23,7 +23,7 @@ export default async function Page() {
             <div className="grid gap-2 text-center">
               <h1 className="text-3xl font-medium">Create Your Team</h1>
             </div>
-            <CreateTeam />
+            <CreateOrganization />
           </div>
         </div>
         </>

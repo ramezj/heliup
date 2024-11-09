@@ -1,17 +1,17 @@
 "use server"
 import prisma from "@/utils/db"
 import { auth } from "@/auth"
-import { Job, Team } from "@prisma/client";
+import { Job, Organization } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-export async function editOrganization(team:Team) {
+export async function editOrganization(organization:Organization) {
     const session = await auth();
     if(!session) { redirect('/auth') }
     try {
-        const orgExists = await prisma.team.findFirst({
+        const orgExists = await prisma.organization.findFirst({
             where:{
-                id: team.id
+                id: organization.id
             }
         })
         if(!orgExists) {
@@ -21,29 +21,29 @@ export async function editOrganization(team:Team) {
                 message: "please create an organization first."
             }
         }
-        const checkSlug = await prisma.team.findFirst({
+        const checkSlug = await prisma.organization.findFirst({
             where: {
                 slug: {
-                    equals: team.slug,
+                    equals: organization.slug,
                     mode: 'insensitive'
                 }
             }
         })
-        if(checkSlug && team.slug != orgExists.slug) { return {
+        if(checkSlug && organization.slug != orgExists.slug) { return {
             error: true,
             organization:null,
             message:"Slug Already In Use"
         }}
-        const updateOrg = await prisma.team.update({
+        const updateOrg = await prisma.organization.update({
             where: {
-                id: team.id
+                id: organization.id
             },
             data: {
-                slug: team.slug,
-                name: team.name,
-                description: team.description,
-                twitter: team.twitter,
-                website: team.website
+                slug: organization.slug,
+                name: organization.name,
+                description: organization.description,
+                twitter: organization.twitter,
+                website: organization.website
             }
         })
         revalidatePath('/dashboard');

@@ -8,7 +8,7 @@ import { Metadata } from "next";
 import { CreateJobButton } from "@/components/create-job";
 import { DataTableDemo } from "@/components/jobs-table-2";
 import { JobCard, JobCardForApplicants } from "@/components/job-card";
-import { getOrganizationByUserId, getOrganizationBySlug } from "@/server-actions/team/get-team";
+import { getOrganizationByUserId, getOrganizationBySlug } from "@/server-actions/organization/get-organization";
 import { Prisma } from "@prisma/client";
 
 type JobWithApplicants = Prisma.JobGetPayload<{

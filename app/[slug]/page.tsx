@@ -1,5 +1,5 @@
-import { getOrganizationBySlug } from "@/server-actions/team/get-team";
-import { Job, Team } from "@prisma/client"
+import { getOrganizationBySlug } from "@/server-actions/organization/get-organization";
+import { Job, Organization } from "@prisma/client"
 import { redirect } from "next/navigation";
 import { JobCard } from "@/components/job-card";
 import { Metadata } from "next";
@@ -13,30 +13,30 @@ import { Prisma } from "@prisma/client";
 import { Toggle } from "@/components/toggle";
 import { SlugNavbar } from "@/components/navbar";
 
-type TeamWithJobs = Prisma.TeamGetPayload<{
+type OrganizationWithJobs = Prisma.OrganizationGetPayload<{
   include: {
       jobs: true
   }
 }>
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const team = await getOrganizationBySlug(params.slug);
+    const organization = await getOrganizationBySlug(params.slug);
     return {
-      title: "Jobs at " + team.team?.name,
+      title: "Jobs at " + organization.organization?.name,
     };
 }
 export default async function Page({ params }: { params: { slug: string } }) {
-    const team = await getOrganizationBySlug(params.slug);
-    if(team?.error) { 
+    const organization = await getOrganizationBySlug(params.slug);
+    if(organization?.error) { 
         console.error("Not Found")
         notFound() 
     }
     return (
         <main className="">
         <div className="top-0 z-10 sticky">
-        <SlugNavbar team={team.team as Team} />
+        <SlugNavbar organization={organization.organization as Organization} />
         </div>
-        <ViewSlug team={team.team as TeamWithJobs} locations={team.locations as Array<string>} types={team.types as Array<string>} />
+        <ViewSlug organization={organization.organization as OrganizationWithJobs} locations={organization.locations as Array<string>} types={organization.types as Array<string>} />
         </main>
     )
 }
