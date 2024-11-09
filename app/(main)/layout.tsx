@@ -1,8 +1,6 @@
 import LayoutNav from "@/components/layout-nav"
 import { auth } from "@/auth"
 import { Session } from "next-auth";
-import { AppSidebar } from "@/components/app-sidebar";
-import { SidebarProvider } from "@/components/ui/sidebar";
 
 export default async function DashboardLayout({children, params, req} : any) {
   const session = await auth();
