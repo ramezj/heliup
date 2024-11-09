@@ -26,7 +26,7 @@ export default async function Page() {
           </p>
         </div>
         <Separator className="-mb-2"/>
-        <EditOrganization organization={organization.organization as Team} />
+        <EditOrganization team={organization.organization as Team} />
         </>
     )
 }
