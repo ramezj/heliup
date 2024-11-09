@@ -8,7 +8,7 @@ export async function getUserDashboard() {
     const session = await auth();
     if(!session) { redirect('/auth') }
     try {
-        const organization = await prisma.team.findFirst({
+        const team = await prisma.team.findFirst({
             where:{
                 ownerId:session.user?.id
             },
@@ -36,14 +36,14 @@ export async function getUserDashboard() {
           ) ?? 0;
           return {
             ok:true,
-            organization,
+            team,
             totalApplicants: totalApplicantCount
           }
     } catch (error) {
         console.error(error);
         return {
             ok:false,
-            organization:null,
+            team:null,
             totalApplicants: null
         }
     }
