@@ -16,7 +16,7 @@ import { formatJobType } from "@/utils/format";
 import { formatDistanceToNow } from "date-fns";
 import { Toggle } from "@/components/toggle";
 import { SlugNavbar } from "@/components/navbar";
-import { Organization } from "@prisma/client";
+import { Team } from "@prisma/client";
 import { MapPin, Briefcase, Banknote } from "lucide-react";
 
 export async function generateMetadata({ params }: { params: { jobId: string } }): Promise<Metadata> {
@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: { params: { jobId: string } }
     };
 }
 export default async function Page({ params }: { params: { jobId: string, slug:string } }) {
-    const organization = await getOrganizationBySlug(params.slug);
-    if(organization?.error) { 
+    const team = await getOrganizationBySlug(params.slug);
+    if(team?.error) { 
         console.error("Not Found")
         notFound() 
     }
@@ -36,7 +36,7 @@ export default async function Page({ params }: { params: { jobId: string, slug:s
     return (
         <main className="">
         <div className="top-0 z-10 sticky">
-        <SlugNavbar organization={organization.organization as Organization} />
+        <SlugNavbar team={team.team as Team} />
         </div>
             <div className="w-full flex flex-col items-center text-center py-8 px-4 gap-y-4">
             <div>
