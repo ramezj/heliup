@@ -97,7 +97,7 @@ export function Navigation(props:any) {
 export function SlugNavbar({ organization } : { organization : Organization}) {
   return (
     <div className="flex w-full flex-col">
-    <header className="sticky top-2 mt-8 flex h-16 items-center gap-4 bg-background px-4 z-50 md:mx-12 mx-4 rounded-xl border border-foreground/20 backdrop-blur-md">
+    <header className="sticky top-2 mt-8 flex h-16 items-center gap-4 px-4 z-50 md:mx-12 mx-4 rounded-xl border border-foreground/20 backdrop-blur-lg">
         <nav className="flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <Link href="/" className="flex items-center text-lg font-semibold">
           {organization.name}

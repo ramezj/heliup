@@ -32,7 +32,6 @@ export default function ApplyCard({ jobId }: { jobId: string}) {
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const selectedFile = e.target.files?.[0] || null;
         setFile(selectedFile);
-        console.log(file);
       };
     return (
         <>
@@ -43,18 +42,18 @@ export default function ApplyCard({ jobId }: { jobId: string}) {
             </div>
             <div className="space-y-2">
             <Label htmlFor="name">Full Name</Label>
-            <Input className="bg-inherit" required placeholder="Joe" value={name} onChange={((e) => {setName(e.target.value)})} />
+            <Input className="bg-inherit" required placeholder="Enter your full name" value={name} onChange={((e) => {setName(e.target.value)})} />
             </div>
             <div className="space-y-2">
             <Label htmlFor="name">Email Address</Label>
-            <Input className="bg-inherit" required placeholder="joebiden@gmail.com" value={emailAddress} onChange={((e) => {setEmailAddress(e.target.value)})} />
+            <Input className="bg-inherit" required placeholder="Enter your email address" value={emailAddress} onChange={((e) => {setEmailAddress(e.target.value)})} />
             </div>
             <div className="space-y-2">
             <Label htmlFor="name">Phone Number</Label>
-            <Input className="bg-inherit" required type="number" placeholder="+20087163518" value={phoneNumber} onChange={((e) => {setPhoneNumber(Number(e.target.value))})} />
+            <Input className="bg-inherit" required type="number" placeholder="Enter your phone number" value={phoneNumber} onChange={((e) => {setPhoneNumber(Number(e.target.value))})} />
             </div>
             <div className="space-y-2">
-            <Label htmlFor="name">Upload Resume ( max 5mb )</Label>
+            <Label htmlFor="name">Resume</Label>
             <div>
             <Input className="bg-inherit" required type="file" id="file" name="file" accept=".pdf" onChange={handleFileChange} />
             </div>
