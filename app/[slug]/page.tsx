@@ -22,7 +22,7 @@ type OrganizationWithJobs = Prisma.OrganizationGetPayload<{
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const organization = await getOrganizationBySlug(params.slug);
     return {
-      title: "Jobs at " + organization.organization?.name,
+      title:organization.organization?.name,
     };
 }
 export default async function Page({ params }: { params: { slug: string } }) {
