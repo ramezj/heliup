@@ -3,6 +3,7 @@ import NextAuth from "next-auth"
 import GitHub from "next-auth/providers/github"
 import Google from "next-auth/providers/google"
 import prisma from './utils/db';
+import { hexoid } from "hexoid"
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),
@@ -28,8 +29,40 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
   },
   trustHost: true,
   callbacks: {
+    async signIn({ user }) {
+      if(user.firstTimeUser === true) {
+        console.log("First time user Detected!");
+        const generateSlug = hexoid(24);
+        try {
+          const organization = await prisma.organization.create({
+            data: {
+              userId: user.id!,
+              name: `${user.name}'s organization`,
+              slug: generateSlug()
+            }
+          })
+          console.log("Organization created:", organization);
+          const update_user = await prisma.user.update({
+            where: {
+              id: user.id!
+            },
+            data: {
+              firstTimeUser: false
+            }
+          })
+          console.log("Updated firstTimeUser!");
+          return true;
+        } catch (error) {
+          console.error("error creating organization");
+          return false;
+        }
+      }
+      return true;
+    },
     async session({ session, user }) {
       session.user = user;
+      session.user.firstTimeUser = user.firstTimeUser;
+      session.user.isPremium = user.isPremium;
       return session;
     }
   },

@@ -1,10 +1,22 @@
-import NextAuth from "next-auth"
+// types/next-auth.d.ts
+import NextAuth from "next-auth";
 
 declare module "next-auth" {
-  /**
-   * Returned by `useSession`, `getSession` and received as a prop on the `SessionProvider` React Context
-   */
+  interface Session {
+    user: {
+      name?: string | null;
+      email?: string | null;
+      image?: string | null;
+      firstTimeUser?: boolean;
+      isPremium?: boolean;
+    };
+  }
+
   interface User {
-    firstTimeUser?: Boolean
+    id: string;
+    email: string;
+    firstTimeUser: boolean;
+    isPremium: boolean;
+    // Add other fields from the User model if needed
   }
 }

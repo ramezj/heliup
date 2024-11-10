@@ -40,6 +40,7 @@
     "framer-motion": "^11.2.10",
     "fumadocs-core": "^14.1.1",
     "fumadocs-ui": "^14.1.1",
+    "hexoid": "^2.0.0",
     "lucide-react": "^0.395.0",
     "next": "14.2.4",
     "next-auth": "^5.0.0-beta.19",
