@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "bun run next dev --experimental-https",
-    "build": "bunx prisma generate && bun run next build",
-    "start": "bun run next start",
-    "lint": "bun run next lint"
+    "dev": "next dev --experimental-https",
+    "build": "npx prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.2.0",
