@@ -61,8 +61,6 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
     },
     async session({ session, user }) {
       session.user = user;
-      session.user.firstTimeUser = user.firstTimeUser;
-      session.user.isPremium = user.isPremium;
       return session;
     }
   },
