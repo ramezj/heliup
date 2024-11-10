@@ -21,7 +21,7 @@ export default async function Page() {
         <div className="flex items-center justify-center py-24">
           <div className="mx-auto grid w-[350px] gap-6">
             <div className="grid gap-2 text-center">
-              <h1 className="text-3xl font-medium">Create Your Team</h1>
+              <h1 className="text-3xl font-medium">Create Organization</h1>
             </div>
             <CreateOrganization />
           </div>

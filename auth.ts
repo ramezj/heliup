@@ -29,36 +29,6 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
   },
   trustHost: true,
   callbacks: {
-    async signIn({ user }) {
-      if(user.firstTimeUser === true) {
-        console.log("First time user Detected!");
-        const generateSlug = hexoid(24);
-        try {
-          const organization = await prisma.organization.create({
-            data: {
-              userId: user.id!,
-              name: `${user.name}'s organization`,
-              slug: generateSlug()
-            }
-          })
-          console.log("Organization created:", organization);
-          const update_user = await prisma.user.update({
-            where: {
-              id: user.id!
-            },
-            data: {
-              firstTimeUser: false
-            }
-          })
-          console.log("Updated firstTimeUser!");
-          return true;
-        } catch (error) {
-          console.error("error creating organization");
-          return false;
-        }
-      }
-      return true;
-    },
     async session({ session, user }) {
       session.user = user;
       return session;
