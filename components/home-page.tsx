@@ -25,7 +25,7 @@ export const HeroSection = () => {
         <div className="flex flex-col items-center text-center">
           <Button asChild className="mb-6 w-fit bg-inherit px-12 border-foreground/20" size={"sm"} variant={"outline"}>
             <Link className="not-prose" href="/">
-                Introducing Heliup <ArrowUpRight className="w-4 ml-2" />
+                Introducing heliup <ArrowUpRight className="w-4 ml-2" />
             </Link>
           </Button>
           <h1 className="sm:text-6xl text-4xl font-light">

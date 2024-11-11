@@ -16,9 +16,9 @@ import { ArrowUpRight } from "lucide-react";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata:Metadata = {
-  title: "Heliup",
-  description: "Heliup, Build Career Pages Effortlessly.",
-  applicationName: "Heliup"
+  title: "heliup",
+  description: "heliup, build career pages effortlessly.",
+  applicationName: "heliup"
 
 }
 export default async function Page() {
