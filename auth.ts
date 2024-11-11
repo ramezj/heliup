@@ -31,6 +31,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
   callbacks: {
     async session({ session, user }) {
       session.user = user;
+      session.user.isPremium = user.isPremium;
       return session;
     }
   },

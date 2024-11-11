@@ -61,7 +61,7 @@ export default async function Page() {
             <div className="space-y-4">
             <h1 className="font-medium text-base text-muted-foreground">If you wish to cancel your subscription, please click the button below. Note that you will lose all the benefits of your current plan.</h1>
             <Button variant={"outline"} className="bg-inherit border-foreground/20" asChild>
-              <Link href={`https://app.gumroad.com/subscriptions/${user.subscription_id}/manage`}>
+              <Link target="_blank" href={`https://app.gumroad.com/subscriptions/${user.subscription_id}/manage`}>
               Cancel Subscription
               </Link>
               </Button>

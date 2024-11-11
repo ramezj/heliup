@@ -6,5 +6,6 @@ declare module "next-auth" {
    */
   interface User {
     firstTimeUser?: Boolean
+    isPremium?: Boolean
   }
 }
