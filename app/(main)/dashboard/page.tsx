@@ -27,7 +27,7 @@ export default async function Page() {
         <Button size={"sm"} variant={"default"} asChild className="w-36">
         <Link target="_blank" href={`https://${organization.organization?.slug}.${process.env.NEXT_URL}`}>
         Preview
-        <SquareArrowOutUpRight className="size-4 ml-2"/>
+        <ArrowUpRight className="size-4 ml-2"/>
         </Link>
         </Button>
         </div>

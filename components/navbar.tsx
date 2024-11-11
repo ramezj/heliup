@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation"
 import { Home, BriefcaseBusiness, Users, SparklesIcon, DollarSignIcon, Laptop, StarIcon, Globe } from "lucide-react"
 import { Organization } from "@prisma/client"
 import { TwitterLogoIcon } from "@radix-ui/react-icons"
-import { NavigationMenuDemo } from "./nav-menu-demo"
+import { NavigationMenuForNavbar } from "./nav-menu-demo"
 
 function useLastPathSegment() {
   const pathname = usePathname();
@@ -21,16 +21,10 @@ export function Navigation(props:any) {
     <div className="flex w-full flex-col">
       <header className="sticky top-2 mt-8 flex h-16 items-center gap-4 px-4 z-50 md:mx-12 mx-4 rounded-xl border border-foreground/20 backdrop-blur-lg">
         <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
-          <Link href="/" className="flex items-center text-lg font-semibold">
-          Heliup
+          <Link href="/" className="flex items-center text-lg font-semibold italic">
+          heliup
           </Link>
-         <NavigationMenuDemo />
-          {/* <Link href={`https://demo.heliup.xyz`} target="_blank" className="text-muted-foreground transition-colors hover:text-foreground font-medium">
-            Demo
-          </Link>
-          <Link href="/pricing" className="text-muted-foreground transition-colors hover:text-foreground font-medium">
-            Pricing
-          </Link> */}
+         <NavigationMenuForNavbar />
         </nav>
         <Sheet>
           <SheetTrigger asChild>
@@ -45,8 +39,8 @@ export function Navigation(props:any) {
           </SheetTrigger>
           <SheetContent side="left" className="flex flex-col dark:bg-black bg-white">
               <SheetClose asChild>
-                <Link href="/" className="px-2 flex items-center text-lg font-semibold justify-center">
-                  Heliup
+                <Link href="/" className="px-2 flex items-center text-lg font-semibold justify-center italic">
+                  heliup
                 </Link>
                 </SheetClose>
                 <nav className="grid gap-3 text-lg font-medium mt-1">

@@ -13,6 +13,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import { ArrowUpRight, MoveUpRight } from "lucide-react"
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -52,11 +53,11 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ]
 
-export function NavigationMenuDemo() {
+export function NavigationMenuForNavbar() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <NavigationMenuTrigger>Features</NavigationMenuTrigger>
           <NavigationMenuContent className="bg-background">
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -88,11 +89,12 @@ export function NavigationMenuDemo() {
               </ListItem>
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
         <NavigationMenuItem className="bg-transparent">
           <Link href="https://demo.heliup.xyz" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()} target="_blank">
               Demo
+              <ArrowUpRight className="size-4 ml-2" />
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

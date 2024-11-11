@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 import { Button } from "@/components/ui/button";
-import { SquareArrowOutUpRight } from "lucide-react";
+import { SquareArrowOutUpRight, ArrowUpRight } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Loader2 } from "lucide-react";
 
@@ -16,7 +16,7 @@ export default function Loading() {
         <h1 className="font-bold text-3xl tracking-tight">Overview</h1>
         <Button size={"sm"} variant={"default"} className="w-36">
         Preview
-        <SquareArrowOutUpRight className="size-4 ml-2"/>
+        <ArrowUpRight className="size-4 ml-2"/>
         </Button>
         </div>
         <div className="w-full h-full items-center flex flex-col justify-center">
