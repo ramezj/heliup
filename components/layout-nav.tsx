@@ -20,8 +20,8 @@ export default function LayoutNav({ children, session }: { children: React.React
         <div className="hidden border-r md:block ">
           <div className="flex h-full max-h-screen flex-col gap-2 sticky top-0 z-50">
             <div className="flex h-16 items-center border-b px-3 lg:h-16 text-center justify-center">
-            <Link href='/' className="flex items-center justify-center">
-              <span className="font-bold text-lg">Heliup</span>
+            <Link href='/' className="flex items-center justify-center align-middle">
+              <span className="font-bold text-lg italic align-middle">heliup</span>
             </Link>
             </div>
             <div className="flex-1 ">
@@ -89,8 +89,8 @@ export default function LayoutNav({ children, session }: { children: React.React
             </SheetTrigger>
               <SheetContent side="left" className="flex flex-col bg-background">
                 <SheetClose asChild>
-                  <Link href="/" className="px-2 flex items-center text-lg font-bold justify-center">
-                    Heliup
+                  <Link href="/" className="px-2 flex items-center text-lg font-bold italic justify-center">
+                    heliup
                   </Link>
                   </SheetClose>
                 <nav className="grid gap-3 text-lg font-medium mt-1">
