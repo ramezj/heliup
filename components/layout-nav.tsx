@@ -155,7 +155,12 @@ export default function LayoutNav({ children, session }: { children: React.React
             </div>
             <div className="flex-1"></div> 
             <div className="ml-auto">
-              {/* <Button className="bg-inherit" variant={"outline"}><Gem className="size-4 mr-2"/>Upgrade to Premium</Button> */}
+              {
+                session.user?.isPremium === false &&
+                <>
+                <Button className="bg-inherit" variant={"outline"}><Gem className="size-4 mr-2"/>Upgrade to Professional</Button>
+                </>
+              }
             </div>
           </header>
               {children}

@@ -7,6 +7,7 @@ import { getUserBilling } from "@/server-actions/billing/get-user-billing";
 import { getUserDashboard } from "@/server-actions/dashboard/getUserDashboard";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Gem } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Billing",
@@ -44,7 +45,8 @@ export default async function Page() {
                 : 
                   <Button asChild variant={"outline"} className="bg-inherit border-foreground/20">
                     <Link target="_blank" href={`https://heliup.gumroad.com/l/heliup?email=${session.user?.email}&custom_field=${session.user?.id}`}>
-                    Upgrade to Premium
+                    <Gem className="size-4 mr-2"/>
+                    Upgrade to Professional
                     </Link>
                     </Button>
               }
