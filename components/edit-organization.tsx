@@ -41,7 +41,20 @@ export default function EditOrganization({ organization } : { organization:Organ
               </div>
               <div className="space-y-2">
               <Label htmlFor="website">Website URL</Label>
-              <Input className="bg-inherit" placeholder="https://heliup.xyz" value={currentOrganization.website!} onChange={((e) => {setCurrentOrganization((prevOrg) => ({ ...prevOrg, website: e.target.value }))})}/>
+              {/* <Input className="bg-inherit" placeholder="https://heliup.xyz" value={currentOrganization.website!} onChange={((e) => {setCurrentOrganization((prevOrg) => ({ ...prevOrg, website: e.target.value }))})}/> */}
+              <div className="flex rounded-lg shadow-sm shadow-black/5">
+                <span className="-z-10 inline-flex items-center rounded-s-lg border border-input bg-background px-3 text-sm text-muted-foreground">
+                  https://
+                </span>
+                <Input
+                  id="input-14"
+                  className="-ms-px rounded-s-none shadow-none bg-inherit"
+                  placeholder="heliup.xyz"
+                  value={currentOrganization.website!}
+                  onChange={((e) => {setCurrentOrganization((prevOrg) => ({ ...prevOrg, website: e.target.value }))})}
+                  type="text"
+                />
+              </div>
               </div>
               <div className="space-y-2">
               <Label htmlFor="twitter">Twitter</Label>
