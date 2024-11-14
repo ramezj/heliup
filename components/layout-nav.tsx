@@ -158,7 +158,12 @@ export default function LayoutNav({ children, session }: { children: React.React
               {
                 session.user?.isPremium === false &&
                 <>
-                <Button className="bg-inherit" variant={"outline"}><Gem className="size-4 mr-2"/>Upgrade to Professional</Button>
+                <Button asChild className="bg-inherit" variant={"outline"}>
+                <Link href="/billing">
+                <Gem className="size-4 mr-2"/>
+                Upgrade to Professional
+                </Link>
+                </Button>
                 </>
               }
             </div>
