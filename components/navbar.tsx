@@ -61,7 +61,7 @@ export function Navigation(props:any) {
         </Sheet>
         <div className="flex w-full items-center gap-3">
           <div className="ml-auto align-middle flex gap-3">
-            <Toggle />
+            {/* <Toggle /> */}
           {
             props.session 
             ? 

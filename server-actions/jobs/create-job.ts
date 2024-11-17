@@ -13,9 +13,20 @@ export  async function createJob(name: string) {
                 id: session.user?.id
             },
             include: {
-                organization: true
+                organization: {
+                    include: {
+                        jobs: true
+                    }
+                }
             }
         });
+        if(session.user?.isPremium === false && user?.organization?.jobs.length === 3) {
+            return {
+                ok:false,
+                job:null,
+                error:"Please upgrade account to create more jobs"
+            }
+        }
         const Job = await prisma.job.create({
             data: {
                 title: name,

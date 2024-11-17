@@ -28,7 +28,7 @@ export function CreateJobButton() {
     if(res?.ok) {
       toast(<>Job Created Successfully</>)
     } else {
-      toast("Something went wrong")
+      toast(res.error)
     }
     setLoading(false);
   }  
