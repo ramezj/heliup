@@ -26,8 +26,8 @@ export async function middleware(req: NextRequest) {
   const host = req.headers.get('host');
   const subdomain = getValidSubdomain(host);
   if (subdomain) {
-    console.log(`>>> Rewriting: ${url.pathname} to /${subdomain}${url.pathname}`);
-    url.pathname = `/${subdomain}${url.pathname}`;
+    console.log(`>>> Rewriting: ${url.pathname} to /view-organization/${subdomain}${url.pathname}`);
+    url.pathname = `/view-organization/${subdomain}${url.pathname}`;
   }
   return NextResponse.rewrite(url);
 }
